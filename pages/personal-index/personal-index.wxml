@@ -1,2 +1,50 @@
-<!--pages/personal-intention/personal-intention.wxml-->
-主页
+<view class="flex-column-center">
+    <view class="top">
+        <view class="flex-row-center top-top">
+            <image style="width:30px;height:30px;border-radius:50%;" src="{{avatar}}"></image>
+            <text class="name">{{name}}</text>
+        </view>
+        <view class="flex-row-center top-bottom">
+            <view>
+                <text class="block p12">诚信刀值</text>
+                <text>99999999</text>
+            </view>
+            <view class="rank">
+                <text class="block p12">好友排名</text>
+                <text>1</text>
+            </view>
+        </view>
+    </view>
+    <view class="middle flex-row-around">
+        <view class="state flex-column-center">
+            <text class="state-num">999</text>
+            <text class="state-disc">已投递</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num">999</text>
+            <text class="state-disc">沟通过</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num orange">999</text>
+            <text class="state-disc">待面试</text>
+        </view>
+    </view>
+    <view class="middle flex-row-around">
+        <view class="state flex-column-center">
+            <text class="state-num">999</text>
+            <text class="state-disc">我的简历</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num">999</text>
+            <text class="state-disc">求职意向</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num orange">999</text>
+            <text class="state-disc">职位收藏</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num orange">999</text>
+            <text class="state-disc">谁看过我</text>
+        </view>
+    </view>
+</view>

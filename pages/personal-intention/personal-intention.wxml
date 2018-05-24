@@ -1,12 +1,11 @@
-<!--pages/personal-intention/personal-intention.wxml-->
-<view class="container">
+<view class="container bg-fff">
   <view class="title-box border-top">
     <text class="title">你期望的工作</text>
   </view>
-  <view class="search-box flex-row-center flex-align-center">
+  <view class="search-box flex-row-center">
     <text class="search-box-txt">{{city}}</text>
-    <image class="icon" src="../img/arr-bottom.png" alt=""></image>
-    <input class="search-box-input flex" type="text" bindinput="hasContent" placeholder="请输入关键词，如产品" />
+    <image class="icon" src="../../img/arr-bottom.png" alt=""></image>
+    <input class="search-box-input" type="text" bindinput="hasContent" placeholder="请输入关键词，如产品" />
   </view>
   <view class="tip-box">
     <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
@@ -14,4 +13,5 @@
   <view class="button-box">
     <view class="mybutton {{canNext ? '':'disabled'}}" bindtap="next">我选好了，去找工作</view>
   </view>
+  <myModal></myModal>
 </view>
