@@ -1,0 +1,95 @@
+<view class="flex-column-center">
+    <view class="top">
+        <navigator url="/pages/mine/base-setting/personal-baseinfo/personal-baseinfo">
+            <view class="flex-row-center top-top">
+                <image style="width:30px;height:30px;border-radius:50%;" src="{{avatar}}"></image>
+                <text class="name">{{name}}</text>
+            </view>
+        </navigator>
+        <view class="flex-row-center top-bottom">
+            <view>
+                <text class="block p12">诚信刀值</text>
+                <text>99999999</text>
+            </view>
+            <view class="rank">
+                <text class="block p12">好友排名</text>
+                <text>1</text>
+            </view>
+        </view>
+    </view>
+    <view class="middle flex-row-around">
+        <view class="state flex-column-center">
+            <text class="state-num">999</text>
+            <text class="state-disc">已投递</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num">999</text>
+            <text class="state-disc">沟通过</text>
+        </view>
+        <view class="state flex-column-center">
+            <text class="state-num orange">999</text>
+            <text class="state-disc">待面试</text>
+        </view>
+    </view>
+    <view class="middle flex-row-around">
+        <view class="state flex-column-center" bindtap="toResume">
+            <view class="resume-icon">
+                <image style="width:24px;height:24px;" src="/img/mine-icon-1-1.png"></image>
+                <text class="resume-percent">{{resumePercent}}%</text>
+            </view>
+            <text class="state-disc">我的简历</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-1-2.png"></image>
+            <text class="state-disc">求职意向</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-1-3.png"></image>
+            <text class="state-disc">职位收藏</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-1-4.png"></image>
+            <text class="state-disc">谁看过我</text>
+        </view>
+    </view>
+    <view class="middle-sp flex-row-around mgbt0 grid">
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-1.png"></image>
+            <text class="state-disc">邀请奖励</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-2.png"></image>
+            <text class="state-disc">日志</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-3.png"></image>
+            <text class="state-disc">足迹</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-4.png"></image>
+            <text class="state-disc">相册</text>
+        </view>
+    </view>
+    <view class="middle-sp flex-row-around grid border-top">
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-5.png"></image>
+            <text class="state-disc">运动</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-6.png"></image>
+            <text class="state-disc">城市服务</text>
+        </view>
+        <view class="state flex-column-center">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-7.png"></image>
+            <text class="state-disc">手机充值</text>
+        </view>
+        <view class="state flex-column-center" bindtap="toMore">
+            <image style="width:24px;height:24px;" src="/img/mine-icon-2-8.png"></image>
+            <text class="state-disc">更多</text>
+        </view>
+    </view>
+    <view class="w100 mgbt10">
+        <mylineWithIcon url="/pages/mine/base-setting/personal-setting/personal-setting" title="设置" icon="/img/mine-icon-3-1.png" hasTopBorder="{{false}}"></mylineWithIcon>
+        <mylineWithIcon url="/pages/mine/base-setting/personal-feedback/personal-feedback" title="反馈帮助" icon="/img/mine-icon-3-2.png"></mylineWithIcon>
+    </view>
+</view>

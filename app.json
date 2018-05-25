@@ -1,10 +1,24 @@
 {
   "pages":[
-    "pages/personal-intention/personal-intention",
-    "pages/personal-index/personal-index",
+    "pages/mine/resume/personal-resume/personal-resume",
+    "pages/mine/personal-mine/personal-mine",
+
+    "pages/welcome-intention/welcome-intention",
+
+    "pages/mine/resume/personal-intention/personal-intention",
+    "pages/mine/base-setting/personal-baseinfo/personal-baseinfo",
+    "pages/mine/base-setting/personal-setting/personal-setting",
+    "pages/mine/base-setting/personal-feedback/personal-feedback",
+    "pages/mine/service/personal-service/personal-service",
+
+    "pages/job/personal-job/personal-job",
+    "pages/job/job-search/job-search",
+    "pages/job/job-list/job-list",
+
+    "pages/msg/personal-msg/personal-msg",
+    "pages/friends/personal-friends/personal-friends",
+
     "pages/index/index",
-    "pages/job-search/job-search",
-    "pages/job-list/job-list",
     "pages/logs/logs"
   ],
   "window":{
@@ -12,5 +26,37 @@
     "navigationBarBackgroundColor": "#29a1f7",
     "navigationBarTitleText": "蜗牛职信",
     "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#909ba3",
+    "selectedColor": "#29a1f7",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "职场",
+        "pagePath": "pages/job/personal-job/personal-job",
+        "iconPath": "img/tabBar/tab-1-1.png",
+        "selectedIconPath": "img/tabBar/tab-1-2.png"
+      },
+      {
+        "text": "消息",
+        "pagePath": "pages/msg/personal-msg/personal-msg",
+        "iconPath": "img/tabBar/tab-2-1.png",
+        "selectedIconPath": "img/tabBar/tab-2-2.png"
+      },
+      {
+        "text": "好友",
+        "pagePath": "pages/friends/personal-friends/personal-friends",
+        "iconPath": "img/tabBar/tab-3-1.png",
+        "selectedIconPath": "img/tabBar/tab-3-2.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/personal-mine/personal-mine",
+        "iconPath": "img/tabBar/tab-4-1.png",
+        "selectedIconPath": "img/tabBar/tab-4-2.png"
+      }
+    ]
   }
 }

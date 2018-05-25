@@ -1,8 +1,11 @@
+// pages/mine/resume/personal-intention/personal-intention.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    city:'上海',
-    tipArr:['产品','设计师','产品','程序员','产品','销售专员','产品','设计师','产品'],
-    canTap:false,
+
   },
 
   /**
@@ -58,28 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  },
-  next(){
-    if(this.data.canTap){
-      wx.switchTab({
-        url: '/pages/mine/personal-mine/personal-mine'
-      })
-    }
-  },
-  changeActiveTip(e){
-    this.setData({
-      "activeTip":e.currentTarget.dataset.index,
-      "canTap":true
-    })
-  },
-  hasContent(e){
-    console.log(e.detail)
-    if (e.detail.value.trim().length>0) {
-      this.setData({"canTap":true})
-    }else{
-      this.setData({"canTap":false})
-    }
 
   }
 })

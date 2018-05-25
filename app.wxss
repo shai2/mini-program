@@ -1,7 +1,7 @@
 /* ------基础部分------ */
 view,text,button,input,textarea,image{box-sizing:border-box;padding:0;}
 page{background:#f3f5f7;height:100%;width:100%;}
-.flex{flex: 1 1 auto;}
+.flex{flex: 1 1;}
 .flex-row-center{display:flex;flex-direction:row;justify-content:center;align-items:center;}
 .flex-row-between{display:flex;flex-direction:row;justify-content:space-between;align-items:center;}
 .flex-row-around{display:flex;flex-direction:row;justify-content:space-around;align-items:center;}
@@ -15,6 +15,7 @@ page{background:#f3f5f7;height:100%;width:100%;}
 .mgtop10{margin-top:10px!important;}
 .mgtop20{margin-top:20px!important;}
 .mgtop30{margin-top:30px!important;}
+.mgbt0{margin-bottom:0px!important;}
 .mgbt10{margin-bottom:10px!important;}
 .font14{font-size:14px!important;}
 .dis-none{display:none;}
@@ -26,58 +27,60 @@ page{background:#f3f5f7;height:100%;width:100%;}
 .p12{font-size:12px;}
 .p14{font-size:14px;}
 .p15{font-size:15px;}
-.red{color:#ec5151;}
-.orange{color:#ff824b;}
-.green{color:#45c654;}
-.blue{color:#29a1f7;}
+.red{color:#ec5151!important;}
+.orange{color:#ff824b!important;}
+.green{color:#45c654!important;}
+.blue{color:#29a1f7!important;}
 .bg-gray{background-color:#f3f5f7;}
 .bg-fff{background-color:#ffffff;}
 /*------样式部分------ */
 .border-top{border-top:1px solid #e4e9f0;}
-.search-box{width:675rpx;}
+.border-bottom{border-bottom:1px solid #e4e9f0;}
+.placeholder{color:#cbd4db;}
+.textarea{background:#fff;width:100%;padding:15px;font-size:14px;min-height:200px;}
 /* ------组件化部分------ */
-/**默认在中间的container**/
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0rpx;
+  justify-content: center;
+  padding: 0 15px;
   box-sizing: border-box;
 }
 .search-box{
   border:1px solid #d7dee2;
   border-radius:100px;
-  padding:5px 20px 7px;
+  padding:10px 20px;
   font-size:14px;
-  flex:0 0;
+  width:100%;
 }
 .search-box-txt{
+  line-height:20px;
   margin-right:10px;
   position:relative;
-}
-.search-box-txt:after{
-  position:absolute;
-  right:-30px;
-  top:3px;
-  content:'';
-  display:block;
-  width:1px;
-  height:16px;
-  background:#d7dee2;
 }
 .search-box-input{
   margin-left:20px;
 }
-.mybutton{
-  text-align:center;
-  border-radius:6px;
-  line-height:45px;
-  font-size:15px;
-  background:#29a1f7;
-  color:#fff;
+.myline-text{
+    font-size:15px;
+    color:#909ba3;
+    margin-right:12px;
+    text-align:right;
 }
-.mybutton.disabled{
-  background:#ecf1f3;
-}
+/* 格子 */
+.middle{width:100%;padding:18px 0;margin-bottom:10px;background:#fff;}
+.middle-title{position:relative;font-size:16px;background:#fff;padding:10px 26px;width:100%;display:block;}
+.middle-title:after{content:'';display:block;position:absolute;left:15px;top:14px;width:2px;height:15px;background:#29a1f7;}
+.middle-sp{width:100%;padding:0px;margin-bottom:10px;background:#fff;}
+.middle-sp .state{padding:18px 0;}
+.middle-for-info{width:100%;padding:20px 15px 25px;margin-bottom:10px;background:#fff;position:relative;}
+.state{flex:1 1;}
+.state-num{color:#546373;font-size:17px;}
+.state-disc{color:#909ba3;font-size:12px;margin-top:10px;}
+.grid view:nth-last-child(n+2){border-right:1px solid #e4e9f0;}
+/* 很多信息页面部分 */
+.info-normal{margin-top:15px;color:#546376;font-size:14px;}
+.info-normal-data{color:#909ba3;margin-left:5px;}
+.edit{position:absolute;top:10px;right:10px;width:20px;height:20px;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/edit.png") no-repeat center/15px;}

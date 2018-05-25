@@ -1,0 +1,4 @@
+<textarea class="textarea" auto-height auto-focus bindblur="getText" placeholder="填写反馈问题" placeholder-style="placeholder"/>
+<view class="button-container">
+    <myButton text="提交" bindtap="submit"></myButton>
+</view>

@@ -1,0 +1,20 @@
+.button-box{width:100%;}
+.mybutton{
+  text-align:center;
+  border-radius:6px;
+  line-height:45px;
+  font-size:15px;
+  background:#29a1f7;
+  color:#fff;
+}
+.mybutton-sp{
+  text-align:center;
+  border-radius:0px;
+  line-height:45px;
+  font-size:15px;
+  background:#fff;
+  color:#ff824b;
+}
+.mybutton.disabled{
+  background:#ecf1f3;
+}

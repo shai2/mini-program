@@ -1,0 +1,3 @@
+<view class="button-container">
+    <myButton type="2" text="退出登录" bindtap="loginOut"></myButton>
+</view>

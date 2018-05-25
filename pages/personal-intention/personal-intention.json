@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "myModal": "/component/my-modal/my-modal"
+    "welcomeModal":"/component/welcome-modal/welcome-modal",
+    "myButton":"/component/my-button/my-button"
   }
 }

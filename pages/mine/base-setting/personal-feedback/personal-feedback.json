@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "反馈帮助",
+  "usingComponents":{
+    "myButton":"/component/my-button/my-button"
+  }
+}
