@@ -1,0 +1,35 @@
+<view>
+    <view>
+        <picker bindchange="" mode="multiSelector">
+            <myline-with-icon title="期望职位" showLeftIcon="">
+                <text class="myline-text"></text>
+            </myline-with-icon>
+        </picker>
+        <picker bindchange="workPlaceChange" mode="region">
+            <myline-with-icon title="工作地点" showLeftIcon="">
+                <text class="myline-text">{{userInfo.province}} · {{userInfo.city}} · {{userInfo.area}}</text>
+            </myline-with-icon>
+        </picker>
+        <myline-with-icon title="薪资待遇" bindinput="nameChange" showLeftIcon="" showRightIcon="">
+            <input class="myline-text" value="" placeholder="请输入期望薪资" placeholder-class="placeholder"/>
+        </myline-with-icon>
+        <picker bindchange="" mode="multiSelector">
+            <myline-with-icon title="期望行业" showLeftIcon="">
+                <text class="myline-text"></text>
+            </myline-with-icon>
+        </picker>
+        <picker bindchange="">
+            <myline-with-icon title="公司规模" showLeftIcon="">
+                <text class="myline-text"></text>
+            </myline-with-icon>
+        </picker>
+        <picker bindchange="">
+            <myline-with-icon title="求职状态" showLeftIcon="">
+                <text class="myline-text"></text>
+            </myline-with-icon>
+        </picker>
+    </view>
+    <view class="button-container-normal">
+        <my-button text="保存" bindtap="save"></my-button>
+    </view>
+</view>

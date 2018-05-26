@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "welcomeModal":"/base-component/welcome-modal/welcome-modal",
+    "my-button":"/base-component/my-button/my-button"
+  }
+}

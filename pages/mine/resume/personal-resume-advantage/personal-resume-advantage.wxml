@@ -1,0 +1,4 @@
+<textarea auto-height auto-focus bindblur="getText" placeholder="请输入" placeholder-class="placeholder"/>
+<view class="button-container-normal">
+    <my-button text="保存" bindtap="save"></my-button>
+</view>

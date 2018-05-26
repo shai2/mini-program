@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "我的简历",
+  "navigationBarTitleText": "求职意向",
   "usingComponents":{
     "myline-with-icon":"/base-component/myline-with-icon/myline-with-icon",
     "my-button":"/base-component/my-button/my-button"

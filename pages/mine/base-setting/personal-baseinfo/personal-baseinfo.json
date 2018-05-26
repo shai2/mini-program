@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "基本信息",
-  "usingComponents":{
-    "mylineWithIcon":"/component/myline-with-icon/myline-with-icon",
-    "myButton":"/component/my-button/my-button"
-  }
-}

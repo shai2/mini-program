@@ -1,0 +1,15 @@
+<view class="myline-with-icon" bindtap="gotoUrl">
+  <view class="inner flex-row-between {{hasTopBorder ? 'has-top-border':''}}">
+    <view class="left flex-row-center">
+      <image wx:if="{{showLeftIcon}}" style="width:24px;height:24px;margin-right:5px;" src="{{icon}}"></image>
+      <view class="title">
+        {{title}}
+      </view>
+    </view>
+    <view class="right flex-row-between">
+      <!-- 右边的值 -->
+      <slot></slot>
+      <image wx:if="{{showRightIcon}}" style="width:12px;height:12px;" src="{{rightIcon}}"></image>
+    </view>
+  </view>
+</view>

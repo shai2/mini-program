@@ -23,14 +23,19 @@ Page({
     })
     console.log(info.userInfo)
   },
-  toMore(){
+  toDeliver(){
     wx.navigateTo({
-      url:"/pages/mine/service/personal-service/personal-service"
+      url:"/pages/mine/job/personal-deliver/personal-deliver"
     })
   },
   toResume(){
     wx.navigateTo({
       url:"/pages/mine/resume/personal-resume/personal-resume"
+    })
+  },
+  toMore(){
+    wx.navigateTo({
+      url:"/pages/mine/service/personal-service/personal-service"
     })
   },
 })

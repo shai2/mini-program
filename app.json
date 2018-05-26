@@ -1,14 +1,29 @@
 {
   "pages":[
-    "pages/mine/resume/personal-resume/personal-resume",
+    "pages/mine/job/personal-deliver/personal-deliver",
+    
     "pages/mine/personal-mine/personal-mine",
-
+    "pages/mine/job/personal-jobdetail/personal-jobdetail",
+    
+    
+    
     "pages/welcome-intention/welcome-intention",
 
-    "pages/mine/resume/personal-intention/personal-intention",
-    "pages/mine/base-setting/personal-baseinfo/personal-baseinfo",
-    "pages/mine/base-setting/personal-setting/personal-setting",
-    "pages/mine/base-setting/personal-feedback/personal-feedback",
+    
+
+    "pages/mine/resume/personal-resume/personal-resume",
+    "pages/mine/resume/personal-resume-baseinfo/personal-resume-baseinfo",
+    "pages/mine/resume/personal-resume-intention/personal-resume-intention",
+    "pages/mine/resume/personal-resume-workexp/personal-resume-workexp",
+    "pages/mine/resume/personal-resume-eduexp/personal-resume-eduexp",
+    "pages/mine/resume/personal-resume-eventexp/personal-resume-eventexp",
+    "pages/mine/resume/personal-resume-myskill/personal-resume-myskill",
+    "pages/mine/resume/personal-resume-advantage/personal-resume-advantage",
+
+    "pages/mine/setting/personal-baseinfo/personal-baseinfo",
+    "pages/mine/setting/personal-setting/personal-setting",
+    "pages/mine/setting/personal-feedback/personal-feedback",
+
     "pages/mine/service/personal-service/personal-service",
 
     "pages/job/personal-job/personal-job",
@@ -16,6 +31,7 @@
     "pages/job/job-list/job-list",
 
     "pages/msg/personal-msg/personal-msg",
+
     "pages/friends/personal-friends/personal-friends",
 
     "pages/index/index",

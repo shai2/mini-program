@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"已投递",
+    "usingComponents":{
+        "job-list":"/page-component/job-list/job-list"
+    }
+}

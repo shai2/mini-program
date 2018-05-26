@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "我的",
   "usingComponents": {
-    "mylineWithIcon":"/component/myline-with-icon/myline-with-icon"
+    "myline-with-icon":"/base-component/myline-with-icon/myline-with-icon"
   }
 }

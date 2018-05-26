@@ -1,0 +1,6 @@
+{
+  "component":true,
+  "usingComponents":{
+    "job-item":"/base-component/job-item/job-item"
+  }
+}

@@ -1,0 +1,20 @@
+<view class="item {{hasBottom ? 'has-bottom' : 'has-border'}}">
+    <view class="top flex-row-between">
+        <text class="name">推广经理</text>
+        <text class="salary">1k-2k</text>
+    </view>
+    <view class="middle">
+        <text class="area">上海市 - 松江区</text>
+        <text class="work">1-3年</text>
+        <text class="edu">小学</text>
+    </view>
+    <view class="bottom flex-row-between">
+        <view class="flex-row-between">
+            <image style="width:20px;height:20px;border-radius:2px;margin-right:5px;" src="{{companyAvatar}}"></image>
+            <text class="company">平安水果</text>
+        </view>
+        <view class="">
+            <text class="updata">15:15</text>
+        </view>
+    </view>
+</view>

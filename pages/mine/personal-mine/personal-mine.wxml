@@ -1,6 +1,6 @@
 <view class="flex-column-center">
     <view class="top">
-        <navigator url="/pages/mine/base-setting/personal-baseinfo/personal-baseinfo">
+        <navigator url="/pages/mine/setting/personal-baseinfo/personal-baseinfo">
             <view class="flex-row-center top-top">
                 <image style="width:30px;height:30px;border-radius:50%;" src="{{avatar}}"></image>
                 <text class="name">{{name}}</text>
@@ -18,15 +18,15 @@
         </view>
     </view>
     <view class="middle flex-row-around">
-        <view class="state flex-column-center">
+        <view class="state flex-column-center" data-type="1" bindtap="toDeliver">
             <text class="state-num">999</text>
             <text class="state-disc">已投递</text>
         </view>
-        <view class="state flex-column-center">
+        <view class="state flex-column-center" data-type="2" bindtap="toDeliver">
             <text class="state-num">999</text>
             <text class="state-disc">沟通过</text>
         </view>
-        <view class="state flex-column-center">
+        <view class="state flex-column-center" data-type="3" bindtap="toDeliver">
             <text class="state-num orange">999</text>
             <text class="state-disc">待面试</text>
         </view>
@@ -89,7 +89,7 @@
         </view>
     </view>
     <view class="w100 mgbt10">
-        <mylineWithIcon url="/pages/mine/base-setting/personal-setting/personal-setting" title="设置" icon="/img/mine-icon-3-1.png" hasTopBorder="{{false}}"></mylineWithIcon>
-        <mylineWithIcon url="/pages/mine/base-setting/personal-feedback/personal-feedback" title="反馈帮助" icon="/img/mine-icon-3-2.png"></mylineWithIcon>
+        <myline-with-icon url="/pages/mine/setting/personal-setting/personal-setting" title="设置" icon="/img/mine-icon-3-1.png" hasTopBorder="{{false}}"></myline-with-icon>
+        <myline-with-icon url="/pages/mine/setting/personal-feedback/personal-feedback" title="反馈帮助" icon="/img/mine-icon-3-2.png"></myline-with-icon>
     </view>
 </view>

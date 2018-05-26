@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "设置",
-  "usingComponents":{
-    "myButton":"/component/my-button/my-button"
-  }
-}
