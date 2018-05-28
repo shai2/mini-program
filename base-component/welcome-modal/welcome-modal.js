@@ -39,7 +39,7 @@ Component({
   },
   methods: {
     getUserInfo(e){
-      console.log(e.detail.userInfo)
+      console.log(e)
       app.globalData.userInfo = e.detail.userInfo //数据传给globalData
       this.setData({
         isHide:true

@@ -5,7 +5,30 @@ Page({
     canTap:false,
   },
   onLoad: function (options) {
-
+    wx.login({
+      success: res => {
+        if (res.code) {
+          console.info(res)
+          //发起网络请求
+          wx.request({
+            url: 'http://zfddue.natappfree.cc/wx/v1/login',
+            method:"POST",
+            data: {
+              code: res.code
+            },
+            success:function(res){
+              console.info(res);
+              wx.setStorageSync('token', res.data.data.token)
+            },
+            fail:function(res){
+              console.info(res)
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   },
   onReady: function () {
 
