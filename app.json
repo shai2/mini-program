@@ -1,5 +1,7 @@
 {
   "pages":[
+
+    "pages/welcome-intention/welcome-intention",
     "pages/mine/job/personal-jobdetail/personal-jobdetail",
 
     "pages/mine/personal-mine/personal-mine",
@@ -9,7 +11,7 @@
     "pages/mine/job/personal-waitinterview/personal-waitinterview",
 
 
-    "pages/welcome-intention/welcome-intention",
+
 
 
 
