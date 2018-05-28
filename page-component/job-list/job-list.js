@@ -11,7 +11,7 @@ Component({
   methods:{
     toJobDetail(){
       wx.navigateTo({
-        url:"/pages/mine/job/personal-jobdetail/personal-jobdetail"
+        url:"/pages/job/personal-jobdetail/personal-jobdetail"
       })
     }
   }

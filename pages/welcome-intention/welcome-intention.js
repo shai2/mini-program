@@ -11,7 +11,7 @@ Page({
           console.info(res)
           //发起网络请求
           wx.request({
-            url: 'http://zfddue.natappfree.cc/wx/v1/login',
+            url: 'http://wxapitest.wnzx.com/credit/wx/v1/login',
             method:"POST",
             data: {
               code: res.code

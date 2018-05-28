@@ -1,0 +1,18 @@
+.baseinfo{padding:15px 15px 30px;background:#fff;margin-bottom:10px;}
+.name{font-size:24px;font-weight:bold;color:#32405e;}
+.salary{font-size:15px;color:#ff824b;font-weight:bold;}
+.disc-line{font-size:12px;color:#909ba3;padding:30px 0;border-bottom:1px solid #f2f5f9;justify-content:flex-start;}
+.disc-item{margin-right:30px;}
+.disc-item text{margin-left:5px;}
+.company-info{align-items:flex-start;padding:25px 0 0;}
+.job-disc{padding:20px 0 10px;}
+.job-content{margin-top:20px;font-size:15px;color:#546373;line-height:1.7;}
+.company-info-right{margin-left:15px;position:relative;top:-5px;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/arrow-right.png") no-repeat right 20px/12px;}
+.company-name{font-size:14px;color:#32405e;}
+.company-disc{margin-top:10px;color:#909ba3;font-size:12px;}
+.company-disc-item{font-size:12px;}
+.company-disc-item:nth-child(n+2){margin-left:20px;position:relative;}
+.company-disc-item:nth-child(n+2):after{content:'';display:block;position:absolute;left:-10px;top:5px;width:1px;bottom:3px;background:#e9eef5;}
+.operation{padding:15px;width:100%;background:#fff;box-shadow:0px -2px 5px rgba(0,0,0,0.05);}
+.operation-item{padding:0 15px;color:#909ba3;}
+.operation-item:nth-child(n+2){margin-left:5px;margin-right:15px;}

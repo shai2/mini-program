@@ -1,9 +1,0 @@
-.baseinfo{padding:15px 15px 30px;background:#fff;margin-bottom:10px;}
-.name{font-size:24px;font-weight:bold;color:#32405e;}
-.salary{font-size:15px;color:#ff824b;font-weight:bold;}
-.disc-line{font-size:12px;color:#909ba3;padding:30px 0;border-bottom:1px solid #e4e9f0;justify-content:flex-start;}
-.disc-item{margin-right:30px;}
-.disc-item text{margin-left:5px;}
-.company-info{align-items:flex-start;}
-.job-disc{padding:30px 0 42px;}
-.job-content{margin-top:20px;font-size:15px;color:#546373;line-height:1.7;}

@@ -7,7 +7,7 @@
     <view class="search-box flex-row-center flex">
       <view>
         <text class="search-box-txt">{{city}}</text>
-        <image class="icon" src="/img/arr-bottom.png" alt=""></image>
+        <image class="icon" src="/img/arrow-bottom.png" alt=""></image>
       </view>
       <view class="flex">
         <input class="search-box-input" type="text" bindinput="hasContent" placeholder="请输入关键词，如产品" />

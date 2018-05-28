@@ -25,7 +25,7 @@ page{background:#f3f5f7;height:100%;width:100%;}
 .inline{display:inline;}
 .inline-block{display:inline-block;}
 .pos-rel{position:relative;}
-.overflow-s{overflow:scroll;}
+.overflow-s{overflow:auto;}
 .overflow-h{overflow:hidden;}
 .icon{width:10px;height:10px;}
 .p10{font-size:10px;}
@@ -77,14 +77,24 @@ page{background:#f3f5f7;height:100%;width:100%;}
 }
 .button-container-bottom{padding:10px 15px;width:100%;background:#fff;}
 .button-container-normal{margin:25px 15px;}
-.full-page-flex{height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;}
+.full-page-flex{display:flex;flex-direction:column;justify-content:space-between;align-items:center;overflow:auto;padding-bottom:75px;}
+.blank{height:75px;width:100%;}
+.fix-bottom{position:fixed;bottom:0;left:0;right:0;z-index:1;}
 .delete-button{text-align:center;border-radius:6px;line-height:45px;font-size:15px;background:transparent;color:#909ba3;}
 .normal-text{color:#909ba3;font-size:14px;}
 .normal-input-container{padding:10px 0;}
 .normal-input{color:#546373;font-size:14px;}
+.indentify{color:#fff;font-size:14px;width:52px;height:14px;margin-top:9px;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/indentify.png") no-repeat center/100%;}
+.indentify-no{color:#fff;font-size:14px;width:52px;height:14px;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/indentify-no.png") no-repeat center/100%;}
+.expend{height:30px;width:100%;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/arrow-bottom.png") no-repeat center/12px;}
+.hot-title{text-align:center;margin:15px 0;}
+.hot-title text{color:#909ba3;font-size:15px;position:relative;background:#f3f5f7;padding:0 15px;}
+.hot-title text:after{position:absolute;left:-70px;right:-70px;top:10px;content:'';display:block;background:#e4e9f0;height:1px;z-index:-1;}
+.address-disc{padding:20px 0;color:#546373;}
+/* .address-disc{padding:20px 0;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/arrow-right.png") no-repeat right center/12px;color:#546373;} */
 /* 格子 */
 .middle{width:100%;padding:18px 0;margin-bottom:10px;background:#fff;}
-.middle-title{position:relative;font-size:16px;background:#fff;padding:10px 0;width:100%;display:block;border-bottom:1px solid #e4e9f0;}
+.middle-title{position:relative;font-size:16px;background:#fff;padding:10px 0;width:100%;display:block;}
 .middle-title:after{content:'';display:block;position:absolute;left:-15px;top:14px;width:2px;height:15px;background:#29a1f7;}
 .middle-sp{width:100%;padding:0px;margin-bottom:10px;background:#fff;}
 .middle-sp .state{padding:18px 0;}

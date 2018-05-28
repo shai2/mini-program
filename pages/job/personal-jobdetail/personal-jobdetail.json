@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText":"岗位详情",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "usingComponents":{
+        "job-list":"/page-component/job-list/job-list",
+        "my-button":"/base-component/my-button/my-button"
+    }
+}

@@ -1,8 +1,10 @@
 {
   "pages":[
-
     "pages/welcome-intention/welcome-intention",
-    "pages/mine/job/personal-jobdetail/personal-jobdetail",
+    "pages/job/personal-jobdetail/personal-jobdetail",
+
+
+
 
     "pages/mine/personal-mine/personal-mine",
 
@@ -30,7 +32,7 @@
 
     "pages/mine/service/personal-service/personal-service",
 
-    "pages/job/personal-job/personal-job",
+    "pages/job/personal-jobindex/personal-jobindex",
     "pages/job/job-search/job-search",
     "pages/job/job-list/job-list",
 
@@ -45,7 +47,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#29a1f7",
     "navigationBarTitleText": "蜗牛职信",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"#fff",
+    "backgroundColor":"#f3f5f7"
   },
   "tabBar": {
     "color": "#909ba3",
@@ -55,7 +58,7 @@
     "list": [
       {
         "text": "职场",
-        "pagePath": "pages/job/personal-job/personal-job",
+        "pagePath": "pages/job/personal-jobindex/personal-jobindex",
         "iconPath": "img/tabBar/tab-1-1.png",
         "selectedIconPath": "img/tabBar/tab-1-2.png"
       },
