@@ -27,7 +27,7 @@
         <!-- 求职意向 -->
         <view class="big-card">
             <text class="middle-title">求职意向</text>
-            <view class="middle-for-info border-top" bindtap="toIntention">
+            <view class="middle-for-info" bindtap="toIntention">
                 <view class="pos-rel">
                     <view class="edit"></view>
                     <view class="info-normal mgtop0">
@@ -60,7 +60,7 @@
         <!-- 工作 -->
         <view class="big-card">
             <text class="middle-title">工作履历</text>
-            <view class="middle-for-card border-top" bindtap="toWorkExp">
+            <view class="middle-for-card" bindtap="toWorkExp">
                 <!-- <block wx:for=""> -->
                     <view class="card-item">
                         <view class="edit"></view>
@@ -85,7 +85,7 @@
         <!-- 教育 -->
         <view class="big-card">
             <text class="middle-title">教育经历</text>
-            <view class="middle-for-card border-top" bindtap="toEduExp">
+            <view class="middle-for-card" bindtap="toEduExp">
                 <!-- <block wx:for=""> -->
                     <view class="card-item">
                         <view class="edit"></view>
@@ -110,7 +110,7 @@
         <!-- 项目 -->
         <view class="big-card">
             <text class="middle-title">项目经验</text>
-            <view class="middle-for-card border-top" bindtap="toEventExp">
+            <view class="middle-for-card" bindtap="toEventExp">
                 <!-- <block wx:for=""> -->
                     <view class="card-item">
                         <view class="edit"></view>

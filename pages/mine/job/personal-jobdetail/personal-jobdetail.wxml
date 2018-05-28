@@ -1,2 +1,38 @@
-<!--pages/mine/job/personal-jobdetail/personal-jobdetail.wxml-->
-<text>pages/mine/job/personal-jobdetail/personal-jobdetail.wxml</text>
+<view>
+    <view class="baseinfo">
+        <view class="flex-row-between">
+            <text class="name">设计师</text>
+            <text class="salary">1-2k</text>
+        </view>
+        <view class="disc-line flex-row-center">
+            <view class="disc-item flex-row-center">
+                <iamge class="width:12px;heigth:12px" src="/img/place.png"></iamge>
+                <text>上海 - 徐汇区</text>
+            </view>
+            <view class="disc-item flex-row-center">
+                <iamge class="width:12px;heigth:12px" src="/img/exp.png"></iamge>
+                <text>3-5年</text>
+            </view>
+            <view class="disc-item flex-row-center">
+                <iamge class="width:12px;heigth:12px" src="/img/edu.png"></iamge>
+                <text>小学</text>
+            </view>
+        </view>
+        <view class="company-info flex-row-between">
+            <iamge class="width:40px;heigth:40px" src="/img/defalut-c.png"></iamge>
+        </view>
+    </view>
+    <view class="big-card">
+        <text class="middle-title">职位介绍</text>
+        <view class="job-disc">
+            <view class="welfare-line">
+                <text class="mybutton-rect">绩效奖金</text>
+                <text class="mybutton-rect">五险一金</text>
+            </view>
+            <view class="job-content">
+                <text class="">1.负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容</text>
+            </view>
+        </view>
+
+    </view>
+</view>

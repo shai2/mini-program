@@ -3,7 +3,7 @@ Component({
   properties: {
     hasBottom:{
       type:Boolean,
-      value:false
+      value:true
     },
     name:{
       type:String,

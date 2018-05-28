@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"待面试",
+    "usingComponents":{
+        "job-list":"/page-component/job-list/job-list"
+    }
+}

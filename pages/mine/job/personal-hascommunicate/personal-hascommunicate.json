@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"沟通过",
+    "usingComponents":{
+        "job-list":"/page-component/job-list/job-list"
+    }
+}

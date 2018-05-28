@@ -25,7 +25,17 @@ Page({
   },
   toDeliver(){
     wx.navigateTo({
-      url:"/pages/mine/job/personal-deliver/personal-deliver"
+      url:"/pages/mine/job/personal-hasdeliver/personal-hasdeliver"
+    })
+  },
+  toCommunicate(){
+    wx.navigateTo({
+      url:"/pages/mine/job/personal-hascommunicate/personal-hascommunicate"
+    })
+  },
+  toInterview(){
+    wx.navigateTo({
+      url:"/pages/mine/job/personal-waitinterview/personal-waitinterview"
     })
   },
   toResume(){

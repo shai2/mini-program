@@ -7,11 +7,11 @@
   padding:20px 15px;
 }
 .name{
-  font-size:18px;
+  font-size:17px;
   font-weight:bold;
 }
 .salary{
-  font-size:18px;
+  font-size:17px;
   color:#ff824b;
 }
 

@@ -1,4 +1,3 @@
-// pages/mine/job/personal-deliver/personal-deliver.js
 Page({
   data: {
 
