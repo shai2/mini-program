@@ -8,3 +8,4 @@
 .skill-box{padding:20px 0px;}
 .skill-box text:nth-child(n+2){margin-left:13px;}
 .advantage-box{position:relative;padding:25px 0;}
+.full-page-flex{padding-bottom:0px;}

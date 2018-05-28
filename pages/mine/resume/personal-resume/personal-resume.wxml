@@ -141,7 +141,7 @@
                     <text class="mybutton-sp">英语4级</text>
                 <!-- </block> -->
             </view>
-            <view class="card-add flex-row-center" bindtap="toEventExp">
+            <view class="card-add flex-row-center" bindtap="toMySkill">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>添加技能</text>
             </view>
