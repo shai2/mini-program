@@ -1,12 +1,15 @@
-.baseinfo{padding:15px 15px 30px;background:#fff;margin-bottom:10px;}
-.name{font-size:24px;font-weight:bold;color:#32405e;}
+.baseinfo{padding:15px 15px 30px;background:#fff;margin-bottom:10px;background:#fff url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/company-bg.png") no-repeat top center/100% auto;}
+.company-name{justify-content: flex-start;margin-top:20px;}
+.company-name .mgtop0{margin-left:10px;}
+.name{font-size:18px;font-weight:bold;color:#32405e;}
 .salary{font-size:15px;color:#ff824b;font-weight:bold;}
-.disc-line{font-size:12px;color:#909ba3;padding:10px 0 20px;border-bottom:1px solid #f2f5f9;justify-content:flex-start;}
+.disc-line{font-size:12px;color:#909ba3;padding:0 0 25px;border-bottom:1px solid #f2f5f9;justify-content:flex-start;}
 .disc-item{margin-right:30px;}
 .disc-item text{margin-left:5px;}
+.welfare-line{padding-top:15px;}
 .company-info{align-items:flex-start;padding:25px 0 0;}
-.job-disc{padding:20px 0 10px;}
-.job-content{margin-top:20px;font-size:15px;color:#546373;line-height:1.7;}
+.company-disc{padding:20px 0 10px;}
+.company-content{font-size:15px;color:#546373;line-height:1.7;}
 .company-info-right{margin-left:15px;position:relative;top:-5px;background:url("http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/arrow-right.png") no-repeat right 20px/12px;}
 .company-name{font-size:14px;color:#32405e;}
 .company-disc{margin-top:10px;color:#909ba3;font-size:12px;}

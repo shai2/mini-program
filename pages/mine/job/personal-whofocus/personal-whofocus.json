@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText":"谁看过我",
+    "usingComponents":{
+        "company-list":"/page-component/company-list/company-list"
+    }
+}

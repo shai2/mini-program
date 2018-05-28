@@ -23,6 +23,11 @@ Page({
     })
     console.log(info.userInfo)
   },
+  toResume(){
+    wx.navigateTo({
+      url:"/pages/mine/resume/personal-resume/personal-resume"
+    })
+  },
   toDeliver(){
     wx.navigateTo({
       url:"/pages/mine/job/personal-hasdeliver/personal-hasdeliver"
@@ -38,9 +43,9 @@ Page({
       url:"/pages/mine/job/personal-waitinterview/personal-waitinterview"
     })
   },
-  toResume(){
+  toWhoFocus(){
     wx.navigateTo({
-      url:"/pages/mine/resume/personal-resume/personal-resume"
+      url:"/pages/mine/job/personal-whofocus/personal-whofocus"
     })
   },
   toMore(){

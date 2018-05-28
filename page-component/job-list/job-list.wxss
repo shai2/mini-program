@@ -1,1 +1,1 @@
-.job-list{overflow:scroll;}
+.job-list{overflow:auto;}

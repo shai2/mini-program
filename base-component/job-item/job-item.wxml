@@ -4,9 +4,9 @@
         <text class="salary">1k-2k</text>
     </view>
     <view class="middle">
-        <text class="area">上海市 - 松江区</text>
-        <text class="work">1-3年</text>
-        <text class="edu">小学</text>
+        <text class="text-item">上海市 - 松江区</text>
+        <text class="text-item">1-3年</text>
+        <text class="text-item">小学</text>
     </view>
     <view class="bottom flex-row-between">
         <view class="flex-row-between">

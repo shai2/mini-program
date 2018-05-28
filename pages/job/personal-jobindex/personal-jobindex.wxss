@@ -1,1 +1,5 @@
-/* pages/personal-job/personal-job.wxss */
+.job-top{position:relative;}
+.job-middle{background:#fff;padding:6px 0 20px;}
+.job-type text{font-size:12px;color:#546373;margin-top:8px;}
+.search-box-container{position:absolute;top:0;width:100%;}
+.search-box{text-align:center;font-size:12px;color:#cbd4db;padding:7px;}

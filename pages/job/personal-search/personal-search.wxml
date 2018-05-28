@@ -1,0 +1,29 @@
+<view class="search">
+    <view class="search-box-container flex-row-center">
+        <input class="flex my-search" placeholder="搜索职位 / 公司" placeholder-class="placeholder"/>
+        <text class="cancel">取消</text>
+    </view>
+    <view class="middle">
+        <view class="item">
+            <view class="flex-row-between">
+                <text class="search-title">历史搜索</text>
+                <image style="width:15px;height:15px;" src="/img/delete.png"></image>
+            </view>
+            <view class="tip-box">
+              <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+            </view>
+        </view>
+        <view class="item">
+            <text class="search-title">热门职位</text>
+            <view class="tip-box">
+              <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+            </view>
+        </view>
+        <view class="item">
+            <text class="search-title">热门公司</text>
+            <view class="tip-box">
+              <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+            </view>
+        </view>
+    </view>
+</view>
