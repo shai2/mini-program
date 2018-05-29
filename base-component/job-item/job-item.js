@@ -23,7 +23,7 @@ Component({
     },
     companyAvatar:{
       type:String,
-      value:'/img/defalut-c.png'
+      value:'/img/default-c.png'
     },
     companyName:{
       type:String,

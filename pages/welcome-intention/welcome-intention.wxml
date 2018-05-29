@@ -1,20 +1,24 @@
 <view class="container flex-column-center bg-fff">
   <view>
-    <welcomeModal></welcomeModal>
+    <getphone-modal></getphone-modal>
     <view class="title-box border-top">
       <text class="title">你期望的工作</text>
     </view>
     <view class="search-box flex-row-center flex">
-      <view>
-        <text class="search-box-txt">{{city}}</text>
+      <view class="flex-row-center">
+        <picker bindchange="regionChange" mode="region">
+            <myline-with-icon title="所在地区" showLeftIcon="">
+                <text class="search-box-txt">{{city}}</text>
+            </myline-with-icon>
+        </picker>
         <image class="icon" src="/img/arrow-bottom.png" alt=""></image>
       </view>
       <view class="flex">
-        <input class="search-box-input" type="text" bindinput="hasContent" placeholder="请输入关键词，如产品" />
+        <input class="search-box-input" type="text" value="{{searchText}}" bindinput="hasContent" placeholder="请输入关键词，如产品" />
       </view>
     </view>
     <view class="tip-box">
-      <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+      <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" data-text="{{item}}" bindtap="changeActiveTip">{{item}}</text>
     </view>
     <view class="button-container">
       <my-button canTap="{{canTap}}" text="我选好了，去找工作" bindtap="next"></my-button>

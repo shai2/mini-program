@@ -1,7 +1,7 @@
 <view class="full-page-flex pdbt0">
     <view>
         <view class="baseinfo">
-            <image style="width:60px;height:60px;border-radius:5px;border:1px solid #fff;margin-top:40px;" src="/img/defalut-c.png"></image>
+            <image style="width:60px;height:60px;border-radius:5px;border:1px solid #fff;margin-top:40px;" src="/img/default-c.png"></image>
             <view class="company-name flex-row-between">
                 <text class="name">上海有限公司</text>
                 <view class="indentify mgtop0"></view>

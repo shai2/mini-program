@@ -1,3 +1,4 @@
+let api = require("../../../utils/api")
 var info = getApp().globalData
 Page({
   data: {
@@ -17,11 +18,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    console.log(info)
     this.setData({
       name:info.userInfo.nickName,
       avatar:info.userInfo.avatarUrl
     })
-    console.log(info.userInfo)
   },
   toResume(){
     wx.navigateTo({

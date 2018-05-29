@@ -1,27 +1,33 @@
+let api = require("../../utils/api")
 Page({
   data: {
     city:'上海',
     tipArr:['产品','设计师','产品','程序员','产品','销售专员',],
     canTap:false,
+    searchText:''
   },
-  onLoad: function (options) {
+  onLoad(options) {
+    this.login()
+  },
+  onReady() {
+
+  },
+  login(){
     wx.login({
       success: res => {
         if (res.code) {
-          console.info(res)
           //发起网络请求
           wx.request({
-            url: 'http://wxapitest.wnzx.com/credit/wx/v1/login',
+            url: api.login,
             method:"POST",
             data: {
               code: res.code
             },
-            success:function(res){
-              console.info(res);
-              wx.setStorageSync('token', res.data.data.token)
+            success(res){
+              wx.setStorageSync('sessionId', res.data.data.token)
             },
-            fail:function(res){
-              console.info(res)
+            fail(res){
+              console.log(res)
             }
           })
         } else {
@@ -30,29 +36,34 @@ Page({
       }
     })
   },
-  onReady: function () {
-
-  },
   next(){
     if(this.data.canTap){
-      console.log(111)
+      wx.setStorageSync('hopePosition',this.data.searchText)
       wx.switchTab({
-        url: '/pages/mine/personal-mine/personal-mine'
+        url: '/pages/job/personal-jobindex/personal-jobindex'
       })
     }
   },
   changeActiveTip(e){
     this.setData({
       "activeTip":e.currentTarget.dataset.index,
-      "canTap":true
+      "canTap":true,
+      "searchText":e.currentTarget.dataset.text
     })
   },
   hasContent(e){
+    this.setData({
+      "activeTip":-1,
+    })
     if (e.detail.value.trim().length>0) {
       this.setData({"canTap":true})
     }else{
       this.setData({"canTap":false})
     }
-
-  }
+  },
+  regionChange(e){
+    this.setData({
+      city:e.detail.value[2],
+    })
+  },
 })

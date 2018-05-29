@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "welcomeModal":"/base-component/welcome-modal/welcome-modal",
+    "getphone-modal":"/base-component/getphone-modal/getphone-modal",
     "my-button":"/base-component/my-button/my-button"
   }
 }
