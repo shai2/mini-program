@@ -64,7 +64,10 @@ Page({
       success(res){
         wx.stopPullDownRefresh()
         wx.hideLoading()
-        console.log(res.data.data)
+        _this.setData({
+          jobDetail:res.data.data
+        })
+        console.log(_this.data.jobDetail)
       },
       fail(res){
         console.log(res)

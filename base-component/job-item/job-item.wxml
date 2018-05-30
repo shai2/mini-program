@@ -1,7 +1,7 @@
 <view class="item {{hasBottom ? 'has-bottom' : 'has-border'}}" bindtap="toDetail">
     <view class="top flex-row-between">
         <text class="name">{{jobItem.position}}</text>
-        <text class="salary">1k-2k</text>
+        <text class="salary">{{jobItem.wagemin}}k-{{jobItem.wagemax}}k</text>
     </view>
     <view class="middle">
         <text class="text-item">{{jobItem.prov}} - {{jobItem.city}}</text>

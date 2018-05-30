@@ -12,7 +12,7 @@ Page({
   },
   onReady() {
     let _this = this
-    wx.request({
+    wx.request({ //热门职位
       url: api.getHotJobAndCompany,
       method:"GET",
       data: {},
