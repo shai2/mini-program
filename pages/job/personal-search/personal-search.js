@@ -18,7 +18,6 @@ Page({
         tipArrHistory:wx.getStorageSync('tipArrHistory')
       })
     }
-    console.log(wx.getStorageSync('tipArrHistory'))
   },
   changeActiveTip(e){
     this.setData({
@@ -29,8 +28,14 @@ Page({
     wx.navigateBack({delta: 1})
   },
   search(){
-    let aaaa = this.data.tipArrHistory.concat(this.data.searchText)
-    wx.setStorageSync('tipArrHistory',)
+    if (this.data.tipArrHistory.indexOf(this.data.searchText)<0) {
+      if (this.data.tipArrHistory.length===3) {
+        this.data.tipArrHistory.splice(-1,1)
+      };
+      this.data.tipArrHistory.unshift(this.data.searchText)
+      // console.log(_tipArrHistory)
+      wx.setStorageSync('tipArrHistory',this.data.tipArrHistory)
+    };
     wx.navigateTo({
       url: "/pages/job/job-searchlist/job-searchlist?keyword=" + this.data.searchText
     })

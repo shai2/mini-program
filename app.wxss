@@ -44,7 +44,7 @@ page{background:#f3f5f7;width:100%;height:100%;}
 .border-bottom{border-bottom:1px solid #e4e9f0;}
 .placeholder{color:#cbd4db;}
 .mybutton-sp{font-size:14px;color:#848a99;border:1px solid #29a1f7;background:#eef7fd;border-radius:100px;padding:8px 15px;}
-.mybutton-rect{font-size:12px;color:#909ba3;background:#eef7fd;border-radius:2px;padding:4px 9px;margin:0 10px 10px 0;}
+.mybutton-rect{font-size:12px;color:#909ba3;background:#eef7fd;border-radius:2px;padding:4px 9px;margin:0 10px 10px 0;display:inline-block;}
 .loading-text{font-size:14px;color:#909ba3;display:block;text-align:center;padding:20px 0;}
 /* ------组件化部分------ */
 .container {

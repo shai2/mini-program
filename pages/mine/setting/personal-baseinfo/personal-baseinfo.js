@@ -37,10 +37,11 @@ Page({
     let _province = 'userInfo.province'  //省
     let _city = 'userInfo.city'  //市
     let _area = 'userInfo.area'  //区
+    console.log(e.detail)
     this.setData({
       [_province]:e.detail.value[0],
-      [_city]:e.detail.value[0],
-      [_area]:e.detail.value[0]
+      [_city]:e.detail.value[1],
+      [_area]:e.detail.value[2]
     })
   },
 })

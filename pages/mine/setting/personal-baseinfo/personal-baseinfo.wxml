@@ -22,7 +22,11 @@
 
         <picker bindchange="regionChange" mode="region">
             <myline-with-icon title="所在地区" showLeftIcon="">
-                <text class="myline-text">{{userInfo.province}} · {{userInfo.city}} · {{userInfo.area}}</text>
+                <text class="myline-text">{{userInfo.province}} · {{userInfo.city}}
+                    <span wx:if="{{userInfo.area != null}}">
+                        · {{userInfo.area}}
+                    </span>
+                </text>
             </myline-with-icon>
         </picker>
     </view>
