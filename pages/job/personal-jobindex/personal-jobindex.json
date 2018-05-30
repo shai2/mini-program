@@ -1,7 +1,8 @@
 {
     "navigationBarTitleText":"职场",
+    "enablePullDownRefresh":true,
     "usingComponents":{
-        "job-list":"/page-component/job-list/job-list",
+        "job-item":"/base-component/job-item/job-item",
         "text-single":"/base-component/text-single/text-single"
     }
 }

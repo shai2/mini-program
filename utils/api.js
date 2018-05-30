@@ -4,5 +4,7 @@ module.exports = {
   getAreaList : baseUrl + "/app/dict/getAreaList", //地区字典
   bindMobile : baseUrl + "/wx/v1/bindMobile",  //手机绑定
   authorize : baseUrl + "/wx/v1/authorize",  //用户授权
-  getJobListByType : baseUrl + "/app/job/getJobListByType" //查询职位
+  getJobListByType : baseUrl + "/app/job/getJobListByType", //查询职位
+  getResume : baseUrl + "/app/resume/get", //获取简历
+  getHotJobAndCompany : baseUrl + "/app/dict/getHotJobAndCompany", //获取热门职位和热门公司
 }

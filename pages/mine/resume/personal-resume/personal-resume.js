@@ -1,13 +1,28 @@
-var info = getApp().globalData
+let info = getApp().globalData
+let api = require("../../../../utils/api")
 Page({
   data: {
-    avatar:"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIehr5Z2wbgOyiaiakRCXxdP8pmlicszkYPBoZLt38IpG1SFyst312rtHkaIbH6jHLvRV0IAHYr0lXlA/132"
+    userInfo:{}
   },
-  onReady: function () {
-    this.setData({
-
+  onLoad() {
+    wx.request({
+      url: api.getResume,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        console.log(res)
+      },
+      fail(res){
+        console.log(res)
+      }
     })
-    console.log(info.userInfo)
+
+    this.setData({
+      userInfo:info.userInfo
+    })
   },
   /**
    * 用户点击右上角分享

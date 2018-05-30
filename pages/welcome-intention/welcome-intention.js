@@ -1,38 +1,28 @@
 let api = require("../../utils/api")
+let info = getApp().globalData
 Page({
   data: {
     city:'上海',
-    tipArr:['产品','设计师','产品','程序员','产品','销售专员',],
+    tipArr:["热门职位","热门职位","热门职位"],
     canTap:false,
     searchText:''
   },
   onLoad(options) {
-    this.login()
-  },
-  onReady() {
 
   },
-  login(){
-    wx.login({
-      success: res => {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: api.login,
-            method:"POST",
-            data: {
-              code: res.code
-            },
-            success(res){
-              wx.setStorageSync('sessionId', res.data.data.token)
-            },
-            fail(res){
-              console.log(res)
-            }
-          })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
+  onReady() {
+    let _this = this
+    wx.request({
+      url: api.getHotJobAndCompany,
+      method:"GET",
+      data: {},
+      success(res){
+        _this.setData({
+          tipArr:res.data.hotJobList
+        })
+      },
+      fail(res){
+        console.log(res)
       }
     })
   },

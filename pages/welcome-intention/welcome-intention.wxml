@@ -18,7 +18,7 @@
       </view>
     </view>
     <view class="tip-box">
-      <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" data-text="{{item}}" bindtap="changeActiveTip">{{item}}</text>
+      <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" data-text="{{item.name}}" bindtap="changeActiveTip">{{item.name}}</text>
     </view>
     <view class="button-container">
       <my-button canTap="{{canTap}}" text="我选好了，去找工作" bindtap="next"></my-button>

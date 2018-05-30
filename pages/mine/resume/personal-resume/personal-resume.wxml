@@ -3,25 +3,25 @@
         <view class="top" bindtap="toBaseInfo">
             <view class="edit"></view>
             <view class="flex-row-center avatar-box border-bottom">
-                <image style="width:55px;height:55px;border-radius:50%;" src="{{avatar}}"></image>
+                <image style="width:55px;height:55px;border-radius:50%;" src="{{userInfo.avatarPhoto}}"></image>
             </view>
             <view class="">
-                <text class="name block">谢森森</text>
+                <text class="name block">{{userInfo.nickName}}</text>
                 <view class="base-info">
-                    <text>谢森森</text>
+                    <text>{{userInfo.gender}}</text>
                     <text>年龄</text>
                     <text>工作经验</text>
                     <text>到岗时间</text>
-                    <text>地点</text>
+                    <text>{{userInfo.city}}</text>
                 </view>
             </view>
             <view class="info-normal">
                 <text class="">手机号码：</text>
-                <text class="info-normal-data">暂无</text>
+                <text class="info-normal-data">{{userInfo.phone}}</text>
             </view>
             <view class="info-normal">
                 <text class="">联系邮箱：</text>
-                <text class="info-normal-data">暂无</text>
+                <text class="info-normal-data">{{userInfo.phone}}</text>
             </view>
         </view>
         <!-- 求职意向 -->

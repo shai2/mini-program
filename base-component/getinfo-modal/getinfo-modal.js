@@ -1,5 +1,5 @@
 let api = require("../../utils/api")
-var app = getApp()
+let app = getApp()
 Component({
   attached(){
     this.checkUserInfo()
@@ -11,13 +11,11 @@ Component({
     isHide:true,
   },
   methods: {
-    checkUserInfo(){ // 页面出现时获取用户信息 有权限直接赋值给全局不弹窗 没权限弹窗点击后赋值
-      let _this = this
+    checkUserInfo(){ // 页面出现没权限弹窗点击后赋值然后上传基本信息 有权限的话 在登录后就获取基本信息了
       wx.getSetting({
         success: res => {
           if (res.authSetting['scope.userInfo']) {
             console.log("已授权过基本信息")
-            // this.authorize() 可以从login拿到
             this.setData({  // 关闭弹窗
               isHide:true
             })
@@ -32,7 +30,6 @@ Component({
     },
     getUserInfo(e){ //允许后返回个人数据
       let _this = this
-      console.log(e)
       this.setData({
         isHide:true
       })
@@ -44,13 +41,7 @@ Component({
         },
         data:e.detail,
         success(res){
-          console.info(res)
-          // app.globalData.userInfo = res.data.data
-          let a = 'app.globalData.userInfo'
-          _this.setData({  // 关闭弹窗
-            [a]:res.data.data
-          })
-          console.log(app.globalData.userInfo)
+          app.globalData.userInfo = res.data.data
         },
         fail(res){
           console.info(res)

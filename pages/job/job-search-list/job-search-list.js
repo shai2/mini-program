@@ -1,4 +1,4 @@
-// pages/job-list/job-list.js
+// pages/job/job-search-list/job-search-list.js
 Page({
 
   /**

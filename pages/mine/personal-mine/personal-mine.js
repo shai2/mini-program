@@ -1,27 +1,18 @@
 let api = require("../../../utils/api")
-var info = getApp().globalData
+let info = getApp().globalData
 Page({
   data: {
     name:null,
     avatar:null,
     resumePercent:90
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad(options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    console.log(info)
+  onReady() {
     this.setData({
       name:info.userInfo.nickName,
-      avatar:info.userInfo.avatarUrl
+      avatar:info.userInfo.avatarPhoto
     })
   },
   toResume(){

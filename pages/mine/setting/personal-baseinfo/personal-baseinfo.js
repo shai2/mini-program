@@ -1,10 +1,11 @@
-var app = getApp()
+let app = getApp()
+let baseData = require('../../../../utils/base-data')
 Page({
   data: {
     userInfo:{},
-    sexOption:['男','女'],
+    sexOption:baseData.sexOption,
   },
-  onReady: function () {
+  onReady() {
     // 先请求后台接口 如果没数据的话 读取微信的赋值给userInfo--------最后传userInfo
     let _userInfo = JSON.parse(JSON.stringify(app.globalData.userInfo)) //深拷贝微信的userInfo
     // 转化微信的性别

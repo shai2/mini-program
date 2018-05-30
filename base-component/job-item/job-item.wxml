@@ -1,20 +1,22 @@
 <view class="item {{hasBottom ? 'has-bottom' : 'has-border'}}">
     <view class="top flex-row-between">
-        <text class="name">推广经理</text>
+        <text class="name">{{jobItem.position}}</text>
         <text class="salary">1k-2k</text>
     </view>
     <view class="middle">
-        <text class="text-item">上海市 - 松江区</text>
-        <text class="text-item">1-3年</text>
-        <text class="text-item">小学</text>
+        <text class="text-item">{{jobItem.prov}} - {{jobItem.city}}</text>
+        <text class="text-item">{{jobItem.workexp_text}}</text>
+        <text class="text-item">{{jobItem.edu_text}}</text>
     </view>
     <view class="bottom flex-row-between">
         <view class="flex-row-between">
-            <image style="width:20px;height:20px;border-radius:2px;margin-right:5px;" src="{{companyAvatar}}"></image>
-            <text class="company">平安水果</text>
+            <image style="width:20px;height:20px;border-radius:2px;margin-right:5px;" src="{{jobItem.companyLogo}}"></image>
+            <text class="company">{{jobItem.companyName}}</text>
         </view>
         <view class="">
-            <text class="updata">15:15</text>
+            <text class="updata">{{jobItem.published_text}}</text>
+            <!-- <text wx:if="{{}}" class="updata">{{jobItem.published_text_second}}</text>
+            <text wx:else class="updata">{{jobItem.published_text}}</text> -->
         </view>
     </view>
 </view>

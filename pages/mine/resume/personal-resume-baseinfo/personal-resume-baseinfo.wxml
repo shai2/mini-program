@@ -1,7 +1,7 @@
 <view>
     <view>
         <myline-with-icon title="更换头像" hasTopBorder="{{false}}" showLeftIcon="" showRightIcon="">
-            <image style="width:60px;height:60px;margin-right:12px;border-radius:50%;" src="{{userInfo.avatarUrl}}"></image>
+            <image style="width:60px;height:60px;margin-right:12px;border-radius:50%;" src="{{userInfo.avatarPhoto}}"></image>
         </myline-with-icon>
 
         <myline-with-icon title="真实姓名" bindinput="nameChange" showLeftIcon="" showRightIcon="">

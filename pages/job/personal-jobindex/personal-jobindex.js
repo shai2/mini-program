@@ -2,9 +2,11 @@ let api = require("../../../utils/api")
 let page = 1
 Page({
   data: {
-
+    jobObj:[]
   },
-  onLoad: function (options) {
+  onLoad(options) {
+    let _this = this
+    wx.showLoading({title:"加载中"})
     wx.request({
       url: api.getJobListByType,
       method:"GET",
@@ -17,7 +19,11 @@ Page({
         page:1
       },
       success(res){
-        console.log(res)
+        _this.setData({
+          jobObj:res.data.data.data
+        })
+        wx.hideLoading()
+        console.log(_this.data.jobObj)
       },
       fail(res){
         console.log(res)

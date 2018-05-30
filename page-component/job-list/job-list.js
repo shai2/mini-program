@@ -1,12 +1,16 @@
-var app = getApp()
+let app = getApp()
 Component({
   properties: {
+    jobItem:{
+      type:Object,
+      value:{}
+    }
   },
   data: {
 
   },
-  onLoad: function (options) {
-
+  ready(options) {
+    console.log(this.data)
   },
   methods:{
     toJobDetail(){
