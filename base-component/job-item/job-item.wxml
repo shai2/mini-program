@@ -1,4 +1,4 @@
-<view class="item {{hasBottom ? 'has-bottom' : 'has-border'}}">
+<view class="item {{hasBottom ? 'has-bottom' : 'has-border'}}" bindtap="toDetail">
     <view class="top flex-row-between">
         <text class="name">{{jobItem.position}}</text>
         <text class="salary">1k-2k</text>
@@ -15,7 +15,7 @@
         </view>
         <view class="">
             <text class="updata">{{jobItem.published_text}}</text>
-            <!-- <text wx:if="{{}}" class="updata">{{jobItem.published_text_second}}</text>
+            <!-- <text wx:if="{{}}" class="updata">{{jobItem.published_text_second}}</text> 当天的不显示年 但是格式不好判断暂时不做
             <text wx:else class="updata">{{jobItem.published_text}}</text> -->
         </view>
     </view>

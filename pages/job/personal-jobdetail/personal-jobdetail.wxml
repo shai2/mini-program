@@ -53,7 +53,10 @@
             </view>
         </view>
         <text-single></text-single>
-        <job-list></job-list>
+        <block wx:for="{{jobObj}}" wx:key="{{index}}">
+            <job-item jobItem="{{item}}"></job-item>
+        </block>
+        <text class="loading-text">{{pullText}}</text>
     </view>
 </view>
 <view class="operation flex-row-around fix-bottom">

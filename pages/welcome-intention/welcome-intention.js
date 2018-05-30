@@ -29,6 +29,25 @@ Page({
   next(){
     if(this.data.canTap){
       wx.setStorageSync('hopePosition',this.data.searchText)
+        wx.request({
+        url: api.updateJobIntention,
+        method:"POST",
+        header:{
+          sessionId: wx.getStorageSync('sessionId')
+        },
+        data: {
+          jobIntention:{
+            "city": this.data.city,
+            "jobTraidId": this.data.searchText,
+          }
+        },
+        success(res){
+          console.log("保存求职意向")
+        },
+        fail(res){
+          console.log(res)
+        }
+      })
       wx.switchTab({
         url: '/pages/job/personal-jobindex/personal-jobindex'
       })

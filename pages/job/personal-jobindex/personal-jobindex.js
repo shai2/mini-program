@@ -1,12 +1,23 @@
 let api = require("../../../utils/api")
-let page = 1
+let pageNow = 1;
 Page({
   data: {
-    jobObj:[]
+    jobObj:[], //搜索相关
+    pullText:'加载中 . .'
   },
   onLoad(options) {
-    let _this = this
     wx.showLoading({title:"加载中"})
+    this.getJobListByType(pageNow)
+  },
+  onPullDownRefresh (){
+    this.getJobListByType(1,0,true)
+  },
+  onReachBottom(){
+    this.getJobListByType(pageNow)
+  },
+  getJobListByType(page,type,refresh){
+    if (!type) type=0; //只写page 默认搜索全部类型 要判断fresh type不能省
+    let _this = this
     wx.request({
       url: api.getJobListByType,
       method:"GET",
@@ -14,16 +25,30 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        type: 0,
+        type:type,
         keyword: wx.getStorageSync('hopePosition'),
-        page:1
+        page:page
       },
       success(res){
-        _this.setData({
-          jobObj:res.data.data.data
-        })
+        if(res.data.data.data.length === 0){ //没数据了
+          _this.setData({
+            pullText:"到底了"
+          })
+          return
+        }
+        if (refresh) {
+          _this.setData({
+            jobObj:res.data.data.data
+          })
+        }else{
+          _this.setData({
+            jobObj:_this.data.jobObj.concat(res.data.data.data)
+          })
+        }
         wx.hideLoading()
-        console.log(_this.data.jobObj)
+        wx.stopPullDownRefresh()
+        // console.log(_this.data.jobObj)
+        pageNow++
       },
       fail(res){
         console.log(res)

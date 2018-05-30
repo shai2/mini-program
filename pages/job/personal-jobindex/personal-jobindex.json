@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText":"职场",
     "enablePullDownRefresh":true,
+    "backgroundColor":"#29a1f7",
     "usingComponents":{
         "job-item":"/base-component/job-item/job-item",
         "text-single":"/base-component/text-single/text-single"

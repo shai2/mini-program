@@ -1,65 +1,74 @@
+let api = require("../../../utils/api")
+let pageNow = 1;
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    jobDetail:{},
+    jobObj:[], //热门相关
+    jid:'',
+    pullText:'加载中 . .'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    this.setData({
+      jid:options.jid
+    })
+    wx.showLoading({title:"加载中"})
+    this.queryJobDetail()//岗位详情
+    this.getHotJobList(pageNow) //请求相关
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onPullDownRefresh (){
+    this.queryJobDetail()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onReachBottom(){
+    this.getHotJobList(pageNow)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getHotJobList(page,refresh){
+    let _this = this
+    wx.request({
+      url: api.getHotJobList,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        position:"人力资源",
+        page:page
+      },
+      success(res){
+        if(res.data.data.data.length === 0){ //没数据了
+          _this.setData({
+            pullText:"到底了"
+          })
+          return
+        }
+        _this.setData({
+          jobObj:_this.data.jobObj.concat(res.data.data.data)
+        })
+        pageNow++
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  queryJobDetail(){
+    let _this = this
+    wx.request({
+      url: api.queryJobDetail,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        jid:_this.data.jid
+      },
+      success(res){
+        wx.stopPullDownRefresh()
+        wx.hideLoading()
+        console.log(res.data.data)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })
