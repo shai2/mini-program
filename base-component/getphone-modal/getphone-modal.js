@@ -45,7 +45,10 @@ Component({
           } else {
             console.log('登录失败！' + res.errMsg)
           }
-        }
+        },
+        fail:res => (
+          console.log(res)
+        )
       })
     },
     getPhoneNumber(e){  //绑定手机请求

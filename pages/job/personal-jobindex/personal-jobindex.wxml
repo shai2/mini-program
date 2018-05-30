@@ -11,19 +11,19 @@
     <image style="width:100%;height:12px;position:absolute;left:0;right:0;bottom:0;" src="/img/banner-bottom.png"></image>
 </view>
 <view class="job-middle flex-row-around">
-    <view class="job-type flex-column-around">
+    <view class="job-type flex-column-around" bindtap="toAll">
         <image style="width:45px;height:45px;" src="/img/pos-all.png"></image>
         <text>全部职位</text>
     </view>
-    <view class="job-type flex-column-around">
+    <view class="job-type flex-column-around" bindtap="toNew">
         <image style="width:45px;height:45px;" src="/img/pos-new.png"></image>
         <text>全新职位</text>
     </view>
-    <view class="job-type flex-column-around">
+    <view class="job-type flex-column-around" bindtap="toHot">
         <image style="width:45px;height:45px;" src="/img/pos-hot.png"></image>
         <text>热门职位</text>
     </view>
-    <view class="job-type flex-column-around">
+    <view class="job-type flex-column-around" bindtap="toTop">
         <image style="width:45px;height:45px;" src="/img/pos-top.png"></image>
         <text>高薪职位</text>
     </view>
