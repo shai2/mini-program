@@ -30,12 +30,6 @@ Page({
         page:page
       },
       success(res){
-        if(res.data.data.data.length === 0){ //没数据了
-          _this.setData({
-            pullText:"到底了"
-          })
-          return
-        }
         if (refresh) {
           _this.setData({
             jobObj:res.data.data.data
@@ -49,6 +43,12 @@ Page({
         wx.stopPullDownRefresh()
         // console.log(_this.data.jobObj)
         pageNow++
+        if(res.data.data.data.length === 0){ //没数据了
+          _this.setData({
+            pullText:"到底了"
+          })
+          return
+        }
       },
       fail(res){
         console.log(res)

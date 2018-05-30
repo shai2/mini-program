@@ -1,7 +1,9 @@
 <view class="search">
     <view class="search-box-container flex-row-center">
-        <input class="flex my-search" placeholder="搜索职位 / 公司" placeholder-class="placeholder"/>
-        <text class="cancel">取消</text>
+        <view class="my-search flex search-box-circle">
+            <input class="flex" placeholder="搜索职位 / 公司" value="{{searchText}}" placeholder-class="placeholder" bindconfirm="search" bindinput="hasContent"/>
+        </view>
+        <text class="cancel" bindtap="search">取消</text>
     </view>
     <view class="middle">
         <view class="item">
@@ -10,19 +12,19 @@
                 <image style="width:15px;height:15px;" src="/img/delete.png"></image>
             </view>
             <view class="tip-box">
-              <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+                <text class="tip {{activeTip==index&&selectType==0 ? 'active' : ''}}" wx:for="{{tipArrHistory}}" wx:key="index" data-text="{{item}}" data-index="{{index}}" data-type="0" bindtap="changeActiveTip">{{item}}</text>
             </view>
         </view>
         <view class="item">
             <text class="search-title">热门职位</text>
             <view class="tip-box">
-              <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+                <text class="tip {{activeTip==index&&selectType==1 ? 'active' : ''}}" wx:for="{{tipArrJob}}" wx:key="index" data-text="{{item.name}}" data-index="{{index}}" data-type="1" bindtap="changeActiveTip">{{item.name}}</text>
             </view>
         </view>
         <view class="item">
             <text class="search-title">热门公司</text>
             <view class="tip-box">
-              <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" bindtap="changeActiveTip">{{item}}</text>
+                <text class="tip {{activeTip==index&&selectType==2 ? 'active' : ''}}" wx:for="{{tipArrCompany}}" wx:key="index" data-text="{{item.name}}" data-index="{{index}}" data-type="2" bindtap="changeActiveTip">{{item.name}}</text>
             </view>
         </view>
     </view>

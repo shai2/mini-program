@@ -1,6 +1,7 @@
 .search{position:fixed;top:0;bottom:0;left:0;right:0;background:#fff;}
 .search-box-container{position:absolute;top:0;width:100%;padding:10px 15px;background:#fff;box-shadow:0px 2px 5px rgba(0,0,0,0.05);}
-.my-search{font-size:12px;color:#cbd4db;justify-content:flex-start;margin-right:10px;padding-left:15px;border:1px solid #d7dee2;border-radius:100px;}
+.search-box-circle{padding:2px 10px;}
+.my-search{font-size:12px;color:#32405e;justify-content:flex-start;margin-right:10px;padding-left:15px;border:1px solid #d7dee2;border-radius:100px;}
 .cancel{font-size:14px;color:#546373;}
 .middle{padding:35px 15px 20px;}
 .search-title{font-size:15px;color:#32405e;}

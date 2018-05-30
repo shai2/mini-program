@@ -2,12 +2,16 @@ let api = require("../../../utils/api")
 let pageNow = 1;
 Page({
   data: {
-    jobObj:[], //搜索相关
-    pullText:'加载中 . .'
+    jobObj:[], //热门相关
+    pullText:'加载中 . .',
+    keyword:''
   },
   onLoad(options) {
+    this.setData({
+      keyword:options.keyword
+    })
     wx.showLoading({title:"加载中"})
-    this.getJobListByType(pageNow)
+    this.getJobListByType(pageNow) //查询
   },
   onPullDownRefresh (){
     this.getJobListByType(1,0,true)
@@ -26,7 +30,7 @@ Page({
       },
       data: {
         type:type,
-        keyword: wx.getStorageSync('hopePosition'),
+        keyword: _this.data.keyword,
         page:page
       },
       success(res){
@@ -55,24 +59,4 @@ Page({
       }
     })
   },
-  toAll(){  //全部
-    wx.navigateTo({
-      url: "/pages/job/job-all/job-all"
-    })
-  },
-  toNew(){  //全新
-    wx.navigateTo({
-      url: "/pages/job/job-new/job-new"
-    })
-  },
-  toHot(){  //热门
-    wx.navigateTo({
-      url: "/pages/job/job-hot/job-hot"
-    })
-  },
-  toTop(){  //高薪
-    wx.navigateTo({
-      url: "/pages/job/job-top/job-top"
-    })
-  }
 })

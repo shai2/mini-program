@@ -34,16 +34,16 @@ Page({
         page:page
       },
       success(res){
+        _this.setData({
+          jobObj:_this.data.jobObj.concat(res.data.data.data)
+        })
+        pageNow++
         if(res.data.data.data.length === 0){ //没数据了
           _this.setData({
             pullText:"到底了"
           })
           return
         }
-        _this.setData({
-          jobObj:_this.data.jobObj.concat(res.data.data.data)
-        })
-        pageNow++
       },
       fail(res){
         console.log(res)

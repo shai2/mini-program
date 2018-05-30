@@ -3,7 +3,7 @@ let info = getApp().globalData
 Page({
   data: {
     city:'上海',
-    tipArr:["热门职位","热门职位","热门职位"],
+    tipArr:[],
     canTap:false,
     searchText:''
   },
@@ -62,6 +62,7 @@ Page({
   },
   hasContent(e){
     this.setData({
+      "searchText":e.detail.value,
       "activeTip":-1,
     })
     if (e.detail.value.trim().length>0) {
@@ -70,9 +71,7 @@ Page({
       this.setData({"canTap":false})
     }
   },
-  regionChange(e){
-    this.setData({
-      city:e.detail.value[2],
-    })
-  },
+  search(){
+
+  }
 })

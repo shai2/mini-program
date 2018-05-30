@@ -10,4 +10,5 @@ module.exports = {
   updateJobIntention : baseUrl + "/app/job/updateJobIntention", //登录第一次填写后存到求职意向
   getHotJobList : baseUrl + "/app/job/getHotJobList", //职位详情下边的热门推荐
   queryJobDetail : baseUrl + "/app/job/queryJobDetail", //职位详情
+  queryCompanyDetail : baseUrl + "GET /app/company/queryCompanyDetail", //公司详情
 }
