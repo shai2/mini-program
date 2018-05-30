@@ -30,7 +30,7 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        position:"人力资源",
+        position:jobDetail.position,
         page:page
       },
       success(res){

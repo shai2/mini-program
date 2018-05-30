@@ -27,7 +27,10 @@
     "pages/job/personal-jobdetail/personal-jobdetail",
     "pages/job/personal-companydetail/personal-companydetail",
     "pages/job/job-search/job-search",
-    "pages/job/job-search-list/job-search-list",
+    "pages/job/job-all/job-all",
+    "pages/job/job-new/job-new",
+    "pages/job/job-hot/job-hot",
+    "pages/job/job-top/job-top",
 
     "pages/msg/personal-msg/personal-msg",
     "pages/mine/service/personal-service/personal-service",
