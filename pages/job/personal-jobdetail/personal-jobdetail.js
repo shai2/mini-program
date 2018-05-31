@@ -3,9 +3,12 @@ let pageNow = 1;
 Page({
   data: {
     jobDetail:{},
+    companyDetail:{},
     jobObj:[], //热门相关
     jid:'',
-    pullText:'加载中 . .'
+    pullText:'加载中 . .',
+    overflow:"dec",
+    flag:true
   },
   onLoad(options) {
     this.setData({
@@ -14,6 +17,12 @@ Page({
     wx.showLoading({title:"加载中"})
     this.queryJobDetail()//岗位详情
     this.getHotJobList(pageNow) //请求相关
+  },
+  dec(){
+    this.setData({
+      overflow:"",
+      flag:false
+    })
   },
   onPullDownRefresh (){
     this.queryJobDetail()
@@ -30,7 +39,7 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        position:jobDetail.position,
+        position:_this.data.jobDetail.position,
         page:page
       },
       success(res){
@@ -44,6 +53,28 @@ Page({
           })
           return
         }
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
+  queryCompanyDetail(){
+    let _this = this
+    wx.request({
+      url: api.queryCompanyDetail,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        cid:_this.data.jobDetail.cid
+      },
+      success(res){
+        _this.setData({
+          companyDetail:res.data.data
+        })
+        console.log(_this.data.companyDetail)
       },
       fail(res){
         console.log(res)
@@ -68,6 +99,7 @@ Page({
           jobDetail:res.data.data
         })
         console.log(_this.data.jobDetail)
+        _this.queryCompanyDetail()
       },
       fail(res){
         console.log(res)

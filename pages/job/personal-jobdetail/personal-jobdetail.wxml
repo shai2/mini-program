@@ -2,32 +2,32 @@
     <view>
         <view class="baseinfo">
             <view class="flex-row-between">
-                <text class="name">设计师</text>
-                <text class="salary">1-2k</text>
+                <text class="name">{{jobDetail.position}}</text>
+                <text class="salary">{{jobDetail.wagemin}}-{{jobDetail.wagemax}} k</text>
             </view>
             <view class="disc-line flex-row-center">
                 <view class="disc-item flex-row-center">
                     <image style="width:12px;height:12px" src="/img/place.png"></image>
-                    <text>上海 - 徐汇区</text>
+                    <text>{{jobDetail.prov}} - {{jobDetail.city}}</text>
                 </view>
                 <view class="disc-item flex-row-center">
                     <image style="width:12px;height:12px" src="/img/exp.png"></image>
-                    <text>3-5年</text>
+                    <text>{{jobDetail.workexp_text}}</text>
                 </view>
                 <view class="disc-item flex-row-center">
                     <image style="width:12px;height:12px" src="/img/edu.png"></image>
-                    <text>小学</text>
+                    <text>{{jobDetail.edu_text }}</text>
                 </view>
             </view>
             <view class="company-info flex-row-between">
                 <image style="width:40px;height:40px;border-radius:3px;" src="/img/default-c.png"></image>
                 <view class="company-info-right flex">
-                    <text class="company-name">上海尚飞尤有限公司</text>
+                    <text class="company-name">{{jobDetail.companyName}}</text>
                     <view class="indentify"></view>
                     <view class="company-disc">
-                        <text class="company-disc-item">移动互联网</text>
-                        <text class="company-disc-item">天使轮</text>
-                        <text class="company-disc-item">1000人</text>
+                        <text class="company-disc-item">{{companyDetail.industry}}</text>
+                        <text class="company-disc-item">{{companyDetail.natureid_text}}</text>
+                        <text class="company-disc-item">{{companyDetail.size}}</text>
                     </view>
                 </view>
             </view>
@@ -36,17 +36,18 @@
             <text class="middle-title">职位介绍</text>
             <view class="job-disc">
                 <view class="welfare-line">
-                    <text class="mybutton-rect">绩效奖金</text>
-                    <text class="mybutton-rect">五险一金</text>
+                    <block wx:for="{{jobDetail.attractionList}}" wx:for-index="idx" wx:for-item="item">
+                        <text class="mybutton-rect">{{item.value}}</text>
+                    </block>                   
                 </view>
-                <view class="job-content">
-                    <text class="">1.负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容</text>
+                <view class="job-content {{overflow}}">
+                    <text class="{{overflow}}">{{jobDetail.descp}}</text>
                 </view>
-                <view class="expend"></view>
+                <view class="expend" bindtap="dec" wx:if="{{flag}}"></view>
             </view>
         </view>
         <view class="big-card">
-            <text class="middle-title">工作地点</text>
+            <text class="middle-title">{{jobDetail.address}}</text>
             <view class="address-disc">
                 <image style="width:12px;height:12px;margin-right:5px" src="/img/place.png"></image>
                 <text>公司名只能写死 地图组件需要经纬度</text>
