@@ -1,7 +1,6 @@
 {
     "navigationBarTitleText":"热门职位",
     "enablePullDownRefresh":true,
-    "backgroundColor":"#29a1f7",
     "usingComponents":{
         "job-item":"/base-component/job-item/job-item",
         "my-button":"/base-component/my-button/my-button"

@@ -15,5 +15,6 @@ module.exports = {
   updateUserInfo : baseUrl + "/app/user/v1/updateUserInfo", //更新用户基本信息（账号）
   getUserInfo : baseUrl + "/app/user/v1/userInfo", //获取用户基本信息（账号）
   avatarUpload : baseUrl + "/common/upload", //上传头像
+  countJobStatus : baseUrl + "/app/job/countJobStatus", //已投递、已沟通，待面试数量
 
 }

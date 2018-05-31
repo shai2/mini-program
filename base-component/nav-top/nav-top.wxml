@@ -1,0 +1,6 @@
+<view class="nav {{type===2?'type2':''}}">
+    <image hidden="{{noBack}}" bindtap="back" style="position:absolute;left:15px;bottom:18px;width:15px;height:15px;" src="{{type===1?backIcon:backIcon2}}"></image>
+    <text class="title">
+        {{title}}
+    </text>
+</view>

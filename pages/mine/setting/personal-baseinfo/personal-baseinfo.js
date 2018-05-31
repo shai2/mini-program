@@ -19,7 +19,6 @@ Page({
       },
       data: {},
       success(res){
-        console.log(res.data.data)
         if (!res.data.data.birthday) {
           res.data.data.birthday = ""
         };
