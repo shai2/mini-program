@@ -10,6 +10,7 @@ Page({
     })
   },
   feedback(){
+    var _this = this
     wx.request({
       url: api.feedback,
       method:"POST",

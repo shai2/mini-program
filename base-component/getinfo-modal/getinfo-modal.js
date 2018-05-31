@@ -42,7 +42,7 @@ Component({
         },
         data:e.detail,
         success(res){
-          app.globalData.userInfo = res.data.data
+          app.globalData.userInfo = res.data.data //to do 信息不刷新
         },
         fail(res){
           console.info(res)
