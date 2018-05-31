@@ -7,11 +7,13 @@ Page({
     repeatFlag:false,
   },
   onLoad(options) {
+    pageNow = 1;
     wx.showLoading({title:"加载中"})
-    this.getJobListByType(1,1) //查询
+    this.getJobListByType(pageNow,1) //查询
   },
   onPullDownRefresh (){
-    this.getJobListByType(1,1,true)
+    pageNow = 1;
+    this.getJobListByType(pageNow,1,true)
   },
   onReachBottom(){
     this.getJobListByType(pageNow,1)

@@ -1,4 +1,4 @@
-<textarea auto-height auto-focus bindblur="getText" placeholder="填写反馈问题" placeholder-class="placeholder"/>
+<textarea auto-height auto-focus bindblur="getText" value="{{feedbackText}}" placeholder="填写反馈问题" placeholder-class="placeholder"/>
 <view class="button-container-normal">
-    <my-button text="提交" bindtap="submit"></my-button>
+    <my-button text="提交" bindtap="feedback"></my-button>
 </view>

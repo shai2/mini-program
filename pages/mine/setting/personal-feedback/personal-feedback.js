@@ -1,16 +1,33 @@
-// pages/personal-feedback/personal-feedback.js
+let api = require("../../../../utils/api")
+let app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    feedbackText:''
   },
   getText(e){
-    // e.detail.value
+    this.setData({
+      feedbackText:e.detail.value
+    })
   },
-  submit(){
-
+  feedback(){
+    wx.request({
+      url: api.feedback,
+      method:"POST",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        feedBackContent:this.data.feedbackText,
+        feedBackType:0
+      },
+      success(res){
+        _this.setData({
+          feedbackText:''
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })

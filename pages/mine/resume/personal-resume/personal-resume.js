@@ -5,6 +5,7 @@ Page({
     userInfo:{}
   },
   onLoad() {
+    var _this = this
     wx.request({
       url: api.getResume,
       method:"GET",
@@ -13,17 +14,15 @@ Page({
       },
       data: {},
       success(res){
-        console.log(res)
+        _this.setData({
+          userInfo:res.data.data
+        })
+        console.log(_this.data.userInfo)
       },
       fail(res){
         console.log(res)
       }
     })
-
-    this.setData({
-      userInfo:info.userInfo
-    })
-    console.log(info.userInfo)
   },
   /**
    * 用户点击右上角分享

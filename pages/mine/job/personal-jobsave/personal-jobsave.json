@@ -1,8 +1,8 @@
 {
-    "navigationBarTitleText":"谁看过我",
+    "navigationBarTitleText":"职位收藏",
     "enablePullDownRefresh":true,
     "usingComponents":{
-        "company-item":"/base-component/company-item/company-item",
+        "job-item":"/base-component/job-item/job-item",
         "my-button":"/base-component/my-button/my-button"
     }
 }

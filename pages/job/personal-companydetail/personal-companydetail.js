@@ -11,6 +11,7 @@ Page({
     repeatFlag:false,
   },
   onLoad(options) {
+    pageNow = 1;
     console.log(options.cid)
     this.setData({
       cid:options.cid

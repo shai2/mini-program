@@ -2,6 +2,7 @@ let api = require("../../../utils/api")
 let info = getApp().globalData
 Page({
   data: {
+    userInfo:{},
     name:'',
     avatar:'',
     resumePercent:90,
@@ -9,6 +10,7 @@ Page({
   },
   onLoad(){
     this.countJobStatus()
+    this.getUserInfo()
   },
   onShow(options) {
     this.setData({
@@ -29,7 +31,28 @@ Page({
         _this.setData({
           countJobStatus:res.data.data
         })
-        console.log(_this.data.countJobStatus)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
+  getUserInfo(){
+    let _this = this
+    wx.request({
+      url: api.getUserInfo,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        if (res.data.data.scoreVO.totalScore==-1) {
+          res.data.data.scoreVO.totalScore = 0
+        };
+        _this.setData({
+          userInfo:res.data.data
+        })
       },
       fail(res){
         console.log(res)
@@ -66,4 +89,14 @@ Page({
       url:"/pages/mine/service/personal-service/personal-service"
     })
   },
+  toJobSave(){
+    wx.navigateTo({
+      url:"/pages/mine/job/personal-jobsave/personal-jobsave"
+    })
+  },
+  toIntention(){
+    wx.navigateTo({
+      url:"/pages/mine/resume/personal-resume-intention/personal-resume-intention"
+    })
+  }
 })

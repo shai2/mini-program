@@ -3,10 +3,10 @@
         <view class="top" bindtap="toBaseInfo">
             <view class="edit"></view>
             <view class="flex-row-center avatar-box border-bottom">
-                <image style="width:55px;height:55px;border-radius:50%;" src="{{userInfo.avatarPhoto}}"></image>
+                <image style="width:55px;height:55px;border-radius:50%;" src="{{userInfo.basicInfo.avatar}}"></image>
             </view>
             <view class="">
-                <text class="name block">{{userInfo.nickName}}</text>
+                <text class="name block">{{userInfo.basicInfo.name}}</text>
                 <view class="base-info">
                     <text>{{userInfo.gender}}</text>
                     <text>年龄</text>

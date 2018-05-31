@@ -27,6 +27,12 @@ Page({
   cancel(){
     wx.navigateBack({delta: 1})
   },
+  clearHistory(){
+    wx.setStorageSync('tipArrHistory',[])
+    this.setData({
+      "tipArrHistory":[]
+    })
+  },
   search(){
     if (this.data.tipArrHistory.indexOf(this.data.searchText)<0) {
       if (this.data.tipArrHistory.length===3) {

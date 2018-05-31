@@ -16,5 +16,8 @@ module.exports = {
   getUserInfo : baseUrl + "/app/user/v1/userInfo", //获取用户基本信息（账号）
   avatarUpload : baseUrl + "/common/upload", //上传头像
   countJobStatus : baseUrl + "/app/job/countJobStatus", //已投递、已沟通，待面试数量
-
+  getJobListByStatus : baseUrl + "/app/job/getJobListByStatus", //列表 - 已投递、已沟通、待面试
+  jobSaveList : baseUrl + "/app/job/favorite/jobList", //职位收藏
+  whoFocus : baseUrl + "/app/resume/queryRecords", //谁看过我
+  feedback : baseUrl + "/user/feedback", //反馈
 }

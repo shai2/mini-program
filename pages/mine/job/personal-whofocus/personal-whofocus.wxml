@@ -1,1 +1,4 @@
-<company-list></company-list>
+<block wx:for="{{companyObj}}" wx:key="{{index}}">
+    <company-item companyItem="{{item}}"></company-item>
+</block>
+<text class="loading-text">{{pullText}}</text>

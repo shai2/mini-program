@@ -7,9 +7,9 @@
     </view>
     <view class="middle">
         <view class="item">
-            <view class="flex-row-between">
+            <view wx:if="{{tipArrHistory.length>0}}" class="flex-row-between">
                 <text class="search-title">历史搜索</text>
-                <image style="width:15px;height:15px;" src="/img/delete.png"></image>
+                <image bindtap="clearHistory" style="width:15px;height:15px;" src="/img/delete.png"></image>
             </view>
             <view class="tip-box">
                 <text class="tip {{activeTip==index&&selectType==0 ? 'active' : ''}}" wx:for="{{tipArrHistory}}" wx:key="index" data-text="{{item}}" data-index="{{index}}" data-type="0" bindtap="changeActiveTip">{{item}}</text>

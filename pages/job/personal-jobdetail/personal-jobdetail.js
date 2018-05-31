@@ -12,6 +12,7 @@ Page({
     repeatFlag:false,
   },
   onLoad(options) {
+    pageNow = 1;
     this.setData({
       jid:options.jid
     })

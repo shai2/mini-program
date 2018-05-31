@@ -1,45 +1,36 @@
-let api = require("../../../utils/api")
+let api = require("../../../../utils/api")
 let pageNow = 1;
 Page({
   data: {
     jobObj:[], //热门相关
     pullText:'加载中 . .',
-    keyword:'',
     repeatFlag:false,
   },
   onLoad(options) {
     pageNow = 1;
-    this.setData({
-      keyword:options.keyword
-    })
     wx.showLoading({title:"加载中"})
-    this.getJobListByType(pageNow) //查询
+    this.jobSaveList(pageNow) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
-    this.getJobListByType(pageNow,0,true)
+    this.jobSaveList(pageNow,true)
   },
   onReachBottom(){
-    this.getJobListByType(pageNow)
+    this.jobSaveList(pageNow)
   },
-  getJobListByType(page,type,refresh){
-    if (!type) type=0; //只写page 默认搜索全部类型 要判断fresh type不能省
+  jobSaveList(page,refresh){
     let _this = this
     if(this.data.repeatFlag) return
     _this.setData({
       repeatFlag:true
     })
     wx.request({
-      url: api.getJobListByType,
+      url: api.jobSaveList,
       method:"GET",
       header:{
         sessionId: wx.getStorageSync('sessionId')
       },
-      data: {
-        type:type,
-        keyword: _this.data.keyword,
-        page:page
-      },
+      data: {},
       success(res){
         if (refresh) {
           _this.setData({
