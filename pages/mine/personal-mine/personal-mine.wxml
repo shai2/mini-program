@@ -3,7 +3,7 @@
     <view class="top">
         <navigator url="/pages/mine/setting/personal-baseinfo/personal-baseinfo">
             <view class="flex-row-center top-top">
-                <image style="width:30px;height:30px;border-radius:50%;" src="{{avatar}}"></image>
+                <image style="background:#fff;width:30px;height:30px;border-radius:50%;" src="{{avatar}}"></image>
                 <text class="name">{{name}}</text>
             </view>
         </navigator>

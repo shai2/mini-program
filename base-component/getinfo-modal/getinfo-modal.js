@@ -14,6 +14,7 @@ Component({
     checkUserInfo(){ // 页面出现没权限弹窗点击后赋值然后上传基本信息 有权限的话 在登录后就获取基本信息了
       wx.getSetting({
         success: res => {
+          if (app.globalData.userInfo.wechatUnionId) return
           if (res.authSetting['scope.userInfo']) {
             console.log("已授权过基本信息")
             this.setData({  // 关闭弹窗

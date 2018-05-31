@@ -6,10 +6,7 @@ Page({
     avatar:null,
     resumePercent:90
   },
-  onLoad(options) {
-
-  },
-  onReady() {
+  onShow(options) {
     this.setData({
       name:info.userInfo.nickName,
       avatar:info.userInfo.avatarPhoto

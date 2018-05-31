@@ -8,7 +8,8 @@ Page({
     jid:'',
     pullText:'加载中 . .',
     overflow:"dec",
-    flag:true
+    flag:true,
+    repeatFlag:false,
   },
   onLoad(options) {
     this.setData({
@@ -32,6 +33,10 @@ Page({
   },
   getHotJobList(page,refresh){
     let _this = this
+    if(this.data.repeatFlag) return
+    _this.setData({
+      repeatFlag:true
+    })
     wx.request({
       url: api.getHotJobList,
       method:"GET",
@@ -44,7 +49,8 @@ Page({
       },
       success(res){
         _this.setData({
-          jobObj:_this.data.jobObj.concat(res.data.data.data)
+          jobObj:_this.data.jobObj.concat(res.data.data.data),
+          repeatFlag:false
         })
         pageNow++
         if(res.data.data.data.length === 0){ //没数据了
@@ -104,6 +110,11 @@ Page({
       fail(res){
         console.log(res)
       }
+    })
+  },
+  toCompanyDetail(e){
+    wx.navigateTo({
+      url:"/pages/job/personal-companydetail/personal-companydetail?cid=" + e.currentTarget.dataset.cid
     })
   }
 })

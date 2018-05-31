@@ -1,65 +1,92 @@
+let api = require("../../../utils/api")
+let pageNow = 1;
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    jobDetail:{},
+    companyDetail:{},
+    jobObj:[], //热门相关
+    pullText:'加载中 . .',
+    overflow:"dec",
+    flag:true,
+    repeatFlag:false,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    console.log(options.cid)
+    this.setData({
+      cid:options.cid
+    })
+    wx.showLoading({title:"加载中"})
+    this.queryCompanyDetail()//公司详情
+    this.getCompanyJobList(pageNow) //请求相关
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  dec(){
+    this.setData({
+      overflow:"",
+      flag:false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onPullDownRefresh (){
+    this.queryCompanyDetail()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onReachBottom(){
+    this.getCompanyJobList(pageNow)
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  getCompanyJobList(page,refresh){
+    let _this = this
+    if(this.data.repeatFlag) return
+    _this.setData({
+      repeatFlag:true
+    })
+    wx.request({
+      url: api.getCompanyJobList,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        cid:_this.data.cid,
+        page:page
+      },
+      success(res){
+        _this.setData({
+          jobObj:_this.data.jobObj.concat(res.data.data.data),
+          repeatFlag:false
+        })
+        pageNow++
+        if(res.data.data.data.length === 0){ //没数据了
+          _this.setData({
+            pullText:"到底了"
+          })
+          return
+        }
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  queryCompanyDetail(){
+    let _this = this
+    wx.request({
+      url: api.queryCompanyDetail,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        cid:_this.data.cid
+      },
+      success(res){
+        wx.stopPullDownRefresh()
+        wx.hideLoading()
+        _this.setData({
+          companyDetail:res.data.data
+        })
+        console.log(_this.data.companyDetail)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -11,4 +11,9 @@ module.exports = {
   getHotJobList : baseUrl + "/app/job/getHotJobList", //职位详情下边的热门推荐
   queryJobDetail : baseUrl + "/app/job/queryJobDetail", //职位详情
   queryCompanyDetail : baseUrl + "/app/company/queryCompanyDetail", //公司详情
+  getCompanyJobList : baseUrl + "/app/company/getCompanyJobList", //公司再招岗位
+  updateUserInfo : baseUrl + "/app/user/v1/updateUserInfo", //更新用户基本信息（账号）
+  getUserInfo : baseUrl + "/app/user/v1/userInfo", //获取用户基本信息（账号）
+  avatarUpload : baseUrl + "/common/upload", //上传头像
+
 }

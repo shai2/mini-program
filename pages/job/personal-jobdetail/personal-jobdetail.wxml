@@ -19,7 +19,7 @@
                     <text>{{jobDetail.edu_text }}</text>
                 </view>
             </view>
-            <view class="company-info flex-row-between">
+            <view class="company-info flex-row-between" bindtap="toCompanyDetail" data-cid="{{jobDetail.cid}}">
                 <image style="width:40px;height:40px;border-radius:3px;" src="/img/default-c.png"></image>
                 <view class="company-info-right flex">
                     <text class="company-name">{{jobDetail.companyName}}</text>
@@ -36,9 +36,9 @@
             <text class="middle-title">职位介绍</text>
             <view class="job-disc">
                 <view class="welfare-line">
-                    <block wx:for="{{jobDetail.attractionList}}" wx:for-index="idx" wx:for-item="item">
+                    <block wx:for="{{jobDetail.attractionList}}" wx:key="{{index}}">
                         <text class="mybutton-rect">{{item.value}}</text>
-                    </block>                   
+                    </block>
                 </view>
                 <view class="job-content {{overflow}}">
                     <text class="{{overflow}}">{{jobDetail.descp}}</text>

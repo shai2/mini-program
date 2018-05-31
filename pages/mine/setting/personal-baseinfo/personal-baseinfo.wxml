@@ -1,6 +1,6 @@
 <view>
     <view>
-        <myline-with-icon title="更换头像" hasTopBorder="{{false}}" showLeftIcon="" showRightIcon="">
+        <myline-with-icon title="更换头像" hasTopBorder="{{false}}" showLeftIcon="" showRightIcon="" bindtap="chooseAvatar">
             <image style="width:60px;height:60px;margin-right:12px;border-radius:50%;" src="{{userInfo.avatarPhoto}}"></image>
         </myline-with-icon>
 
@@ -22,11 +22,7 @@
 
         <picker bindchange="regionChange" mode="region">
             <myline-with-icon title="所在地区" showLeftIcon="">
-                <text class="myline-text">{{userInfo.province}} · {{userInfo.city}}
-                    <span wx:if="{{userInfo.area != null}}">
-                        · {{userInfo.area}}
-                    </span>
-                </text>
+                <text class="myline-text">{{userInfo.province}} · {{userInfo.city}} {{userInfo.area!=null?"· " + userInfo.area:""}}</text>
             </myline-with-icon>
         </picker>
     </view>

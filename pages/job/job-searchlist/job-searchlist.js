@@ -4,7 +4,8 @@ Page({
   data: {
     jobObj:[], //热门相关
     pullText:'加载中 . .',
-    keyword:''
+    keyword:'',
+    repeatFlag:false,
   },
   onLoad(options) {
     this.setData({
@@ -22,6 +23,10 @@ Page({
   getJobListByType(page,type,refresh){
     if (!type) type=0; //只写page 默认搜索全部类型 要判断fresh type不能省
     let _this = this
+    if(this.data.repeatFlag) return
+    _this.setData({
+      repeatFlag:true
+    })
     wx.request({
       url: api.getJobListByType,
       method:"GET",
@@ -36,11 +41,13 @@ Page({
       success(res){
         if (refresh) {
           _this.setData({
-            jobObj:res.data.data.data
+            jobObj:res.data.data.data,
+            repeatFlag:false
           })
         }else{
           _this.setData({
-            jobObj:_this.data.jobObj.concat(res.data.data.data)
+            jobObj:_this.data.jobObj.concat(res.data.data.data),
+            repeatFlag:false
           })
         }
         wx.hideLoading()

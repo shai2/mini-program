@@ -3,7 +3,7 @@
         <view class="my-search flex search-box-circle">
             <input class="flex" placeholder="搜索职位 / 公司" value="{{searchText}}" placeholder-class="placeholder" bindconfirm="search" bindinput="hasContent"/>
         </view>
-        <text class="cancel" bindtap="search">取消</text>
+        <text class="cancel" bindtap="cancel">取消</text>
     </view>
     <view class="middle">
         <view class="item">

@@ -23,6 +23,7 @@ Page({
     this.setData({
       userInfo:info.userInfo
     })
+    console.log(info.userInfo)
   },
   /**
    * 用户点击右上角分享
