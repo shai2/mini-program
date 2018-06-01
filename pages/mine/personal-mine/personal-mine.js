@@ -15,6 +15,7 @@ Page({
     this.getScaleList()
     this.getJobStateList()
     this.getIndustryList()
+    this.getWorkStartList()
   },
   onShow(options) {
     this.setData({

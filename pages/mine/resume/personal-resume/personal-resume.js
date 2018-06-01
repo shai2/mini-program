@@ -48,12 +48,12 @@ Page({
   },
   toEduExp(e){
     wx.navigateTo({
-      url:"/pages/mine/resume/personal-resume-eduexp/personal-resume-eduexp="+e.currentTarget.dataset.index
+      url:"/pages/mine/resume/personal-resume-eduexp/personal-resume-eduexp?index="+e.currentTarget.dataset.index
     })
   },
   toEventExp(e){
     wx.navigateTo({
-      url:"/pages/mine/resume/personal-resume-eventexp/personal-resume-eventexp="+e.currentTarget.dataset.index
+      url:"/pages/mine/resume/personal-resume-eventexp/personal-resume-eventexp?index="+e.currentTarget.dataset.index
     })
   },
   toMySkill(){

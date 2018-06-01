@@ -1,66 +1,100 @@
-// pages/mine/resume/personal-resume-eduexp/personal-resume-eduexp.js
+let app = getApp()
+let api = require("../../../../utils/api")
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    userInfo:{},
+    index:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    var _this = this
+    this.getResume(()=>{
+      _this.setData({
+        index:options.index
+      })
+      if (_this.data.index==-1) {
+        _this.setData({
+          index:_this.data.userInfo.educationExperiences.length*1
+        })
+      }else{
+        _this.setData({
+          index:options.index
+        })
+      }
+      console.log('options.index是'+options.index+'要修改的index是'+_this.data.index)
+      // console.log(_this.data.index,this.data.userInfo.educationExperiences.length)
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  nameChange(e){
+    let _name = 'userInfo.educationExperiences['+this.data.index+'].school'
+    this.setData({
+      [_name]:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  majorChange(e){
+    let _pos = 'userInfo.educationExperiences['+this.data.index+'].major'
+    this.setData({
+      [_pos]:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  educationStartChange(e){
+    let _workStart = 'userInfo.educationExperiences['+this.data.index+'].educationStart'
+    this.setData({
+      [_workStart]:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  educationEndChange(e){
+    let _workEnd = 'userInfo.educationExperiences['+this.data.index+'].educationEnd'
+    this.setData({
+      [_workEnd]:e.detail.value
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  getResume(fn){
+    let _this = this
+    wx.request({
+      url: api.getResume,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.setData({
+          userInfo:res.data.data
+        })
+        if(fn) fn()
+        console.log(_this.data.userInfo)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  saveResume(){
+    let _this = this
+    wx.request({
+      url: api.resumeUpdate,
+      method:"POST",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: _this.data.userInfo,
+      success(res){
+        wx.showToast({
+          title: '保存成功',
+          icon: 'success',
+          duration: 1000
+        })
+        setTimeout(()=>{
+          wx.navigateBack({delta:1})
+        },1000)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  deleteItem(){
+    this.data.userInfo.educationExperiences.splice(this.data.index,1)
+    this.saveResume()
   }
 })
