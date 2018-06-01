@@ -1,3 +1,6 @@
 <view class="button-box">
     <view class="{{type===1 ? 'mybutton' : 'mybutton-sp'}} {{canTap ? '':'disabled'}}">{{text}}</view>
 </view>
+<!-- <view class="button-box">
+    <view class="{{type===1 ? 'mybutton' : 'mybutton-sp'}} {{canTap ? '':'disabled'}}">{{text}}</view>
+</view> -->

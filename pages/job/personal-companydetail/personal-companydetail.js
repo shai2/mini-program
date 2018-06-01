@@ -23,7 +23,15 @@ Page({
   dec(){
     this.setData({
       overflow:"",
-      flag:false
+      flag:false,
+      overflow:"dec",
+      overFlag:false
+    })
+  },
+  show(){
+    this.setData({
+      overflow:"",
+      overFlag:true
     })
   },
   onPullDownRefresh (){
@@ -53,6 +61,7 @@ Page({
           jobObj:_this.data.jobObj.concat(res.data.data.data),
           repeatFlag:false
         })
+        console.log(_this.data.jobObj)
         pageNow++
         if(res.data.data.data.length === 0){ //没数据了
           _this.setData({

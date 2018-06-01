@@ -17,7 +17,12 @@ module.exports = {
   avatarUpload : baseUrl + "/common/upload", //上传头像
   countJobStatus : baseUrl + "/app/job/countJobStatus", //已投递、已沟通，待面试数量
   getJobListByStatus : baseUrl + "/app/job/getJobListByStatus", //列表 - 已投递、已沟通、待面试
-  jobSaveList : baseUrl + "/app/job/favorite/jobList", //职位收藏
+  jobSaveList : baseUrl + "/app/job/favorite/jobList", //职位收藏列表 
   whoFocus : baseUrl + "/app/resume/queryRecords", //谁看过我
   feedback : baseUrl + "/user/feedback", //反馈
+  sendResume : baseUrl + "/app/job/sendResume", //投递简历
+  getSendResumeStatus : baseUrl + "/app/job/getSendResumeStatus", //是否投递简历
+  jobSave : baseUrl + "/app/job/favorite", //职位收藏
+  jobSaveFlag : baseUrl + "/app/job/favorite/exist", //是否职位收藏
+  jobSaveNo : baseUrl + "/app/job/unFavorite", //取消职位收藏
 }

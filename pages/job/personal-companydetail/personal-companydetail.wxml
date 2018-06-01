@@ -3,35 +3,36 @@
         <view class="baseinfo">
             <image style="width:60px;height:60px;border-radius:5px;border:1px solid #fff;margin-top:40px;" src="/img/default-c.png"></image>
             <view class="company-name flex-row-between">
-                <text class="name">上海有限公司</text>
+                <text class="name">{{companyDetail.name}}</text>
                 <view class="indentify mgtop0"></view>
             </view>
             <view class="disc-line flex-row-center">
                 <view class="mgtop10">
-                    <text class="company-disc-item">移动互联网</text>
-                    <text class="company-disc-item">天使轮</text>
-                    <text class="company-disc-item">1000人</text>
+                    <text class="company-disc-item">{{companyDetail.industry}}</text>
+                    <text class="company-disc-item">{{companyDetail.natureid_text}}</text>
+                    <text class="company-disc-item">{{companyDetail.size}}</text>
                 </view>
             </view>
             <view class="welfare-line">
-                <text class="mybutton-rect">绩效奖金</text>
-                <text class="mybutton-rect">五险一金</text>
+                <block wx:for="{{companyDetail.welfare}}" wx:key="{{index}}">
+                    <text class="mybutton-rect">{{item.value}}</text>
+                </block>
             </view>
         </view>
         <view class="big-card">
             <text class="middle-title">公司简介</text>
             <view class="company-disc">
-                <view class="company-content">
-                    <text class="">1.负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容负责内容</text>
+                <view class="company-content {{overflow}}">
+                    <text class="">{{companyDetail.content}}</text>
                 </view>
-                <view class="expend"></view>
+                <view class="expend" bindtap="show" hidden="{{overFlag}}"></view>
             </view>
         </view>
         <view class="big-card">
             <text class="middle-title">公司地址</text>
             <view class="address-disc">
                 <image style="width:12px;height:12px;margin-right:5px" src="/img/place.png"></image>
-                <text>公司名只能写死 地图组件需要经纬度</text>
+                <text>{{companyDetail.adress}}</text>
             </view>
         </view>
         <text-single text="他们还在招"></text-single>

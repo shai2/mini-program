@@ -41,16 +41,16 @@
                     </block>
                 </view>
                 <view class="job-content {{overflow}}">
-                    <text class="{{overflow}}">{{jobDetail.descp}}</text>
+                    <text>{{jobDetail.descp}}</text>
                 </view>
                 <view class="expend" bindtap="dec" wx:if="{{flag}}"></view>
             </view>
         </view>
         <view class="big-card">
-            <text class="middle-title">{{jobDetail.address}}</text>
+            <text class="middle-title">公司地址</text>
             <view class="address-disc">
                 <image style="width:12px;height:12px;margin-right:5px" src="/img/place.png"></image>
-                <text>公司名只能写死 地图组件需要经纬度</text>
+                <text>{{jobDetail.address}}</text>
             </view>
         </view>
         <text-single></text-single>
@@ -65,9 +65,10 @@
         <image style="width:18px;height:18px;" src="/img/share.png"></image>
         <text>分享</text>
     </view>
-    <view class="operation-item flex-column-center">
-        <image style="width:18px;height:18px;" src="/img/collect.png"></image>
+    <view class="operation-item flex-column-center" bindtap="collection">
+        <image style="width:18px;height:18px;" src="{{coImg}}"></image>
         <text>收藏</text>
     </view>
-    <my-button class="flex" text="应聘职位"></my-button>
+    <view class=" btn {{ResumeFlag ? 'send' : ''}}" bindtap="sendResume">{{ResumeText}}</view>
+    <!-- <my-button canTap="{{canTap}}" class="flex" text="应聘职位"></my-button> -->
 </view>

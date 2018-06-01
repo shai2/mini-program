@@ -20,3 +20,16 @@
 	max-height: 100px;
 	overflow: hidden;
 }
+.btn{
+	display: block;
+	padding: 0 50px;
+	text-align:center;
+	 border-radius:6px;
+	 line-height:45px;
+	 font-size:15px;
+	 background:#29a1f7;
+	 color:#fff; 
+}
+.send{
+	background-color: #cbd4db !important;
+}
