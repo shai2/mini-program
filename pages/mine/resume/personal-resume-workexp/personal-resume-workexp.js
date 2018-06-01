@@ -1,66 +1,85 @@
-// pages/mine/resume/personal-resume-workexp/personal-resume-workexp.js
+let app = getApp()
+let api = require("../../../../utils/api")
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    userInfo:{},
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    this.getResume()
+    // option.index
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onReady() {
+    this.getResume()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  nameChange(e){
+    var _name = 'userInfo.workExperiences.company'
+    this.setData({
+      [_name]:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  positionChange(e){
+    var _pos = 'userInfo.workExperiences.position'
+    this.setData({
+      [_pos]:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  workStartChange(e){
+    let _workStart = 'userInfo.workExperiences.workStart'
+    this.setData({
+      [_workStart]:e.detail.value
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  workEndChange(e){
+    let _workEnd = 'userInfo.workExperiences.workEnd'
+    this.setData({
+      [_workEnd]:e.detail.value
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  textChange(e){
+    let _workDesc = 'userInfo.workExperiences.workDesc'
+    this.setData({
+      [_workDesc]:e.detail.value
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  getResume(){
+    var _this = this
+    wx.request({
+      url: api.getResume,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.setData({
+          userInfo:res.data.data
+        })
+        console.log(_this.data.userInfo)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
+  saveResume(){
+    let _this = this
+    wx.request({
+      url: api.resumeUpdate,
+      method:"POST",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: _this.data.userInfo,
+      success(res){
+        wx.showToast({
+          title: '保存成功',
+          icon: 'success',
+          duration: 1000
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })

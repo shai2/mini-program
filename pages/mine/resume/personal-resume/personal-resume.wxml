@@ -12,7 +12,7 @@
                     <text>{{userInfo.basicInfo.age}}</text>
                     <text>{{userInfo.basicInfo.workLife}}</text>
                     <text>{{userInfo.jobIntension.onBoardDate}}</text>
-                    <text>{{userInfo.city}}</text>  
+                    <text>{{userInfo.city}}</text>
                 </view>
             </view>
             <view class="info-normal">
@@ -64,12 +64,12 @@
         <!-- 工作 -->
         <view class="big-card">
             <text class="middle-title">工作履历</text>
-            <view class="middle-for-card" bindtap="toWorkExp">
-                  <!-- <block wx:for="{{userInfo.workExperiences}}" wx:key="{{index}}"> -->
-                    <view class="card-item">
+            <view class="middle-for-card">
+                  <block wx:for="{{[1,2]}}" wx:key="{{index}}">
+                    <view class="card-item" bindtap="toWorkExp" date-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">运营经理</text>
+                            <text class="">运营经理{{index}}</text>
                             <text class="">移动公司</text>
                         </view>
                         <view class="card-middle">
@@ -79,9 +79,9 @@
                             <text class="">运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理</text>
                         </view>
                     </view>
-                  <!-- </block>   -->
+                  </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp" date-index="-1">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>工作履历</text>
             </view>
@@ -89,12 +89,12 @@
         <!-- 教育 -->
         <view class="big-card">
             <text class="middle-title">教育经历</text>
-            <view class="middle-for-card" bindtap="toEduExp">
-                <!-- <block wx:for=""> -->
-                    <view class="card-item">
+            <view class="middle-for-card">
+                <block wx:for="{{[1,2]}}" wx:key="{{index}}">
+                    <view class="card-item" bindtap="toEduExp" date-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">XX学校</text>
+                            <text class="">XX学校{{index}}</text>
                         </view>
                         <view class="card-middle">
                             <text class="">2011.1~2011.2</text>
@@ -104,9 +104,9 @@
                             <text class="">XX学历</text>
                         </view>
                     </view>
-                <!-- </block> -->
+                </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toEduExp">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toEduExp" date-index="-1">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>教育经历</text>
             </view>
@@ -114,12 +114,12 @@
         <!-- 项目 -->
         <view class="big-card">
             <text class="middle-title">项目经验</text>
-            <view class="middle-for-card" bindtap="toEventExp">
-                <!-- <block wx:for=""> -->
-                    <view class="card-item">
+            <view class="middle-for-card">
+                <block wx:for="{{[1,2]}}" wx:key="{{index}}">
+                    <view class="card-item" bindtap="toEventExp" date-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">运营经理</text>
+                            <text class="">运营经理{{index}}</text>
                             <text class="">移动公司</text>
                         </view>
                         <view class="card-middle">
@@ -129,9 +129,9 @@
                             <text class="">运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理</text>
                         </view>
                     </view>
-                <!-- </block> -->
+                </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toEventExp">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toEventExp" date-index="-1">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>项目经验</text>
             </view>

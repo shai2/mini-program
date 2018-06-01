@@ -4,19 +4,13 @@ Page({
   data: {
     userInfo:{}
   },
-  onLoad() {
-    
-  },
   onShow(){
     this.getResume()
-  }, 
-  onShareAppMessage() {
-
   },
-  getResume(){
-    var _this = this 
+  getResume() {
+    var _this = this
     wx.request({
-      url: api.getResume,   
+      url: api.getResume,
       method:"GET",
       header:{
         sessionId: wx.getStorageSync('sessionId')
@@ -33,6 +27,9 @@ Page({
       }
     })
   },
+  onShareAppMessage: function () {
+
+  },
   toIntention(){
     wx.navigateTo({
       url:"/pages/mine/resume/personal-resume-intention/personal-resume-intention"
@@ -43,6 +40,7 @@ Page({
       url:"/pages/mine/resume/personal-resume-baseinfo/personal-resume-baseinfo"
     })
   },
+  // 加data-type 来区分是不是添加 添加的话 隐藏删除 删除的话 加载那一条
   toWorkExp(){
     wx.navigateTo({
       url:"/pages/mine/resume/personal-resume-workexp/personal-resume-workexp"

@@ -1,29 +1,26 @@
 <view>
     <view>
-        <myline-with-icon title="公司名称" bindinput="nameChange" showLeftIcon="" showRightIcon="">
-            <input class="myline-text" value="{{userInfo.nickName}}" placeholder="请输入真实姓名" placeholder-class="placeholder"/>
+        <myline-with-icon title="公司名称" showLeftIcon="" showRightIcon="">
+            <input class="myline-text" value="{{userInfo.workExperiences.company}}" bindinput="nameChange" placeholder="请输入公司名称" placeholder-class="placeholder"/>
         </myline-with-icon>
-
-        <picker bindchange="" mode="multiSelector">
-            <myline-with-icon title="职位名称" showLeftIcon="">
-                <text class="myline-text"></text>
-            </myline-with-icon>
-        </picker>
-        <picker bindchange="birthdayChange" mode="date">
+        <myline-with-icon title="职位名称" showLeftIcon="" showRightIcon="">
+            <input class="myline-text" value="{{userInfo.workExperiences.position}}" bindinput="positionChange" placeholder="请输入职位名称" placeholder-class="placeholder"/>
+        </myline-with-icon>
+        <picker bindchange="workStartChange" mode="date">
             <myline-with-icon title="入职时间" showLeftIcon="">
-                <text class="myline-text">{{}}</text>
+                <text class="myline-text">{{userInfo.workExperiences.workStart}}</text>
             </myline-with-icon>
         </picker>
-        <picker bindchange="birthdayChange" mode="date">
+        <picker bindchange="workEndChange" mode="date">
             <myline-with-icon title="离职时间" showLeftIcon="">
-                <text class="myline-text">{{}}</text>
+                <text class="myline-text">{{userInfo.workExperiences.workEnd}}</text>
             </myline-with-icon>
         </picker>
         <text class="title-nobg">工作职责</text>
-        <textarea auto-height bindblur="" placeholder="填写我的优势" placeholder-class="placeholder"/>
+        <textarea auto-height bindinput="textChange" value="{{userInfo.workExperiences.workDesc}}" placeholder="填写工作职责" placeholder-class="placeholder"/>
     </view>
     <view class="button-container-normal">
-        <my-button text="保存" bindtap="save"></my-button>
+        <my-button text="保存" bindtap="saveResume"></my-button>
         <view class="delete-button" bindtap="">删除</view>
     </view>
 </view>

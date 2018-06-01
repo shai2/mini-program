@@ -33,8 +33,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "基本信息",
+					"pathName": "pages/mine/resume/personal-resume-baseinfo/personal-resume-baseinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "工作履历",
+					"pathName": "pages/mine/resume/personal-resume-workexp/personal-resume-workexp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历",
+					"pathName": "pages/mine/resume/personal-resume/personal-resume",
+					"query": ""
+				}
+			]
 		}
 	}
 }

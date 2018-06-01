@@ -17,9 +17,18 @@ module.exports = {
   avatarUpload : baseUrl + "/common/upload", //上传头像
   countJobStatus : baseUrl + "/app/job/countJobStatus", //已投递、已沟通，待面试数量
   getJobListByStatus : baseUrl + "/app/job/getJobListByStatus", //列表 - 已投递、已沟通、待面试
-  jobSaveList : baseUrl + "/app/job/favorite/jobList", //职位收藏列表 
+  jobSaveList : baseUrl + "/app/job/favorite/jobList", //职位收藏
   whoFocus : baseUrl + "/app/resume/queryRecords", //谁看过我
   feedback : baseUrl + "/user/feedback", //反馈
+  getSalaryList : baseUrl + "/app/dict/getSalaryList", //字典-薪资
+  getScaleList : baseUrl + "/app/dict/getScaleList", //字典-公司规模
+  getJobStateList : baseUrl + "/app/dict/getTargetcurrList", //字典-求职状态
+  getIndustryList : baseUrl + "/app/dict/getIndustryList", //字典-行业
+  getPositionList : baseUrl + "/app/dict/getPositionList", //字典-岗位（先不做）
+  getWorkStartList : baseUrl + "/app/dict/getWorkStartList", //字典-到岗时间
+  getIntention : baseUrl + "/app/job/v1/intention/get", //单独获取求职意向
+  intentionUpdate : baseUrl + "/app/job/v1/intention/update", //单独更新求职意向
+  resumeUpdate : baseUrl + "/app/resume/update", //更新简历
   sendResume : baseUrl + "/app/job/sendResume", //投递简历
   getSendResumeStatus : baseUrl + "/app/job/getSendResumeStatus", //是否投递简历
   jobSave : baseUrl + "/app/job/favorite", //职位收藏

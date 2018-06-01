@@ -2,30 +2,37 @@
     <view>
         <picker bindchange="" mode="multiSelector">
             <myline-with-icon title="期望职位" showLeftIcon="">
-                <text class="myline-text"></text>
+                <text class="myline-text">{{jobIntension.jobTradeId}}</text>
             </myline-with-icon>
         </picker>
         <picker bindchange="workPlaceChange" mode="region">
             <myline-with-icon title="工作地点" showLeftIcon="">
-                <text class="myline-text">{{userInfo.province}}{{" · "+userInfo.city}}{{userInfo.area!=null?" · " + userInfo.area:""}}</text>
+                <text class="myline-text">{{jobIntension.province!=null?jobIntension.province:''}}{{jobIntension.city!=null?" · "+jobIntension.city:''}}{{jobIntension.area!=null?" · " + jobIntension.area:""}}</text>
             </myline-with-icon>
         </picker>
-        <myline-with-icon title="薪资待遇" bindinput="nameChange" showLeftIcon="" showRightIcon="">
-            <input class="myline-text" value="" placeholder="请输入期望薪资" placeholder-class="placeholder"/>
-        </myline-with-icon>
-        <picker bindchange="" mode="multiSelector">
+        <picker bindchange="salaryChange" range="{{salaryOption}}">
+            <myline-with-icon title="薪资待遇" showLeftIcon="">
+                <text class="myline-text">{{jobIntension.expSalary}}</text>
+            </myline-with-icon>
+        </picker>
+        <picker bindchange="industrySelect" mode="multiSelector" bindcolumnchange="industryChange" range="{{industryArr}}" value="{{industryValue}}">
             <myline-with-icon title="期望行业" showLeftIcon="">
-                <text class="myline-text"></text>
+                <text class="myline-text">{{jobIntension.industry}}</text>
             </myline-with-icon>
         </picker>
-        <picker bindchange="">
+        <picker bindchange="companyScaleChange" range="{{companyScaleOption}}">
             <myline-with-icon title="公司规模" showLeftIcon="">
-                <text class="myline-text"></text>
+                <text class="myline-text">{{jobIntension.companyScale}}</text>
             </myline-with-icon>
         </picker>
-        <picker bindchange="">
+        <picker bindchange="jobStateChange" range="{{jobStateOption}}">
             <myline-with-icon title="求职状态" showLeftIcon="">
-                <text class="myline-text"></text>
+                <text class="myline-text">{{jobIntension.curentStatus}}</text>
+            </myline-with-icon>
+        </picker>
+        <picker bindchange="workStartChange" range="{{workStartOption}}">
+            <myline-with-icon title="到岗时间" showLeftIcon="">
+                <text class="myline-text">{{jobIntension.onBoardDate}}</text>
             </myline-with-icon>
         </picker>
     </view>

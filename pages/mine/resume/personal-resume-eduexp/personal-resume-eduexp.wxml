@@ -1,10 +1,10 @@
 <view>
     <view>
-        <myline-with-icon title="学校名称" bindinput="nameChange" showLeftIcon="" showRightIcon="">
-            <input class="myline-text" value="{{userInfo.nickName}}" placeholder="请输入学校名称" placeholder-class="placeholder"/>
+        <myline-with-icon title="学校名称" showLeftIcon="" showRightIcon="">
+            <input class="myline-text" value="{{userInfo.nickName}}" bindinput="nameChange" placeholder="请输入学校名称" placeholder-class="placeholder"/>
         </myline-with-icon>
-        <myline-with-icon title="专业名称" bindinput="nameChange" showLeftIcon="" showRightIcon="">
-            <input class="myline-text" value="{{userInfo.nickName}}" placeholder="请输入专业名称" placeholder-class="placeholder"/>
+        <myline-with-icon title="专业名称" showLeftIcon="" showRightIcon="">
+            <input class="myline-text" value="{{userInfo.nickName}}" bindinput="nameChange" placeholder="请输入专业名称" placeholder-class="placeholder"/>
         </myline-with-icon>
 
         <picker bindchange="birthdayChange" mode="date">
