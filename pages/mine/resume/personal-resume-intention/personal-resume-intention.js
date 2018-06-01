@@ -24,13 +24,14 @@ Page({
       industryArr:_arr
     })
     console.log(this.data.industryArr)
+    // console.log(this.data.industryListLevel1)
   },
   workPlaceChange(e){
-    let _province = 'jobIntension.province'  //省
+    let _prov = 'jobIntension.prov'  //省
     let _city = 'jobIntension.city'  //市
     let _area = 'jobIntension.area'  //区
     this.setData({
-      [_province]:e.detail.value[0],
+      [_prov]:e.detail.value[0],
       [_city]:e.detail.value[1],
       [_area]:e.detail.value[2]
     })
@@ -54,9 +55,10 @@ Page({
     })
   },
   workStartChange(e){
-    let _scale = 'jobIntension.onBoardDate' //公司规模
+    console.log(e.detail.value)
+    let _onBoardDate = 'jobIntension.onBoardDate' //公司规模
     this.setData({
-      [_scale]:this.data.workStartOption[e.detail.value],
+      [_onBoardDate]:this.data.workStartOption[e.detail.value],
     })
   },
   industryChange(e){ //选择时触发联动
@@ -77,7 +79,7 @@ Page({
     })
   },
   getBaseDate(){
-    console.log(wx.getStorageSync('workStart'))
+    console.log(wx.getStorageSync('industryListLevel1'))
     this.setData({
       companyScaleOption:wx.getStorageSync('companyScale'),
       salaryOption:wx.getStorageSync('salaryList'),

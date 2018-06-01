@@ -41,19 +41,19 @@ Page({
     })
   },
   // 加data-type 来区分是不是添加 添加的话 隐藏删除 删除的话 加载那一条
-  toWorkExp(){
+  toWorkExp(e){
     wx.navigateTo({
-      url:"/pages/mine/resume/personal-resume-workexp/personal-resume-workexp"
+      url:"/pages/mine/resume/personal-resume-workexp/personal-resume-workexp?index="+e.currentTarget.dataset.index
     })
   },
-  toEduExp(){
+  toEduExp(e){
     wx.navigateTo({
-      url:"/pages/mine/resume/personal-resume-eduexp/personal-resume-eduexp"
+      url:"/pages/mine/resume/personal-resume-eduexp/personal-resume-eduexp?index="+e.currentTarget.dataset.index
     })
   },
-  toEventExp(){
+  toEventExp(e){
     wx.navigateTo({
-      url:"/pages/mine/resume/personal-resume-eventexp/personal-resume-eventexp"
+      url:"/pages/mine/resume/personal-resume-eventexp/personal-resume-eventexp?index="+e.currentTarget.dataset.index
     })
   },
   toMySkill(){
