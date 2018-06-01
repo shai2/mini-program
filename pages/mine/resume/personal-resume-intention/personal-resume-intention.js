@@ -24,6 +24,7 @@ Page({
       industryArr:_arr
     })
     console.log(this.data.industryArr)
+    // console.log(this.data.industryListLevel1)
   },
   workPlaceChange(e){
     let _prov = 'jobIntension.prov'  //省
@@ -78,7 +79,7 @@ Page({
     })
   },
   getBaseDate(){
-    console.log(wx.getStorageSync('workStart'))
+    console.log(wx.getStorageSync('industryListLevel1'))
     this.setData({
       companyScaleOption:wx.getStorageSync('companyScale'),
       salaryOption:wx.getStorageSync('salaryList'),

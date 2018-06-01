@@ -126,8 +126,8 @@ Page({
           })
           _arrLevel2.push(_arr)
         })
-        wx.setStorageSync('positionListLevel1',_arrLevel1)
-        wx.setStorageSync('positionListLevel2',_arrLevel2)
+        wx.setStorageSync('industryListLevel1',_arrLevel1)
+        wx.setStorageSync('industryListLevel2',_arrLevel2)
         console.log(_arrLevel1,_arrLevel2)
       },
       fail(res){
@@ -151,8 +151,8 @@ Page({
     //         _arr.push(m.value)
     //       })
     //     })
-    //     wx.setStorageSync('industryListLevel1',_arrLevel1)
-    //     wx.setStorageSync('industryListLevel2',_arrLevel2)
+    //     wx.setStorageSync('positionListLevel1',_arrLevel1)
+    //     wx.setStorageSync('positionListLevel2',_arrLevel2)
     //     console.log(_arrLevel1,_arrLevel2)
     //   },
     //   fail(res){
