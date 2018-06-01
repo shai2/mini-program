@@ -65,7 +65,7 @@
         <view class="big-card">
             <text class="middle-title">工作履历</text>
             <view class="middle-for-card">
-                  <block wx:for="{{[1,2]}}" wx:key="{{index}}" wx:for="{{userInfo.workExperiences}}">
+                  <block wx:for="{{userInfo.workExperiences}}" wx:key="{{index}}">
                     <view class="card-item" bindtap="toWorkExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
@@ -90,7 +90,7 @@
         <view class="big-card">
             <text class="middle-title">教育经历</text>
             <view class="middle-for-card">
-                <block wx:for="{{[1,2]}}" wx:key="{{index}}" wx:for="{{userInfo.educationExperiences}}">
+                <block wx:for="{{userInfo.educationExperiences}}" wx:key="{{index}}">
                     <view class="card-item" bindtap="toEduExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
@@ -115,18 +115,18 @@
         <view class="big-card">
             <text class="middle-title">项目经验</text>
             <view class="middle-for-card">
-                <block wx:for="{{[1,2]}}" wx:key="{{index}}">
+                <block wx:for="{{userInfo.projectExperiences}}" wx:key="{{index}}">
                     <view class="card-item" bindtap="toEventExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">运营经理{{index}}</text>
-                            <text class="">移动公司</text>
+                            <text class="">{{item.responsibility}}{{index}}</text>
+                            <text class="">{{item.company}}</text>
                         </view>
                         <view class="card-middle">
-                            <text class="">2011.1~2011.2</text>
+                            <text class="">{{item.projectStart}}~{{item.projecEnd}}</text>
                         </view>
                         <view class="card-bottom">
-                            <text class="">运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理</text>
+                            <text class="">{{item.responsibility}}</text>
                         </view>
                     </view>
                 </block>
@@ -140,10 +140,9 @@
         <view class="big-card">
             <text class="middle-title">我的技能</text>
             <view class="skill-box" bindtap="toMySkill">
-                <!-- <block wx:for=""> -->
-                    <text class="mybutton-sp">办公软件</text>
-                    <text class="mybutton-sp">英语4级</text>
-                <!-- </block> -->
+                <block wx:for="{{userInfo.skill.languages}}" wx:key="{{index}}">
+                    <text class="mybutton-sp">111</text>
+                </block>
             </view>
             <view class="card-add flex-row-center" bindtap="toMySkill">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
