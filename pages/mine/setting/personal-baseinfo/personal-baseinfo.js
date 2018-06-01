@@ -51,10 +51,10 @@ Page({
       }
     })
   },
-  nameChange(){
+  nameChange(e){
     let _nickName = 'userInfo.nickName'
     this.setData({
-      [_gender]:e.detail.value
+      [_nickName]:e.detail.value
     })
   },
   sexChange(e){

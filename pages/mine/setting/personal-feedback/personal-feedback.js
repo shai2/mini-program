@@ -31,6 +31,9 @@ Page({
         _this.setData({
           feedbackText:''
         })
+        setTimeout(()=>{
+          wx.navigateBack({delta:1})
+        },1000)
       },
       fail(res){
         console.log(res)

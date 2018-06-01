@@ -102,6 +102,9 @@ Page({
           icon: 'success',
           duration: 1000
         })
+        setTimeout(()=>{
+          wx.navigateBack({delta:1})
+        },1000)
       },
       fail(res){
         console.log(res)

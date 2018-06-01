@@ -7,10 +7,11 @@
         <text bindtap="addKill">添加到技能</text>
     </view>
 </view>
-<!-- 循环时候要去掉第一个的top-border 加hasTopBorder="{{index!==0}}" -->
-<view>
-	<block wx:for="{{userInfo.skill.languages}}" wx:key="index"  wx:for-index="index" wx:for-item="itemName">
-    	<myline-with-icon title="{{itemName.languageName}}" showLeftIcon="" rightIcon="/img/delete.png"></myline-with-icon>
-    	<view class="del" data-index="{{index}}" bindtap="delKill"></view>
-    </block>
+<view class="overflow-h">
+    <view class="hide-1px">
+    	<block wx:for="{{userInfo.skill.languages}}" wx:key="index"  wx:for-index="index" wx:for-item="itemName">
+        	<myline-with-icon title="{{itemName.languageName}}" showLeftIcon="" rightIcon="/img/delete.png"></myline-with-icon>
+        	<view class="del" data-index="{{index}}" bindtap="delKill"></view>
+        </block>
+    </view>
 </view>

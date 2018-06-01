@@ -1,6 +1,10 @@
 let app = getApp()
 Component({
   properties: {
+    hasBottom:{
+      type:Boolean,
+      value:true
+    },
     jobItem:{
       type:Object,
       value:{}

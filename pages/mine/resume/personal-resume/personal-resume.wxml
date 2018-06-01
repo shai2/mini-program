@@ -12,7 +12,7 @@
                     <text>{{userInfo.basicInfo.age}}</text>
                     <text>{{userInfo.basicInfo.workLife}}</text>
                     <text>{{userInfo.jobIntension.onBoardDate}}</text>
-                    <text>{{userInfo.city}}</text>
+                    <text>{{userInfo.basicInfo.area}}</text>
                 </view>
             </view>
             <view class="info-normal">
@@ -64,7 +64,7 @@
         <!-- 工作 -->
         <view class="big-card">
             <text class="middle-title">工作履历</text>
-            <view class="middle-for-card">
+            <view class="middle-for-card" wx:if="{{userInfo.workExperiences.length>0}}">
                   <block wx:for="{{userInfo.workExperiences}}" wx:key="{{index}}">
                     <view class="card-item" bindtap="toWorkExp" data-index="{{index}}">
                         <view class="edit"></view>
@@ -89,7 +89,7 @@
         <!-- 教育 -->
         <view class="big-card">
             <text class="middle-title">教育经历</text>
-            <view class="middle-for-card">
+            <view class="middle-for-card" wx:if="{{userInfo.educationExperiences.length>0}}">
                 <block wx:for="{{userInfo.educationExperiences}}" wx:key="{{index}}">
                     <view class="card-item" bindtap="toEduExp" data-index="{{index}}">
                         <view class="edit"></view>
@@ -114,7 +114,7 @@
         <!-- 项目 -->
         <view class="big-card">
             <text class="middle-title">项目经验</text>
-            <view class="middle-for-card">
+            <view class="middle-for-card" wx:if="{{userInfo.projectExperiences.length>0}}">
                 <block wx:for="{{userInfo.projectExperiences}}" wx:key="{{index}}">
                     <view class="card-item" bindtap="toEventExp" data-index="{{index}}">
                         <view class="edit"></view>
@@ -123,7 +123,7 @@
                             <text class="">{{item.company}}</text>
                         </view>
                         <view class="card-middle">
-                            <text class="">{{item.projectStart}}~{{item.projecEnd}}</text>
+                            <text class="">{{item.projectStart}}~{{item.projectEnd}}</text>
                         </view>
                         <view class="card-bottom">
                             <text class="">{{item.responsibility}}</text>
@@ -139,9 +139,9 @@
         <!-- 技能 -->
         <view class="big-card">
             <text class="middle-title">我的技能</text>
-            <view class="skill-box" bindtap="toMySkill">
+            <view class="skill-box" bindtap="toMySkill" wx:if="{{userInfo.skill.languages.length>0}}">
                 <block wx:for="{{userInfo.skill.languages}}" wx:key="{{index}}">
-                    <text class="mybutton-sp">111</text>
+                    <text class="mybutton-sp mgbt10">{{item.languageName}}</text>
                 </block>
             </view>
             <view class="card-add flex-row-center" bindtap="toMySkill">

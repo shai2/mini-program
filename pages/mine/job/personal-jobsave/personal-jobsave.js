@@ -9,7 +9,7 @@ Page({
   onLoad(options) {
     pageNow = 1;
     wx.showLoading({title:"加载中"})
-    this.jobSaveList(pageNow) //查询
+    this.jobSaveList(pageNow,true) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -32,22 +32,22 @@ Page({
       },
       data: {},
       success(res){
+        wx.hideLoading()
+        wx.stopPullDownRefresh()
         if (refresh) {
           _this.setData({
-            jobObj:res.data.data.data,
+            jobObj:res.data.data,
             repeatFlag:false
           })
         }else{
           _this.setData({
-            jobObj:_this.data.jobObj.concat(res.data.data.data),
+            jobObj:_this.data.jobObj.concat(res.data.data),
             repeatFlag:false
           })
         }
-        wx.hideLoading()
-        wx.stopPullDownRefresh()
         // console.log(_this.data.jobObj)
         pageNow++
-        if(res.data.data.data.length === 0){ //没数据了
+        if(res.data.data.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })

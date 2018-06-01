@@ -2,22 +2,16 @@ let info = getApp().globalData
 let api = require("../../../../utils/api")
 Page({
   data: {
-    killName:"aa",
+    killName:"",
     userInfo:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
     this.getResume()
   },
   input(e){
-    console.log(e)
     this.setData({
       killName:e.detail.value
     })
-    console.log(this.data.killName)
   },
   addKill(){
     console.log( this.data.userInfo.skill.languages)
@@ -31,7 +25,6 @@ Page({
     });
   },
   delKill(e){
-    
     this.data.userInfo.skill.languages.splice(
       e.currentTarget.dataset.index,1);
     console.log(this.data.userInfo.skill.languages)
@@ -50,7 +43,8 @@ Page({
       data: {},
       success(res){
         _this.setData({
-          userInfo:res.data.data
+          userInfo:res.data.data,
+          killName:''
         })
         console.log(_this.data.userInfo)
       },
@@ -78,7 +72,7 @@ Page({
             duration: 1000
           })
         }
-        
+
       },
       fail(res){
         console.log(res)

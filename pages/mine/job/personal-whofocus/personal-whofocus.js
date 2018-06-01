@@ -2,14 +2,14 @@ let api = require("../../../../utils/api")
 let pageNow = 1;
 Page({
   data: {
-    companyObj:[], //热门相关
+    companyObj:[],
     pullText:'加载中 . .',
     repeatFlag:false,
   },
   onLoad(options) {
     pageNow = 1;
     wx.showLoading({title:"加载中"})
-    this.whoFocus(pageNow) //查询
+    this.whoFocus(pageNow,true) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -32,22 +32,28 @@ Page({
       },
       data: {page:pageNow},
       success(res){
+        wx.hideLoading()
+        wx.stopPullDownRefresh()
         if (refresh) {
           _this.setData({
-            companyObj:res.data.data.data,
+            companyObj:res.data.data.list,
             repeatFlag:false
           })
+          if (res.data.data.list.length===0) {
+            _this.setData({
+              pullText:"尚未被公司查看"
+            })
+            return
+          };
         }else{
           _this.setData({
-            companyObj:_this.data.companyObj.concat(res.data.data.data),
+            companyObj:_this.data.companyObj.concat(res.data.data.list),
             repeatFlag:false
           })
         }
-        wx.hideLoading()
-        wx.stopPullDownRefresh()
         // console.log(_this.data.companyObj)
         pageNow++
-        if(res.data.data.data.length === 0){ //没数据了
+        if(res.data.data.list.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })

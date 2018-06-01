@@ -1,16 +1,16 @@
 <view class="item {{hasBottom ? 'has-bottom' : 'has-border'}} flex-row-between">
     <view class="left">
-        <image style="width:45px;height:45px;border-radius:2px;margin-right:5px;" src="{{companyAvatar}}"></image>
+        <image style="width:45px;height:45px;border-radius:2px;margin-right:5px;" src="{{companyItem.viewCompanyLogo}}"></image>
     </view>
     <view class="right">
-        <text class="name">上海有限公司</text>
-        <text class="industry">互联网</text>
+        <text class="name">{{companyItem.viewCompanyName}}</text>
+        <!-- <text class="industry">行业暂无</text> -->
         <view class="bottom flex-row-between">
-            <view>
-                <text class="text-item">天使轮</text>
-                <text class="text-item">50-200人</text>
-            </view>
-            <text class="updata">15:15查看</text>
+            <!-- <view>
+                <text class="text-item">天使轮暂无</text>
+                <text class="text-item">规模暂无</text>
+            </view> -->
+            <text class="updata">{{companyItem.viewTimeText}}</text>
         </view>
     </view>
 </view>

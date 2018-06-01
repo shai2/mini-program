@@ -50,7 +50,7 @@ Page({
       data: {
         jobId:_this.data.jid
       },
-      success(res){     
+      success(res){
         if(res.data.data)
         {
           _this.setData({
@@ -72,17 +72,17 @@ Page({
       header:{
         sessionId: wx.getStorageSync('sessionId')
       },
-      data: {       
+      data: {
         jid:_this.data.jid
       },
-      success(res){        
+      success(res){
           if(res.data.data)
-          {          
+          {
             _this.setData({
               ResumeFlag:true,
               ResumeText:"已经投递"
             })
-          }             
+          }
       },
       fail(res){
         console.log(res)
@@ -98,7 +98,7 @@ Page({
       header:{
         sessionId: wx.getStorageSync('sessionId')
       },
-      data: {       
+      data: {
         jobId:_this.data.jobDetail.jid
       },
       success(res){
@@ -155,7 +155,7 @@ Page({
           sessionId: wx.getStorageSync('sessionId'),
           'content-type': 'application/json'
         },
-        data: {       
+        data: {
           cid:_this.data.jobDetail.cid,
           jid:_this.data.jobDetail.jid,
           jobPosition:_this.data.jobDetail.positionid,
@@ -163,17 +163,17 @@ Page({
         },
         success(res){
             if(res.data.msg=="投递成功")
-            {          
+            {
               _this.setData({
                 ResumeFlag:true,
                 ResumeText:"已经投递"
               })
-            }        
+            }
             wx.showToast({
               title: '投递成功',
               icon: 'success',
               duration: 1000
-            })            
+            })
         },
         fail(res){
           console.log(res)
@@ -203,7 +203,7 @@ Page({
           repeatFlag:false
         })
         pageNow++
-        if(res.data.data.data.length === 0){ //没数据了
+        if(res.data.data.data.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })

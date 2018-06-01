@@ -57,17 +57,21 @@ Page({
         page:page
       },
       success(res){
-        _this.setData({
-          jobObj:_this.data.jobObj.concat(res.data.data.data),
-          repeatFlag:false
-        })
-        console.log(_this.data.jobObj)
-        pageNow++
-        if(res.data.data.data.length === 0){ //没数据了
+        if (res.data.code===0) {
           _this.setData({
-            pullText:"到底了"
+            jobObj:_this.data.jobObj.concat(res.data.data.data),
+            repeatFlag:false
           })
-          return
+          console.log(_this.data.jobObj)
+          pageNow++
+          if(res.data.data.data.length <10){ //没数据了
+            _this.setData({
+              pullText:"到底了"
+            })
+            return
+          }
+        }else{
+          console.log(res.data.msg)
         }
       },
       fail(res){

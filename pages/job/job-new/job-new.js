@@ -9,7 +9,7 @@ Page({
   onLoad(options) {
     pageNow = 1;
     wx.showLoading({title:"加载中"})
-    this.getJobListByType(pageNow,1) //查询
+    this.getJobListByType(pageNow,1,true) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -52,7 +52,7 @@ Page({
         wx.stopPullDownRefresh()
         // console.log(_this.data.jobObj)
         pageNow++
-        if(res.data.data.data.length === 0){ //没数据了
+        if(res.data.data.data.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })
