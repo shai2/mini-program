@@ -66,7 +66,7 @@
             <text class="middle-title">工作履历</text>
             <view class="middle-for-card">
                   <block wx:for="{{[1,2]}}" wx:key="{{index}}">
-                    <view class="card-item" bindtap="toWorkExp" date-index="{{index}}">
+                    <view class="card-item" bindtap="toWorkExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
                             <text class="">运营经理{{index}}</text>
@@ -81,7 +81,7 @@
                     </view>
                   </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp" date-index="-1">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp" data-index="-1">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>工作履历</text>
             </view>
@@ -91,7 +91,7 @@
             <text class="middle-title">教育经历</text>
             <view class="middle-for-card">
                 <block wx:for="{{[1,2]}}" wx:key="{{index}}">
-                    <view class="card-item" bindtap="toEduExp" date-index="{{index}}">
+                    <view class="card-item" bindtap="toEduExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
                             <text class="">XX学校{{index}}</text>
@@ -106,7 +106,7 @@
                     </view>
                 </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toEduExp" date-index="-1">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toEduExp" data-index="-1">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>教育经历</text>
             </view>
@@ -116,7 +116,7 @@
             <text class="middle-title">项目经验</text>
             <view class="middle-for-card">
                 <block wx:for="{{[1,2]}}" wx:key="{{index}}">
-                    <view class="card-item" bindtap="toEventExp" date-index="{{index}}">
+                    <view class="card-item" bindtap="toEventExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
                             <text class="">运营经理{{index}}</text>
@@ -131,7 +131,7 @@
                     </view>
                 </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toEventExp" date-index="-1">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toEventExp" data-index="-1">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>项目经验</text>
             </view>

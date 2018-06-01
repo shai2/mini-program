@@ -3,13 +3,19 @@ let api = require("../../../../utils/api")
 Page({
   data: {
     userInfo:{},
+    index:''
   },
   onLoad(options) {
     this.getResume()
-    // option.index
-  },
-  onReady() {
-    this.getResume()
+    this.setData({
+      index:options.index
+    })
+    console.log(this.data.index)
+    if (this.data.index===-1) { //新增
+
+    }else{  //修改
+
+    }
   },
   nameChange(e){
     var _name = 'userInfo.workExperiences.company'
