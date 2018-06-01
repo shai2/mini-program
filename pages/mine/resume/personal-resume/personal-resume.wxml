@@ -8,20 +8,20 @@
             <view class="">
                 <text class="name block">{{userInfo.basicInfo.name}}</text>
                 <view class="base-info">
-                    <text>{{userInfo.gender}}</text>
-                    <text>年龄</text>
-                    <text>工作经验</text>
-                    <text>到岗时间</text>
-                    <text>{{userInfo.city}}</text>
+                    <text>{{userInfo.basicInfo.gender}}</text>
+                    <text>{{userInfo.basicInfo.age}}</text>
+                    <text>{{userInfo.basicInfo.workLife}}</text>
+                    <text>{{userInfo.jobIntension.onBoardDate}}</text>
+                    <text>{{userInfo.city}}</text>  
                 </view>
             </view>
             <view class="info-normal">
                 <text class="">手机号码：</text>
-                <text class="info-normal-data">{{userInfo.phone}}</text>
+                <text class="info-normal-data">{{userInfo.basicInfo.mobile}}</text>
             </view>
             <view class="info-normal">
                 <text class="">联系邮箱：</text>
-                <text class="info-normal-data">{{userInfo.phone}}</text>
+                <text class="info-normal-data">{{userInfo.basicInfo.email}}</text>
             </view>
         </view>
         <!-- 求职意向 -->
@@ -32,27 +32,31 @@
                     <view class="edit"></view>
                     <view class="info-normal mgtop0">
                         <text class="">期望职位：</text>
-                        <text class="info-normal-data">暂无</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.position}}</text>
                     </view>
                     <view class="info-normal">
                         <text class="">工作地点：</text>
-                        <text class="info-normal-data">暂无</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.workPlace}}</text>
                     </view>
                     <view class="info-normal">
                         <text class="">薪资待遇：</text>
-                        <text class="info-normal-data">暂无</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.expectedSalary}}</text>
                     </view>
                     <view class="info-normal">
                         <text class="">期望行业：</text>
-                        <text class="info-normal-data">暂无</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.industry}}</text>
                     </view>
                     <view class="info-normal">
                         <text class="">公司规模：</text>
-                        <text class="info-normal-data">暂无</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.companyScale}}</text>
                     </view>
                     <view class="info-normal">
                         <text class="">求职状态：</text>
-                        <text class="info-normal-data">暂无</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.workStatus}}</text>
+                    </view>
+                    <view class="info-normal">
+                        <text class="">到岗时间：</text>
+                        <text class="info-normal-data">{{userInfo.jobIntension.onBoardDate}}</text>
                     </view>
                 </view>
             </view>
@@ -61,7 +65,7 @@
         <view class="big-card">
             <text class="middle-title">工作履历</text>
             <view class="middle-for-card" bindtap="toWorkExp">
-                <!-- <block wx:for=""> -->
+                  <!-- <block wx:for="{{userInfo.workExperiences}}" wx:key="{{index}}"> -->
                     <view class="card-item">
                         <view class="edit"></view>
                         <view class="card-top">
@@ -75,7 +79,7 @@
                             <text class="">运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理运营经理</text>
                         </view>
                     </view>
-                <!-- </block> -->
+                  <!-- </block>   -->
             </view>
             <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>

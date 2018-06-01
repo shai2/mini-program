@@ -5,9 +5,18 @@ Page({
     userInfo:{}
   },
   onLoad() {
-    var _this = this
+    
+  },
+  onShow(){
+    this.getResume()
+  }, 
+  onShareAppMessage() {
+
+  },
+  getResume(){
+    var _this = this 
     wx.request({
-      url: api.getResume,
+      url: api.getResume,   
       method:"GET",
       header:{
         sessionId: wx.getStorageSync('sessionId')
@@ -23,12 +32,6 @@ Page({
         console.log(res)
       }
     })
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   },
   toIntention(){
     wx.navigateTo({
