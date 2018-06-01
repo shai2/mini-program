@@ -3,7 +3,8 @@ let api = require("../../../../utils/api")
 Page({
   data: {
     userInfo:{},
-    index:''
+    index:'',
+    deleteShow:true
   },
   onLoad(options) {
     var _this = this
@@ -13,7 +14,8 @@ Page({
       })
       if (_this.data.index==-1) {
         _this.setData({
-          index:_this.data.userInfo.projectExperiences.length*1
+          index:_this.data.userInfo.projectExperiences.length*1,
+          deleteShow:true
         })
       }else{
         _this.setData({
@@ -67,7 +69,7 @@ Page({
         _this.setData({
           userInfo:res.data.data
         })
-        if(fn) fn()
+        if(typeof(fn)==="function") fn()
         console.log(_this.data.userInfo)
       },
       fail(res){

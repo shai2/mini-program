@@ -21,6 +21,6 @@
     </view>
     <view class="button-container-normal">
         <my-button text="保存" bindtap="saveResume"></my-button>
-        <view wx:if="{{index!=userInfo.workExperiences.length||index!=userInfo.workExperiences.length-1}}" class="delete-button" bindtap="deleteItem">删除</view>
+        <view wx:if="{{deleteShow}}" class="delete-button" bindtap="deleteItem">删除</view>
     </view>
 </view>
