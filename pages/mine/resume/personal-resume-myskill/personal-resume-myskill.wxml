@@ -1,14 +1,16 @@
 <view class="big-card">
     <view class="normal-input-container">
-        <input class="normal-input" value="" placeholder="请输入技能名称" placeholder-class="placeholder"/>
+        <input class="normal-input" value="{{killName}}" placeholder="请输入技能名称" placeholder-class="placeholder" bindinput="input"/>
     </view>
     <view class="add-skill flex-row-center">
         <image style="width:12px;height:12px;margin-right: 5px;" src="/img/add.png"></image>
-        <text>添加到技能</text>
+        <text bindtap="addKill">添加到技能</text>
     </view>
 </view>
 <!-- 循环时候要去掉第一个的top-border 加hasTopBorder="{{index!==0}}" -->
 <view>
-    <myline-with-icon title="XXX软件" showLeftIcon="" rightIcon="/img/delete.png"></myline-with-icon>
-    <myline-with-icon title="XXX软件" showLeftIcon="" rightIcon="/img/delete.png"></myline-with-icon>
+	<block wx:for="{{userInfo.skill.languages}}" wx:key="index"  wx:for-index="index" wx:for-item="itemName">
+    	<myline-with-icon title="{{itemName.languageName}}" showLeftIcon="" rightIcon="/img/delete.png"></myline-with-icon>
+    	<view class="del" data-index="{{index}}" bindtap="delKill"></view>
+    </block>
 </view>

@@ -1,66 +1,88 @@
-// pages/mine/resume/personal-resume-myskill/personal-resume-myskill.js
+let info = getApp().globalData
+let api = require("../../../../utils/api")
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    killName:"aa",
+    userInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    this.getResume()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  input(e){
+    console.log(e)
+    this.setData({
+      killName:e.detail.value
+    })
+    console.log(this.data.killName)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  addKill(){
+    console.log( this.data.userInfo.skill.languages)
+    this.data.userInfo.skill.languages.push({
+      languageName:this.data.killName,
+      qualification:"",
+      primaryId:""
+    })
+    this.saveResume(()=>{
+      this.getResume()
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  delKill(e){
+    
+    this.data.userInfo.skill.languages.splice(
+      e.currentTarget.dataset.index,1);
+    console.log(this.data.userInfo.skill.languages)
+    this.saveResume(()=>{
+      this.getResume()
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  getResume() {
+    var _this = this
+    wx.request({
+      url: api.getResume,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.setData({
+          userInfo:res.data.data
+        })
+        console.log(_this.data.userInfo)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  saveResume(fn){
+    let _this = this
+    wx.request({
+      url: api.resumeUpdate,
+      method:"POST",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: _this.data.userInfo,
+      success(res){
+        console.log(res)
+        if(res.data.msg=="更新成功"){
+          if(typeof(fn)==="function") fn()
+          wx.showToast({
+            title: "保存成功",
+            icon: 'success',
+            duration: 1000
+          })
+        }
+        
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })

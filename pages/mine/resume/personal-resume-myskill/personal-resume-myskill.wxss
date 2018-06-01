@@ -1,1 +1,8 @@
 .add-skill{color:#29a1f7;padding:10px 0;border-top:1px solid #e4e9f0;}
+.del{
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin-top: -30px;
+	margin-right: 12px;
+}
