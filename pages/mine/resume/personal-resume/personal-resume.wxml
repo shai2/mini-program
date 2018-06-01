@@ -81,7 +81,7 @@
                     </view>
                   </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp" data-index="-1">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toWorkExp" data-index="{{index+1}}">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>工作履历</text>
             </view>
@@ -106,7 +106,7 @@
                     </view>
                 </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toEduExp" data-index="-1">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toEduExp" data-index="{{index+1}}">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>教育经历</text>
             </view>
@@ -131,7 +131,7 @@
                     </view>
                 </block>
             </view>
-            <view class="card-add flex-row-center" date-type="add" bindtap="toEventExp" data-index="-1">
+            <view class="card-add flex-row-center" date-type="add" bindtap="toEventExp" data-index="{{index+1}}">
                 <image style="width:10px;height:10px;" src="/img/add.png"></image>
                 <text>项目经验</text>
             </view>

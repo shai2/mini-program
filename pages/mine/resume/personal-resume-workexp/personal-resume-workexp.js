@@ -11,8 +11,12 @@ Page({
       index:options.index
     })
     console.log(this.data.index)
-    if (this.data.index===-1) { //新增
 
+    if (this.data.index===-1) { //新增
+      // this.data.userInfo.workExperiences.push{}
+      this.setData({
+        userInfo:options.index
+      })
     }else{  //修改
 
     }
