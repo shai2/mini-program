@@ -1,8 +1,12 @@
 {
   "pages":[
+    "pages/mine/personal-mine/personal-mine",
+    "pages/account/personal-reward/personal-reward",
+
+    "pages/event/inviting-friend/inviting-friend",
     "pages/welcome-intention/welcome-intention",
 
-    "pages/mine/personal-mine/personal-mine",
+    
 
     "pages/mine/job/personal-hasdeliver/personal-hasdeliver",
     "pages/mine/job/personal-hascommunicate/personal-hascommunicate",

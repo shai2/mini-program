@@ -8,7 +8,11 @@ Page({
     searchText:''
   },
   onLoad(options) {
-
+    // if (true) {
+    //   wx.switchTab({
+    //     url: '/pages/job/personal-jobindex/personal-jobindex'
+    //   })
+    // };
   },
   onReady() {
     let _this = this

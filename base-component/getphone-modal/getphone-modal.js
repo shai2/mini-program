@@ -28,6 +28,9 @@ Component({
                 info.userInfo = res.data.data.userInfo
                 if (res.data.data.userInfo.phone) { // 登录成功后检查手机 有不弹窗 没弹窗点击后获取手机号注册
                   console.log("已绑定手机")
+                  // wx.switchTab({
+                  //   url: '/pages/job/personal-jobindex/personal-jobindex'
+                  // })
                   _this.setData({  // 关闭弹窗
                     isHide:true
                   })
