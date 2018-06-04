@@ -9,16 +9,16 @@ Page({
   onLoad(options) {
     pageNow = 1;
     wx.showLoading({title:"加载中"})
-    this.getJobListByType(pageNow,0,true) //查询
+    this.getJobListByStatus(pageNow,0,true) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
-    this.getJobListByType(pageNow,0,true)
+    this.getJobListByStatus(pageNow,0,true)
   },
   onReachBottom(){
-    this.getJobListByType(pageNow)
+    this.getJobListByStatus(pageNow)
   },
-  getJobListByType(page,type,refresh){
+  getJobListByStatus(page,type,refresh){
     if (!type) type=0; //只写page 默认搜索全部类型 要判断fresh type不能省
     let _this = this
     if(this.data.repeatFlag) return
@@ -26,7 +26,7 @@ Page({
       repeatFlag:true
     })
     wx.request({
-      url: api.getJobListByType,
+      url: api.getJobListByStatus,
       method:"GET",
       header:{
         sessionId: wx.getStorageSync('sessionId')

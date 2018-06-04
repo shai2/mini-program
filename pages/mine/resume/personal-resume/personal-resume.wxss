@@ -9,3 +9,12 @@
 .skill-box text:nth-child(n+2){margin-left:13px;}
 .advantage-box{position:relative;padding:25px 0;}
 .full-page-flex{padding-bottom:0px;}
+.title-icon{width:10px;height:10px;}
+.tip-left{width:12px;margin-right:5px;}
+.tip-right{width:12px;margin-left:5px;}
+.close-icon{margin-top:5px;}
+.shadow-top{position:relative;}
+.shadow-text-top,.shadow-text-bottom{position:absolute;left:0;right:0;text-align:center;color:#db2b30;font-size:12px;}
+.shadow-text-top{top:60px;}
+.shadow-text-bottom{top:90px;}
+.money{font-size:30px;margin-right:5px;}

@@ -10,13 +10,23 @@
     </view>
     <view class="bottom flex-row-between">
         <view class="flex-row-between">
-            <image style="width:20px;height:20px;border-radius:2px;margin-right:5px;" src="{{jobItem.companyLogo}}"></image>
+            <image class="companyLogo" src="{{jobItem.companyLogo}}"></image>
             <text class="company">{{jobItem.companyName}}</text>
         </view>
         <view class="">
             <text class="updata">{{jobItem.published_text}}</text>
             <!-- <text wx:if="{{}}" class="updata">{{jobItem.published_text_second}}</text> 当天的不显示年 但是格式不好判断暂时不做
             <text wx:else class="updata">{{jobItem.published_text}}</text> -->
+        </view>
+    </view>
+    <view wx:if="{{hasState}}" class="job-state flex-row-between">
+        <view class="state-left flex-row-between">
+            <text class="state-icon">入职奖</text>
+            <text class="state-text">入职成功</text>
+        </view>
+        <view class="state-right flex-row-between">
+            <view class="state-disc" catchtap="toUploadContract">上传合同领取奖金</view>
+            <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
         </view>
     </view>
 </view>

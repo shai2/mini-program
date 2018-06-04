@@ -1,35 +1,78 @@
-<view class="job-top flex-column-center">
-    <view class="search-box-container">
-        <navigator url="/pages/job/personal-search/personal-search">
-            <view class="search-box flex-row-center">
-                <image style="width:12px;height:12px;margin-right:10px" src="/img/search.png"></image>
-                <text>搜索职位公司</text>
-            </view>
-        </navigator>
+<!-- 意向弹窗 包括手机授权 -->
+<view wx:if="{{!hasIntension}}" class="intention-box">
+    <view class="container flex-column-center bg-fff">
+      <view>
+        <getphone-modal wx:if="{{modalShow}}"></getphone-modal>
+        <view class="title-box border-top">
+          <text class="title">你期望的工作</text>
+        </view>
+        <view class="search-box-index flex-row-center flex">
+          <view class="flex-row-center">
+            <picker bindchange="regionChange" mode="region">
+                <myline-with-icon title="所在地区" showLeftIcon="">
+                    <text class="search-box-txt">{{city}}</text>
+                </myline-with-icon>
+            </picker>
+            <image class="icon" src="/img/arrow-bottom.png" alt=""></image>
+          </view>
+          <view class="flex">
+            <input class="search-box-input" type="text" value="{{searchText}}" bindinput="hasContent" placeholder="请输入关键词，如产品" />
+          </view>
+        </view>
+        <view class="tip-box">
+          <text class="tip {{activeTip == index ? 'active' : ''}}" wx:for="{{tipArr}}" wx:key="index" data-index="{{index}}" data-text="{{item.name}}" bindtap="changeActiveTip">{{item.name}}</text>
+        </view>
+        <view class="button-container">
+          <my-button canTap="{{canTap}}" text="我选好了，去找工作" bindtap="next"></my-button>
+        </view>
+      </view>
     </view>
-    <image mode="widthFix" style="width:100%;" src="/img/banner.png"></image>
-    <image style="width:100%;height:12px;position:absolute;left:0;right:0;bottom:0;" src="/img/banner-bottom.png"></image>
 </view>
-<view class="job-middle flex-row-around">
-    <view class="job-type flex-column-around" bindtap="toAll">
-        <image style="width:45px;height:45px;" src="/img/pos-all.png"></image>
-        <text>全部职位</text>
+
+<scroll-view scroll-y="{{canScroll}}">
+    <view class="job-top flex-column-center">
+        <view class="search-box-container">
+            <navigator url="/pages/job/personal-search/personal-search">
+                <view class="search-box flex-row-center">
+                    <image class="search-icon" src="/img/search.png"></image>
+                    <text>搜索职位公司</text>
+                </view>
+            </navigator>
+        </view>
+        <image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/banner/banner-01.png"></image>
+        <image style="width:100%;height:12px;position:absolute;left:0;right:0;bottom:0;" src="/img/banner-bottom.png"></image>
     </view>
-    <view class="job-type flex-column-around" bindtap="toNew">
-        <image style="width:45px;height:45px;" src="/img/pos-new.png"></image>
-        <text>全新职位</text>
+    <view class="job-middle flex-row-around">
+        <view class="job-type flex-column-around" bindtap="toAll">
+            <image class="pos-icon" src="/img/pos-all.png"></image>
+            <text>全部职位</text>
+        </view>
+        <view class="job-type flex-column-around" bindtap="toNew">
+            <image class="pos-icon" src="/img/pos-new.png"></image>
+            <text>全新职位</text>
+        </view>
+        <view class="job-type flex-column-around" bindtap="toHot">
+            <image class="pos-icon" src="/img/pos-hot.png"></image>
+            <text>热门职位</text>
+        </view>
+        <view class="job-type flex-column-around" bindtap="toTop">
+            <image class="pos-icon" src="/img/pos-top.png"></image>
+            <text>高薪职位</text>
+        </view>
     </view>
-    <view class="job-type flex-column-around" bindtap="toHot">
-        <image style="width:45px;height:45px;" src="/img/pos-hot.png"></image>
-        <text>热门职位</text>
+    <text-single></text-single>
+    <block wx:for="{{jobObj}}" wx:key="{{index}}">
+        <job-item jobItem="{{item}}"></job-item>
+    </block>
+    <text class="loading-text">{{pullText}}</text>
+    <view class="gift orange-tip flex-row-between" bindtap="toResume">
+        <view class="flex-row-between">
+            <image class="gift-left" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/gift.png"></image>
+            <text>完善简历立得现金红包</text>
+        </view>
+        <view class="flex-row-between">
+            <text>立即填写</text>
+            <image class="gift-right" mode="widthFix" src="/img/arrow-right-orange.png"></image>
+        </view>
     </view>
-    <view class="job-type flex-column-around" bindtap="toTop">
-        <image style="width:45px;height:45px;" src="/img/pos-top.png"></image>
-        <text>高薪职位</text>
-    </view>
-</view>
-<text-single></text-single>
-<block wx:for="{{jobObj}}" wx:key="{{index}}">
-    <job-item jobItem="{{item}}"></job-item>
-</block>
-<text class="loading-text">{{pullText}}</text>
+</scroll-view>

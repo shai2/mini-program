@@ -1,12 +1,13 @@
 {
   "pages":[
+    "pages/job/personal-jobindex/personal-jobindex",
+
+
     "pages/mine/personal-mine/personal-mine",
     "pages/account/personal-reward/personal-reward",
 
     "pages/event/inviting-friend/inviting-friend",
     "pages/welcome-intention/welcome-intention",
-
-    
 
     "pages/mine/job/personal-hasdeliver/personal-hasdeliver",
     "pages/mine/job/personal-hascommunicate/personal-hascommunicate",
@@ -27,7 +28,7 @@
     "pages/mine/setting/personal-setting/personal-setting",
     "pages/mine/setting/personal-feedback/personal-feedback",
 
-    "pages/job/personal-jobindex/personal-jobindex",
+
     "pages/job/personal-search/personal-search",
     "pages/job/personal-jobdetail/personal-jobdetail",
     "pages/job/personal-companydetail/personal-companydetail",
@@ -39,9 +40,7 @@
 
     "pages/msg/personal-msg/personal-msg",
     "pages/mine/service/personal-service/personal-service",
-    "pages/friends/personal-friends/personal-friends",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/friends/personal-friends/personal-friends"
   ],
   "window":{
     "backgroundTextStyle":"light",

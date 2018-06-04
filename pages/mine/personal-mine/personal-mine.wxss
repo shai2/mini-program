@@ -15,4 +15,10 @@
 .name{margin-left:10px;}
 
 .resume-icon{position:relative;}
-.resume-percent{position:absolute;left:100%;top:-2px;background:#ff824b;border-radius:100px 100px 100px 0px;color:#fff;font-size:10px;padding:0 2px;}
+.resume-percent{position:absolute;left:100%;top:-2px;background:#ff824b;border-radius:100px 100px 100px 0px;color:#fff;font-size:10px;padding:0 4px;}
+.shadow-box{position:relative;}
+.shadow{position:absolute;top:0;bottom:0;left:0;right:0;}
+.service-icon{width:24px;height:24px;}
+.state-icon{position:relative;}
+.state-text{position:absolute;left:130%;top:-2px;background:#ec5151;border-radius:100px 100px 100px 0px;color:#fff;font-size:10px;padding:0 4px;width:40px;}
+.reward-card{position:relative;}

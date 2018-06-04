@@ -8,6 +8,10 @@ Component({
     jobItem:{
       type:Object,
       value:{}
+    },
+    hasState:{
+      type:Boolean,
+      value:true
     }
   },
   data: {

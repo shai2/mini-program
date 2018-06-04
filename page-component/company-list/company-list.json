@@ -1,6 +1,0 @@
-{
-  "component":true,
-  "usingComponents":{
-    "company-item":"/base-component/company-item/company-item"
-  }
-}

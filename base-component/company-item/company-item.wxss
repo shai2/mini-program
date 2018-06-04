@@ -44,3 +44,4 @@
   flex:1 1;
   margin-left:10px;
 }
+.company-avatar{width:45px;height:45px;border-radius:2px;margin-right:5px}

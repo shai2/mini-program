@@ -28,8 +28,13 @@
 	 line-height:45px;
 	 font-size:15px;
 	 background:#29a1f7;
-	 color:#fff; 
+	 color:#fff;
 }
 .send{
 	background-color: #cbd4db !important;
 }
+.address-icon{width:12px;height:12px;margin-right:5px;}
+.normal-icon{width:12px;height:12px;}
+.bottom-icon{width:18px;height:18px;}
+.default-c{width:40px;height:40px;border-radius:3px;}
+.prize{position:fixed;right:0;bottom:100px;}

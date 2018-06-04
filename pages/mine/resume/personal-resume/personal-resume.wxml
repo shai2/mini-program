@@ -1,5 +1,23 @@
+<view class="myShadow flex-column-center" wx:if="{{rewardShow}}">
+    <view class="shadow-top flex-column-center">
+        <image class="" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/red-page.png"></image>
+        <text class="shadow-text-top">恭喜您获得了</text>
+        <text class="shadow-text-bottom"><text class="money">2000</text>元</text>
+    </view>
+    <image class="close-icon" bindtap="closeShadow" src="/img/close.png"></image>
+</view>
 <view class="full-page-flex">
     <view class="overflow-s">
+        <view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
+            <view class="flex-row-between">
+                <image mode="widthFix" class="tip-left" mod="" src="/img/notice.png"></image>
+                <text>完善基本信息、工作履历、教育背景</text>
+            </view>
+            <view class="flex-row-between">
+                <text>领取奖金</text>
+                <image mode="widthFix" class="tip-right" src="/img/arrow-right-orange.png"></image>
+            </view>
+        </view>
         <view class="top" bindtap="toBaseInfo">
             <view class="edit"></view>
             <view class="flex-row-center avatar-box border-bottom">
@@ -82,7 +100,7 @@
                   </block>
             </view>
             <view class="card-add flex-row-center" bindtap="toWorkExp" data-index="-1">
-                <image style="width:10px;height:10px;" src="/img/add.png"></image>
+                <image class="title-icon" src="/img/add.png"></image>
                 <text>工作履历</text>
             </view>
         </view>
@@ -107,7 +125,7 @@
                 </block>
             </view>
             <view class="card-add flex-row-center" bindtap="toEduExp" data-index="-1">
-                <image style="width:10px;height:10px;" src="/img/add.png"></image>
+                <image class="title-icon" src="/img/add.png"></image>
                 <text>教育经历</text>
             </view>
         </view>
@@ -132,7 +150,7 @@
                 </block>
             </view>
             <view class="card-add flex-row-center" bindtap="toEventExp" data-index="-1">
-                <image style="width:10px;height:10px;" src="/img/add.png"></image>
+                <image class="title-icon" src="/img/add.png"></image>
                 <text>项目经验</text>
             </view>
         </view>
@@ -145,7 +163,7 @@
                 </block>
             </view>
             <view class="card-add flex-row-center" bindtap="toMySkill">
-                <image style="width:10px;height:10px;" src="/img/add.png"></image>
+                <image class="title-icon" src="/img/add.png"></image>
                 <text>添加技能</text>
             </view>
         </view>

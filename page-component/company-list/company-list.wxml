@@ -1,4 +1,0 @@
-<view class="company-list">
-    <company-item bindtap="toCompanyDetail"></company-item>
-    <company-item></company-item>
-</view>

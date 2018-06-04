@@ -7,20 +7,20 @@
             </view>
             <view class="disc-line flex-row-center">
                 <view class="disc-item flex-row-center">
-                    <image style="width:12px;height:12px" src="/img/place.png"></image>
+                    <image class="normal-icon" src="/img/place.png"></image>
                     <text>{{jobDetail.prov}} - {{jobDetail.city}}</text>
                 </view>
                 <view class="disc-item flex-row-center">
-                    <image style="width:12px;height:12px" src="/img/exp.png"></image>
+                    <image class="normal-icon" src="/img/exp.png"></image>
                     <text>{{jobDetail.workexp_text}}</text>
                 </view>
                 <view class="disc-item flex-row-center">
-                    <image style="width:12px;height:12px" src="/img/edu.png"></image>
+                    <image class="normal-icon" src="/img/edu.png"></image>
                     <text>{{jobDetail.edu_text }}</text>
                 </view>
             </view>
             <view class="company-info flex-row-between" bindtap="toCompanyDetail" data-cid="{{jobDetail.cid}}">
-                <image style="width:40px;height:40px;border-radius:3px;" src="/img/default-c.png"></image>
+                <image class="default-c" src="/img/default-c.png"></image>
                 <view class="company-info-right flex">
                     <text class="company-name">{{jobDetail.companyName}}</text>
                     <view class="indentify"></view>
@@ -49,7 +49,7 @@
         <view class="big-card">
             <text class="middle-title">公司地址</text>
             <view class="address-disc">
-                <image style="width:12px;height:12px;margin-right:5px" src="/img/place.png"></image>
+                <image class="address-icon" src="/img/place.png"></image>
                 <text>{{jobDetail.address}}</text>
             </view>
         </view>
@@ -62,13 +62,17 @@
 </view>
 <view class="operation flex-row-around fix-bottom">
     <view class="operation-item flex-column-center">
-        <image style="width:18px;height:18px;" src="/img/share.png"></image>
+        <image class="bottom-icon" src="/img/share.png"></image>
         <text>分享</text>
     </view>
     <view class="operation-item flex-column-center" bindtap="collection">
-        <image style="width:18px;height:18px;" src="{{coImg}}"></image>
+        <image class="bottom-icon" src="{{coImg}}"></image>
         <text>收藏</text>
     </view>
     <view class=" btn {{ResumeFlag ? 'send' : ''}}" bindtap="sendResume">{{ResumeText}}</view>
     <!-- <my-button canTap="{{canTap}}" class="flex" text="应聘职位"></my-button> -->
+</view>
+<!-- <view class="prize" wx:if="{{jobDetail.isPrizes === 1}}"> -->
+<view class="prize" wx:if="{{true}}">
+
 </view>

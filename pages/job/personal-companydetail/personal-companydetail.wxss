@@ -22,3 +22,5 @@
 	max-height: 100px;
 	overflow: hidden;
 }
+.company-avatar{width:60px;height:60px;border-radius:5px;border:1px solid #fff;margin-top:40px;}
+.address-icon{width:12px;height:12px;margin-right:5px}

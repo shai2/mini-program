@@ -2,6 +2,9 @@
   "navigationBarTitleText": "我的",
   "usingComponents": {
     "getinfo-modal":"/base-component/getinfo-modal/getinfo-modal",
-    "myline-with-icon":"/base-component/myline-with-icon/myline-with-icon"
+    "myline-with-icon":"/base-component/myline-with-icon/myline-with-icon",
+    "text-single":"/base-component/text-single/text-single",
+    "getphone-modal":"/base-component/getphone-modal/getphone-modal",
+    "my-button":"/base-component/my-button/my-button"
   }
 }

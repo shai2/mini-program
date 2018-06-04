@@ -5,10 +5,13 @@ Page({
     userInfo:{},
     name:'',
     avatar:'',
-    resumePercent:90,
+    resumePercent:0,
     countJobStatus:[0,0,0],
+    canTap:false
   },
   onLoad(){
+    this.getCvDegree()
+    this.chekPhone()
     this.countJobStatus()
     this.getUserInfo()
     this.getSalaryList()
@@ -21,6 +24,36 @@ Page({
     this.setData({
       name:info.userInfo.nickName,
       avatar:info.userInfo.avatarPhoto
+    })
+  },
+  chekPhone(){
+    if (!wx.getStorageSync('hasPhone')) {
+      this.setData({
+        canTap:false
+      })
+    }else{
+      this.setData({
+        canTap:true
+      })
+    }
+  },
+  getCvDegree(){
+    let _this = this
+    wx.request({
+      url: api.getCvDegree,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.setData({
+          resumePercent:res.data.data
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
     })
   },
   countJobStatus(){
@@ -43,6 +76,7 @@ Page({
     })
   },
   getSalaryList(){  //存薪资
+    if (wx.getStorageSync('salaryList')) return
     let _this = this
     wx.request({
       url: api.getSalaryList,
@@ -60,6 +94,7 @@ Page({
     })
   },
   getScaleList(){ //存规模
+    if (wx.getStorageSync('companyScale')) return
     let _this = this
     wx.request({
       url: api.getScaleList,
@@ -77,6 +112,7 @@ Page({
     })
   },
   getJobStateList(){ //存状态
+    if (wx.getStorageSync('jobState')) return
     let _this = this
     wx.request({
       url: api.getJobStateList,
@@ -94,6 +130,7 @@ Page({
     })
   },
   getWorkStartList(){ //存到岗时间
+    if (wx.getStorageSync('workStart')) return
     let _this = this
     wx.request({
       url: api.getWorkStartList,
@@ -111,6 +148,7 @@ Page({
     })
   },
   getIndustryList(){ //存行业
+    if (wx.getStorageSync('industryListLevel1')) return
     let _this = this
     wx.request({
       url: api.getIndustryList,
@@ -136,6 +174,7 @@ Page({
     })
   },
   getPositionList(){ //存职位 先不做 之后改成2联
+    // if (wx.getStorageSync('positionListLevel1')) return
     // let _this = this
     // wx.request({
     //   url: api.getPositionList,
@@ -180,6 +219,12 @@ Page({
       fail(res){
         console.log(res)
       }
+    })
+  },
+  toJobIndex(){
+    console.log(1111)
+    wx.switchTab({
+      url:"/pages/job/personal-jobindex/personal-jobindex"
     })
   },
   toResume(){

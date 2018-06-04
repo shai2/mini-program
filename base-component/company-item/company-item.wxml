@@ -1,6 +1,6 @@
 <view class="item {{hasBottom ? 'has-bottom' : 'has-border'}} flex-row-between">
     <view class="left">
-        <image style="width:45px;height:45px;border-radius:2px;margin-right:5px;" src="{{companyItem.viewCompanyLogo}}"></image>
+        <image class="company-avatar" src="{{companyItem.viewCompanyLogo}}"></image>
     </view>
     <view class="right">
         <text class="name">{{companyItem.viewCompanyName}}</text>

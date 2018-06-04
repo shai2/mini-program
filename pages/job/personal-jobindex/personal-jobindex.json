@@ -4,6 +4,8 @@
     "backgroundColor":"#29a1f7",
     "usingComponents":{
         "job-item":"/base-component/job-item/job-item",
-        "text-single":"/base-component/text-single/text-single"
+        "text-single":"/base-component/text-single/text-single",
+        "getphone-modal":"/base-component/getphone-modal/getphone-modal",
+        "my-button":"/base-component/my-button/my-button"
     }
 }

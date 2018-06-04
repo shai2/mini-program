@@ -1,7 +1,7 @@
 <view class="full-page-flex pdbt0">
     <view>
         <view class="baseinfo">
-            <image style="width:60px;height:60px;border-radius:5px;border:1px solid #fff;margin-top:40px;" src="/img/default-c.png"></image>
+            <image class="company-avatar" src="/img/default-c.png"></image>
             <view class="company-name flex-row-between">
                 <text class="name">{{companyDetail.name}}</text>
                 <view class="indentify mgtop0"></view>
@@ -31,7 +31,7 @@
         <view class="big-card">
             <text class="middle-title">公司地址</text>
             <view class="address-disc">
-                <image style="width:12px;height:12px;margin-right:5px" src="/img/place.png"></image>
+                <image class="address-icon" src="/img/place.png"></image>
                 <text>{{companyDetail.adress}}</text>
             </view>
         </view>

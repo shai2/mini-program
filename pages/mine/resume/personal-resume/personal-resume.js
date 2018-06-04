@@ -2,10 +2,15 @@ let info = getApp().globalData
 let api = require("../../../../utils/api")
 Page({
   data: {
-    userInfo:{}
+    userInfo:{},
+    rewardShow:false,
+    hasReward:false
   },
   onShow(){
     this.getResume()
+  },
+  onShareAppMessage: function () {
+
   },
   getResume() {
     var _this = this
@@ -27,8 +32,16 @@ Page({
       }
     })
   },
-  onShareAppMessage: function () {
-
+  closeShadow(){
+    this.setData({
+      rewardShow:false
+    })
+  },
+  getReward(){
+    this.setData({
+      rewardShow:true
+    })
+    // 发送请求 没有红包了
   },
   toIntention(){
     wx.navigateTo({

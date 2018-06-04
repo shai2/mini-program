@@ -12,3 +12,5 @@
     color:#546373;
     font-size:14px;
 }
+.left-icon{width:24px;height:24px;margin-right:5px;}
+.right-icon{width:12px;height:12px;}

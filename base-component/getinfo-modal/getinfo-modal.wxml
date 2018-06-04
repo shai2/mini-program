@@ -2,7 +2,7 @@
   <view class="bg flex-column-center" hidden="{{isHide}}">
     <view class="card flex-column-center">
         <view class="card-top flex-column-center">
-            <image mode="widthFix" style="width:100%;margin-top: -40px;" src="/img/banner.png"></image>
+            <image mode="widthFix" style="width:100%;margin-top: -40px;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/banner/banner-00.png"></image>
             <image style="width:100%;height:12px;position:absolute;left:0;right:0;bottom:0;" src="/img/banner-bottom.png"></image>
         </view>
         <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" lang="zh_CN" class="getinfobutton flex-row-center">

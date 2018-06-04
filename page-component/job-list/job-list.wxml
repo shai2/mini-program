@@ -1,4 +1,0 @@
-<view class="job-list">
-    <job-item bindtap="toJobDetail"></job-item>
-    <job-item></job-item>
-</view>
