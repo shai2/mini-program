@@ -1,5 +1,13 @@
 let app = getApp()
 Component({
+  attached(){
+    if (!this.data.jobItem.companyLogo) { //没头像给默认头像
+      let _logo = 'jobItem.companyLogo'
+      this.setData({
+        [_logo]:"/img/default-c.png"
+      })
+    };
+  },
   properties: {
     hasBottom:{
       type:Boolean,

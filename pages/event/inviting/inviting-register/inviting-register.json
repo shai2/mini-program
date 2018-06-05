@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "好友注册",
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+  }
+}

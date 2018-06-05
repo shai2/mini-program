@@ -35,4 +35,6 @@ module.exports = {
   jobSaveFlag : baseUrl + "/app/job/favorite/exist", //是否职位收藏
   jobSaveNo : baseUrl + "/app/job/unFavorite", //取消职位收藏
   getCvDegree : baseUrl + "/app/resume/getCvDegree", //简历完善度
+  invitingJob : baseUrl + "/app/invite_recommend/v1/Recommend-Job-list", //查询我的推荐岗位
+  invitingRegister : baseUrl + "/app/invite_recommend/v1/Recommend-Job-user-list", //查询我的推荐人
 }

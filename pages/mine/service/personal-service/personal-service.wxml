@@ -1,4 +1,6 @@
-<text class="middle-title">我的应用</text>
+<view class="middle-title-box">
+    <text class="middle-title">我的应用</text>
+</view>
 <view class="middle-sp flex-row-around grid border-top">
     <view class="state flex-column-center">
         <image class="service-icon" src="/img/mine-icon-2-2.png"></image>
@@ -18,7 +20,9 @@
     </view>
 </view>
 
-<text class="middle-title">活动中心</text>
+<view class="middle-title-box">
+    <text class="middle-title">活动中心</text>
+</view>
 <view class="middle-sp flex-row-around grid border-top">
     <view class="state flex-column-center">
         <image class="service-icon" src="/img/mine-icon-2-1.png"></image>
@@ -38,7 +42,9 @@
     </view>
 </view>
 
-<text class="middle-title">服务中心</text>
+<view class="middle-title-box">
+    <text class="middle-title">服务中心</text>
+</view>
 <view class="middle-sp flex-row-around grid border-top mgbt0">
     <view class="state flex-column-center">
         <image class="service-icon" src="/img/mine-icon-2-6.png"></image>

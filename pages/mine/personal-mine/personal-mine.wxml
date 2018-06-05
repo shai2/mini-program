@@ -68,6 +68,7 @@
         <view class="state flex-column-center pos-rel" bindtap="toInvitingReward">
             <view style="position:absolute;top:10px;left:0;right:0;text-align:center;">
                 <image class="service-icon" style="width:40px;height:40px;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/gift.png"></image>
+                <text class="state-text" style="left:70%;width:auto">奖</text>
             </view>
             <image class="service-icon" src="/img/mine-icon-2-1.png"></image>
             <text class="state-disc">好友注册</text>

@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "推荐岗位",
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+    "job-item":"/base-component/job-item/job-item"
+  }
+}
