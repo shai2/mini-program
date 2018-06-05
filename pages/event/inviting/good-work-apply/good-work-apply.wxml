@@ -1,7 +1,9 @@
 <!--pages/event/good-word-apply/good-word-apply.wxml-->
 <view class="bg">
 	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job1.png"></image>
-	<image class="people" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/people.png"></image>
+	<view class="people-box">
+		<image class="people" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/people.png"></image>
+	</view>
 	<text class="dec">好友XXX推荐
 	aaaaaaaa
 	</text>
@@ -12,7 +14,7 @@
 	<view class="bot">
 		<image  mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/elm.png"></image>
 		<text>平安产险</text>
-	</view>		
+	</view>
 	<view class="adress">
 		<text>上海-松江区</text>
 		<text>1-3年</text>

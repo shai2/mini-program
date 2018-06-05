@@ -1,4 +1,4 @@
-// pages/event/inviting-friend/inviting-friend.js
+// pages/event/inviting/inviting-job/inviting-job.js
 Page({
 
   /**

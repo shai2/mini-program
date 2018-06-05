@@ -219,5 +219,10 @@ Page({
     wx.navigateTo({
       url:"/pages/mine/resume/personal-resume/personal-resume"
     })
+  },
+  toInvitingReward(){
+    wx.navigateTo({
+      url:"/pages/event/inviting/inviting-friend/inviting-friend"
+    })
   }
 })

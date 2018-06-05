@@ -37,16 +37,16 @@
 		</view>
 		<view class="contain">
 			<view>
-				<view>
+				<view class="flex-row-between">
 					<text>完善资料</text>
 					<text>+2.00</text>
 				</view>
-				<view>
+				<view class="flex-row-between">
 					<text>简历不完整</text>
 					<text>待结算</text>
 				</view>
 				<view>
-					<text>2018-05-08 11：11</text>	
+					<text>2018-05-08 11：11</text>
 				</view>
 			</view>
 		</view>

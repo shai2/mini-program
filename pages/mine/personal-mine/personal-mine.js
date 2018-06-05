@@ -10,17 +10,23 @@ Page({
     canTap:false
   },
   onLoad(){
-    this.getCvDegree()
-    this.chekPhone()
-    this.countJobStatus()
-    this.getUserInfo()
-    this.getSalaryList()
-    this.getScaleList()
-    this.getJobStateList()
-    this.getIndustryList()
-    this.getWorkStartList()
+    if (this.chekPhone()) {
+      this.getSalaryList()
+      this.getScaleList()
+      this.getJobStateList()
+      this.getIndustryList()
+      this.getWorkStartList()
+      this.countJobStatus()
+      this.getCvDegree()
+      this.getUserInfo()
+    };
   },
   onShow(options) {
+    if (this.chekPhone()) {
+      this.countJobStatus()
+      this.getCvDegree()
+      this.getUserInfo()
+    };
     this.setData({
       name:info.userInfo.nickName,
       avatar:info.userInfo.avatarPhoto
@@ -28,13 +34,17 @@ Page({
   },
   chekPhone(){
     if (!wx.getStorageSync('hasPhone')) {
+      console.log('未登陆手机号')
       this.setData({
         canTap:false
       })
+      return false
     }else{
+      console.log('已登陆手机号')
       this.setData({
         canTap:true
       })
+      return true
     }
   },
   getCvDegree(){
@@ -174,30 +184,30 @@ Page({
     })
   },
   getPositionList(){ //存职位 先不做 之后改成2联
-    // if (wx.getStorageSync('positionListLevel1')) return
-    // let _this = this
-    // wx.request({
-    //   url: api.getPositionList,
-    //   method:"GET",
-    //   success(res){
-    //     let _arrLevel1 = []
-    //     let _arrLevel2 = []
-    //     let _arrLevel3 = []
-    //     res.data.data.positionList.map((e,i)=>{
-    //       _arrLevel1.push(e.value)
-    //       let _arr = []
-    //       e.son.map((m,n)=>{
-    //         _arr.push(m.value)
-    //       })
-    //     })
-    //     wx.setStorageSync('positionListLevel1',_arrLevel1)
-    //     wx.setStorageSync('positionListLevel2',_arrLevel2)
-    //     console.log(_arrLevel1,_arrLevel2)
-    //   },
-    //   fail(res){
-    //     console.log(res)
-    //   }
-    // })
+    if (wx.getStorageSync('positionListLevel1')) return
+    let _this = this
+    wx.request({
+      url: api.getPositionList,
+      method:"GET",
+      success(res){
+        let _arrLevel1 = []
+        let _arrLevel2 = []
+        let _arrLevel3 = []
+        res.data.data.positionList.map((e,i)=>{
+          _arrLevel1.push(e.value)
+          let _arr = []
+          e.son.map((m,n)=>{
+            _arr.push(m.value)
+          })
+        })
+        wx.setStorageSync('positionListLevel1',_arrLevel1)
+        wx.setStorageSync('positionListLevel2',_arrLevel2)
+        console.log(_arrLevel1,_arrLevel2)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
   getUserInfo(){
     let _this = this
@@ -222,7 +232,6 @@ Page({
     })
   },
   toJobIndex(){
-    console.log(1111)
     wx.switchTab({
       url:"/pages/job/personal-jobindex/personal-jobindex"
     })
@@ -265,6 +274,11 @@ Page({
   toIntention(){
     wx.navigateTo({
       url:"/pages/mine/resume/personal-resume-intention/personal-resume-intention"
+    })
+  },
+  toInvitingReward(){
+    wx.navigateTo({
+      url:"/pages/event/inviting/inviting-friend/inviting-friend"
     })
   }
 })

@@ -1,0 +1,39 @@
+<view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
+    <view class="flex-row-between">
+        <image mode="widthFix" class="tip-left" src="/img/notice.png"></image>
+        <text>上传合同领取奖金</text>
+    </view>
+</view>
+<view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
+    <view class="flex-row-between">
+        <image mode="widthFix" class="tip-left" src="/img/notice.png"></image>
+        <text>合同上传成功</text>
+    </view>
+    <view class="flex-row-between">
+        <text>领取奖金</text>
+        <image mode="widthFix" class="tip-right" src="/img/arrow-right-orange.png"></image>
+    </view>
+</view>
+<view class="bg">
+    <view class="contract-card">
+        <image mode="widthFix" class="upload-indentify" src="/img/unload-success.png"></image>
+        <view class="contract-top flex-row-between">
+            <image class="company-avatar" src="{{avatar}}"></image>
+            <view class="contract-top-text flex">
+                <text class="name">高级市场经理</text>
+                <text class="company">中国平安</text>
+            </view>
+        </view>
+        <view class="contract-bottom flex-row-between">
+            <view class="contract-bottom-left flex-row-center">
+                <image style="width:12px;height:12px;margin-right:5px;" src="/img/shield.png"></image>
+                <text class="txt">蜗牛正在保护你的隐私</text>
+            </view>
+            <text class="state-text">合同审核中</text>
+        </view>
+    </view>
+    <view class="uploadContract flex-row-between">
+        <text class="upload-text">上传合同</text>
+        <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
+    </view>
+</view>

@@ -1,8 +1,7 @@
-<!--pages/event/inviting-friend/inviting-friend.wxml-->
 <view class="contain overflow-s">
 	<image mode="widthFix" class="bg" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/bg-event1.png"></image>
-	<view class="see"></view>
-	<view class="see see1"></view>
+	<view bindtap="tofriendInvite" class="see"></view>
+	<view bindtap="tojobInvite" class="see see1"></view>
 	<text class="num">823 <text class="wei">位</text></text>
 	<text class="num num1">123 <text class="wei">位</text></text>
 	<view class="bottom flex-row-around">

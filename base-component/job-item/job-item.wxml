@@ -19,13 +19,13 @@
             <text wx:else class="updata">{{jobItem.published_text}}</text> -->
         </view>
     </view>
-    <view wx:if="{{hasState}}" class="job-state flex-row-between">
+    <view catchtap="toUploadContract" wx:if="{{hasState}}" class="job-state flex-row-between">
         <view class="state-left flex-row-between">
             <text class="state-icon">入职奖</text>
             <text class="state-text">入职成功</text>
         </view>
         <view class="state-right flex-row-between">
-            <view class="state-disc" catchtap="toUploadContract">上传合同领取奖金</view>
+            <view class="state-disc">上传合同领取奖金</view>
             <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
         </view>
     </view>

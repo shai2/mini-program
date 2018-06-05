@@ -50,7 +50,7 @@
 	border-left: 1px solid rgba(255,255,255,.3);
 }
 .nav view:first-child{
-	
+
 	border-left: none;
 }
 .nav view text{
@@ -81,7 +81,7 @@
 .body-nav view text{
 	display: inline-block;
 	line-height: 45px;
-	
+
 }
 .act{
 	border-bottom: 2px solid #29a1f7;
@@ -99,33 +99,27 @@
 }
 .contain>view view:nth-child(1){
 	font-size: 15px;
-	line-height: 15px;	
+	line-height: 15px;
 	color: #32405e;
 }
 .contain>view view:nth-child(1) text:nth-child(1){
-	float: left;
 	font-weight: bold;
 }
 .contain>view view:nth-child(1) text:nth-child(2){
-	float: right;
 	color: #ff824b;
 }
 .contain>view view:nth-child(2){
 	font-size: 12px;
-	line-height: 12px;
-	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-top: 8px;
+	margin-bottom: 10px;
 }
 .contain>view view:nth-child(2) text:nth-child(1){
-	float: left;
 	color: #ec5151;
 }
 .contain>view view:nth-child(2) text:nth-child(2){
-	float: right;
 	color: #cbd4db;
 }
 .contain>view view:nth-child(3) text:nth-child(1){
-	float: left;
 	color: #909ba3;
 	font-size: 12px;
 	line-height: 12px;
