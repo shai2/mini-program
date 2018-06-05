@@ -1,0 +1,96 @@
+.bg{
+	position: relative;
+}
+.bottom{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 64px;
+	width: 100%;
+	background-color: #fff;	
+}
+.apply{
+	background-color: #df4027;
+	color: #fff;
+	width: 325px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	border-radius: 5px;
+}
+.people{
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	margin-left: -62.5px;
+	top: 10.3%;
+}
+.dec{
+	font-size: 14px;
+	color: #544342;
+	position: absolute;
+	left: 0;
+	top: 19.5%;
+	width: 100%;
+	text-align: center;
+}
+
+.title{
+	position: absolute;
+	left: 0;
+	top: 25%;
+	width: 100%;
+	padding: 0 45px;
+	background-color: transparent;
+}
+.title text:nth-child(1){
+	font-size: 15px;
+	font-weight: bold; 
+	float: left;
+}
+.title text:nth-child(2){
+	font-size: 15px;
+	font-weight: bold; 
+	float: right;
+	color: #ff824b;
+}
+.adress{
+	position: absolute;
+	left: 0;
+	top: 27%;
+	width: 100%;
+	font-size: 12px;
+	line-height: 12px;
+	color: #bab0a9;
+	padding: 0 34px;
+}
+.adress text{
+	float: left;
+	padding: 0 10px;
+	border-left: 1px solid #bab0a9;
+}
+.adress text:first-child{
+	border-left: none;
+}
+.adress text:last-child{
+	float: right;
+	border-left: none;
+}
+.bot{
+	position: absolute;
+	left: 0;
+	top: 29%;
+	width: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	padding-left: 44px;
+	color: #9a9188;
+}
+.bot image{
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+	margin-right: 5px;
+}

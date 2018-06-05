@@ -1,0 +1,25 @@
+<!--pages/event/good-word-apply/good-word-apply.wxml-->
+<view class="bg">
+	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job1.png"></image>
+	<image class="people" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/people.png"></image>
+	<text class="dec">好友XXX推荐
+	aaaaaaaa
+	</text>
+	<view class="title">
+		<text >高级市场推广经理</text>
+		<text >10K-15K</text>
+	</view>
+	<view class="bot">
+		<image  mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/elm.png"></image>
+		<text>平安产险</text>
+	</view>		
+	<view class="adress">
+		<text>上海-松江区</text>
+		<text>1-3年</text>
+		<text>硕士</text>
+		<text>11：25发布</text>
+	</view>
+	<view class="bottom flex-row-around">
+		<text class="apply">立即申请</text>
+	</view>
+</view>

@@ -1,0 +1,17 @@
+.bottom{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 64px;
+	width: 100%;
+	background-color: #fff;	
+}
+.apply{
+	background-color: #df4027;
+	color: #fff;
+	width: 325px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	border-radius: 5px;
+}
