@@ -31,10 +31,10 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        keyword: wx.getStorageSync('hopePosition'),
         page:page
       },
       success(res){
+        console.log(res.data)
         if (refresh) {
           _this.setData({
             jobObj:res.data.data.data,

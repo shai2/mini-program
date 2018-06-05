@@ -4,8 +4,8 @@
 	<view class="people-box">
 		<image class="people" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/people.png"></image>
 	</view>
-	<text class="dec">好友XXX推荐
-	aaaaaaaa
+	<text class="dec">好友XXX给你推荐热门岗位啦
+	入职后，即可得到奖金哦~
 	</text>
 	<view class="title">
 		<text >高级市场推广经理</text>
