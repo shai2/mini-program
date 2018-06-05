@@ -1,1 +1,132 @@
-/* pages/account/personal-reward/personal-reward.wxss */
+.header{
+	width: 100%;
+	position: relative;
+}
+.header image{
+	width: 100%;
+}
+.header>text{
+	position: absolute;
+}
+.moneyTit{
+	font-size: 12px;
+	color: #cfedff;
+	line-height: 12px;
+	top: 22px;
+	left: 15px;
+}
+.money{
+	font-size: 29px;
+	color: #fff;
+	line-height: 29px;
+	top: 44px;
+	left: 15px;
+}
+.put{
+	font-size: 12px;
+	color: #fff;
+	height: 24px;
+	line-height: 24px;
+	top: 43px;
+	right: 0px;
+	background-color: rgba(255,255,255,.4);
+	padding: 0 15px 0 20px;
+	border-bottom-left-radius: 13px;
+	border-top-left-radius: 13px;
+}
+.nav{
+	width: 100%;
+	display: flex;
+	/* justify-content:space-between; */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-top: 1px solid rgba(255,255,255,.3);
+	color: #fff;
+}
+.nav view{
+	flex:1 1;
+	padding: 14.5px 0 15px 15px;
+	border-left: 1px solid rgba(255,255,255,.3);
+}
+.nav view:first-child{
+	
+	border-left: none;
+}
+.nav view text{
+	display: block;
+	font-size: 12px;
+	line-height: 12px;
+}
+.nav view text:nth-child(2){
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: bold;
+	margin-top: 7.5px;
+}
+
+.body-nav{
+	position: relative;
+	height: 45px;
+	margin-top: 10px;
+	width: 100%;
+	display: flex;
+	background-color: #fff;
+	box-shadow: 0px 2px 13px rgba(24,88,134,0.15) ;
+}
+.body-nav view{
+	flex:1 1;
+	text-align: center;
+}
+.body-nav view text{
+	display: inline-block;
+	line-height: 45px;
+	
+}
+.act{
+	border-bottom: 2px solid #29a1f7;
+}
+.contain{
+	width: 100%;
+	background-color: #fff;
+}
+.contain>view{
+	padding: 20px 15px 15px 21px;
+	border-bottom: 1px solid #f2f5f9;
+}
+.contain>view view{
+	overflow-y: hidden;
+}
+.contain>view view:nth-child(1){
+	font-size: 15px;
+	line-height: 15px;	
+	color: #32405e;
+}
+.contain>view view:nth-child(1) text:nth-child(1){
+	float: left;
+	font-weight: bold;
+}
+.contain>view view:nth-child(1) text:nth-child(2){
+	float: right;
+	color: #ff824b;
+}
+.contain>view view:nth-child(2){
+	font-size: 12px;
+	line-height: 12px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.contain>view view:nth-child(2) text:nth-child(1){
+	float: left;
+	color: #ec5151;
+}
+.contain>view view:nth-child(2) text:nth-child(2){
+	float: right;
+	color: #cbd4db;
+}
+.contain>view view:nth-child(3) text:nth-child(1){
+	float: left;
+	color: #909ba3;
+	font-size: 12px;
+	line-height: 12px;
+}

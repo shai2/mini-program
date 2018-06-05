@@ -1,7 +1,11 @@
 {
   "pages":[
     "pages/job/personal-jobindex/personal-jobindex",
-
+    
+    "pages/account/personal-reward/personal-reward",
+    "pages/event/good-word-apply/good-word-apply",
+    "pages/event/good-word-register/good-word-register",
+    "pages/event/inviting-friend/inviting-friend",
 
     "pages/mine/personal-mine/personal-mine",
     "pages/account/personal-reward/personal-reward",

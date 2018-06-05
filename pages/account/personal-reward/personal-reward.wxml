@@ -1,2 +1,54 @@
 <!--pages/account/personal-reward/personal-reward.wxml-->
-<text>pages/account/personal-reward/personal-reward.wxml</text>
+<view>
+	<view class="header">
+		<image  mode="widthFix"  src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/reward.png"></image>
+		<text class="moneyTit">奖金总数 (元)</text>
+		<text class="money">8888</text>
+		<text class="put">立即提现 ></text>
+		<view class="nav">
+			<view>
+				<text>待结算(元)</text>
+				<text>888.00</text>
+			</view>
+			<view>
+				<text>可提现(元)</text>
+				<text>888.00</text>
+			</view>
+			<view>
+				<text>历史提现(元)</text>
+				<text>888.00</text>
+			</view>
+		</view>
+	</view>
+	<view class="body">
+		<view class="body-nav">
+			<view>
+				<text class="act">全部</text>
+			</view>
+			<view>
+				<text>邀请</text>
+			</view>
+			<view>
+				<text>推荐</text>
+			</view>
+			<view>
+				<text>提现</text>
+			</view>
+		</view>
+		<view class="contain">
+			<view>
+				<view>
+					<text>完善资料</text>
+					<text>+2.00</text>
+				</view>
+				<view>
+					<text>简历不完整</text>
+					<text>待结算</text>
+				</view>
+				<view>
+					<text>2018-05-08 11：11</text>	
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

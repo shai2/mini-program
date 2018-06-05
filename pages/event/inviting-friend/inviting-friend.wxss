@@ -1,1 +1,51 @@
-/* pages/event/inviting-friend/inviting-friend.wxss */
+.contain{
+	position: relative;	
+}
+.bg{
+	display: block;
+	width: 100%;
+}
+.num{
+	font-size: 24px; 
+	position: absolute;
+	left: 29%;
+	top: 31%;
+	/* color: blue; */
+	color: #df4027;
+}
+.wei{
+	font-size: 12px;
+}
+.num1{
+	left: 29.3%;
+	top: 42%;
+}
+.see{
+	position: absolute;
+	width: 84px;
+	height: 27px;
+	right: 45px;
+	top: 295px;
+	/* background-color: red; */
+}
+.see1{
+	right: 45px;
+	top: 403px;
+}
+.bottom{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 64px;
+	width: 100%;
+	background-color: #fff;	
+}
+.apply{
+	background-color: #df4027;
+	color: #fff;
+	width: 325px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	border-radius: 5px;
+}
