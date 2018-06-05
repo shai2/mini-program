@@ -23,15 +23,15 @@
 }
 .see{
 	position: absolute;
-	width: 84px;
-	height: 27px;
-	right: 45px;
-	top: 295px;
-	/* background-color: red; */
+	width: 325px;
+	height: 59px;
+	right: 7%;
+	top: 28%;
+	 /* background-color: red;  */
 }
 .see1{
-	right: 45px;
-	top: 403px;
+	right: 7%;
+	top: 39%;
 }
 .bottom{
 	position: fixed;

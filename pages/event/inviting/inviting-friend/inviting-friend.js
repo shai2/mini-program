@@ -1,17 +1,30 @@
+
+let api = require("../../../../utils/api.js");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    inviteNumber:0,
+    recommNumber:0,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    let _this = this;
+    wx.request({ //我的邀请
+      url: api.myInvitings,
+      method: "GET",
+      header: {
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res) {
+        console.log(res)
+        _this.setData({
+          inviteNumber: res.data.data.inviteNumber,
+          recommNumber: res.data.data.recommNumber
+        })
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
   },
   tofriendInvite(){
     wx.navigateTo({
