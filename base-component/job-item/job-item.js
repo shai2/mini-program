@@ -19,7 +19,7 @@ Component({
     },
     stateType:{
       type:Number,
-      value:2
+      value:0
     },
     exData:{
       type:Object,

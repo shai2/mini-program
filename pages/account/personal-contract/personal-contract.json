@@ -1,5 +1,6 @@
 {
     "navigationBarTitleText":"上传合同",
     "usingComponents":{
+        "redpack":"/base-component/redpack/redpack"
     }
 }

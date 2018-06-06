@@ -1,3 +1,4 @@
+<redpack id="redpack" money="9999"></redpack>
 <view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
     <view class="flex-row-between">
         <image mode="widthFix" class="tip-left" src="/img/notice.png"></image>

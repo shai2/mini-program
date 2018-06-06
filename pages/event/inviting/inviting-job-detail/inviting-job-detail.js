@@ -1,66 +1,43 @@
-// pages/event/inviting/inviting-job-detail/inviting-job-detail.js
+let api = require("../../../../utils/api")
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    jid:'',
+    jobObj:{},
+    userList:{},
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    this.setData({
+      jid:options.jid
+    })
+    wx.showLoading({title:"加载中"})
+    this.invitingRegister() //查询
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  invitingRegister(){
+    let _this = this
+    if(this.data.repeatFlag) return
+    _this.setData({
+      repeatFlag:true
+    })
+    wx.request({
+      url: api.invitingRegister,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        jobId:this.data.jid
+      },
+      success(res){
+        _this.setData({
+          jobObj:res.data.data.jobDetailBean,
+          userList:res.data.data.userList,
+        })
+        console.log(res.data.data.userList)
+        wx.hideLoading()
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
 })

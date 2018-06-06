@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "好友注册",
   "enablePullDownRefresh":true,
-  "usingComponents": {
-  }
+  "usingComponents":{
+        "redpack":"/base-component/redpack/redpack"
+    }
 }

@@ -1,19 +1,13 @@
-<job-item jobItem="{{item.jobDetailBean}}" exData="{{item}}"></job-item>
+<job-item jobItem="{{jobObj}}" exData="{{item}}"></job-item>
 <view class="register-list">
-    <view class="register-card flex-row-center">
-        <image class="register-avatar" src="/img/default-p.png"></image>
-        <view class="card-middle flex-column-center flex">
-            <text class="register-name">渣渣森</text>
-            <text class="register-state">已申请：11111</text>
-            <text class="register-state-success">已入职：1111</text>
+    <block wx:for="{{userList}}" wx:key="{{index}}">
+        <view class="register-card flex-row-center">
+            <image class="register-avatar" src="{{item.userPhoto}}"></image>
+            <view class="card-middle flex-column-center flex">
+                <text class="register-name">{{item.applyUserName}}</text>
+                <text wx:if="{{item.status == 1}}" class="register-state">已申请：{{item.effectiveTimeText}}</text>
+                <text wx:elif="{{item.status == 2 || item.status == 3}}" class="register-state-success">已入职</text>
+            </view>
         </view>
-    </view>
-    <view class="register-card flex-row-center">
-        <image class="register-avatar" src="/img/default-p.png"></image>
-        <view class="card-middle flex-column-center flex">
-            <text class="register-name">渣渣森</text>
-            <text class="register-state">已申请</text>
-            <text class="register-state-success">已入职</text>
-        </view>
-    </view>
+    </block>
 </view>
