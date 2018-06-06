@@ -5,6 +5,25 @@ Page({
     inviteNumber:0,
     recommNumber:0,
   },
+  invite() {
+    console.log("b")
+    wx.showShareMenu({
+      withShareTicket: true,
+      success() {
+        console.log("a")
+      }
+    })
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '蜗牛职信',
+      path: '/pages/job/personal-jobindex/personal-jobindex?id=' + wx.getStorageSync('sessionId') + ''
+    }
+  },
   onLoad: function (options) {
     let _this = this;
     wx.request({ //我的邀请

@@ -5,6 +5,6 @@
 	<text class="num">{{inviteNumber}} <text class="wei">位</text></text>
 	<text class="num num1">{{recommNumber}} <text class="wei">位</text></text>
 	<view class="bottom flex-row-around">
-		<text class="apply">立即邀请</text>
+		<button open-type="share" class="apply" bindtap='invite'>立即邀请</button>
 	</view>
 </view>
