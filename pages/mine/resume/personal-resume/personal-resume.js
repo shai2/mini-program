@@ -32,11 +32,6 @@ Page({
       }
     })
   },
-  closeShadow(){
-    this.setData({
-      rewardShow:false
-    })
-  },
   getReward(){
     this.setData({
       rewardShow:true

@@ -20,10 +20,10 @@
                 </view>
             </view>
             <view class="company-info flex-row-between" bindtap="toCompanyDetail" data-cid="{{jobDetail.cid}}">
-                <image class="default-c" src="/img/default-c.png"></image>
+                <image class="default-c" src="{{companyDetail.image==''?'/img/default-c.png':companyDetail.image}}"></image>
                 <view class="company-info-right flex">
                     <text class="company-name">{{jobDetail.companyName}}</text>
-                    <view class="indentify"></view>
+                    <view class="{{companyDetail.status == 3 ? 'indentify' : 'indentify-no'}}"></view>
                     <view class="company-disc">
                         <text class="company-disc-item">{{companyDetail.industry}}</text>
                         <text class="company-disc-item">{{companyDetail.natureid_text}}</text>

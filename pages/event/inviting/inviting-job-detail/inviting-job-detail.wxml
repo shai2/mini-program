@@ -1,0 +1,19 @@
+<job-item jobItem="{{item.jobDetailBean}}" exData="{{item}}"></job-item>
+<view class="register-list">
+    <view class="register-card flex-row-center">
+        <image class="register-avatar" src="/img/default-p.png"></image>
+        <view class="card-middle flex-column-center flex">
+            <text class="register-name">渣渣森</text>
+            <text class="register-state">已申请：11111</text>
+            <text class="register-state-success">已入职：1111</text>
+        </view>
+    </view>
+    <view class="register-card flex-row-center">
+        <image class="register-avatar" src="/img/default-p.png"></image>
+        <view class="card-middle flex-column-center flex">
+            <text class="register-name">渣渣森</text>
+            <text class="register-state">已申请</text>
+            <text class="register-state-success">已入职</text>
+        </view>
+    </view>
+</view>

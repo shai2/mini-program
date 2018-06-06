@@ -11,6 +11,7 @@ Page({
   },
   onLoad(){
     if (this.chekPhone()) {
+      this.getPositionList()
       this.getSalaryList()
       this.getScaleList()
       this.getJobStateList()
@@ -183,7 +184,7 @@ Page({
       }
     })
   },
-  getPositionList(){ //存职位 先不做 之后改成2联
+  getPositionList(){ //存职位
     if (wx.getStorageSync('positionListLevel1')) return
     let _this = this
     wx.request({
@@ -192,13 +193,16 @@ Page({
       success(res){
         let _arrLevel1 = []
         let _arrLevel2 = []
-        let _arrLevel3 = []
         res.data.data.positionList.map((e,i)=>{
           _arrLevel1.push(e.value)
           let _arr = []
           e.son.map((m,n)=>{
-            _arr.push(m.value)
+            let _obj = {}
+            _obj.value = m.value
+            _obj.son = m.son
+            _arr.push(_obj)
           })
+          _arrLevel2.push(_arr)
         })
         wx.setStorageSync('positionListLevel1',_arrLevel1)
         wx.setStorageSync('positionListLevel2',_arrLevel2)

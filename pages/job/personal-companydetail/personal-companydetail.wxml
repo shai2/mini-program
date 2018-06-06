@@ -4,7 +4,7 @@
             <image class="company-avatar" src="/img/default-c.png"></image>
             <view class="company-name flex-row-between">
                 <text class="name">{{companyDetail.name}}</text>
-                <view class="indentify mgtop0"></view>
+                <view class="{{companyDetail.status == 3 ? 'indentify' : 'indentify-no'}} mgtop0"></view>
             </view>
             <view class="disc-line flex-row-center">
                 <view class="mgtop10">

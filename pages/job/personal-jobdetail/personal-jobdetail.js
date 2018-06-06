@@ -23,7 +23,7 @@ Page({
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
     wx.showLoading({title:"加载中"})
-    this.queryJobDetail()//岗位详情
+    this.queryJobDetail()//职位详情
     this.getHotJobList(pageNow) //请求相关
 
   },

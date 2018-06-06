@@ -8,13 +8,15 @@ Page({
     workStartOption:[],
     industryArr:[],
     industryValue:[0,0],
-    industryListLevel1:[],
-    industryListLevel2:[],
+    positionArr:[],
+    positionValue:[0,0],
+    positionSelectShow:false
   },
   onReady: function () {
     this.getIntention()
     this.getBaseDate()
-    this.setIndustryArr()
+    this.setIndustryArr() //初始化行业
+    this.setPositionArr() //初始化职位
   },
   setIndustryArr(){
     let _arr = []
@@ -23,8 +25,16 @@ Page({
     this.setData({
       industryArr:_arr
     })
-    console.log(this.data.industryArr)
-    // console.log(this.data.industryListLevel1)
+    // console.log(this.data.industryArr)
+  },
+  setPositionArr(){
+    let _arr = []
+    _arr.push(this.data.positionListLevel1)
+    _arr.push(this.data.positionListLevel2[0])
+    this.setData({
+      positionArr:_arr
+    })
+    console.log(this.data.positionArr)
   },
   workPlaceChange(e){
     let _prov = 'jobIntension.prov'  //省
@@ -79,7 +89,7 @@ Page({
     })
   },
   getBaseDate(){
-    console.log(wx.getStorageSync('industryListLevel1'))
+    // console.log(wx.getStorageSync('positionListLevel2'))
     this.setData({
       companyScaleOption:wx.getStorageSync('companyScale'),
       salaryOption:wx.getStorageSync('salaryList'),
@@ -87,6 +97,38 @@ Page({
       workStartOption:wx.getStorageSync('workStart'),
       industryListLevel1:wx.getStorageSync('industryListLevel1'),
       industryListLevel2:wx.getStorageSync('industryListLevel2'),
+      positionListLevel1:wx.getStorageSync('positionListLevel1'),
+      positionListLevel2:wx.getStorageSync('positionListLevel2'),
+    })
+  },
+  openSelect(){
+    this.setData({
+      positionSelectShow:true
+    })
+  },
+  hideSelect(){
+    this.setData({
+      positionSelectShow:false
+    })
+  },
+  setPositionLevel2(e){
+    let _index = e.currentTarget.dataset.position
+    this.data.positionArr.splice(1,1,this.data.positionListLevel2[_index])
+    this.setData({
+      positionArr:this.data.positionArr
+    })
+    this.setData({
+      positionValue:[_index,0]
+    })
+  },
+  getPositionLevel2(e){
+    console.log(e.currentTarget.dataset.job)
+    let _job = 'jobIntension.jobTradeId'
+    this.setData({
+      [_job]:e.currentTarget.dataset.job
+    })
+    this.setData({
+      positionSelectShow:false
     })
   },
   save(){
@@ -105,6 +147,9 @@ Page({
             icon: 'success',
             duration: 1000
           })
+          setTimeout(()=>{
+            wx.navigateBack({delta:1})
+          },1000)
         }else{
           wx.showToast({
             title: res.data.msg,
@@ -130,10 +175,6 @@ Page({
       success(res){
         _this.setData({
           jobIntension:res.data.data
-        })
-        let _jobTradeId = 'jobIntension.jobTradeId'
-        _this.setData({
-          [_jobTradeId]:"java"
         })
       },
       fail(res){

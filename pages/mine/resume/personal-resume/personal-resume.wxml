@@ -1,11 +1,4 @@
-<view class="myShadow flex-column-center" wx:if="{{rewardShow}}">
-    <view class="shadow-top flex-column-center">
-        <image class="" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/red-page.png"></image>
-        <text class="shadow-text-top">恭喜您获得了</text>
-        <text class="shadow-text-bottom"><text class="money">2000</text>元</text>
-    </view>
-    <image class="close-icon" bindtap="closeShadow" src="/img/close.png"></image>
-</view>
+<redpack wx:if="{{rewardShow}}" money="2000000"></redpack>
 <view class="full-page-flex">
     <view class="overflow-s">
         <view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">

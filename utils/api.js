@@ -12,7 +12,7 @@ module.exports = {
   getHotJobList : baseUrl + "/app/job/getHotJobList", //职位详情下边的热门推荐
   queryJobDetail : baseUrl + "/app/job/queryJobDetail", //职位详情
   queryCompanyDetail : baseUrl + "/app/company/queryCompanyDetail", //公司详情
-  getCompanyJobList : baseUrl + "/app/company/getCompanyJobList", //公司再招岗位
+  getCompanyJobList : baseUrl + "/app/company/getCompanyJobList", //公司在招职位
   updateUserInfo : baseUrl + "/app/user/v1/updateUserInfo", //更新用户基本信息（账号）
   getUserInfo : baseUrl + "/app/user/v1/userInfo", //获取用户基本信息（账号）
   avatarUpload : baseUrl + "/common/upload", //上传头像
@@ -25,7 +25,7 @@ module.exports = {
   getScaleList : baseUrl + "/app/dict/getScaleList", //字典-公司规模
   getJobStateList : baseUrl + "/app/dict/getTargetcurrList", //字典-求职状态
   getIndustryList : baseUrl + "/app/dict/getIndustryList", //字典-行业
-  getPositionList : baseUrl + "/app/dict/getPositionList", //字典-岗位（先不做）
+  getPositionList : baseUrl + "/app/dict/getPositionList", //字典-职位
   getWorkStartList : baseUrl + "/app/dict/getWorkStartList", //字典-到岗时间
   getIntention : baseUrl + "/app/job/v1/intention/get", //单独获取求职意向
   intentionUpdate : baseUrl + "/app/job/v1/intention/update", //单独更新求职意向
@@ -36,8 +36,9 @@ module.exports = {
   jobSaveFlag : baseUrl + "/app/job/favorite/exist", //是否职位收藏
   jobSaveNo : baseUrl + "/app/job/unFavorite", //取消职位收藏
   getCvDegree : baseUrl + "/app/resume/getCvDegree", //简历完善度
-  invitingJob : baseUrl + "/app/invite_recommend/v1/Recommend-Job-list", //查询我的推荐岗位
-  invitingRegister : baseUrl + "/app/invite_recommend/v1/Recommend-Job-user-list", //查询我的推荐人
-  myInvitings: baseUrl + "/app/invite_recommend/v1/sum", //我的邀请
+  invitingJob : baseUrl + "/app/invite_recommend/v1/Recommend-Job-list", //查询我的推荐职位
+  invitingRegister : baseUrl + "/app/invite_recommend/v1/Recommend-Job-user-list", //查询我的推荐职位详情
+  myInvitingList : baseUrl + "/app/invite_recommend/v1/invite-list", //查询我的邀请人列表
+  myInvitings: baseUrl + "/app/invite_recommend/v1/sum", //查询我的邀请和推荐的数量
 
 }

@@ -39,6 +39,9 @@
 }
 .updata{
   color:#ff824b;
+  min-width:90px;
+  display:block;
+  padding-left:10px;
 }
 .right{
   flex:1 1;

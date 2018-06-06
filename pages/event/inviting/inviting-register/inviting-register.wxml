@@ -1,2 +1,27 @@
-<!--pages/event/inviting/inviting-register/inviting-register.wxml-->
-<text>pages/event/inviting/inviting-register/inviting-register.wxml</text>
+<text class="title-nobg">
+    <text class="title-item">邀请成功注册({{10}}人)</text>
+</text>
+<view class="register-list">
+    <view class="register-card flex-row-center">
+        <image class="register-avatar" src="/img/default-p.png"></image>
+        <view class="card-middle flex-column-center flex">
+            <text class="register-name">渣渣森</text>
+            <text class="register-state">简历待完善</text>
+            <text class="register-time">已注册：2000-1</text>
+        </view>
+        <view class="card-right flex-column-center">
+            <text class="register-reward">领红包</text>
+        </view>
+    </view>
+    <view class="register-card flex-row-center">
+        <image class="register-avatar" src="/img/default-p.png"></image>
+        <view class="card-middle flex-column-center flex">
+            <text class="register-name">渣渣森</text>
+            <text class="register-state">简历待完善</text>
+            <text class="register-time">已注册：2000-1</text>
+        </view>
+        <view class="card-right flex-column-center">
+            <text class="register-reward-no">领红包</text>
+        </view>
+    </view>
+</view>

@@ -1,13 +1,11 @@
 <view>
     <view>
-        <picker bindchange="" mode="multiSelector">
-            <myline-with-icon title="期望职位" showLeftIcon="">
-                <text class="myline-text">{{jobIntension.jobTradeId}}</text>
-            </myline-with-icon>
-        </picker>
+        <myline-with-icon title="期望职位" showLeftIcon="" bindtap="openSelect">
+            <text class="myline-text">{{jobIntension.jobTradeId}}</text>
+        </myline-with-icon>
         <picker bindchange="workPlaceChange" mode="region">
             <myline-with-icon title="工作地点" showLeftIcon="">
-                <text class="myline-text">{{jobIntension.prov!=null?jobIntension.prov:''}}{{jobIntension.city!=null?" · "+jobIntension.city:''}}{{jobIntension.area!=null?" · " + jobIntension.area:""}}</text>
+                <text class="myline-text">{{jobIntension.prov}}{{jobIntension.city!=''?" · "+jobIntension.city:''}}{{jobIntension.area!=''?" · " + jobIntension.area:""}}</text>
             </myline-with-icon>
         </picker>
         <picker bindchange="salaryChange" range="{{salaryOption}}">
@@ -38,5 +36,26 @@
     </view>
     <view class="button-container-normal">
         <my-button text="保存" bindtap="save"></my-button>
+    </view>
+</view>
+<!-- 选择职位 -->
+<view class="wrap-job-container" wx:if="{{positionSelectShow}}" bindtap="hideSelect"></view>
+<view class="wrap-job flex-row-center {{positionSelectShow?'joblistshow':''}}">
+    <view class="job-l">
+        <block wx:for='{{positionArr[0]}}' wx:key="{{index}}">
+            <view class="wrap-category {{index===positionValue[0] ? 'select-active' : ''}}">
+                <view class='category-item' data-position="{{index}}" bindtap='setPositionLevel2'>
+                    <text class="txt">{{item}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="job-r flex">
+        <view wx:for='{{positionArr[1]}}' wx:key="{{index}}">
+            <text class="seconde">{{item.value}}</text>
+            <view class="group">
+                <text wx:for-item="jobItem" data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:for='{{item.son}}' wx:key='{{index}}'>{{jobItem.value}}</text>
+            </view>
+        </view>
     </view>
 </view>

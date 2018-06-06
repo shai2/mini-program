@@ -17,9 +17,13 @@ Component({
       type:Object,
       value:{}
     },
-    hasState:{
-      type:Boolean,
-      value:true
+    stateType:{
+      type:Number,
+      value:2
+    },
+    exData:{
+      type:Object,
+      value:{}
     }
   },
   data: {
@@ -34,6 +38,11 @@ Component({
     toUploadContract(){
       wx.navigateTo({
         url: "/pages/account/personal-contract/personal-contract?jid=" + this.data.jobItem.jid +"&cid="+ this.data.jobItem.cid
+      })
+    },
+    toInvitingJobDetail(){
+      wx.navigateTo({
+        url: "/pages/event/inviting/inviting-job-detail/inviting-job-detail?jid=" + this.data.jobItem.jid +"&cid="+ this.data.jobItem.cid
       })
     }
   }

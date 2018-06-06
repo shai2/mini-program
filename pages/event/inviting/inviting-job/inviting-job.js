@@ -2,6 +2,7 @@ let api = require("../../../../utils/api")
 let pageNow = 1;
 Page({
   data: {
+    res:{},
     jobObj:[], //热门相关
     pullText:'加载中 . .',
     repeatFlag:false,
@@ -37,12 +38,13 @@ Page({
         console.log(res.data)
         if (refresh) {
           _this.setData({
-            jobObj:res.data.data.data,
+            res:res.data.data,
+            jobObj:res.data.data.resultList,
             repeatFlag:false
           })
         }else{
           _this.setData({
-            jobObj:_this.data.jobObj.concat(res.data.data.data),
+            jobObj:_this.data.jobObj.concat(res.data.data.resultList),
             repeatFlag:false
           })
         }
@@ -50,7 +52,7 @@ Page({
         wx.stopPullDownRefresh()
         // console.log(_this.data.jobObj)
         pageNow++
-        if(res.data.data.data.length <10){ //没数据了
+        if(res.data.data.resultList.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })

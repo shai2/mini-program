@@ -1,66 +1,67 @@
-// pages/event/inviting/inviting-register/inviting-register.js
+let api = require("../../../../utils/api")
+let pageNow = 1;
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    res:{},
+    jobObj:[], //热门相关
+    pullText:'加载中 . .',
+    repeatFlag:false,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    pageNow = 1;
+    wx.showLoading({title:"加载中"})
+    this.myInvitingList(pageNow,true) //查询
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onPullDownRefresh (){
+    pageNow = 1;
+    this.myInvitingList(pageNow,true)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  onReachBottom(){
+    this.myInvitingList(pageNow)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  myInvitingList(page,refresh){
+    let _this = this
+    if(this.data.repeatFlag) return
+    _this.setData({
+      repeatFlag:true
+    })
+    wx.request({
+      url: api.myInvitingList,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        page:page
+      },
+      success(res){
+        console.log(res.data)
+        if (refresh) {
+          _this.setData({
+            res:res.data.data,
+            jobObj:res.data.data.resultList,
+            repeatFlag:false
+          })
+        }else{
+          _this.setData({
+            jobObj:_this.data.jobObj.concat(res.data.data.resultList),
+            repeatFlag:false
+          })
+        }
+        wx.hideLoading()
+        wx.stopPullDownRefresh()
+        // console.log(_this.data.jobObj)
+        pageNow++
+        if(res.data.data.resultList.length <10){ //没数据了
+          _this.setData({
+            pullText:"到底了"
+          })
+          return
+        }
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

@@ -12,6 +12,7 @@
     "pages/event/inviting/inviting-friend/inviting-friend",
     "pages/event/inviting/inviting-register/inviting-register",
     "pages/event/inviting/inviting-job/inviting-job",
+    "pages/event/inviting/inviting-job-detail/inviting-job-detail",
 
     "pages/welcome-intention/welcome-intention",
 

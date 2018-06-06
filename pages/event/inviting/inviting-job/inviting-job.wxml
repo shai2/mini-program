@@ -1,8 +1,8 @@
 <text class="title-nobg">
-    <text class="title-item">已推荐岗位(1)</text>
-    <text class="title-item">成功入职(1)</text>
+    <text class="title-item">已推荐职位({{res.jobSum}})</text>
+    <text class="title-item">成功入职({{res.successSum}})</text>
 </text>
 <block wx:for="{{jobObj}}" wx:key="{{index}}">
-    <job-item jobItem="{{item}}"></job-item>
+    <job-item jobItem="{{item.jobDetailBean}}" exData="{{item}}"></job-item>
 </block>
 <text class="loading-text">{{pullText}}</text>
