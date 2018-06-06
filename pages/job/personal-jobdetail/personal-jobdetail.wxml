@@ -1,8 +1,9 @@
 <view class="full-page-flex">
     <view>
         <view class="baseinfo">
-            <view class="flex-row-between">
-                <text class="name">{{jobDetail.position}}</text>
+            <view class="flex-row-between ">
+                <image hidden="{{hidden}}" class="flag" mode="widthFix" src="../../../img/prize-tip.png"></image>
+                <text class="name {{boxName}}">{{jobDetail.position}}</text>
                 <text class="salary">{{jobDetail.wagemin}}-{{jobDetail.wagemax}} k</text>
             </view>
             <view class="disc-line flex-row-center">
