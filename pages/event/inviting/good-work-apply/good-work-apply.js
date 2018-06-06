@@ -13,17 +13,18 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        userId:wx.getStorageSync('userId'),
-        jid:649808
+        userId:options.userId,
+        jid:options.jid
       },
       success(res){
-        console.log(res)
-        // if(res.data.data)
-        // {
-        //   _this.setData({
-        //     detail:"/img/collected.png"
-        //   })
-        // }
+        console.log(res.data.data)
+        if(res.data.msg=="success")
+        {
+          console.log(res.data.data)
+          _this.setData({
+            detail:res.data.data
+          })
+        }
       },
       fail(res){
         console.log(res)

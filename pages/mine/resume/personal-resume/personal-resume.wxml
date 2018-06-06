@@ -1,4 +1,4 @@
-<redpack wx:if="{{rewardShow}}" money="2000000"></redpack>
+<redpack id="redpack" money="2000000"></redpack>
 <view class="full-page-flex">
     <view class="overflow-s">
         <view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">

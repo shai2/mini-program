@@ -1,66 +1,97 @@
 // pages/account/personal-reward/personal-reward.js
+const api=require("../../../utils/api.js")
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    allFlag:"act",
+    invationFlag:"",
+    recommendFlag:"",
+    putFlag:"",
+    moneyDetail:{},
+    userFlowingWater:{},
+    pageNum:2
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
-  },
+    var _this=this;
+    wx.request({
+      url:api.getUserMsg,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data:{
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+      },
+      success(res){
+        console.log(res)
+        if(res.data.msg=="success"){
+          _this.setData({
+            moneyDetail:res.data.data
+          })
+        }
+      },
+      fail(error){
+        console.log(error)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  requestData(type,page,pageSize){
+    var _this=this;
+    wx.request({
+      url:api.userFlowingWater,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data:{
+        type:type,
+        page:page,
+        pageSize:pageSize
+      },
+      success(res){
+        console.log(res)
+        if(res.data.msg=="success"){
+          _this.setData({
+            userFlowingWater:res.data.data
+          })
+        }
+        console.log(_this.data.userFlowingWater)
+      },
+      fail(error){
+        console.log(error)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  all(){
+    this.setData({
+      allFlag:"act",
+      invationFlag:"",
+      recommendFlag:"",
+      putFlag:"",
+    })
+    this.requestData(0,this.data.pageNum,10)
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  invation(){
+    this.setData({
+      allFlag:"",
+      invationFlag:"act",
+      recommendFlag:"",
+      putFlag:"",
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  recommend(){
+    this.setData({
+      allFlag:"",
+      invationFlag:"",
+      recommendFlag:"act",
+      putFlag:"",
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  put(){
+    this.setData({
+      allFlag:"",
+      invationFlag:"",
+      recommendFlag:"",
+      putFlag:"act",
+    })
   }
 })

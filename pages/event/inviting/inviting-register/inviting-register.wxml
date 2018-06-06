@@ -1,27 +1,21 @@
+<redpack id="redpack" money="9999"></redpack>
 <text class="title-nobg">
-    <text class="title-item">邀请成功注册({{10}}人)</text>
+    <text class="title-item">邀请成功注册({{sum}}人)</text>
 </text>
 <view class="register-list">
-    <view class="register-card flex-row-center">
-        <image class="register-avatar" src="/img/default-p.png"></image>
-        <view class="card-middle flex-column-center flex">
-            <text class="register-name">渣渣森</text>
-            <text class="register-state">简历待完善</text>
-            <text class="register-time">已注册：2000-1</text>
+    <block wx:for="{{registerObj}}" wx:key="{{index}}">
+        <view class="register-card flex-row-center">
+            <image class="register-avatar" src="/img/default-p.png"></image>
+            <view class="card-middle flex-column-center flex">
+                <text class="register-name">{{item.inviteUserName}}</text>
+                <text wx:if="{{item.inviteRewardFlag===0}}" class="register-state-no">简历待完善</text>
+                <text wx:else class="register-state">简历待完善</text>
+                <text class="register-time">已注册：{{item.inviteTimeText}}</text>
+            </view>
+            <view class="card-right flex-column-center">
+                <text wx:if="{{item.inviteRewardFlag===1}}" class="register-reward" catchtap="getReward">领红包</text>
+                <text wx:if="{{item.inviteRewardFlag===2}}" class="register-reward-no">已领取</text>
+            </view>
         </view>
-        <view class="card-right flex-column-center">
-            <text class="register-reward">领红包</text>
-        </view>
-    </view>
-    <view class="register-card flex-row-center">
-        <image class="register-avatar" src="/img/default-p.png"></image>
-        <view class="card-middle flex-column-center flex">
-            <text class="register-name">渣渣森</text>
-            <text class="register-state">简历待完善</text>
-            <text class="register-time">已注册：2000-1</text>
-        </view>
-        <view class="card-right flex-column-center">
-            <text class="register-reward-no">领红包</text>
-        </view>
-    </view>
+    </block>
 </view>

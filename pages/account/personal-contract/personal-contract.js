@@ -31,4 +31,8 @@ Page({
       }
     })
   },
+  getReward(){
+    this.selectComponent("#redpack").show()
+    // 发送请求 没有红包了
+  },
 })

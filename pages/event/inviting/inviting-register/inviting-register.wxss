@@ -5,7 +5,8 @@
 .card-middle{align-items:flex-start;}
 .card-right{height:75px;}
 .register-name{font-size:15px;color:#374665;}
-.register-state{font-size:12px;color:#ec5151;margin-top:10px;}
+.register-state{font-size:12px;color:#909ba3;margin-top:10px;}
+.register-state-no{font-size:12px;color:#ec5151;margin-top:10px;}
 .register-time{font-size:12px;color:#909ba3;margin-top:10px;}
 .register-reward{color:#fff;background:#ff824b;padding:3px 8px;border-radius:100px;}
 .register-reward-no{color:#fff;background:#cbd4db;padding:3px 8px;border-radius:100px;}

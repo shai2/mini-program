@@ -3,7 +3,8 @@ let pageNow = 1;
 Page({
   data: {
     res:{},
-    jobObj:[], //热门相关
+    sum:0,
+    registerObj:[], //热门相关
     pullText:'加载中 . .',
     repeatFlag:false,
   },
@@ -35,24 +36,26 @@ Page({
         page:page
       },
       success(res){
-        console.log(res.data)
+        console.log(res.data.data.inviteUserAccountVOS)
         if (refresh) {
           _this.setData({
             res:res.data.data,
-            jobObj:res.data.data.resultList,
-            repeatFlag:false
+            registerObj:res.data.data.inviteUserAccountVOS,
+            repeatFlag:false,
+            sum:res.data.data.sum
           })
         }else{
           _this.setData({
-            jobObj:_this.data.jobObj.concat(res.data.data.resultList),
-            repeatFlag:false
+            registerObj:_this.data.registerObj.concat(res.data.data.inviteUserAccountVOS),
+            repeatFlag:false,
+            sum:res.data.data.sum
           })
         }
         wx.hideLoading()
         wx.stopPullDownRefresh()
-        // console.log(_this.data.jobObj)
+        // console.log(_this.data.registerObj)
         pageNow++
-        if(res.data.data.resultList.length <10){ //没数据了
+        if(res.data.data.inviteUserAccountVOS.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })
@@ -63,5 +66,9 @@ Page({
         console.log(res)
       }
     })
+  },
+  getReward(){
+    this.selectComponent("#redpack").show()
+    // 发送请求 没有红包了
   },
 })

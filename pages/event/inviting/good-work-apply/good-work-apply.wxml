@@ -2,24 +2,24 @@
 <view class="bg">
 	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job1.png"></image>
 	<view class="people-box">
-		<image class="people" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/people.png"></image>
+		<image class="people" mode="widthFix" src="{{detail.avatar}}"></image>
 	</view>
-	<text class="dec">好友XXX给你推荐热门职位啦
+	<text class="dec">好友  {{detail.name}}  给你推荐热门职位啦
 	入职后，即可得到奖金哦~
 	</text>
 	<view class="title">
-		<text >高级市场推广经理</text>
-		<text >10K-15K</text>
+		<text >{{detail.jobDetail.position}}</text>
+		<text >{{detail.jobDetail.wagemin}}K-{{detail.jobDetail.wagemax}}</text>
 	</view>
 	<view class="bot">
-		<image  mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/elm.png"></image>
-		<text>平安产险</text>
+		<image  mode="widthFix" src="{{detail.jobDetail.companyLogo}}"></image>
+		<text>{{detail.jobDetail.companyName}}</text>
 	</view>
 	<view class="adress">
-		<text>上海-松江区</text>
-		<text>1-3年</text>
-		<text>硕士</text>
-		<text>11：25发布</text>
+		<text>{{detail.jobDetail.prov}}-{{detail.jobDetail.city}}</text>
+		<text>{{detail.jobDetail.workexp_text}}</text>
+		<text>{{detail.jobDetail.edu_text}}</text>
+		<text>{{detail.jobDetail.published_text}}</text>
 	</view>
 	<view class="bottom flex-row-around">
 		<text class="apply">立即申请</text>

@@ -3,6 +3,6 @@
     <text class="title-item">成功入职({{res.successSum}})</text>
 </text>
 <block wx:for="{{jobObj}}" wx:key="{{index}}">
-    <job-item jobItem="{{item.jobDetailBean}}" exData="{{item}}"></job-item>
+    <job-item stateType="2" jobItem="{{item.jobDetailBean}}" exData="{{item}}"></job-item>
 </block>
 <text class="loading-text">{{pullText}}</text>
