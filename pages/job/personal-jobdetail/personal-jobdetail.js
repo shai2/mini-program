@@ -13,7 +13,19 @@ Page({
     collectionFlag:false,
     coImg:"/img/collect.png",
     ResumeFlag:false,
-    ResumeText:"应聘职位"
+    ResumeText:"应聘职位",
+    boxName:"",
+    hidden:true
+  },
+   onShareAppMessage: function (res) {
+    if (res.from === 'menu') {
+      // 来自右上角
+      console.log(res.target)
+    }
+    return {
+      title: '蜗牛职信',
+      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"userId="+wx.getStorageSync('sessionId')
+    }
   },
   onLoad(options) {
     pageNow = 1;
@@ -25,7 +37,6 @@ Page({
     wx.showLoading({title:"加载中"})
     this.queryJobDetail()//职位详情
     this.getHotJobList(pageNow) //请求相关
-
   },
   dec(){
     this.setData({
@@ -198,6 +209,7 @@ Page({
         page:page
       },
       success(res){
+
         _this.setData({
           jobObj:_this.data.jobObj.concat(res.data.data.data),
           repeatFlag:false
@@ -255,6 +267,12 @@ Page({
           jobDetail:res.data.data
         })
         console.log(_this.data.jobDetail)
+        if(_this.data.jobDetail.isPrizes==1){
+          _this.setData({
+            hidden:false,
+            boxName:"name1"
+          })
+        }
         _this.queryCompanyDetail()
       },
       fail(res){

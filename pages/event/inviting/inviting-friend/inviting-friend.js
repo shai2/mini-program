@@ -5,15 +5,6 @@ Page({
     inviteNumber:0,
     recommNumber:0,
   },
-  invite() {
-    console.log("b")
-    wx.showShareMenu({
-      withShareTicket: true,
-      success() {
-        console.log("a")
-      }
-    })
-  },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮

@@ -41,8 +41,11 @@ Page({
               code: res.code
             },
             success(res){
+              console.log(res)
               wx.setStorageSync('sessionId', res.data.data.token)
+              wx.setStorageSync('userId', info.userInfo.userId)
               info.userInfo = res.data.data.userInfo //同步到全局
+              wx.setStorageSync('userId', info.userInfo.userId)
               if (res.data.data.jobIntentionFlag===0) { //已经有意向了
                 console.log("有意向（有手机）")
                 wx.setStorageSync('hasPhone',true)

@@ -40,5 +40,5 @@ module.exports = {
   invitingRegister : baseUrl + "/app/invite_recommend/v1/Recommend-Job-user-list", //查询我的推荐职位详情
   myInvitingList : baseUrl + "/app/invite_recommend/v1/invite-list", //查询我的邀请人列表
   myInvitings: baseUrl + "/app/invite_recommend/v1/sum", //查询我的邀请和推荐的数量
-
+  shareJobDetail: baseUrl + "/app/share/getShareJobDetail", //获取分享职位详情
 }
