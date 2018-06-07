@@ -19,14 +19,14 @@ Page({
     this.getHot()
     pageNow = 1;
     wx.showLoading({title:"加载中"})
-    this.getJobListByType(pageNow,0,true)
+    this.getJobListByType(pageNow,4,true)
   },
   onPullDownRefresh (){
     pageNow = 1;
-    this.getJobListByType(pageNow,0,true)
+    this.getJobListByType(pageNow,4,true)
   },
   onReachBottom(){
-    this.getJobListByType(pageNow)
+    this.getJobListByType(pageNow,4)
   },
   login(){
     let _this = this
@@ -89,7 +89,6 @@ Page({
     })
   },
   getJobListByType(page,type,refresh){
-    if (!type) type=0; //只写page 默认搜索全部类型 要判断fresh type不能省
     let _this = this
     if(this.data.repeatFlag) return
     _this.setData({
@@ -103,7 +102,7 @@ Page({
       },
       data: {
         type:type,
-        keyword: wx.getStorageSync('hopePosition'),
+        // keyword: wx.getStorageSync('hopePosition'),
         page:page
       },
       success(res){
@@ -154,7 +153,7 @@ Page({
     var _this = this
     if(this.data.canTap){
       wx.setStorageSync('hopePosition',this.data.searchText)
-      _this.getJobListByType(pageNow,0,true)
+      _this.getJobListByType(pageNow,4,true)
         wx.request({
         url: api.updateJobIntention,
         method:"POST",

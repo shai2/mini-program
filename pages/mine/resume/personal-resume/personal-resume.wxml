@@ -20,10 +20,10 @@
                 <text class="name block">{{userInfo.basicInfo.name}}</text>
                 <view class="base-info">
                     <text>{{userInfo.basicInfo.gender}}</text>
-                    <text>{{userInfo.basicInfo.age}}</text>
-                    <text>{{userInfo.basicInfo.workLife}}</text>
+                    <text>{{userInfo.basicInfo.age}}岁</text>
+                    <text>{{userInfo.basicInfo.workLife}}年</text>
                     <text>{{userInfo.jobIntension.onBoardDate}}</text>
-                    <text>{{userInfo.basicInfo.area}}</text>
+                    <text>{{userInfo.basicInfo.address}}</text>
                 </view>
             </view>
             <view class="info-normal">
@@ -80,7 +80,7 @@
                     <view class="card-item" bindtap="toWorkExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">{{item.position}}{{index}}</text>
+                            <text class="">{{item.position}}</text>
                             <text class="">{{item.company}}</text>
                         </view>
                         <view class="card-middle">
@@ -105,7 +105,7 @@
                     <view class="card-item" bindtap="toEduExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">{{item.school}}{{index}}</text>
+                            <text class="">{{item.school}}</text>
                         </view>
                         <view class="card-middle">
                             <text class="">{{item.educationStart}}~{{item.educationEnd}}</text>
@@ -130,7 +130,7 @@
                     <view class="card-item" bindtap="toEventExp" data-index="{{index}}">
                         <view class="edit"></view>
                         <view class="card-top">
-                            <text class="">{{item.responsibility}}{{index}}</text>
+                            <text class="">{{item.projectName}}</text>
                             <text class="">{{item.company}}</text>
                         </view>
                         <view class="card-middle">

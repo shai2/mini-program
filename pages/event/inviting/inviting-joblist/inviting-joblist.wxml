@@ -5,4 +5,4 @@
 <block wx:for="{{jobObj}}" wx:key="{{index}}">
     <job-item stateType="2" jobItem="{{item.jobDetailBean}}" exData="{{item}}"></job-item>
 </block>
-<text class="loading-text">{{pullText}}</text>
+<text wx:if="{{jobObj.length}}" class="loading-text">{{pullText}}</text>

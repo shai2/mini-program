@@ -1,18 +1,19 @@
 {
   "pages":[
-    "pages/event/inviting/good-work-apply/good-work-apply",
     "pages/job/personal-jobindex/personal-jobindex",
-    
+    "pages/event/inviting/good-work-apply/good-work-apply",
+
+
 
     "pages/mine/personal-mine/personal-mine",
     "pages/account/personal-reward/personal-reward",
     "pages/account/personal-contract/personal-contract",
 
-    
+
     "pages/event/inviting/good-work-register/good-work-register",
     "pages/event/inviting/inviting-friend/inviting-friend",
-    "pages/event/inviting/inviting-register/inviting-register",
-    "pages/event/inviting/inviting-job/inviting-job",
+    "pages/event/inviting/inviting-registerlist/inviting-registerlist",
+    "pages/event/inviting/inviting-joblist/inviting-joblist",
     "pages/event/inviting/inviting-job-detail/inviting-job-detail",
 
     "pages/welcome-intention/welcome-intention",

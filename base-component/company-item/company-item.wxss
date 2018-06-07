@@ -41,10 +41,10 @@
   color:#ff824b;
   min-width:90px;
   display:block;
-  padding-left:10px;
+  /* padding-left:10px; */
 }
 .right{
   flex:1 1;
   margin-left:10px;
 }
-.company-avatar{width:45px;height:45px;border-radius:2px;margin-right:5px;background:url("/img/default-c.png");}
+.company-avatar{width:45px;height:45px;border-radius:2px;margin-right:5px;}

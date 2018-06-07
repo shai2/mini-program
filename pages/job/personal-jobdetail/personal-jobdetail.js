@@ -6,6 +6,7 @@ Page({
     companyDetail:{},
     jobObj:[], //热门相关
     jid:'',
+    position:'',
     pullText:'加载中 . .',
     overflow:"dec",
     flag:true,
@@ -30,7 +31,8 @@ Page({
   onLoad(options) {
     pageNow = 1;
     this.setData({
-      jid:options.jid
+      jid:options.jid,
+      position:options.pos
     })
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
@@ -113,7 +115,6 @@ Page({
         jobId:_this.data.jobDetail.jid
       },
       success(res){
-        console.log(res)
         _this.setData({
           collectionFlag:res.data.msg
         })
@@ -130,10 +131,10 @@ Page({
             coFlag="收藏失败！"
           }
           wx.showToast({
-                    title: coFlag,
-                    icon: 'success',
-                    duration: 1000
-                  })
+            title: coFlag,
+            icon: 'success',
+            duration: 1000
+          })
         }else{
           if(_this.data.collectionFlag=="success")
           {
@@ -145,10 +146,10 @@ Page({
             coFlag="取消失败！"
           }
           wx.showToast({
-                    title: coFlag,
-                    icon: 'success',
-                    duration: 1000
-                  })
+            title: coFlag,
+            icon: 'success',
+            duration: 1000
+          })
         }
       },
       fail(res){
@@ -205,11 +206,10 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        position:_this.data.jobDetail.position,
+        position:_this.data.position,
         page:page
       },
       success(res){
-
         _this.setData({
           jobObj:_this.data.jobObj.concat(res.data.data.data),
           repeatFlag:false
@@ -242,7 +242,6 @@ Page({
         _this.setData({
           companyDetail:res.data.data
         })
-        console.log(_this.data.companyDetail)
       },
       fail(res){
         console.log(res)
@@ -270,7 +269,7 @@ Page({
         if(_this.data.jobDetail.isPrizes==1){
           _this.setData({
             hidden:false,
-            boxName:"name1"
+            boxName:"name-sp"
           })
         }
         _this.queryCompanyDetail()

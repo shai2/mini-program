@@ -3,6 +3,7 @@ let api = require("../../../../utils/api")
 Page({
   data: {
     userInfo:{},
+    repeatFlag:false
   },
   onLoad(options) {
     var _this = this
@@ -36,7 +37,12 @@ Page({
     })
   },
   saveResume(){
+    if (this.data.repeatFlag) return
+    wx.showLoading({title:"提交中"})
     let _this = this
+    _this.setData({
+      repeatFlag:true
+    })
     wx.request({
       url: api.resumeUpdate,
       method:"POST",
@@ -45,6 +51,7 @@ Page({
       },
       data: _this.data.userInfo,
       success(res){
+        wx.hideLoading()
         wx.showToast({
           title: '保存成功',
           icon: 'success',

@@ -3,7 +3,7 @@ Component({
   properties: {
     text:{
         type:String,
-        value:"热门推荐"
+        value:"text"
     }
   },
   data: {

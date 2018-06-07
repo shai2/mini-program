@@ -4,7 +4,8 @@ Page({
   data: {
     userInfo:{},
     index:'',
-    deleteShow:true
+    deleteShow:true,
+    repeatFlag:false
   },
   onLoad(options) {
     var _this = this
@@ -22,7 +23,7 @@ Page({
           index:options.index
         })
       }
-      console.log('options.index是'+options.index+'要修改的index是'+_this.data.index)
+      // console.log('options.index是'+options.index+'要修改的index是'+_this.data.index)
       // console.log(_this.data.index,this.data.userInfo.projectExperiences.length)
     })
   },
@@ -66,6 +67,7 @@ Page({
       },
       data: {},
       success(res){
+        console.log(res.data)
         _this.setData({
           userInfo:res.data.data
         })
@@ -78,7 +80,12 @@ Page({
     })
   },
   saveResume(){
+    if (this.data.repeatFlag) return
+    wx.showLoading({title:"提交中"})
     let _this = this
+    _this.setData({
+      repeatFlag:true
+    })
     wx.request({
       url: api.resumeUpdate,
       method:"POST",
@@ -87,6 +94,7 @@ Page({
       },
       data: _this.data.userInfo,
       success(res){
+        wx.hideLoading()
         wx.showToast({
           title: '保存成功',
           icon: 'success',

@@ -4,9 +4,11 @@ Page({
   data: {
     userInfo:{},
     sexOption:['男','女'],
+    repeatFlag:false
   },
   onReady() {
     this.getResume()
+    this.setExpArr()
   },
   chooseAvatar(){
     var _this = this
@@ -28,6 +30,17 @@ Page({
       }
     })
   },
+  setExpArr(){
+    this.setData({
+      expOption:wx.getStorageSync('expList'),
+    })
+  },
+  expChange(e){
+    var _exp = 'userInfo.basicInfo.workLife'
+    this.setData({
+      [_exp]:this.data.expOption[e.detail.value]
+    })
+  },
   nameChange(e){
     var _name = 'userInfo.basicInfo.name'
     this.setData({
@@ -47,7 +60,7 @@ Page({
     })
   },
   regionChange(e){
-    let _area = 'userInfo.basicInfo.area'
+    let _area = 'userInfo.basicInfo.address'
     this.setData({
       [_area]:e.detail.value[0]+'-'+e.detail.value[1]+'-'+e.detail.value[2]
     })
@@ -88,7 +101,12 @@ Page({
     })
   },
   saveResume(){
+    if (this.data.repeatFlag) return
+    wx.showLoading({title:"提交中"})
     let _this = this
+    _this.setData({
+      repeatFlag:true
+    })
     wx.request({
       url: api.resumeUpdate,
       method:"POST",
@@ -97,6 +115,7 @@ Page({
       },
       data: _this.data.userInfo,
       success(res){
+        wx.hideLoading()
         wx.showToast({
           title: '保存成功',
           icon: 'success',

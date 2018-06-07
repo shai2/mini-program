@@ -41,7 +41,7 @@
 .box-name{
 	position: relative;
 }
-.name1{
+.name-sp{
 	margin-left: 26px;
 }
 .flag{

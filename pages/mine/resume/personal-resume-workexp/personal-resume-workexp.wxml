@@ -17,7 +17,7 @@
             </myline-with-icon>
         </picker>
         <text class="title-nobg">工作职责</text>
-        <textarea auto-height bindinput="textChange" value="{{userInfo.workExperiences[index].workDesc}}" placeholder="填写工作职责" placeholder-class="placeholder"/>
+        <textarea maxlength="-1" auto-height bindinput="textChange" value="{{userInfo.workExperiences[index].workDesc}}" placeholder="填写工作职责" placeholder-class="placeholder"/>
     </view>
     <view class="button-container-normal">
         <my-button text="保存" bindtap="saveResume"></my-button>

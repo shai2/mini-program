@@ -1,10 +1,10 @@
 <view>
     <view>
-        <myline-with-icon title="公司名称" showLeftIcon="" showRightIcon="">
-            <input class="myline-text" value="{{userInfo.projectExperiences[index].company}}" bindinput="nameChange" placeholder="请输入公司名称" placeholder-class="placeholder"/>
-        </myline-with-icon>
         <myline-with-icon title="项目名称" showLeftIcon="" showRightIcon="">
             <input class="myline-text" value="{{userInfo.projectExperiences[index].projectName}}" bindinput="projectNameChange" placeholder="请输入项目名称" placeholder-class="placeholder"/>
+        </myline-with-icon>
+        <myline-with-icon title="职位名称" showLeftIcon="" showRightIcon="">
+            <input class="myline-text" value="{{userInfo.projectExperiences[index].positionName}}" bindinput="projectNameChange" placeholder="请输入职位名称" placeholder-class="placeholder"/>
         </myline-with-icon>
         <picker bindchange="projectStartChange" mode="date">
             <myline-with-icon title="开始时间" showLeftIcon="">
@@ -16,8 +16,10 @@
                 <text class="myline-text">{{userInfo.projectExperiences[index].projectEnd}}</text>
             </myline-with-icon>
         </picker>
+        <text class="title-nobg">项目描述</text>
+        <textarea maxlength="-1" auto-height bindinput="textChange" value="{{userInfo.projectExperiences[index].projectDesc}}" placeholder="填写项目描述" placeholder-class="placeholder"/>
         <text class="title-nobg">职责描述</text>
-        <textarea auto-height bindinput="textChange" value="{{userInfo.projectExperiences[index].responsibility}}" placeholder="填写工作职责" placeholder-class="placeholder"/>
+        <textarea maxlength="-1" auto-height bindinput="textChange" value="{{userInfo.projectExperiences[index].responsibility}}" placeholder="填写工作职责" placeholder-class="placeholder"/>
     </view>
     <view class="button-container-normal">
         <my-button text="保存" bindtap="saveResume"></my-button>

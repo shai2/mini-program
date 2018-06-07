@@ -32,7 +32,7 @@ Component({
   methods: {
     toDetail(){
       wx.navigateTo({
-        url: "/pages/job/personal-jobdetail/personal-jobdetail?jid=" + this.data.jobItem.jid +"&cid="+ this.data.jobItem.cid
+        url: "/pages/job/personal-jobdetail/personal-jobdetail?jid=" + this.data.jobItem.jid +"&cid="+ this.data.jobItem.cid + "&pos="+ this.data.jobItem.position
       })
     },
     toUploadContract(){

@@ -60,7 +60,7 @@
             <text>高薪职位</text>
         </view>
     </view>
-    <text-single></text-single>
+    <text-single text="有奖推荐职位"></text-single>
     <block wx:for="{{jobObj}}" wx:key="{{index}}">
         <job-item jobItem="{{item}}"></job-item>
     </block>

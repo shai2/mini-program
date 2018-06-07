@@ -5,7 +5,7 @@
 <view class="register-list">
     <block wx:for="{{registerObj}}" wx:key="{{index}}">
         <view class="register-card flex-row-center">
-            <image class="register-avatar" src="/img/default-p.png"></image>
+            <image class="register-avatar" src="{{item.userPhoto}}"></image>
             <view class="card-middle flex-column-center flex">
                 <text class="register-name">{{item.inviteUserName}}</text>
                 <text wx:if="{{item.inviteRewardFlag===0}}" class="register-state-no">简历待完善</text>
@@ -19,3 +19,4 @@
         </view>
     </block>
 </view>
+<text wx:if="{{registerObj.length}}" class="loading-text">{{pullText}}</text>

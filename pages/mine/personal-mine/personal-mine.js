@@ -17,6 +17,7 @@ Page({
       this.getJobStateList()
       this.getIndustryList()
       this.getWorkStartList()
+      this.getExperienceList()
       this.countJobStatus()
       this.getCvDegree()
       this.getUserInfo()
@@ -152,6 +153,24 @@ Page({
           _arr.push(e.value)
         })
         wx.setStorageSync('workStart',_arr)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
+  getExperienceList(){ //存工作经验
+    // if (wx.getStorageSync('expList')) return
+    let _this = this
+    wx.request({
+      url: api.getExperienceList,
+      method:"GET",
+      success(res){
+        let _arr = []
+        res.data.data.experienceList.map((e,i)=>{
+          _arr.push(e.value)
+        })
+        wx.setStorageSync('expList',_arr)
       },
       fail(res){
         console.log(res)

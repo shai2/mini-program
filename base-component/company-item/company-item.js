@@ -1,5 +1,13 @@
 let app = getApp()
 Component({
+  attached(){
+    if (!this.data.companyItem.viewCompanyLogo) { //没头像给默认头像
+      let _logo = 'companyItem.viewCompanyLogo'
+      this.setData({
+        [_logo]:"/img/default-c.png"
+      })
+    };
+  },
   properties: {
     hasBottom:{
       type:Boolean,
@@ -16,7 +24,7 @@ Component({
   methods: {
     toDetail(){
       wx.navigateTo({
-        url: "/pages/job/personal-jobdetail/personal-jobdetail?cid=" + this.data.companyItem.cvid
+        url:"/pages/job/personal-companydetail/personal-companydetail?cid=" + this.data.companyItem.viewCid
       })
     }
   },

@@ -38,12 +38,12 @@ Page({
   },
   tofriendInvite(){
     wx.navigateTo({
-      url:"/pages/event/inviting/inviting-register/inviting-register"
+      url:"/pages/event/inviting/inviting-registerlist/inviting-registerlist"
     })
   },
   tojobInvite(){
     wx.navigateTo({
-      url:"/pages/event/inviting/inviting-job/inviting-job"
+      url:"/pages/event/inviting/inviting-joblist/inviting-joblist"
     })
   }
 })

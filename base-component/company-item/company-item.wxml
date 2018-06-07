@@ -1,4 +1,4 @@
-<view class="item {{hasBottom ? 'has-bottom' : 'has-border'}} flex-row-between">
+<view class="item {{hasBottom ? 'has-bottom' : 'has-border'}} flex-row-between" bindtap="toDetail">
     <view class="left">
         <image class="company-avatar" src="{{companyItem.viewCompanyLogo}}"></image>
     </view>

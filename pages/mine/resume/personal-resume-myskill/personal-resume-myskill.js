@@ -3,7 +3,8 @@ let api = require("../../../../utils/api")
 Page({
   data: {
     killName:"",
-    userInfo:{}
+    userInfo:{},
+    repeatFlag:false
   },
   onLoad(options) {
     this.getResume()
@@ -14,7 +15,10 @@ Page({
     })
   },
   addKill(){
-    console.log( this.data.userInfo.skill.languages)
+    if (this.data.killName.trim().length===0){
+      this.data.killName = ''
+      return
+    }
     this.data.userInfo.skill.languages.push({
       languageName:this.data.killName,
       qualification:"",
@@ -54,7 +58,11 @@ Page({
     })
   },
   saveResume(fn){
+    wx.showLoading({title:"提交中"})
     let _this = this
+    _this.setData({
+      repeatFlag:true
+    })
     wx.request({
       url: api.resumeUpdate,
       method:"POST",
@@ -63,6 +71,10 @@ Page({
       },
       data: _this.data.userInfo,
       success(res){
+        _this.setData({
+          repeatFlag:false
+        })
+        wx.hideLoading()
         console.log(res)
         if(res.data.msg=="更新成功"){
           if(typeof(fn)==="function") fn()

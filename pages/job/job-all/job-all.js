@@ -16,10 +16,9 @@ Page({
     this.getJobListByType(pageNow,0,true)
   },
   onReachBottom(){
-    this.getJobListByType(pageNow)
+    this.getJobListByType(pageNow,0)
   },
   getJobListByType(page,type,refresh){
-    if (!type) type=0; //只写page 默认搜索全部类型 要判断fresh type不能省
     let _this = this
     if(this.data.repeatFlag) return
     _this.setData({

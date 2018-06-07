@@ -1,4 +1,4 @@
-<textarea auto-height bindinput="textChange" value="{{userInfo.jobIntension.selfEvaluation}}" placeholder="请输入" placeholder-class="placeholder"/>
+<textarea maxlength="-1" auto-height bindinput="textChange" value="{{userInfo.jobIntension.selfEvaluation}}" placeholder="请输入" placeholder-class="placeholder"/>
 <view class="button-container-normal">
     <my-button text="保存" bindtap="saveResume"></my-button>
 </view>

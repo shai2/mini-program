@@ -54,7 +54,7 @@
                 <text>{{jobDetail.address}}</text>
             </view>
         </view>
-        <text-single></text-single>
+        <text-single text="热门推荐"></text-single>
         <block wx:for="{{jobObj}}" wx:key="{{index}}">
             <job-item jobItem="{{item}}"></job-item>
         </block>

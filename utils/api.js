@@ -26,6 +26,7 @@ module.exports = {
   getJobStateList : baseUrl + "/app/dict/getTargetcurrList", //字典-求职状态
   getIndustryList : baseUrl + "/app/dict/getIndustryList", //字典-行业
   getPositionList : baseUrl + "/app/dict/getPositionList", //字典-职位
+  getExperienceList : baseUrl + "/app/dict/getExperienceList", //字典-工作经验
   getWorkStartList : baseUrl + "/app/dict/getWorkStartList", //字典-到岗时间
   getIntention : baseUrl + "/app/job/v1/intention/get", //单独获取求职意向
   intentionUpdate : baseUrl + "/app/job/v1/intention/update", //单独更新求职意向

@@ -22,7 +22,13 @@
 
         <picker bindchange="regionChange" mode="region">
             <myline-with-icon title="所在地区" showLeftIcon="">
-                <text class="myline-text">{{userInfo.basicInfo.area}}</text>
+                <text class="myline-text">{{userInfo.basicInfo.address}}</text>
+            </myline-with-icon>
+        </picker>
+
+        <picker bindchange="expChange" range="{{expOption}}">
+            <myline-with-icon title="工作经验" showLeftIcon="">
+                <text class="myline-text">{{userInfo.basicInfo.workLife}}</text>
             </myline-with-icon>
         </picker>
 
