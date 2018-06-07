@@ -5,10 +5,13 @@ Page({
     allFlag:"act",
     invationFlag:"",
     recommendFlag:"",
+    requestFlag:true,
     putFlag:"",
     moneyDetail:{},
-    userFlowingWater:{},
-    pageNum:1
+    userFlowingWater:[],
+    pageNum:1,
+    type:-1,
+    text:"加载中..."
   },
   onLoad: function (options) {
     var _this=this;
@@ -33,34 +36,54 @@ Page({
         console.log(error)
       }
     })
-    this.requestData(-1,this.data.pageNum,10);
+    this.requestData(-1,this.data.pageNum,10,false);
   },
-  requestData(type,page,pageSize){
+  requestData(type,page,pageSize,flag){
     var _this=this;
-    wx.request({
-      url:api.userFlowingWater,
-      method:"GET",
-      header:{
-        sessionId: wx.getStorageSync('sessionId')
-      },
-      data:{
-        type:type,
-        page:page,
-        pageSize:pageSize
-      },
-      success(res){
-        console.log(res)
-        if(res.data.msg=="success"){
-          _this.setData({
-            userFlowingWater:res.data.data
-          })
+    if(this.data.requestFlag)
+    {
+      this.setData({
+        requestFlag:false
+      })   
+      wx.request({
+        url:api.userFlowingWater,
+        method:"GET",
+        header:{
+          sessionId: wx.getStorageSync('sessionId')
+        },
+        data:{
+          type:type,
+          page:page,
+          pageSize:pageSize
+        },
+        success(res){
+          console.log(res)
+          if(res.data.msg=="success"){
+            if(flag){             
+            console.log(_this.data.userFlowingWater,res.data.data.data,"aa")        
+              _this.setData({
+                userFlowingWater:_this.data.userFlowingWater.concat(res.data.data.data),           
+                requestFlag:true
+              })
+            }else{
+              _this.setData({
+                userFlowingWater:res.data.data.data,
+                requestFlag:true
+              })
+            }
+          }
+          if(_this.data.userFlowingWater.length<10){
+            _this.setData({
+              text:"到底了"
+            })
+          }
+  
+        },
+        fail(error){
+          console.log(error)
         }
-        console.log(_this.data.userFlowingWater,"a")
-      },
-      fail(error){
-        console.log(error)
-      }
-    })
+      })
+    }
   },
   all(){
     this.setData({
@@ -68,8 +91,10 @@ Page({
       invationFlag:"",
       recommendFlag:"",
       putFlag:"",
+      type:-1,
+      pageNum:1
     })
-    this.requestData(-1,this.data.pageNum,10);
+    this.requestData(-1,this.data.pageNum,10,false);
   },
   invation(){
     this.setData({
@@ -77,8 +102,10 @@ Page({
       invationFlag:"act",
       recommendFlag:"",
       putFlag:"",
+      type:1,
+      pageNum:1
     })
-    this.requestData(-1,this.data.pageNum,10);
+    this.requestData(1,this.data.pageNum,10,false);
   },
   recommend(){
     this.setData({
@@ -86,7 +113,10 @@ Page({
       invationFlag:"",
       recommendFlag:"act",
       putFlag:"",
+      type:2,
+      pageNum:1
     })
+    this.requestData(2,this.data.pageNum,10,false);
   },
   put(){
     this.setData({
@@ -94,6 +124,14 @@ Page({
       invationFlag:"",
       recommendFlag:"",
       putFlag:"act",
+      type:4,
+      pageNum:1
     })
-  }
+    this.requestData(4,this.data.pageNum,10,false);
+  },
+  onReachBottom(){
+    console.log("a")
+    this.data.pageNum++;
+    this.requestData(this.data.type,this.data.pageNum,10,true);
+  },
 })

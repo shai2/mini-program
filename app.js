@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-
+ 
   },
   globalData: {
     userInfo: {
@@ -9,4 +9,5 @@ App({
         nickName:"蜗牛用户",
     }
   },
+
 })

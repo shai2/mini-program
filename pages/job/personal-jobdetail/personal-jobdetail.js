@@ -16,7 +16,8 @@ Page({
     ResumeFlag:false,
     ResumeText:"应聘职位",
     boxName:"",
-    hidden:true
+    hidden:true,
+    collectFlag:true,
   },
    onShareAppMessage: function (res) {
     if (res.from === 'menu') {
@@ -103,6 +104,11 @@ Page({
     })
   },
   collection(){
+    if(this.data.collectFlag)
+    {
+      this.setData({
+            collectFlag: false
+          })
     var _this = this;
     var imgUrl=this.data.coImg=="/img/collect.png"?api.jobSave : api.jobSaveNo;
     wx.request({
@@ -116,7 +122,8 @@ Page({
       },
       success(res){
         _this.setData({
-          collectionFlag:res.data.msg
+          collectionFlag:res.data.msg,
+          collectFlag: true
         })
         var coFlag=""
         if(imgUrl==api.jobSave)
@@ -154,8 +161,12 @@ Page({
       },
       fail(res){
         console.log(res)
+        _this.setData({
+            collectFlag: true
+          })
       }
     })
+   }
   },
   sendResume(){
     if(!this.data.ResumeFlag){

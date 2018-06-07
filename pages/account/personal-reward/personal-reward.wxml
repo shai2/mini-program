@@ -36,19 +36,20 @@
 			</view>
 		</view>
 		<view class="contain" >
-			<view wx:for="{{userFlowingWater.data}}" wx:key="index" wx:index="index" wx:item="item">
+			<view wx:for="{{userFlowingWater}}" wx:key="index" wx:index="index" wx:item="item">
 				<view class="flex-row-between">
 					<text>{{item.remark}}</text>
-					<text>{{item.incomeAmount_format}}</text>
+					<text style="color: {{item.type===1 ?'#ec5151':'#29a1f7'}}">{{item.type===1 ?'-':'+'}}{{item.incomeAmount_format}}</text>
 				</view>
-				<view class="flex-row-between">
+				<!-- <view class="flex-row-between">
 					<text>简历不完整</text>
 					<text>{{item.extralMessage}}</text>
-				</view>
+				</view> -->
 				<view>
 					<text>{{item.createTime_format}}</text>
 				</view>
 			</view>
+			<text class="loading-text">{{text}}</text>
 		</view>
 	</view>
 </view>
