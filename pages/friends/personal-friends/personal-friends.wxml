@@ -1,16 +1,16 @@
 <view class="contain">
 	<view class="box">
-		<image mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/new.png"></image>
+		<image class="left-icon" mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/new.png"></image>
 		<view>
 			<text>新的好友</text>
-			<text>></text>
-		</view>		
+			<image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
+		</view>
 	</view>
 	<view class="box">
-		<image mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/myFriend.png"></image>
+		<image class="left-icon" mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/myFriend.png"></image>
 		<view>
 			<text>我的好友</text>
-			<text>></text>
-		</view>		
+			<image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
+		</view>
 	</view>
 </view>

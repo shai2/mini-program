@@ -13,9 +13,9 @@
 .box view{
 	display: flex;
 	justify-content:space-between;
-	
+	align-items:center;
 }
-.box image{
+.left-icon{
 	width: 36px;
 	height: 36px;
 	position: absolute;
