@@ -19,11 +19,6 @@ Page({
       })
     }
   },
-  changeActiveTip(e){
-    this.setData({
-      "activeTip":e.currentTarget.dataset.index
-    })
-  },
   cancel(){
     wx.navigateBack({delta: 1})
   },
@@ -69,6 +64,7 @@ Page({
       "searchText":e.currentTarget.dataset.text,
       "selectType":e.currentTarget.dataset.type
     })
+    this.search()
   },
   hasContent(e){
     this.setData({

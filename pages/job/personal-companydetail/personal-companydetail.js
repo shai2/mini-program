@@ -12,7 +12,6 @@ Page({
   },
   onLoad(options) {
     pageNow = 1;
-    console.log(options.cid)
     this.setData({
       cid:options.cid
     })
@@ -93,6 +92,9 @@ Page({
       success(res){
         wx.stopPullDownRefresh()
         wx.hideLoading()
+        if (!res.data.data.image) { //没头像给默认头像
+          res.data.data.image = "/img/default-c.png"
+        };
         _this.setData({
           companyDetail:res.data.data
         })

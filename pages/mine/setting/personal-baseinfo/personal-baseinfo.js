@@ -19,6 +19,7 @@ Page({
       },
       data: {},
       success(res){
+        console.log(res.data.data)
         if (!res.data.data.birthday) {
           res.data.data.birthday = ""
         };
@@ -52,7 +53,7 @@ Page({
     })
   },
   nameChange(e){
-    let _nickName = 'userInfo.nickName'
+    let _nickName = 'userInfo.realName'
     this.setData({
       [_nickName]:e.detail.value
     })

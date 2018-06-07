@@ -89,7 +89,7 @@ Page({
     })
   },
   getBaseDate(){
-    // console.log(wx.getStorageSync('positionListLevel2'))
+    console.log(wx.getStorageSync('positionListLevel2'))
     this.setData({
       companyScaleOption:wx.getStorageSync('companyScale'),
       salaryOption:wx.getStorageSync('salaryList'),

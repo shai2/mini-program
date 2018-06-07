@@ -4,10 +4,12 @@ Page({
   data: {
     userInfo:{},
     rewardShow:false,
-    hasReward:false
+    hasReward:false,
+    money:0
   },
   onShow(){
     this.getResume()
+    this.getRewardStatus()
   },
   onShareAppMessage: function () {
 
@@ -33,8 +35,53 @@ Page({
     })
   },
   getReward(){
-    this.selectComponent("#redpack").show()
-    // 发送请求 没有红包了
+    if (this.data.rewardFlag!==1) return
+    let _this = this
+    wx.request({
+      url: api.registMoney,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        // if (!res.data.money) {
+        //   wx.showToast({
+        //     title: '服务器异常',
+        //     icon: 'none',
+        //     duration: 1000
+        //   })
+        //   return
+        // };
+        _this.setData({
+          money:res.data.money/100,
+          rewardFlag:-1
+        })
+        _this.selectComponent("#redpack").show()
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
+  getRewardStatus(){
+    let _this = this
+    wx.request({
+      url: api.getRewardStatus,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.setData({
+          rewardFlag:res.data.data.rewardFlag
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
   toIntention(){
     wx.navigateTo({

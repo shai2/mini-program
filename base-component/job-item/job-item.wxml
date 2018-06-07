@@ -8,7 +8,7 @@
         <text class="text-item">{{jobItem.workexp_text}}</text>
         <text class="text-item">{{jobItem.edu_text}}</text>
     </view>
-    <view class="bottom flex-row-between">
+    <view wx:if="{{hasCopany}}" class="bottom flex-row-between">
         <view class="flex-row-between">
             <image class="companyLogo" src="{{jobItem.companyLogo==''? '/img/default-c.png':jobItem.companyLogo}}"></image>
             <text class="company">{{jobItem.companyName}}</text>

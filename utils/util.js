@@ -14,6 +14,27 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const shareFunction = (options,title,url,...args) => {
+  var shareObj = {
+    title: "转发的标题",
+　　path: url,
+　　imgUrl: img,
+    success: function(res){
+　　　console.log('分享成功')
+　　},
+　　fail:function(){
+      console.log('分享失败')
+　　}
+  }
+  if( options.from == 'button' ){
+    let _data = options.target.dataset;
+　　console.log( _data);
+    shareObj.path = path+'?a=1&b=2'
+　}
+　return shareObj
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  shareFunction
 }

@@ -1,10 +1,18 @@
-<redpack id="redpack" money="2000000"></redpack>
+<redpack id="redpack" money="{{money}}"></redpack>
 <view class="full-page-flex">
     <view class="overflow-s">
-        <view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
+        <!-- 提醒完善简历 -->
+        <view wx:if="{{rewardFlag===0}}" class="orange-tip flex-row-between">
             <view class="flex-row-between">
                 <image mode="widthFix" class="tip-left" mod="" src="/img/notice.png"></image>
-                <text>完善基本信息、工作履历、教育背景</text>
+                <text>完善奖励后可领取红包</text>
+            </view>
+        </view>
+        <!-- 可以领取 -->
+        <view wx:elif="{{rewardFlag===1}}" class="orange-tip flex-row-between" bindtap="getReward">
+            <view class="flex-row-between">
+                <image mode="widthFix" class="tip-left" mod="" src="/img/notice.png"></image>
+                <text>简历已完善，请领取红包</text>
             </view>
             <view class="flex-row-between">
                 <text>领取奖金</text>
@@ -131,7 +139,7 @@
                         <view class="edit"></view>
                         <view class="card-top">
                             <text class="">{{item.projectName}}</text>
-                            <text class="">{{item.company}}</text>
+                            <text class="">{{item.position}}</text>
                         </view>
                         <view class="card-middle">
                             <text class="">{{item.projectStart}}~{{item.projectEnd}}</text>

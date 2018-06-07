@@ -1,5 +1,5 @@
 .wrap-job {
-  /* width: 100%; */
+  width:650rpx;
   height: 100%;
   position: fixed;
   top:0;
@@ -31,15 +31,6 @@
   border-color: #29a1f7 !important;
 }
 
-.job-l {
-  width: 110px;
-  height: 100%;
-  font-size: 15px;
-  text-align: center;
-  float: left;
-  background-color: #fff;
-}
-
 .wrap-category {
   display: flex;
   flex-direction: column;
@@ -56,11 +47,19 @@
   color: #909ba3;
 }
 
-.job-r {
+.job-l {
+  width: 110px;
   height: 100%;
-  overflow: hidden;
-  padding-left: 10px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #fff;
+}
+.job-r {
+  /* width:100px; */
+  height: 100%;
+  padding: 20px 10px;
   background-color: #f3f5f7;
+  /* overflow:scroll; */
 }
 
 .seconde {
@@ -82,5 +81,5 @@
   background-color: #fff;
 }
 .joblistshow{
-  left:50px;
+  left:100rpx;
 }

@@ -53,6 +53,12 @@ Page({
       [_gender]:this.data.sexOption[e.detail.value]
     })
   },
+  expChange(e){
+    var _name = 'userInfo.basicInfo.workLife'
+    this.setData({
+      [_name]:e.detail.value
+    })
+  },
   birthdayChange(e){
     let _birthday = 'userInfo.basicInfo.birthday'
     this.setData({
@@ -90,6 +96,7 @@ Page({
       },
       data: {},
       success(res){
+        res.data.data.basicInfo.workLife += '年'
         _this.setData({
           userInfo:res.data.data
         })

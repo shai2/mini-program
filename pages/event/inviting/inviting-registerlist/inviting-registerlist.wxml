@@ -1,4 +1,4 @@
-<redpack id="redpack" money="9999"></redpack>
+<redpack id="redpack" money="{{money}}"></redpack>
 <text class="title-nobg">
     <text class="title-item">邀请成功注册({{sum}}人)</text>
 </text>
@@ -13,7 +13,7 @@
                 <text class="register-time">已注册：{{item.inviteTimeText}}</text>
             </view>
             <view class="card-right flex-column-center">
-                <text wx:if="{{item.inviteRewardFlag===1}}" class="register-reward" catchtap="getReward">领红包</text>
+                <text data-inviteRewardFlag="{{item.inviteRewardFlag}}" data-id="{{item.id}}" data-index="{{index}}" wx:if="{{item.inviteRewardFlag===1}}" class="register-reward" catchtap="getReward">领红包</text>
                 <text wx:if="{{item.inviteRewardFlag===2}}" class="register-reward-no">已领取</text>
             </view>
         </view>

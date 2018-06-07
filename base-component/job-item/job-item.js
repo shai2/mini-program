@@ -13,6 +13,10 @@ Component({
       type:Boolean,
       value:true
     },
+    hasCopany:{
+      type:Boolean,
+      value:true
+    },
     jobItem:{
       type:Object,
       value:{}

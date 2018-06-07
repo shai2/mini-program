@@ -43,9 +43,8 @@ Page({
             success(res){
               console.log(res)
               wx.setStorageSync('sessionId', res.data.data.token)
-              wx.setStorageSync('userId', info.userInfo.userId)
+              wx.setStorageSync('userId', res.data.data.userInfo.userId)
               info.userInfo = res.data.data.userInfo //同步到全局
-              wx.setStorageSync('userId', info.userInfo.userId)
               if (res.data.data.jobIntentionFlag===0) { //已经有意向了
                 console.log("有意向（有手机）")
                 wx.setStorageSync('hasPhone',true)
@@ -86,6 +85,11 @@ Page({
       fail:res => (
         console.log(res)
       )
+    })
+  },
+  regionChange(e){
+    this.setData({
+      city:e.detail.value[0]
     })
   },
   getJobListByType(page,type,refresh){
@@ -153,7 +157,6 @@ Page({
     var _this = this
     if(this.data.canTap){
       wx.setStorageSync('hopePosition',this.data.searchText)
-      _this.getJobListByType(pageNow,4,true)
         wx.request({
         url: api.updateJobIntention,
         method:"POST",

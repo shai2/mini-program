@@ -24,7 +24,6 @@ Component({
           if(res.data.code===0){
             console.log("绑定手机成功")
             wx.setStorageSync('hasPhone',true)
-            info.userInfo = res.data.data //绑定成功后获取默认头像与名字
             _this.setData({
               modalShow:false
             })

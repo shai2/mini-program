@@ -34,7 +34,13 @@ Page({
     })
   },
   projectNameChange(e){
-    let _pos = 'userInfo.projectExperiences['+this.data.index+'].projectName'
+    let _posName = 'userInfo.projectExperiences['+this.data.index+'].projectName'
+    this.setData({
+      [_posName]:e.detail.value
+    })
+  },
+  projectPosChange(e){
+    let _pos = 'userInfo.projectExperiences['+this.data.index+'].position'
     this.setData({
       [_pos]:e.detail.value
     })
@@ -51,10 +57,16 @@ Page({
       [_workEnd]:e.detail.value
     })
   },
-  textChange(e){
+  responsChange(e){
     let _workDesc = 'userInfo.projectExperiences['+this.data.index+'].responsibility'
     this.setData({
       [_workDesc]:e.detail.value
+    })
+  },
+  proDescChange(e){
+    let _proDesc = 'userInfo.projectExperiences['+this.data.index+'].projectDesc'
+    this.setData({
+      [_proDesc]:e.detail.value
     })
   },
   getResume(fn){

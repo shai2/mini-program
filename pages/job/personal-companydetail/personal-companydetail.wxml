@@ -1,7 +1,7 @@
 <view class="full-page-flex pdbt0">
     <view>
         <view class="baseinfo">
-            <image class="company-avatar" src="/img/default-c.png"></image>
+            <image class="company-avatar" src="{{companyDetail.image}}"></image>
             <view class="company-name flex-row-between">
                 <text class="name">{{companyDetail.name}}</text>
                 <view class="{{companyDetail.status == 3 ? 'indentify' : 'indentify-no'}} mgtop0"></view>
@@ -37,7 +37,7 @@
         </view>
         <text-single text="他们还在招"></text-single>
         <block wx:for="{{jobObj}}" wx:key="{{index}}">
-            <job-item jobItem="{{item}}"></job-item>
+            <job-item hasCopany="{{false}}" jobItem="{{item}}"></job-item>
         </block>
         <text class="loading-text">{{pullText}}</text>
     </view>

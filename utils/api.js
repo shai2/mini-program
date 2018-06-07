@@ -8,7 +8,7 @@ module.exports = {
   getJobListByType : baseUrl + "/app/job/getJobListByType", //查询职位
   getResume : baseUrl + "/app/resume/get", //获取简历
   getHotJobAndCompany : baseUrl + "/app/dict/getHotJobAndCompany", //获取热门职位和热门公司
-  updateJobIntention : baseUrl + "/app/job/updateJobIntention", //登录第一次填写后存到求职意向
+  updateJobIntention : baseUrl + "/app/job/v1/intention/update", //登录第一次填写后存到求职意向
   getHotJobList : baseUrl + "/app/job/getHotJobList", //职位详情下边的热门推荐
   queryJobDetail : baseUrl + "/app/job/queryJobDetail", //职位详情
   queryCompanyDetail : baseUrl + "/app/company/queryCompanyDetail", //公司详情
@@ -43,5 +43,8 @@ module.exports = {
   myInvitings: baseUrl + "/app/invite_recommend/v1/sum", //查询我的邀请和推荐的数量
   shareJobDetail: baseUrl + "/app/share/getShareJobDetail", //获取分享职位详情
   getUserMsg: baseUrl + "/app/userAccount/getAccountInfo", //获取用户账户信息
+  getRewardStatus: baseUrl + "/app/resume/getResumeRewardStatus", //获取红包状态
+  registMoney: baseUrl + "/app/invite_recommend/v1/regist-money", //完善简历领红包
+  inviteMoney: baseUrl + "/app/invite_recommend/v1/invite-money/id", //邀请人领红包
   userFlowingWater: baseUrl + "/app/userAccount/getAccountRecordListByType", //根据类型查询账户流水（全部、邀请注册、推荐岗位、历史提现）
 }

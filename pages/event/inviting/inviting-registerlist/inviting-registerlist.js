@@ -7,6 +7,7 @@ Page({
     registerObj:[], //热门相关
     pullText:'加载中 . .',
     repeatFlag:false,
+    money:0
   },
   onLoad(options) {
     pageNow = 1;
@@ -67,8 +68,37 @@ Page({
       }
     })
   },
-  getReward(){
-    this.selectComponent("#redpack").show()
-    // 发送请求 没有红包了
+  getReward(e){
+    if (e.currentTarget.dataset.inviteRewardFlag===2) return
+    let _this = this
+    wx.request({
+      url: api.inviteMoney,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {
+        id:e.currentTarget.dataset.id
+      },
+      success(res){
+        if (!res.data.data.money) {
+          wx.showToast({
+            title: '服务器异常',
+            icon: 'none',
+            duration: 1000
+          })
+          return
+        };
+        let _flag = 'registerObj['+e.currentTarget.dataset.index+'].inviteRewardFlag'
+        _this.setData({
+          money:res.data.data.money/100,
+          [_flag]:2
+        })
+        _this.selectComponent("#redpack").show()
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
 })

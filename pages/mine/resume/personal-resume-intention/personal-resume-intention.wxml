@@ -41,7 +41,7 @@
 <!-- 选择职位 -->
 <view class="wrap-job-container" wx:if="{{positionSelectShow}}" bindtap="hideSelect"></view>
 <view class="wrap-job flex-row-center {{positionSelectShow?'joblistshow':''}}">
-    <view class="job-l">
+    <scroll-view scroll-y="{{true}}" class="job-l">
         <block wx:for='{{positionArr[0]}}' wx:key="{{index}}">
             <view class="wrap-category {{index===positionValue[0] ? 'select-active' : ''}}">
                 <view class='category-item' data-position="{{index}}" bindtap='setPositionLevel2'>
@@ -49,13 +49,25 @@
                 </view>
             </view>
         </block>
-    </view>
-    <view class="job-r flex">
-        <view wx:for='{{positionArr[1]}}' wx:key="{{index}}">
+    </scroll-view>
+    <scroll-view scroll-y="{{true}}" class="job-r flex">
+        <block wx:for='{{positionArr[1]}}' wx:key="{{index}}">
             <text class="seconde">{{item.value}}</text>
+            <!-- <view class="group">
+                <block wx:for='{{item.son}}' wx:for-item="jobItem">
+                    <text data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:key='{{jobItem.index}}'>{{jobItem.value}}</text>
+                </block>
+            </view> -->
+        </block>
+    </scroll-view>
+    <!-- <scroll-view scroll-y="{{true}}" class="job-r flex">
+        <view style="overflow:scroll">
+        <block wx:for='{{positionArr[1]}}' wx:key="{{index}}">
+            <text class="seconde">{{item.value}}1111111111111111 111111111111111111111111111111111111111 11111111111111 111111111111111</text>
             <view class="group">
-                <text wx:for-item="jobItem" data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:for='{{item.son}}' wx:key='{{index}}'>{{jobItem.value}}</text>
+                <text wx:for-item="jobItem" data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:for='{{item.son}}' wx:key='{{index}}'>{{jobItem.value}}222222222222222222222222222222222222</text>
             </view>
+        </block>
         </view>
-    </view>
+    </scroll-view> -->
 </view>

@@ -1,5 +1,4 @@
 let api = require("../../../utils/api")
-let info = getApp().globalData
 Page({
   data: {
     userInfo:{},
@@ -10,18 +9,16 @@ Page({
     canTap:false
   },
   onLoad(){
-    if (this.chekPhone()) {
-      this.getPositionList()
-      this.getSalaryList()
-      this.getScaleList()
-      this.getJobStateList()
-      this.getIndustryList()
-      this.getWorkStartList()
-      this.getExperienceList()
-      this.countJobStatus()
-      this.getCvDegree()
-      this.getUserInfo()
-    };
+    this.getPositionList()
+    this.getSalaryList()
+    this.getScaleList()
+    this.getJobStateList()
+    this.getIndustryList()
+    this.getWorkStartList()
+    this.getExperienceList()
+    // this.countJobStatus()
+    // this.getCvDegree()
+    // this.getUserInfo()
   },
   onShow(options) {
     if (this.chekPhone()) {
@@ -29,10 +26,6 @@ Page({
       this.getCvDegree()
       this.getUserInfo()
     };
-    this.setData({
-      name:info.userInfo.nickName,
-      avatar:info.userInfo.avatarPhoto
-    })
   },
   chekPhone(){
     if (!wx.getStorageSync('hasPhone')) {
@@ -242,6 +235,7 @@ Page({
       },
       data: {},
       success(res){
+        console.log(res.data.data)
         if (res.data.data.scoreVO.totalScore==-1) {
           res.data.data.scoreVO.totalScore = 0
         };
