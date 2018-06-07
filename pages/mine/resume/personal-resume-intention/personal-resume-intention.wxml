@@ -51,23 +51,11 @@
         </block>
     </scroll-view>
     <scroll-view scroll-y="{{true}}" class="job-r flex">
-        <block wx:for='{{positionArr[1]}}' wx:key="{{index}}">
+        <view wx:for='{{positionArr[1]}}' wx:key="{{index}}">
             <text class="seconde">{{item.value}}</text>
-            <!-- <view class="group">
-                <block wx:for='{{item.son}}' wx:for-item="jobItem">
-                    <text data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:key='{{jobItem.index}}'>{{jobItem.value}}</text>
-                </block>
-            </view> -->
-        </block>
-    </scroll-view>
-    <!-- <scroll-view scroll-y="{{true}}" class="job-r flex">
-        <view style="overflow:scroll">
-        <block wx:for='{{positionArr[1]}}' wx:key="{{index}}">
-            <text class="seconde">{{item.value}}1111111111111111 111111111111111111111111111111111111111 11111111111111 111111111111111</text>
             <view class="group">
-                <text wx:for-item="jobItem" data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:for='{{item.son}}' wx:key='{{index}}'>{{jobItem.value}}222222222222222222222222222222222222</text>
+                <text wx:for-item="jobItem" data-job="{{jobItem.value}}" bindtap='getPositionLevel2' wx:for='{{item.son}}' wx:key='{{index}}'>{{jobItem.value}}</text>
             </view>
-        </block>
         </view>
-    </scroll-view> -->
+    </scroll-view>
 </view>
