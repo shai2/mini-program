@@ -8,7 +8,7 @@ Page({
     putFlag:"",
     moneyDetail:{},
     userFlowingWater:{},
-    pageNum:2
+    pageNum:1
   },
   onLoad: function (options) {
     var _this=this;
@@ -33,6 +33,7 @@ Page({
         console.log(error)
       }
     })
+    this.requestData(-1,this.data.pageNum,10);
   },
   requestData(type,page,pageSize){
     var _this=this;
@@ -54,7 +55,7 @@ Page({
             userFlowingWater:res.data.data
           })
         }
-        console.log(_this.data.userFlowingWater)
+        console.log(_this.data.userFlowingWater,"a")
       },
       fail(error){
         console.log(error)
@@ -68,7 +69,7 @@ Page({
       recommendFlag:"",
       putFlag:"",
     })
-    this.requestData(0,this.data.pageNum,10)
+    this.requestData(-1,this.data.pageNum,10);
   },
   invation(){
     this.setData({
@@ -77,6 +78,7 @@ Page({
       recommendFlag:"",
       putFlag:"",
     })
+    this.requestData(-1,this.data.pageNum,10);
   },
   recommend(){
     this.setData({

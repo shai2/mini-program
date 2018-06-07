@@ -1,21 +1,12 @@
 {
   "pages":[
-<<<<<<< HEAD
     "pages/job/personal-jobindex/personal-jobindex",
     "pages/event/inviting/good-work-apply/good-work-apply",
 
-=======
-     "pages/job/personal-jobindex/personal-jobindex",
-
-     "pages/account/personal-reward/personal-reward",
-    "pages/event/inviting/good-work-apply/good-work-apply",
->>>>>>> 805cb56b8cca73845185238799995776570ea9c6
-
-
     "pages/mine/personal-mine/personal-mine",
-   
-    "pages/account/personal-contract/personal-contract",
 
+    "pages/account/personal-contract/personal-contract",
+    "pages/account/personal-reward/personal-reward",
 
     "pages/event/inviting/good-work-register/good-work-register",
     "pages/event/inviting/inviting-friend/inviting-friend",
