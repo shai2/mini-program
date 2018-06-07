@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/account/personal-reward/personal-reward",
      "pages/job/personal-jobindex/personal-jobindex",
 
-     "pages/account/personal-reward/personal-reward",
+     
     "pages/event/inviting/good-work-apply/good-work-apply",
 
 
