@@ -42,4 +42,6 @@ module.exports = {
   myInvitingList : baseUrl + "/app/invite_recommend/v1/invite-list", //查询我的邀请人列表
   myInvitings: baseUrl + "/app/invite_recommend/v1/sum", //查询我的邀请和推荐的数量
   shareJobDetail: baseUrl + "/app/share/getShareJobDetail", //获取分享职位详情
+  getUserMsg: baseUrl + "/app/userAccount/getAccountInfo", //获取用户账户信息
+  userFlowingWater: baseUrl + "/app/userAccount/getAccountRecordListByType", //根据类型查询账户流水（全部、邀请注册、推荐岗位、历史提现）
 }

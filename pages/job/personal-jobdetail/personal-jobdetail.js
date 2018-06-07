@@ -25,7 +25,7 @@ Page({
     }
     return {
       title: '蜗牛职信',
-      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"userId="+wx.getStorageSync('sessionId')
+      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"userId="+wx.getStorageSync('userId')
     }
   },
   onLoad(options) {
