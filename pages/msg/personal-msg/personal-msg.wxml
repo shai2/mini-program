@@ -1,2 +1,16 @@
-<!--pages/personal-msg/personal-msg.wxml-->
-<text>pages/personal-msg/personal-msg.wxml</text>
+<view class="contain">
+	<view class="box">
+		<image mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/know.png"></image>
+		<view>
+			<text>小蜗通知</text>
+			<text>></text>
+		</view>		
+	</view>
+	<view class="box">
+		<image mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/job.png"></image>
+		<view>
+			<text>小蜗求职</text>
+			<text>></text>
+		</view>		
+	</view>
+</view>

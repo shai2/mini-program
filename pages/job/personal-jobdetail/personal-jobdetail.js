@@ -18,12 +18,9 @@ Page({
     boxName:"",
     hidden:true,
     collectFlag:true,
+    clickResume:true
   },
    onShareAppMessage: function (res) {
-    if (res.from === 'menu') {
-      // 来自右上角
-      console.log(res.target)
-    }
     return {
       title: '蜗牛职信',
       path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"userId="+wx.getStorageSync('userId')
@@ -169,7 +166,8 @@ Page({
    }
   },
   sendResume(){
-    if(!this.data.ResumeFlag){
+    if(!this.data.ResumeFlag&&this.data.clickResume){
+      this.data.clickResume=false;
       var _this=this;
       wx.request({
         url: api.sendResume,

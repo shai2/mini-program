@@ -1,1 +1,27 @@
-/* pages/personal-msg/personal-msg.wxss */
+.contain{
+	padding: 0 15px;
+	background-color: #fff;
+}
+.box {
+	height: 80px;
+	line-height: 80px;
+	font-size: 15px;
+	color: #374665;
+	position: relative;
+	border-bottom: 1px solid #f2f5f7;
+}
+.box view{
+	display: flex;
+	justify-content:space-between;
+	
+}
+.box image{
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	top: 23px;
+	left: 0px;
+}
+.box text:first-child{
+	margin-left: 51px;
+}

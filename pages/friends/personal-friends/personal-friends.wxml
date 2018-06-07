@@ -1,2 +1,16 @@
-<!--pages/personal-friends/personal-friends.wxml-->
-<text>pages/personal-friends/personal-friends.wxml</text>
+<view class="contain">
+	<view class="box">
+		<image mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/new.png"></image>
+		<view>
+			<text>新的好友</text>
+			<text>></text>
+		</view>		
+	</view>
+	<view class="box">
+		<image mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/myFriend.png"></image>
+		<view>
+			<text>我的好友</text>
+			<text>></text>
+		</view>		
+	</view>
+</view>
