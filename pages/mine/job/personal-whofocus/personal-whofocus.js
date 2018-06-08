@@ -20,7 +20,7 @@ Page({
   },
   whoFocus(page,refresh){
     let _this = this
-    if(this.data.repeatFlag) return
+    if(_this.data.repeatFlag) return
     _this.setData({
       repeatFlag:true
     })

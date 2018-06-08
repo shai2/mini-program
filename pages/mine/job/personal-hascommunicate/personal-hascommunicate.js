@@ -20,7 +20,7 @@ Page({
   },
   getJobListByStatus(page,type,refresh){
     let _this = this
-    if(this.data.repeatFlag) return
+    if(_this.data.repeatFlag) return
     _this.setData({
       repeatFlag:true
     })
@@ -31,7 +31,7 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        type:type,
+        status:type,
         page:page
       },
       success(res){

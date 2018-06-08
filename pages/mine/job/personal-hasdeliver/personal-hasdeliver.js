@@ -7,7 +7,7 @@ Page({
     repeatFlag:false,
   },
   onLoad(options) {
-    pageNow = 1
+    pageNow = 1;
     wx.showLoading({title:"加载中"})
     this.getJobListByStatus(pageNow,0,true) //查询
   },
@@ -20,7 +20,7 @@ Page({
   },
   getJobListByStatus(page,type,refresh){
     let _this = this
-    if(this.data.repeatFlag) return
+    if(_this.data.repeatFlag) return
     _this.setData({
       repeatFlag:true
     })
