@@ -2,14 +2,11 @@
 let api = require("../../../../utils/api.js");
 Page({
   data: {
+    inviteCode:"",
     inviteNumber:0,
     recommNumber:0,
   },
   onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
     return {
       title: '蜗牛职信',
       path: '/pages/event/inviting/good-work-register/good-work-register?userId=' + wx.getStorageSync('userId')
@@ -30,6 +27,24 @@ Page({
           inviteNumber: res.data.data.inviteNumber,
           recommNumber: res.data.data.recommNumber
         })
+      },
+      fail(res) {
+        console.log(res)
+      }
+    })
+    wx.request({ //获取邀请码
+      url: api.getUserInfo,
+      method: "GET",
+      header: {
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res) {
+        console.log(res,"aaaa")
+        // _this.setData({
+        //   inviteNumber: res.data.data.inviteNumber,
+        //   recommNumber: res.data.data.recommNumber
+        // })
       },
       fail(res) {
         console.log(res)

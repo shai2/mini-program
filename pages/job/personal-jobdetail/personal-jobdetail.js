@@ -23,7 +23,7 @@ Page({
    onShareAppMessage: function (res) {
     return {
       title: '蜗牛职信',           
-      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"userId="+wx.getStorageSync('userId')
+      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&userId="+wx.getStorageSync('userId')+"&position="+this.data.position
     }
   },
   onLoad(options) {
@@ -32,6 +32,7 @@ Page({
       jid:options.jid,
       position:options.pos
     })
+    console.log(options.pos,"aaaaaaaa")
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
     wx.showLoading({title:"加载中"})
@@ -275,6 +276,11 @@ Page({
         _this.setData({
           jobDetail:res.data.data
         })
+        if(_this.data.jobDetail.address.length<=200){
+           _this.setData({
+            flag:false,            
+          })
+        }
         console.log(_this.data.jobDetail)
         if(_this.data.jobDetail.isPrizes==1){
           _this.setData({

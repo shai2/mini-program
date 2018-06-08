@@ -1,10 +1,12 @@
 let api = require("../../../../utils/api.js")
 Page({
   data: {
-    detail:{}
+    detail:{},
+    position:""
   },
   onLoad: function (options) {
     //jid= 649808
+    // this.data.position=options.position;
     var _this=this;
     wx.request({
       url: api.shareJobDetail,
@@ -13,8 +15,10 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        userId:options.userId,
-        jid:options.jid
+        // userId:options.userId,
+        // jid:options.jid
+        userId:wx.getStorageSync('userId'),
+        jid:649808
       },
       success(res){
         console.log(res.data.data)
@@ -34,6 +38,11 @@ Page({
   apply(){
     wx.switchTap({
       url:"/pages/job/personal-jobindex/personal-jobindex"
+    })
+  },
+  clickJob(){
+    wx.navigateTo({
+      url:"/pages/job/personal-jobdetail/personal-jobdetail?jid=649808&pos=java"
     })
   }
 })
