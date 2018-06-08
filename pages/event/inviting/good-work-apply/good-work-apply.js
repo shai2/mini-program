@@ -30,5 +30,10 @@ Page({
         console.log(res)
       }
     })
+  },
+  apply(){
+    wx.switchTap({
+      url:"/pages/job/personal-jobindex/personal-jobindex"
+    })
   }
 })

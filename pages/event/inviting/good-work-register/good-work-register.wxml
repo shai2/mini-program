@@ -1,7 +1,7 @@
 <!--pages/event/good-word-register/good-word-register.wxml-->
 <view>
 	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job.png"></image>
-	<view class="bottom flex-row-around">
+	<view class="bottom flex-row-around" bindtap="registe">
 		<text class="apply">立即注册</text>
 	</view>
 </view>

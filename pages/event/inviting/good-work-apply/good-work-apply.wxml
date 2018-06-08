@@ -21,7 +21,7 @@
 		<text>{{detail.jobDetail.edu_text}}</text>
 		<text>{{detail.jobDetail.published_text}}</text>
 	</view>
-	<view class="bottom flex-row-around">
+	<view class="bottom flex-row-around" bindtap="apply">
 		<text class="apply">立即申请</text>
 	</view>
 </view>

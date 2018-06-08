@@ -62,10 +62,10 @@
     </view>
 </view>
 <view class="operation flex-row-around fix-bottom">
-    <view class="operation-item flex-column-center">
+    <button plain="true" open-type="share" class="operation-item flex-column-center share-btn">
         <image class="bottom-icon" src="/img/share.png"></image>
-        <text>分享</text>
-    </view>
+        <text style="line-height:20px;">分享</text>
+    </button>
     <view class="operation-item flex-column-center" bindtap="collection">
         <image class="bottom-icon" src="{{coImg}}"></image>
         <text>收藏</text>

@@ -22,7 +22,7 @@ Page({
   },
    onShareAppMessage: function (res) {
     return {
-      title: '蜗牛职信',
+      title: '蜗牛职信',           
       path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"userId="+wx.getStorageSync('userId')
     }
   },
@@ -156,8 +156,8 @@ Page({
           })
         }
       },
-      fail(res){
-        console.log(res)
+      fail(err){
+        console.log(err)
         _this.setData({
             collectFlag: true
           })
@@ -198,6 +198,7 @@ Page({
         },
         fail(res){
           console.log(res)
+          this.data.clickResume=true;
         }
       })
     }
