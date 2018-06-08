@@ -1,7 +1,8 @@
-<!--pages/event/good-word-register/good-word-register.wxml-->
+<getphone-modal bindsuccess="getFlag" id="getPhone"></getphone-modal>
 <view>
 	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job.png"></image>
 	<view class="bottom flex-row-around" bindtap="registe">
-		<text class="apply">立即注册</text>
+        <text wx:if="{{stateFlag==false}}" class="apply">立即注册</text>
+		<text wx:elif="{{stateFlag==true}}" class="apply">前往首页</text>
 	</view>
 </view>

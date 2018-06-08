@@ -9,7 +9,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: '蜗牛职信',
-      path: '/pages/event/inviting/good-work-register/good-work-register?userId=' + wx.getStorageSync('userId')
+      path: '/pages/event/inviting/good-work-register/good-work-register?inviteCode=' + this.data.inviteCode
     }
   },
   onLoad: function (options) {
@@ -41,10 +41,9 @@ Page({
       data: {},
       success(res) {
         console.log(res,"aaaa")
-        // _this.setData({
-        //   inviteNumber: res.data.data.inviteNumber,
-        //   recommNumber: res.data.data.recommNumber
-        // })
+        _this.setData({
+          inviteCode:res.data.data.inviteCode
+        })
       },
       fail(res) {
         console.log(res)
