@@ -12,7 +12,7 @@ Page({
     }
     return {
       title: '蜗牛职信',
-      path: '/pages/job/personal-jobindex/personal-jobindex?id=' + wx.getStorageSync('sessionId') + ''
+      path: '/pages/event/inviting/good-work-register/good-work-register?userId=' + wx.getStorageSync('userId')
     }
   },
   onLoad: function (options) {
