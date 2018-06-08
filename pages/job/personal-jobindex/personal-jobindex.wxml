@@ -2,7 +2,7 @@
 <view wx:if="{{!hasIntension}}" class="intention-box">
     <view class="container flex-column-center bg-fff">
       <view>
-        <getphone-modal wx:if="{{modalShow}}"></getphone-modal>
+        <getphone-modal id="getPhone"></getphone-modal>
         <view class="title-box border-top">
           <text class="title">你期望的工作</text>
         </view>

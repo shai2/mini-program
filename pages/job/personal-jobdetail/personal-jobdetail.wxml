@@ -1,4 +1,5 @@
 <view class="full-page-flex">
+    <getphone-modal id="getPhone"></getphone-modal>
     <view>
         <view class="baseinfo">
             <view class="flex-row-between flag-box">
@@ -49,9 +50,12 @@
         </view>
         <view class="big-card">
             <text class="middle-title">公司地址</text>
-            <view class="address-disc">
-                <image class="address-icon" src="/img/place.png"></image>
-                <text>{{jobDetail.address}}</text>
+            <view class="address-disc flex-row-between" bindtap="toAddress">
+                <view>
+                    <image class="address-icon" src="/img/place.png"></image>
+                    <text>{{jobDetail.address}}</text>
+                </view>
+                <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
             </view>
         </view>
         <text-single text="热门推荐"></text-single>

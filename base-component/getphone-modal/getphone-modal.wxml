@@ -1,5 +1,4 @@
-<view class="">
-  <view class="bg flex-column-center" wx:if="{{modalShow}}">
+<view class="bg flex-column-center" wx:if="{{modalShow}}">
     <view class="card flex-column-center">
         <view class="card-top flex-column-center">
             <image mode="widthFix" style="width:100%;margin-top: -40px;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/banner/banner-00.png"></image>
@@ -10,5 +9,4 @@
             <span>手机号快捷登录</span>
         </button>
     </view>
-  </view>
 </view>

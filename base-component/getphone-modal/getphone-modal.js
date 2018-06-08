@@ -8,7 +8,7 @@ Component({
 
   },
   data: {
-    modalShow:true,
+    modalShow:false,
   },
   methods: {
     getPhoneNumber(e){  //绑定手机请求
@@ -24,9 +24,7 @@ Component({
           if(res.data.code===0){
             console.log("绑定手机成功")
             wx.setStorageSync('hasPhone',true)
-            _this.setData({
-              modalShow:false
-            })
+            _this.hide()
           }else{
             console.log(res.data.msg)
           }
@@ -36,5 +34,15 @@ Component({
         }
       })
     },
+    show(){
+      this.setData({
+        modalShow:true
+      })
+    },
+    hide(){
+      this.setData({
+        modalShow:false
+      })
+    }
   }
 })

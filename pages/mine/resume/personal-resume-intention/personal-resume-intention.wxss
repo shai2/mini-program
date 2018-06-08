@@ -55,7 +55,6 @@
   background-color: #fff;
 }
 .job-r {
-  /* width:100px; */
   height: 100%;
   padding: 20px 10px;
   background-color: #f3f5f7;

@@ -5,7 +5,7 @@
             <image class="register-avatar" src="{{item.userPhoto}}"></image>
             <view class="card-middle flex-column-center flex">
                 <text class="register-name">{{item.applyUserName}}</text>
-                <text wx:if="{{item.status == 1}}" class="register-state">已申请：{{item.effectiveTimeText}}</text>
+                <text wx:if="{{item.status == 1}}" class="register-state">已申请：{{item.effectiveTime}}</text>
                 <text wx:elif="{{item.status == 2 || item.status == 3}}" class="register-state-success">已入职</text>
             </view>
         </view>

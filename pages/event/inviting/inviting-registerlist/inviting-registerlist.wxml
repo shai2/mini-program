@@ -9,8 +9,8 @@
             <view class="card-middle flex-column-center flex">
                 <text class="register-name">{{item.inviteUserName}}</text>
                 <text wx:if="{{item.inviteRewardFlag===0}}" class="register-state-no">简历待完善</text>
-                <text wx:else class="register-state">简历待完善</text>
-                <text class="register-time">已注册：{{item.inviteTimeText}}</text>
+                <text wx:else class="register-state">简历已完善</text>
+                <text class="register-time">已注册：{{item.inviteTime}}</text>
             </view>
             <view class="card-right flex-column-center">
                 <text data-inviteRewardFlag="{{item.inviteRewardFlag}}" data-id="{{item.id}}" data-index="{{index}}" wx:if="{{item.inviteRewardFlag===1}}" class="register-reward" catchtap="getReward">领红包</text>

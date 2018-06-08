@@ -11,7 +11,6 @@ Page({
     pullText:'加载中 . .',
     repeatFlag:false,
     hasIntension:true,
-    modalShow:false,
     canScroll:false,
   },
   onLoad(options) {
@@ -59,7 +58,6 @@ Page({
                 wx.setStorageSync('hasPhone',true)
                 _this.setData({  // 无弹窗
                   hasIntension:false,
-                  modalShow:false,
                   canScroll:false
                 })
                 return
@@ -69,9 +67,10 @@ Page({
                 wx.setStorageSync('hasPhone',false)
                 _this.setData({
                   hasIntension:false,
-                  modalShow:true,
                   canScroll:false
                 })
+                console.log(_this.selectComponent('#getPhone'))
+                _this.selectComponent('#getPhone').show()
               }
             },
             fail(res){
@@ -156,7 +155,7 @@ Page({
   next(){
     var _this = this
     if(this.data.canTap){
-      wx.setStorageSync('hopePosition',this.data.searchText)
+      // wx.setStorageSync('hopePosition',this.data.searchText)
         wx.request({
         url: api.updateJobIntention,
         method:"POST",

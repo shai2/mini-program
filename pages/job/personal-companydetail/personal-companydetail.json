@@ -5,6 +5,7 @@
     "usingComponents":{
         "job-item":"/base-component/job-item/job-item",
         "my-button":"/base-component/my-button/my-button",
-        "text-single":"/base-component/text-single/text-single"
+        "text-single":"/base-component/text-single/text-single",
+        "getphone-modal":"/base-component/getphone-modal/getphone-modal"
     }
 }

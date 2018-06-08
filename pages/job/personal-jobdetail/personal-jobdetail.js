@@ -1,9 +1,13 @@
+let QQMapWX = require('../../../utils/qqmap-wx-jssdk.js');
 let api = require("../../../utils/api")
+let info = getApp().globalData
+let qqmapsdk;
 let pageNow = 1;
 Page({
   data: {
     jobDetail:{},
     companyDetail:{},
+    addressObj: {}, //中文地址查询返回集合
     jobObj:[], //热门相关
     jid:'',
     position:'',
@@ -27,12 +31,15 @@ Page({
     }
   },
   onLoad(options) {
+    this.login()
+    qqmapsdk = new QQMapWX({
+      key: 'MPABZ-64LLO-4IWWC-SEKKE-B7SK5-3XBXA'
+    });
     pageNow = 1;
     this.setData({
       jid:options.jid,
       position:options.pos
     })
-    console.log(options.pos,"aaaaaaaa")
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
     wx.showLoading({title:"加载中"})
@@ -157,8 +164,8 @@ Page({
           })
         }
       },
-      fail(err){
-        console.log(err)
+      fail(res){
+        console.log(res)
         _this.setData({
             collectFlag: true
           })
@@ -253,6 +260,7 @@ Page({
         _this.setData({
           companyDetail:res.data.data
         })
+        _this.getAddress()
       },
       fail(res){
         console.log(res)
@@ -295,9 +303,84 @@ Page({
       }
     })
   },
+  getAddress(){
+    let _this = this
+    qqmapsdk.geocoder({
+      address: this.data.companyDetail.prov+this.data.companyDetail.city+this.data.companyDetail.adress,
+      success: function(res) {
+        _this.setData({
+          addressObj:res.result,
+        })
+        console.log(res.result)
+      },
+      fail: function(res) {
+        console.log(res.result);
+      },
+      complete: function(res) {
+
+      }
+    })
+  },
+  // 登录流程 没有账号快捷注册
+  login(){
+    let _this = this
+    wx.login({
+      success: res => {
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: api.login,
+            method:"POST",
+            data: {
+              code: res.code
+            },
+            success(res){
+              console.log(res)
+              wx.setStorageSync('sessionId', res.data.data.token)
+              wx.setStorageSync('userId', res.data.data.userInfo.userId)
+              info.userInfo = res.data.data.userInfo //同步到全局
+              if (res.data.data.jobIntentionFlag===0) { //已经有意向了
+                console.log("有意向（有手机）")
+                wx.setStorageSync('hasPhone',true)
+                return
+              };
+              if (res.data.data.userInfo.phone&&res.data.data.jobIntentionFlag!==0) { // 有手机号没意向 只出来intention
+                console.log("已绑定手机 无意向")
+                wx.setStorageSync('hasPhone',true)
+                return
+              }
+              if(!res.data.data.userInfo.phone){
+                console.log("需要绑定手机权限授权")
+                wx.setStorageSync('hasPhone',false)
+                _this.selectComponent('#getPhone').show()
+              }
+            },
+            fail(res){
+              console.log(res)
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      },
+      fail:res => (
+        console.log(res)
+      )
+    })
+  },
   toCompanyDetail(e){
     wx.navigateTo({
       url:"/pages/job/personal-companydetail/personal-companydetail?cid=" + e.currentTarget.dataset.cid
+    })
+  },
+  toAddress(){
+    let _this = this
+    wx.openLocation({
+      latitude: _this.data.addressObj.location.lat*1,
+      longitude: _this.data.addressObj.location.lng*1,
+      name:_this.data.companyDetail.name,
+      address:_this.data.companyDetail.adress,
+      scale: 18
     })
   }
 })

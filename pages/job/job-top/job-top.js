@@ -32,7 +32,6 @@ Page({
       },
       data: {
         type:type,
-        keyword: wx.getStorageSync('hopePosition'),
         page:page
       },
       success(res){

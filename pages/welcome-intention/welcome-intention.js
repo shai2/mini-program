@@ -32,7 +32,6 @@ Page({
   },
   next(){
     if(this.data.canTap){
-      wx.setStorageSync('hopePosition',this.data.searchText)
         wx.request({
         url: api.updateJobIntention,
         method:"POST",

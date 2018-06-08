@@ -29,7 +29,7 @@ const shareFunction = (options,title,url,...args) => {
   if( options.from == 'button' ){
     let _data = options.target.dataset;
 　　console.log( _data);
-    shareObj.path = path+'?a=1&b=2'
+    shareObj.path = path+'?a=1&b=2' //写一半 参数遍历带入
 　}
 　return shareObj
 }

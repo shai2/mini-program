@@ -1,9 +1,12 @@
+let QQMapWX = require('../../../utils/qqmap-wx-jssdk.js');
 let api = require("../../../utils/api")
+let qqmapsdk;
 let pageNow = 1;
 Page({
   data: {
     jobDetail:{},
     companyDetail:{},
+    addressObj: {}, //中文地址查询返回集合
     jobObj:[], //热门相关
     pullText:'加载中 . .',
     overflow:"dec",
@@ -11,6 +14,9 @@ Page({
     repeatFlag:false,
   },
   onLoad(options) {
+    qqmapsdk = new QQMapWX({
+      key: 'MPABZ-64LLO-4IWWC-SEKKE-B7SK5-3XBXA'
+    });
     pageNow = 1;
     this.setData({
       cid:options.cid
@@ -98,6 +104,7 @@ Page({
         _this.setData({
           companyDetail:res.data.data
         })
+        _this.getAddress()
         console.log(_this.data.companyDetail)
       },
       fail(res){
@@ -105,4 +112,32 @@ Page({
       }
     })
   },
+  getAddress(){
+    let _this = this
+    qqmapsdk.geocoder({
+      address: this.data.companyDetail.prov+this.data.companyDetail.city+this.data.companyDetail.adress,
+      success: function(res) {
+        _this.setData({
+          addressObj:res.result,
+        })
+        console.log(res.result)
+      },
+      fail: function(res) {
+        console.log(res.result);
+      },
+      complete: function(res) {
+
+      }
+    })
+  },
+  toAddress(){
+    let _this = this
+    wx.openLocation({
+      latitude: _this.data.addressObj.location.lat*1,
+      longitude: _this.data.addressObj.location.lng*1,
+      name:_this.data.companyDetail.name,
+      address:_this.data.companyDetail.adress,
+      scale: 18
+    })
+  }
 })
