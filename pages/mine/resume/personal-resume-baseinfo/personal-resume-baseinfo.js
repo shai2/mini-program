@@ -66,9 +66,10 @@ Page({
     })
   },
   regionChange(e){
-    let _area = 'userInfo.basicInfo.address'
     this.setData({
-      [_area]:e.detail.value[0]+'-'+e.detail.value[1]+'-'+e.detail.value[2]
+      ['userInfo.basicInfo.province']:e.detail.value[0],
+      ['userInfo.basicInfo.city']:e.detail.value[1],
+      ['userInfo.basicInfo.area']:e.detail.value[2]
     })
   },
   mobileChange(e){
