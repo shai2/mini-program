@@ -9,40 +9,39 @@ Page({
   onLoad(options) {
     pageNow = 1
     wx.showLoading({title:"加载中"})
-    this.getJobListByStatus(pageNow,2,true) //查询
+    this.jobListInterviewed(pageNow,2,true) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
-    this.getJobListByStatus(pageNow,2,true)
+    this.jobListInterviewed(pageNow,2,true)
   },
   onReachBottom(){
-    this.getJobListByStatus(pageNow,2)
+    this.jobListInterviewed(pageNow,2)
   },
-  getJobListByStatus(page,type,refresh){
+  jobListInterviewed(page,type,refresh){
     let _this = this
     if(this.data.repeatFlag) return
     _this.setData({
       repeatFlag:true
     })
     wx.request({
-      url: api.getJobListByStatus,
+      url: api.jobListInterviewed,
       method:"GET",
-      header:{
+        header:{
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        status:type,
         page:page
       },
       success(res){
         if (refresh) {
           _this.setData({
-            jobObj:res.data.data.data,
+            jobObj:res.data.data,
             repeatFlag:false
           })
         }else{
           _this.setData({
-            jobObj:_this.data.jobObj.concat(res.data.data.data),
+            jobObj:_this.data.jobObj.concat(res.data.data),
             repeatFlag:false
           })
         }
@@ -50,7 +49,7 @@ Page({
         wx.stopPullDownRefresh()
         // console.log(_this.data.jobObj)
         pageNow++
-        if(res.data.data.data.length <10){ //没数据了
+        if(res.data.data.length <10){ //没数据了
           _this.setData({
             pullText:"到底了"
           })
@@ -62,4 +61,7 @@ Page({
       }
     })
   },
+  enlarge(){
+    
+  }
 })

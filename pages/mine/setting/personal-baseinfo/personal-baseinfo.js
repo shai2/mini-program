@@ -34,7 +34,7 @@ Page({
   },
   chooseAvatar(){
     var _this = this
-    wx.chooseImage({
+    wx.chooseImage({count:1,
       success: function(res) {
         wx.uploadFile({
           url: api.avatarUpload,

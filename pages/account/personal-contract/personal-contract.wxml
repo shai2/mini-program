@@ -1,40 +1,49 @@
-<redpack id="redpack" money="9999"></redpack>
-<view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
+<view wx:if="{{contractObj.status === 3}}" class="orange-tip flex-row-between">
     <view class="flex-row-between">
         <image mode="widthFix" class="tip-left" src="/img/notice.png"></image>
-        <text>上传合同领取奖金</text>
+        <text>您的合同审核通过，奖金即将到账。</text>
     </view>
 </view>
-<view wx:if="{{true}}" class="orange-tip flex-row-between" bindtap="getReward">
-    <view class="flex-row-between">
-        <image mode="widthFix" class="tip-left" src="/img/notice.png"></image>
-        <text>合同上传成功</text>
-    </view>
-    <view class="flex-row-between">
-        <text>领取奖金</text>
-        <image mode="widthFix" class="tip-right" src="/img/arrow-right-orange.png"></image>
-    </view>
+<view wx:if="{{enlargeFlag}}" class="enlarge-box flex-column-center" bindtap="enlargeHide">
+    <image mode="widthFix" style="width:100%" src="{{contractObj.contractPath}}"></image>
 </view>
 <view class="bg">
-    <view class="contract-card">
-        <image mode="widthFix" class="upload-indentify" src="/img/unload-success.png"></image>
-        <view class="contract-top flex-row-between">
-            <image class="company-avatar" src="{{avatar}}"></image>
-            <view class="contract-top-text flex">
-                <text class="name">高级市场经理</text>
-                <text class="company">中国平安</text>
-            </view>
-        </view>
-        <view class="contract-bottom flex-row-between">
-            <view class="contract-bottom-left flex-row-center">
-                <image style="width:12px;height:12px;margin-right:5px;" src="/img/shield.png"></image>
-                <text class="txt">蜗牛正在保护你的隐私</text>
-            </view>
-            <text class="state-text">合同审核中</text>
+    <view wx:if="{{contractObj.status === 2 || contractObj.status === 5}}" class="contract-card-blank" bindtap="enlargeShow">
+        <view class="pd15">
+            <image class="" style="width:100%;" mode="aspectFill" src="{{contractObj.contractPath}}"></image>
         </view>
     </view>
-    <view class="uploadContract flex-row-between">
+    <view wx:if="{{contractObj.status === 3 || contractObj.status === 4}}" class="pd15">
+        <view class="contract-card">
+            <image mode="widthFix" class="upload-indentify" src="/img/unload-success.png"></image>
+            <view class="contract-top flex-row-between">
+                <image class="company-avatar" src="{{jobDetail.companyLogo}}"></image>
+                <view class="contract-top-text flex">
+                    <text class="name">{{jobDetail.position}}</text>
+                    <text class="company">{{jobDetail.companyName}}</text>
+                </view>
+            </view>
+            <view class="contract-bottom flex-row-between">
+                <view class="contract-bottom-left flex-row-center">
+                    <image style="width:12px;height:12px;margin-right:5px;" src="/img/shield.png"></image>
+                    <text class="txt">蜗牛正在保护你的隐私</text>
+                </view>
+                <text class="state-text"></text>
+            </view>
+        </view>
+    </view>
+    
+    <view wx:if="{{contractObj.status === 0}}" class="uploadContract flex-row-between" bindtap="uploadContract">
         <text class="upload-text">上传合同</text>
+        <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
+    </view>
+
+    <view wx:if="{{contractObj.status === 2 || contractObj.status === 5}}" class="uploadContract flex-row-between" bindtap="uploadContract">
+        <text class="upload-text">重新上传合同</text>
+        <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
+    </view>
+    <view wx:if="{{contractObj.status === 3 || contractObj.status === 4}}" class="uploadContract flex-row-between" bindtap="enlargeShow">
+        <text class="upload-text">查看合同</text>
         <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
     </view>
 </view>

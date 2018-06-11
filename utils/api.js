@@ -47,4 +47,8 @@ module.exports = {
   registMoney: baseUrl + "/app/invite_recommend/v1/regist-money", //完善简历领红包
   inviteMoney: baseUrl + "/app/invite_recommend/v1/invite-money/id", //邀请人领红包
   userFlowingWater: baseUrl + "/app/userAccount/getAccountRecordListByType", //根据类型查询账户流水（全部、邀请注册、推荐岗位、历史提现）
+  jobListInterviewed: baseUrl + "/app/job/jobList-interviewed", //待面试职位（包含判断合同状态字段）
+  contractpath: baseUrl + "/app/contract/v1/contractpath", //获取合同状态
+  uploadContract: baseUrl + "/app/contract/v1/contract", //上传合同
+  
 }
