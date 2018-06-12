@@ -2,14 +2,15 @@
 <view class="bg">
 	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job1.png"></image>
 	<view class="people-box">
-		<image class="people" mode="widthFix" src="{{detail.avatar}}"></image>
+		<image class="people" mode="widthFix" src="{{detail.avatar}}" ></image>
+		
 	</view>
 	<text class="dec">好友  {{detail.name}}  给你推荐热门职位啦
 	入职后，即可得到奖金哦~
 	</text>
 	<view class="title">
 		<text >{{detail.jobDetail.position}}</text>
-		<text >{{detail.jobDetail.wagemin}}K-{{detail.jobDetail.wagemax}}</text>
+		<text >{{detail.jobDetail.wagemin}}K-{{detail.jobDetail.wagemax}}K</text>
 	</view>
 	<view class="bot">
 		<image  mode="widthFix" src="{{detail.jobDetail.companyLogo}}"></image>
