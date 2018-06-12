@@ -65,7 +65,7 @@
         <job-item jobItem="{{item}}"></job-item>
     </block>
     <text class="loading-text">{{pullText}}</text>
-    <view class="gift orange-tip flex-row-between" bindtap="toResume">
+    <view wx:if="{{rewardFlag===0}}" class="gift orange-tip flex-row-between" bindtap="toResume">
         <view class="flex-row-between">
             <image class="gift-left" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/gift.png"></image>
             <text>完善简历立得现金红包</text>

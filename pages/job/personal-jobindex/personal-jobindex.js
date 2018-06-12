@@ -12,10 +12,12 @@ Page({
     repeatFlag:false,
     hasIntension:true,
     canScroll:false,
+    rewardFlag:''
   },
   onLoad(options) {
     this.login()
     this.getHot()
+    this.getRewardStatus()
     pageNow = 1;
     wx.showLoading({title:"加载中"})
     this.getJobListByType(pageNow,4,true)
@@ -84,6 +86,25 @@ Page({
       fail:res => (
         console.log(res)
       )
+    })
+  },
+  getRewardStatus(){
+    let _this = this
+    wx.request({
+      url: api.getRewardStatus,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.setData({
+          rewardFlag:res.data.data.rewardFlag
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
     })
   },
   regionChange(e){

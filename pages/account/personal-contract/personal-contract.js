@@ -54,7 +54,7 @@ Page({
       },
       success(res){
         _this.setData({
-          contractObj:res.data.contractVO,
+          contractObj:res.data.data,
         })
         wx.hideLoading()
       },
