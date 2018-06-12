@@ -49,7 +49,8 @@
 					<text>{{item.createTime_format}}</text>
 				</view>
 			</view>
-			<text class="loading-text">{{text}}</text>
+			
 		</view>
+		<text class="loading-text">{{text}}</text>
 	</view>
 </view>

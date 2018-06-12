@@ -38,7 +38,7 @@ Page({
     })
   },
   apply(){
-    wx.switchTap({
+    wx.switchTab({
       url:"/pages/job/personal-jobindex/personal-jobindex"
     })
   },
