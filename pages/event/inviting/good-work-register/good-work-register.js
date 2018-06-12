@@ -12,12 +12,6 @@ Page({
   },
   registe(){
     this.login()
-    console.log("a")
-    // wx.showToast({
-    //   title: this.data.stateFlag,
-    //   icon: 'success',
-    //   duration: 2000
-    // })
   },
   getFlag(){
     this.setData({
@@ -26,7 +20,6 @@ Page({
   },
   // 登录流程 没有账号快捷注册
   login(){
-
     if (this.data.stateFlag) {
       wx.switchTab({
         url:"/pages/job/personal-jobindex/personal-jobindex"

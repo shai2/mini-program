@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "活动",
   "usingComponents": {
+    "getphone-modal":"/base-component/getphone-modal/getphone-modal"
   }
 }
