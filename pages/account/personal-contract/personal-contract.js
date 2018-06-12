@@ -79,7 +79,7 @@ Page({
           },
           success: function(res){
             _this.setData({
-              ['contractObj.contractPath']:JSON.parse(res.data).data
+              ['contractObj.contractPath']:JSON.parse(res.data).url
             })
           }
         })
