@@ -12,9 +12,11 @@ Page({
     repeatFlag:false,
     hasIntension:true,
     canScroll:false,
-    rewardFlag:''
+    rewardFlag:'',
+    inviteCode:'',
   },
   onLoad(options) {
+    this.data.inviteCode = options.inviteCode
     this.login()
     this.getHot()
     this.getRewardStatus()
@@ -39,7 +41,8 @@ Page({
             url: api.login,
             method:"POST",
             data: {
-              code: res.code
+              code: res.code,
+              inviteCode:_this.data.inviteCode
             },
             success(res){
               console.log(res)
@@ -71,7 +74,7 @@ Page({
                   hasIntension:false,
                   canScroll:false
                 })
-                console.log(_this.selectComponent('#getPhone'))
+                // console.log(_this.selectComponent('#getPhone'))
                 _this.selectComponent('#getPhone').show()
               }
             },

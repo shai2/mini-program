@@ -8,6 +8,11 @@ Component({
       })
     };
     switch(this.data.jobItem.status){
+      case 1:
+        this.setData({
+          statusTxt:'上传合同领取奖金'
+        })
+        break
       case 2:
         this.setData({
           statusTxt:'审核中'

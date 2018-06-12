@@ -78,9 +78,10 @@ Page({
             jobId:_this.data.jid
           },
           success: function(res){
-            _this.setData({
-              ['contractObj.contractPath']:JSON.parse(res.data).url
-            })
+            _this.contractpath()
+            // _this.setData({
+            //   ['contractObj.contractPath']:JSON.parse(res.data).url
+            // })
           }
         })
       }
