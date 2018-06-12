@@ -153,7 +153,7 @@ Page({
     })
   },
   getExperienceList(){ //存工作经验
-    // if (wx.getStorageSync('expList')) return
+    if (wx.getStorageSync('expList')) return
     let _this = this
     wx.request({
       url: api.getExperienceList,

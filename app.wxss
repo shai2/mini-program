@@ -19,6 +19,7 @@ page{background:#f3f5f7;width:100%;height:100%;}
 .mgtop30{margin-top:30px!important;}
 .mgbt0{margin-bottom:0px!important;}
 .mgbt10{margin-bottom:10px!important;}
+.mgrt10{margin-right:10px!important;}
 .pdbt0{padding-bottom:0px!important;}
 .pd15{padding:15px;}
 .font14{font-size:14px!important;}

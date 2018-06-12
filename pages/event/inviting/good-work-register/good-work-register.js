@@ -1,3 +1,4 @@
+let api = require("../../utils/api")
 Page({
   data: {
     inviteCode:0,

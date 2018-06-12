@@ -2,10 +2,14 @@
 <view class="full-page-flex">
     <view class="overflow-s">
         <!-- 提醒完善简历 -->
-        <view wx:if="{{rewardFlag===0}}" class="orange-tip flex-row-between">
-            <view class="flex-row-between">
+        <view wx:if="{{rewardFlag===0}}" class="orange-tip flex-row-between" bindtap="getReward">
+            <view class="flex-row-between flex mgrt10">
                 <image mode="widthFix" class="tip-left" mod="" src="/img/notice.png"></image>
-                <text>完善奖励后可领取红包</text>
+                <text>完善基本信息、工作履历、教育背景</text>
+            </view>
+            <view class="flex-row-between">
+                <text>领取奖金</text>
+                <image mode="widthFix" class="tip-right" src="/img/arrow-right-orange.png"></image>
             </view>
         </view>
         <!-- 可以领取 -->

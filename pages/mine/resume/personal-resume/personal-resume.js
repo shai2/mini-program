@@ -35,7 +35,33 @@ Page({
     })
   },
   getReward(){
-    if (this.data.rewardFlag!==1) return
+    if (this.data.rewardFlag!==1){
+      if(this.data.baseinfoSc===0){
+        wx.showToast({
+          title: '请先完善基本信息',
+          icon: 'none',
+          duration: 1000
+        })
+        return
+      }
+      if(this.data.eduSc===0){
+        wx.showToast({
+          title: '请先填写一段教育背景',
+          icon: 'none',
+          duration: 1000
+        })
+        return
+      }
+      if(this.data.workExperienceSc===0){
+        wx.showToast({
+          title: '请先填写一段工作经历',
+          icon: 'none',
+          duration: 1000
+        })
+        return
+      }
+      // return
+    }
     let _this = this
     wx.request({
       url: api.registMoney,
@@ -45,14 +71,6 @@ Page({
       },
       data: {},
       success(res){
-        // if (!res.data.money) {
-        //   wx.showToast({
-        //     title: '服务器异常',
-        //     icon: 'none',
-        //     duration: 1000
-        //   })
-        //   return
-        // };
         _this.setData({
           money:res.data.money/100,
           rewardFlag:-1
@@ -75,6 +93,7 @@ Page({
       data: {},
       success(res){
         _this.setData({
+          rewardObj:res.data.data,
           rewardFlag:res.data.data.rewardFlag
         })
       },
