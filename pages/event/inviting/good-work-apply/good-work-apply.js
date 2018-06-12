@@ -2,11 +2,13 @@ let api = require("../../../../utils/api.js")
 Page({
   data: {
     detail:{},
-    position:""
+    position:"",
+    jid:0
   },
   onLoad: function (options) {
     //jid= 649808
-    // this.data.position=options.position;
+    this.data.position=options.position;
+    this.data.jid=options.jid;
     var _this=this;
     wx.request({
       url: api.shareJobDetail,
@@ -15,10 +17,10 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        // userId:options.userId,
-        // jid:options.jid
-        userId:wx.getStorageSync('userId'),
-        jid:649808
+        userId:options.userId,
+        jid:options.jid
+        // userId:wx.getStorageSync('userId'),
+        // jid:649808
       },
       success(res){
         console.log(res.data.data)
@@ -36,13 +38,13 @@ Page({
     })
   },
   apply(){
-    wx.switchTap({
+    wx.switchTab({
       url:"/pages/job/personal-jobindex/personal-jobindex"
     })
   },
   clickJob(){
     wx.navigateTo({
-      url:"/pages/job/personal-jobdetail/personal-jobdetail?jid=649808&pos=java"
+      url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+this.data.jid+"&pos="+this.data.position
     })
   }
 })

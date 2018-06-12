@@ -1,4 +1,5 @@
-let api = require("../../utils/api")
+const api=require("../../../../utils/api.js")
+let info = getApp().globalData
 Page({
   data: {
     inviteCode:0,
@@ -11,6 +12,12 @@ Page({
   },
   registe(){
     this.login()
+    console.log("a")
+    // wx.showToast({
+    //   title: this.data.stateFlag,
+    //   icon: 'success',
+    //   duration: 2000
+    // })
   },
   getFlag(){
     this.setData({
@@ -19,8 +26,9 @@ Page({
   },
   // 登录流程 没有账号快捷注册
   login(){
+
     if (this.data.stateFlag) {
-      wx.switchTap({
+      wx.switchTab({
         url:"/pages/job/personal-jobindex/personal-jobindex"
       })
     }else{
@@ -44,15 +52,15 @@ Page({
                 if (res.data.data.jobIntentionFlag===0) { //已经有意向了
                   console.log("有意向（有手机）")
                   wx.setStorageSync('hasPhone',true)
-                  wx.switchTap({
+                  wx.switchTab({
                     url:"/pages/job/personal-jobindex/personal-jobindex"
                   })
                   return
-                };
+                }
                 if (res.data.data.userInfo.phone&&res.data.data.jobIntentionFlag!==0) { // 有手机号没意向 只出来intention
                   console.log("已绑定手机 无意向")
-                  wx.setStorageSync('hasPhone',true)
-                  wx.switchTap({
+                  wx.setStorageSync('hasPhone',true);
+                  wx.switchTab({
                     url:"/pages/job/personal-jobindex/personal-jobindex"
                   })
                   return
