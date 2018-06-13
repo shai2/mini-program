@@ -2,6 +2,7 @@
     <view class="shadow-top flex-column-center">
         <image class="red-page" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/red-page2.png"></image>
         <text class="shadow-text-bottom"><text class="money">{{money}}</text>元</text>
+        <view catchtap="hide" class="clickButton">确定</view>
+        <view class="close-icon" catchtap="hide"></view>
     </view>
-    <image class="close-icon" catchtap="hide" src="/img/close.png"></image>
 </view>

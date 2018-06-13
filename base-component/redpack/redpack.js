@@ -6,7 +6,7 @@ Component({
     },
     rewardShow:{
       type:Boolean,
-      value:true
+      value:false
     }
   },
   data: {
