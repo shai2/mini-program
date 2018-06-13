@@ -1,9 +1,9 @@
 .close-icon{margin-top:5px;}
 .shadow-top{position:relative;}
-.shadow-text-top,.shadow-text-bottom{position:absolute;left:0;right:0;text-align:center;color:#db2b30;font-size:12px;}
-.shadow-text-top{top:60px;}
-.shadow-text-bottom{top:90px;}
-.money{font-size:30px;margin-right:5px;}
+.shadow-text-bottom{position:absolute;left:0;right:0;text-align:center;color:#db2b30;font-size:14px;}
+.shadow-text-bottom{top:145px;color:#ffe13a;}
+.money{font-size:50px;margin-right:5px;}
 .myShadow{position:fixed;z-index:1;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,0.4);}
 .close-icon{width:40px;height:40px;padding:10px;}
 .flex-column-center{display:flex;flex-direction:column;justify-content:center;align-items:center;}
+.red-page{width:250px;height:290px}

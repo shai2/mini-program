@@ -1,7 +1,6 @@
 <view wx:if="{{rewardShow}}" class="myShadow flex-column-center">
     <view class="shadow-top flex-column-center">
-        <image class="" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/red-page.png"></image>
-        <text class="shadow-text-top">恭喜您获得了</text>
+        <image class="red-page" mode="widthFix" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/red-page2.png"></image>
         <text class="shadow-text-bottom"><text class="money">{{money}}</text>元</text>
     </view>
     <image class="close-icon" catchtap="hide" src="/img/close.png"></image>

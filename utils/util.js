@@ -36,20 +36,17 @@ const shareFunction = (options,title,url,...args) => {
 }
 // 请求封装promise
 const wxPromisifty = (fn)=>{
-  return (obj)=>{
+  return (obj={})=>{
     return new Promise((resolve,reject)=>{
-      obj.success = (res) =>{
-        resolve(res)
-      }
-      obj.fail = (res) =>{
-        reject(res)
-      }
+      obj.success = (res) =>{resolve(res)}
+      obj.fail = (res) =>{reject(res)}
+      fn(obj)
     })
-    fn(obj)
   }
 }
 
 module.exports = {
   formatTime,
-  shareFunction
+  shareFunction,
+  wxPromisifty
 }

@@ -26,7 +26,7 @@ Page({
     })
     wx.request({
       url: api.whoFocus,
-      method:"POST",
+      method:"GET",
       header:{
         sessionId: wx.getStorageSync('sessionId')
       },
