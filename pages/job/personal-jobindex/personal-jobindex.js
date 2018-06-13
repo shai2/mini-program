@@ -19,7 +19,6 @@ Page({
     this.data.inviteCode = options.inviteCode
     this.login()
     this.getHot()
-    this.getRewardStatus()
     pageNow = 1;
     wx.showLoading({title:"加载中"})
     this.getJobListByType(pageNow,4,true)
@@ -56,6 +55,7 @@ Page({
                   hasIntension:true,
                   canScroll:true
                 })
+                _this.getRewardStatus()
                 return
               };
               if (res.data.data.userInfo.phone&&res.data.data.jobIntentionFlag!==0) { // 有手机号没意向 只出来intention
@@ -65,6 +65,7 @@ Page({
                   hasIntension:false,
                   canScroll:false
                 })
+                _this.getRewardStatus()
                 return
               }
               if(!res.data.data.userInfo.phone){
@@ -101,6 +102,7 @@ Page({
       },
       data: {},
       success(res){
+        console.log(res)
         _this.setData({
           rewardFlag:res.data.data.rewardFlag
         })
@@ -109,6 +111,10 @@ Page({
         console.log(res)
       }
     })
+  },
+  getPhoneSuccess(e){
+    console.log(e)
+    this.getRewardStatus()
   },
   regionChange(e){
     this.setData({

@@ -32,7 +32,7 @@
             </view>
         </view>
     </view>
-    
+    <!-- 先写麻烦 后期没问题再简化 -->
     <view wx:if="{{contractObj.status === 1}}" class="uploadContract flex-row-between" bindtap="uploadContract">
         <text class="upload-text">上传合同</text>
         <image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>

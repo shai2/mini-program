@@ -26,6 +26,7 @@ Component({
             wx.setStorageSync('hasPhone',true)
             _this.triggerEvent('success',{flag:true})
             _this.hide()
+            _this.triggerEvent('getPhoneSuccess') //抛出事件
           }else{
             console.log(res.data.msg)
           }
