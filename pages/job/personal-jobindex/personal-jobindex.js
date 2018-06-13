@@ -17,6 +17,13 @@ Page({
   },
   onLoad(options) {
     this.data.inviteCode = options.inviteCode
+    if(options.inviteCode){
+      wx.showToast({
+        title: '可在我的职位收藏里找到推荐岗位',
+        icon: 'none',
+        duration: 2000
+      })
+    }
     this.login()
     this.getHot()
     pageNow = 1;
