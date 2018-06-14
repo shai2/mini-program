@@ -42,7 +42,7 @@ Page({
     this.setData({
       jid:options.jid,
       position:options.pos,
-      inviteCode:optins.inviteCode
+      inviteCode:options.inviteCode
     })
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
