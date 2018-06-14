@@ -21,7 +21,7 @@
                     <text>{{jobDetail.edu_text }}</text>
                 </view>
                 <view class="reward">
-                    <text>推荐奖</text>
+                    <text>推荐奖\t\t</text>
                     <text>{{jobDetail.rewardAmountText}}</text>
                 </view>
             </view>

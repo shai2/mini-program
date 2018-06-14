@@ -5,7 +5,7 @@ Page({
     detail:{},
     position:"",
     jid:'',
-    imgFlag:false
+    imgFlag:true
   },
   onLoad: function (options) {
     console.log(options)
@@ -44,6 +44,11 @@ Page({
           _this.setData({
             detail:res.data.data
           })
+          if(_this.data.detail.avatar){
+            _this.setData({
+            imgFlag:false
+          })
+          }
         }
       },
       fail(res){
