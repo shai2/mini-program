@@ -12,7 +12,12 @@ Page({
     this.data.position=options.position;
     this.data.jid=options.jid;
     this.data.inviteCode=options.inviteCode
+    wx.setStorageSync('inviteCode',options.inviteCode)
+    wx.setStorageSync('inviteJid',options.jid)
     this.shareJobDetail()
+    console.log('inviteCode:',wx.getStorageSync('inviteCode'))
+    console.log('inviteJid:',wx.getStorageSync('inviteJid'))
+    console.log('apply页面')
   },
   imgError(){
     this.setData({
@@ -28,9 +33,8 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        inviteCode:this.data.inviteCode,
-        jid:this.data.jid,
-        
+        inviteCode:_this.data.inviteCode,
+        jid:_this.data.jid,
       },
       success(res){
         console.log(res,"bbbbb")
@@ -64,7 +68,8 @@ Page({
               method:"POST",
               data: {
                 code: res.code,
-                inviteCode:_this.data.inviteCode
+                inviteCode:_this.data.inviteCode,
+                jobId:_this.data.jid
               },
               success(res){
                 console.log(res)
@@ -87,7 +92,7 @@ Page({
                   console.log("需要绑定手机权限授权")
                   wx.setStorageSync('hasPhone',false)
                   wx.switchTab({
-                    url:"/pages/job/personal-jobindex/personal-jobindex?inviteCode=" + _this.data.jid
+                    url:"/pages/job/personal-jobindex/personal-jobindex"
                   })
                 }
               },

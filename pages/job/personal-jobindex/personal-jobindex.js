@@ -17,6 +17,7 @@ Page({
     hasInviteCode:false
   },
   onLoad(options) {
+    console.log(options)
     this.data.inviteCode = options.inviteCode
     if(options.inviteCode){
       this.data.hasInviteCode = true
@@ -28,7 +29,8 @@ Page({
     this.getJobListByType(pageNow,4,true)
   },
   onReady(){
-    
+    console.log('inviteCode:',wx.getStorageSync('inviteCode'))
+    console.log('inviteJid:',wx.getStorageSync('inviteJid'))
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -48,7 +50,8 @@ Page({
             method:"POST",
             data: {
               code: res.code,
-              inviteCode:_this.data.inviteCode
+              inviteCode:wx.getStorageSync('inviteCode'),
+              jobId:wx.getStorageSync('inviteJid')
             },
             success(res){
               console.log(res)

@@ -26,7 +26,7 @@ Page({
     inviteCode:''
   },
    onShareAppMessage: function (res) {
-     console.log(this.data.inviteCode)
+    console.log(this.data.inviteCode)
     return {
       title: '您的好友 ' + this.data.userName + ' 向您推荐了优质岗位“' + this.data.jobDetail.position + '”，点击查看',
       path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&inviteCode="+this.data.inviteCode+"&position="+this.data.position
@@ -40,10 +40,14 @@ Page({
       key: 'MPABZ-64LLO-4IWWC-SEKKE-B7SK5-3XBXA'
     });
     pageNow = 1;
+    if(options.inviteCode){
+      this.setData({
+        inviteCode:options.inviteCode
+      })
+    }
     this.setData({
       jid:options.jid,
-      position:options.pos,
-      inviteCode:options.inviteCode
+      position:options.pos
     })
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
