@@ -1,16 +1,27 @@
 let api = require("../../../../utils/api.js")
+let info=getApp().globalData;
 Page({
   data: {
     detail:{},
     position:"",
-    jid:''
+    jid:'',
+    imgFlag:false
   },
   onLoad: function (options) {
-    this.shareJobDetail()
-  },
-  shareJobDetail(){
     this.data.position=options.position;
     this.data.jid=options.jid;
+    this.data.userId=options.userId
+    console.log(options,"aaaa")
+
+    this.shareJobDetail()
+    
+  },
+  imgError(){
+    this.setData({
+      imgFlag:true
+    })
+  },
+  shareJobDetail(){
     var _this=this;
     wx.request({
       url: api.shareJobDetail,
@@ -19,11 +30,11 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        userId:options.userId,
-        jid:options.jid
+        userId:this.data.userId,
+        jid:this.data.jid
       },
       success(res){
-        console.log(res.data.data)
+        console.log(res.data.data,"bbbbb")
         if(res.data.msg=="success")
         {
           console.log(res.data.data)

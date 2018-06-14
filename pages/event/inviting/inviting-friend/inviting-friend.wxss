@@ -10,16 +10,16 @@
 	font-size: 24px;
 	position: absolute;
 	left: 29%;
-	top: 31%;
+	top: 30.5%;
 	/* color: blue; */
-	color: #df4027;
+	color: #0b84d7;
 }
 .wei{
 	font-size: 12px;
 }
 .num1{
 	left: 29.3%;
-	top: 42%;
+	top: 38.3%;
 }
 .see{
 	position: absolute;
@@ -31,7 +31,7 @@
 }
 .see1{
 	right: 7%;
-	top: 39%;
+	top: 36.3%;
 }
 .bottom{
 	position: fixed;
@@ -42,7 +42,7 @@
 	background-color: #fff;
 }
 .apply{
-	background-color: #df4027;
+	background-color: #29a1f7;
 	color: #fff;
 	width: 325px;
 	height: 44px;

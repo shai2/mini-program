@@ -1,9 +1,8 @@
 <!--pages/event/good-word-apply/good-word-apply.wxml-->
 <view class="bg">
-	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/good-job1.png"></image>
+	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/jobReward.jpg"></image>
 	<view class="people-box">
-		<image class="people" mode="widthFix" src="{{detail.avatar}}" ></image>
-		
+		<image class="people" hidden="{{imgFlag}}" binderror="imgError" mode="widthFix" src="{{detail.avatar}}" ></image>
 	</view>
 	<text class="dec">好友  {{detail.name}}  给你推荐热门职位啦
 	入职后，即可得到奖金哦~

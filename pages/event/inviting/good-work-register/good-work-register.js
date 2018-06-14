@@ -1,5 +1,9 @@
-const api=require("../../../../utils/api.js")
-let info = getApp().globalData
+
+
+
+let api = require("../../../../utils/api.js");
+console.log(api);
+let info = getApp().globalData;
 Page({
   data: {
     inviteCode:0,
