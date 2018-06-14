@@ -26,6 +26,7 @@ Page({
     inviteCode:''
   },
    onShareAppMessage: function (res) {
+     console.log(this.data.inviteCode)
     return {
       title: '您的好友 ' + this.data.userName + ' 向您推荐了优质岗位“' + this.data.jobDetail.position + '”，点击查看',
       path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&inviteCode="+this.data.inviteCode+"&position="+this.data.position

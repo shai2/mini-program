@@ -11,7 +11,7 @@ Page({
     console.log(options)
     this.data.position=options.position;
     this.data.jid=options.jid;
-    this.data.userId=options.userId
+    this.data.inviteCode=options.inviteCode
     this.shareJobDetail()
   },
   imgError(){
@@ -28,11 +28,12 @@ Page({
         sessionId: wx.getStorageSync('sessionId')
       },
       data: {
-        userId:this.data.userId,
-        jid:this.data.jid
+        inviteCode:this.data.inviteCode,
+        jid:this.data.jid,
+        
       },
       success(res){
-        console.log(res.data.data,"bbbbb")
+        console.log(res,"bbbbb")
         if(res.data.msg=="success")
         {
           console.log(res.data.data)
