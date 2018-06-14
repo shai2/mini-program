@@ -62,5 +62,5 @@
 	margin-left: 11px;
 }
 .reward text:last-child{
-	margin-right: 15px;
+	margin-right: 11px;
 }

@@ -22,7 +22,7 @@
                 </view>
                 <view class="reward">
                     <text>推荐奖</text>
-                    <text>￥300</text>
+                    <text>{{jobDetail.rewardAmountText}}</text>
                 </view>
             </view>
             <view class="company-info flex-row-between" bindtap="toCompanyDetail" data-cid="{{jobDetail.cid}}">

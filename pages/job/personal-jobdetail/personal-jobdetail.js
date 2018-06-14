@@ -281,15 +281,30 @@ Page({
       success(res){
         wx.stopPullDownRefresh()
         wx.hideLoading()
+        var rewardNum=parseFloat(res.data.data.rewardAmountText)
         _this.setData({
-          jobDetail:res.data.data
+          jobDetail:res.data.data,
+          "jobDetail.rewardAmountText": rewardNum
         })
         if(_this.data.jobDetail.address.length<=200){
            _this.setData({
             flag:false,            
           })
         }
-        console.log(_this.data.jobDetail)
+       
+        if(rewardNum>=1000){
+          rewardNum=(rewardNum/1000).toFixed(2)+"K";
+          _this.setData({
+            "jobDetail.rewardAmountText":rewardNum,            
+          })
+        }else{
+          rewardNum="￥"+rewardNum;
+          _this.setData({
+            "jobDetail.rewardAmountText":rewardNum,            
+          })
+        }
+        console.log(_this.data.jobDetail,"job")
+        console.log(parseFloat(_this.data.jobDetail.rewardAmountText),"job")
         if(_this.data.jobDetail.isPrizes==1){
           _this.setData({
             hidden:false,

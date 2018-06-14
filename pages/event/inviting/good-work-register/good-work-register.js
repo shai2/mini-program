@@ -1,8 +1,5 @@
 
-
-
 let api = require("../../../../utils/api.js");
-console.log(api);
 let info = getApp().globalData;
 Page({
   data: {
