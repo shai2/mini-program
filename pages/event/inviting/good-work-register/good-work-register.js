@@ -1,4 +1,3 @@
-
 let api = require("../../../../utils/api.js");
 let info = getApp().globalData;
 Page({

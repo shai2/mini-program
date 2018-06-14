@@ -36,7 +36,7 @@ Page({
   },
   getReward(){
     if (this.data.rewardFlag!==1){
-      if(this.data.baseinfoSc===0){
+      if(this.data.rewardObj.baseinfoSc===0){
         wx.showToast({
           title: '请先完善基本信息',
           icon: 'none',
@@ -44,7 +44,7 @@ Page({
         })
         return
       }
-      if(this.data.eduSc===0){
+      if(this.data.rewardObj.eduSc===0){
         wx.showToast({
           title: '请先填写一段教育背景',
           icon: 'none',
@@ -52,7 +52,7 @@ Page({
         })
         return
       }
-      if(this.data.workExperienceSc===0){
+      if(this.data.rewardObj.workExperienceSc===0){
         wx.showToast({
           title: '请先填写一段工作经历',
           icon: 'none',
@@ -60,27 +60,28 @@ Page({
         })
         return
       }
-      // return
+      let _this = this
+      wx.request({
+        url: api.registMoney,
+        method:"GET",
+        header:{
+          sessionId: wx.getStorageSync('sessionId')
+        },
+        data: {},
+        success(res){
+          // if(res.data.code===0)
+          _this.setData({
+            money:res.data.money/100,
+            rewardFlag:-1
+          })
+          _this.selectComponent("#redpack").show()
+        },
+        fail(res){
+          console.log(res)
+        }
+      })
     }
-    let _this = this
-    wx.request({
-      url: api.registMoney,
-      method:"GET",
-      header:{
-        sessionId: wx.getStorageSync('sessionId')
-      },
-      data: {},
-      success(res){
-        _this.setData({
-          money:res.data.money/100,
-          rewardFlag:-1
-        })
-        _this.selectComponent("#redpack").show()
-      },
-      fail(res){
-        console.log(res)
-      }
-    })
+    
   },
   getRewardStatus(){
     let _this = this

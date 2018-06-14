@@ -9,15 +9,15 @@
             </view>
             <view class="disc-line flex-row-center rewardBox">
                 <view class="disc-item flex-row-center">
-                    <image class="normal-icon" src="/img/place.png"></image>
+                    <!-- <image class="normal-icon" src="/img/place.png"></image> -->
                     <text>{{jobDetail.prov}} - {{jobDetail.city}}</text>
                 </view>
                 <view class="disc-item flex-row-center">
-                    <image class="normal-icon" src="/img/exp.png"></image>
+                    <!-- <image class="normal-icon" src="/img/exp.png"></image> -->
                     <text>{{jobDetail.workexp_text}}</text>
                 </view>
                 <view class="disc-item flex-row-center">
-                    <image class="normal-icon" src="/img/edu.png"></image>
+                    <!-- <image class="normal-icon" src="/img/edu.png"></image> -->
                     <text>{{jobDetail.edu_text }}</text>
                 </view>
                 <view class="reward">

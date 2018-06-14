@@ -65,15 +65,40 @@ Component({
         url: "/pages/job/personal-jobdetail/personal-jobdetail?jid=" + this.data.jobItem.jid + "&cid=" + this.data.jobItem.cid + "&pos="+ this.data.jobItem.position
       })
     },
-    toUploadContract(){
-      wx.navigateTo({
-        url: "/pages/account/personal-contract/personal-contract?jid=" + this.data.jobItem.jid + "&cid=" + this.data.jobItem.cid
-      })
+    toUploadContract(e){
+      if(e.currentTarget.dataset.status === 1){
+        this.uploadContract()
+      }else{
+        wx.navigateTo({
+          url: "/pages/account/personal-contract/personal-contract?jid=" + this.data.jobItem.jid + "&cid=" + this.data.jobItem.cid
+        })
+      }
     },
     toInvitingJobDetail(){
       wx.navigateTo({
         url: "/pages/event/inviting/inviting-job-detail/inviting-job-detail?jid=" + this.data.jobItem.jid +"&cid="+ this.data.jobItem.cid
       })
-    }
+    },
+    uploadContract(){
+      let _this = this
+      wx.chooseImage({count:1,
+        success: function(res) {
+          wx.uploadFile({
+            url: api.uploadContract,
+            header:{
+              sessionId: wx.getStorageSync('sessionId')
+            },
+            filePath: res.tempFilePaths[0],
+            name: 'file',
+            formData:{
+              jobId:_this.data.jobItem.jid
+            },
+            success: function(res){
+              _this.triggerEvent('uploadContractSuccess') //抛出事件
+            }
+          })
+        }
+      })
+    },
   }
 })

@@ -8,13 +8,11 @@ Page({
     imgFlag:false
   },
   onLoad: function (options) {
+    console.log(options)
     this.data.position=options.position;
     this.data.jid=options.jid;
     this.data.userId=options.userId
-    console.log(options,"aaaa")
-
     this.shareJobDetail()
-    
   },
   imgError(){
     this.setData({
@@ -88,7 +86,7 @@ Page({
                   console.log("需要绑定手机权限授权")
                   wx.setStorageSync('hasPhone',false)
                   wx.switchTab({
-                    url:"/pages/job/personal-jobindex/personal-jobindex?inviteCode=" + this.data.jid
+                    url:"/pages/job/personal-jobindex/personal-jobindex?inviteCode=" + _this.data.jid
                   })
                 }
               },

@@ -1,5 +1,5 @@
 <!-- 意向弹窗 包括手机授权 -->
-<view wx:if="{{!hasIntension}}" class="intention-box">
+<view hidden="{{hasIntension}}" class="intention-box">
     <view class="container flex-column-center bg-fff">
       <view>
         <getphone-modal bindgetPhoneSuccess="getPhoneSuccess" id="getPhone"></getphone-modal>

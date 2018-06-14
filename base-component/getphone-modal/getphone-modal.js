@@ -24,9 +24,8 @@ Component({
           if(res.data.code===0){
             console.log("绑定手机成功")
             wx.setStorageSync('hasPhone',true)
-            _this.triggerEvent('success',{flag:true})
-            _this.hide()
             _this.triggerEvent('getPhoneSuccess') //抛出事件
+            _this.hide()
           }else{
             console.log(res.data.msg)
           }

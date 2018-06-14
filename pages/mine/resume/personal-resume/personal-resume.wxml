@@ -23,6 +23,7 @@
                 <image mode="widthFix" class="tip-right" src="/img/arrow-right-orange.png"></image>
             </view>
         </view>
+        
         <view class="top" bindtap="toBaseInfo">
             <view class="edit"></view>
             <view class="flex-row-center avatar-box border-bottom">

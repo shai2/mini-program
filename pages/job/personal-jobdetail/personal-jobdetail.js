@@ -26,11 +26,13 @@ Page({
   },
    onShareAppMessage: function (res) {
     return {
-      title: '蜗牛职信',           
+      title: '您的好友 ' + this.data.userName + ' 向您推荐了优质岗位“' + this.data.jobDetail.position + '”，点击查看',
       path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&userId="+wx.getStorageSync('userId')+"&position="+this.data.position
     }
   },
   onLoad(options) {
+    console.log(options.jid)
+    this.getUserInfo() //查询分享者信息
     this.login()
     qqmapsdk = new QQMapWX({
       key: 'MPABZ-64LLO-4IWWC-SEKKE-B7SK5-3XBXA'
@@ -57,6 +59,23 @@ Page({
   },
   onReachBottom(){
     this.getHotJobList(pageNow)
+  },
+  getUserInfo(){
+    let _this = this
+    wx.request({
+      url: api.getUserInfo,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        _this.data.userName = res.data.data.realName
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
   seeCollection(){
     var _this=this;

@@ -53,6 +53,7 @@
 }
 .companyLogo{width:20px;height:20px;border-radius:2px;margin-right:5px;}
 
-.job-state{margin-top:15px;padding-top:13px;border-top:1px solid #f2f5f7;}
+.job-state{margin-top:15px;padding-top:13px;border-top:1px solid #f2f5f7;position:relative;}
+.job-state:before{position: absolute;left:-15px;right:-15px;top:0px;bottom:-20px;z-index:1;content:'';display:block;}
 .state-icon{background:#ec5151;border-radius:100px 100px 100px 0px;color:#fff;font-size:10px;padding:0 4px;margin-right:5px;}
 .state-disc{font-size:14px;color:#29a1f3;}

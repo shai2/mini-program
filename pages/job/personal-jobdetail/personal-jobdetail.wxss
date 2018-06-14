@@ -2,7 +2,8 @@
 .name{font-size:24px;font-weight:bold;color:#32405e;}
 .salary{font-size:15px;color:#ff824b;font-weight:bold;}
 .disc-line{font-size:12px;color:#909ba3;padding:10px 0 20px;border-bottom:1px solid #f2f5f9;justify-content:flex-start;}
-.disc-item{margin-right:30px;}
+.disc-item{margin-right:15px;position:relative;}
+.disc-item:nth-child(n+2):after{content:'';display:block;position:absolute;left:-5px;top:5px;width:1px;bottom:3px;background:#e9eef5;}
 .disc-item text{margin-left:5px;}
 .company-info{align-items:flex-start;padding:25px 0 0;}
 .job-disc{padding:20px 0 10px;}

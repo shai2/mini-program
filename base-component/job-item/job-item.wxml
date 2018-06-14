@@ -24,7 +24,7 @@
             <text wx:else class="updata">{{jobItem.published_text}}</text> -->
         </view>
     </view>
-    <view catchtap="toUploadContract" wx:if="{{stateType===1&&jobItem.accepted>0&&jobItem.isPrizes===1}}" class="job-state flex-row-between">
+    <view catchtap="toUploadContract" data-status="{{jobItem.status}}" wx:if="{{stateType===1&&jobItem.accepted>0&&jobItem.isPrizes===1}}" class="job-state flex-row-between">
         <view class="state-left flex-row-between">
             <text class="state-icon">入职奖</text>
             <text class="state-text">入职成功</text>

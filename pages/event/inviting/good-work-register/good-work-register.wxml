@@ -1,4 +1,4 @@
-<getphone-modal bindsuccess="getFlag" id="getPhone"></getphone-modal>
+<getphone-modal bindgetPhoneSuccess="getFlag" id="getPhone"></getphone-modal>
 <view>
 	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/friendVi.jpg"></image>
 	<view class="bottom flex-row-around" bindtap="registe">

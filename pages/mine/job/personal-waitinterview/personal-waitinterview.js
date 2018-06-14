@@ -18,6 +18,9 @@ Page({
   onReachBottom(){
     this.jobListInterviewed(pageNow,2)
   },
+  uploadContractSuccess(){
+    this.jobListInterviewed(pageNow,2,true)
+  },
   jobListInterviewed(page,type,refresh){
     let _this = this
     if(this.data.repeatFlag) return

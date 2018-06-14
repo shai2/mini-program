@@ -14,21 +14,21 @@ Page({
     canScroll:false,
     rewardFlag:'',
     inviteCode:'',
+    hasInviteCode:false
   },
   onLoad(options) {
     this.data.inviteCode = options.inviteCode
     if(options.inviteCode){
-      wx.showToast({
-        title: '可在我的职位收藏里找到推荐岗位',
-        icon: 'none',
-        duration: 2000
-      })
+      this.data.hasInviteCode = true
     }
     this.login()
     this.getHot()
     pageNow = 1;
     wx.showLoading({title:"加载中"})
     this.getJobListByType(pageNow,4,true)
+  },
+  onReady(){
+    
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -82,7 +82,6 @@ Page({
                   hasIntension:false,
                   canScroll:false
                 })
-                // console.log(_this.selectComponent('#getPhone'))
                 _this.selectComponent('#getPhone').show()
               }
             },
@@ -120,8 +119,14 @@ Page({
     })
   },
   getPhoneSuccess(e){
-    console.log(e)
     this.getRewardStatus()
+    if(this.data.hasInviteCode === true){
+      wx.showToast({
+        title: '可在 我的->职位收藏 里找到推荐岗位',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   },
   regionChange(e){
     this.setData({
@@ -200,10 +205,8 @@ Page({
           sessionId: wx.getStorageSync('sessionId')
         },
         data: {
-          jobIntention:{
-            "city": this.data.city,
-            "jobTraidId": this.data.searchText,
-          }
+          "city": this.data.city,
+          "jobTraidId": this.data.searchText,
         },
         success(res){
           console.log("保存求职意向")
