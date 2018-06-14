@@ -7,29 +7,7 @@ Component({
         [_logo]:"/img/default-c.png"
       })
     };
-    switch(this.data.jobItem.status){
-      case 1:
-        this.setData({
-          statusTxt:'上传合同领取奖金'
-        })
-        break
-      case 2:
-        this.setData({
-          statusTxt:'审核中'
-        })
-        break
-      case 3:
-      case 4:
-        this.setData({
-          statusTxt:'审核成功'
-        })
-        break
-      case 5:
-        this.setData({
-          statusTxt:'审核失败'
-        })  
-        break
-    }
+    this.chooseStatus()
   },
   data:{
     statusTxt:'上传合同领取奖金'
@@ -54,6 +32,10 @@ Component({
     exData:{
       type:Object,
       value:{}
+    },
+    index:{
+      type:Number,
+      value:null
     }
   },
   data: {
@@ -65,9 +47,40 @@ Component({
         url: "/pages/job/personal-jobdetail/personal-jobdetail?jid=" + this.data.jobItem.jid + "&cid=" + this.data.jobItem.cid + "&pos="+ this.data.jobItem.position
       })
     },
+    chooseStatus(status){
+      if(status){
+        this.data.jobItem.status = status
+      }
+      switch(this.data.jobItem.status){
+        case 1:
+          this.setData({
+            statusTxt:'上传合同领取奖金'
+          })
+          break
+        case 2:
+          this.setData({
+            statusTxt:'审核中'
+          })
+          break
+        case 3:
+        case 4:
+          this.setData({
+            statusTxt:'审核成功'
+          })
+          break
+        case 5:
+          this.setData({
+            statusTxt:'审核失败'
+          })  
+          break
+      }
+    },
     toUploadContract(e){
       if(e.currentTarget.dataset.status === 1){
-        this.uploadContract()
+        this.triggerEvent('uploadContract',{
+          jobId:this.data.jobItem.jid,
+          index:this.data.index
+        })
       }else{
         wx.navigateTo({
           url: "/pages/account/personal-contract/personal-contract?jid=" + this.data.jobItem.jid + "&cid=" + this.data.jobItem.cid
@@ -79,26 +92,8 @@ Component({
         url: "/pages/event/inviting/inviting-job-detail/inviting-job-detail?jid=" + this.data.jobItem.jid +"&cid="+ this.data.jobItem.cid
       })
     },
-    uploadContract(){
-      let _this = this
-      wx.chooseImage({count:1,
-        success: function(res) {
-          wx.uploadFile({
-            url: api.uploadContract,
-            header:{
-              sessionId: wx.getStorageSync('sessionId')
-            },
-            filePath: res.tempFilePaths[0],
-            name: 'file',
-            formData:{
-              jobId:_this.data.jobItem.jid
-            },
-            success: function(res){
-              _this.triggerEvent('uploadContractSuccess') //抛出事件
-            }
-          })
-        }
-      })
-    },
+    changeStatus(status){
+      this.chooseStatus(status)
+    }
   }
 })

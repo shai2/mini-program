@@ -9,19 +9,16 @@ Page({
   onLoad(options) {
     pageNow = 1
     wx.showLoading({title:"加载中"})
-    this.jobListInterviewed(pageNow,2,true) //查询
+    this.jobListInterviewed(pageNow,true) //查询
   },
   onPullDownRefresh (){
     pageNow = 1;
-    this.jobListInterviewed(pageNow,2,true)
+    this.jobListInterviewed(pageNow,true)
   },
   onReachBottom(){
-    this.jobListInterviewed(pageNow,2)
+    this.jobListInterviewed(pageNow)
   },
-  uploadContractSuccess(){
-    this.jobListInterviewed(pageNow,2,true)
-  },
-  jobListInterviewed(page,type,refresh){
+  jobListInterviewed(page,refresh){
     let _this = this
     if(this.data.repeatFlag) return
     _this.setData({
@@ -42,6 +39,7 @@ Page({
             jobObj:res.data.data,
             repeatFlag:false
           })
+          console.log(res.data.data)
         }else{
           _this.setData({
             jobObj:_this.data.jobObj.concat(res.data.data),
@@ -64,7 +62,25 @@ Page({
       }
     })
   },
-  enlarge(){
-    
-  }
+  uploadContract(e){
+    let _this = this
+    wx.chooseImage({count:1,
+      success: function(res) {
+        wx.uploadFile({
+          url: api.uploadContract,
+          header:{
+            sessionId: wx.getStorageSync('sessionId')
+          },
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          formData:{
+            jobId:e.detail.jobId
+          },
+          success: function(res){
+            this.selectAllComponents('#job-item')[e.detail.index].changeStatus(2)
+          }
+        })
+      }
+    })
+  },
 })

@@ -1,4 +1,4 @@
 <block wx:for="{{jobObj}}" wx:key="{{index}}">
-    <job-item binduploadContractSuccess="uploadContractSuccess" stateType="1" index="{{index}}" jobItem="{{item}}"></job-item>
+    <job-item id="job-item" binduploadContract="uploadContract" stateType="1" index="{{index}}" jobItem="{{item}}"></job-item>
 </block>
 <text class="loading-text">{{pullText}}</text>
