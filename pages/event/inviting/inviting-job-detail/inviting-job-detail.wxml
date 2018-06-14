@@ -1,13 +1,20 @@
-<job-item jobItem="{{jobObj}}" exData="{{item}}"></job-item>
-<view class="register-list">
-    <block wx:for="{{userList}}" wx:key="{{index}}">
-        <view class="register-card flex-row-center">
-            <image class="register-avatar" src="{{item.userPhoto}}"></image>
-            <view class="card-middle flex-column-center flex">
-                <text class="register-name">{{item.applyUserName}}</text>
-                <text wx:if="{{item.status == 1}}" class="register-state">已申请：{{item.effectiveTime}}</text>
-                <text wx:elif="{{item.status == 2 || item.status == 3}}" class="register-state-success">已入职：{{item.applyRewardTime}}</text>
+<view class="big-box">
+    <job-item jobItem="{{jobObj}}" exData="{{item}}"></job-item>
+    <view class="register-list">
+        <block wx:for="{{userList}}" wx:key="{{index}}">
+            <view class="register-card flex-row-center">
+                <image class="register-avatar" src="{{item.userPhoto}}"></image>
+                <view class="card-middle flex-column-center flex">
+                    <text class="register-name">{{item.applyUserName}}</text>
+                    <text wx:if="{{item.status == 1}}" class="register-state">已申请：{{item.effectiveTime}}</text>
+                    <text wx:elif="{{item.status == 2 || item.status == 3}}" class="register-state-success">已入职：{{item.applyRewardTime}}</text>
+                </view>
             </view>
-        </view>
-    </block>
+        </block>
+    </view>
+</view>
+<view class="mybutton-box">
+    <button plain="true" open-type="share">
+        <text class="share-btn">再次分享</text>
+    </button>
 </view>

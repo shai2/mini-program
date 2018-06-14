@@ -9,7 +9,7 @@
             <view class="disc-line flex-row-center">
                 <view class="mgtop10">
                     <text class="company-disc-item">{{companyDetail.industry}}</text>
-                    <text class="company-disc-item">{{companyDetail.natureid_text}}</text>
+                    <text class="company-disc-item">{{companyDetail.financle_text}}</text>
                     <text class="company-disc-item">{{companyDetail.size}}</text>
                 </view>
             </view>

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "推荐职位",
   "usingComponents": {
-    "job-item":"/base-component/job-item/job-item"
+    "job-item":"/base-component/job-item/job-item",
+    "my-button":"/base-component/my-button/my-button"
   }
 }

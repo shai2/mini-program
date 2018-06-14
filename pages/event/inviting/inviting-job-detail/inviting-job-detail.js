@@ -12,6 +12,12 @@ Page({
     wx.showLoading({title:"加载中"})
     this.invitingRegister() //查询
   },
+  onShareAppMessage: function (res) {
+    return {
+      title: '蜗牛职信',           
+      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&userId="+wx.getStorageSync('userId')+"&position="+this.data.jobObj.position
+    }
+  },
   invitingRegister(){
     let _this = this
     if(this.data.repeatFlag) return
@@ -39,5 +45,5 @@ Page({
         console.log(res)
       }
     })
-  }
+  },
 })
