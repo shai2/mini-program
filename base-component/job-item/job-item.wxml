@@ -3,10 +3,15 @@
         <text class="name">{{jobItem.position}}</text>
         <text class="salary">{{jobItem.wagemin}}k-{{jobItem.wagemax}}k</text>
     </view>
-    <view class="middle">
-        <text class="text-item">{{jobItem.prov}} - {{jobItem.city}}</text>
-        <text class="text-item">{{jobItem.workexp_text}}</text>
-        <text class="text-item">{{jobItem.edu_text}}</text>
+    <view class="middle flex-row-between">
+        <view class="">
+            <text class="text-item">{{jobItem.prov}} - {{jobItem.city}}</text>
+            <text class="text-item">{{jobItem.workexp_text}}</text>
+            <text class="text-item">{{jobItem.edu_text}}</text>
+        </view>
+        <view wx:if="{{!hasCopany}}">
+            <text class="updata">{{jobItem.published_text}}</text>
+        </view>
     </view>
     <view wx:if="{{hasCopany}}" class="bottom flex-row-between">
         <view class="flex-row-between">
