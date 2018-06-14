@@ -22,16 +22,17 @@ Page({
     boxName:"",
     hidden:true,
     collectFlag:true,
-    clickResume:true
+    clickResume:true,
+    inviteCode:''
   },
    onShareAppMessage: function (res) {
     return {
       title: '您的好友 ' + this.data.userName + ' 向您推荐了优质岗位“' + this.data.jobDetail.position + '”，点击查看',
-      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&userId="+wx.getStorageSync('userId')+"&position="+this.data.position
+      path: '/pages/event/inviting/good-work-apply/good-work-apply?jid='+this.data.jid+"&inviteCode="+this.data.inviteCode+"&position="+this.data.position
     }
   },
   onLoad(options) {
-    console.log(options.jid)
+    console.log(options)
     this.getUserInfo() //查询分享者信息
     this.login()
     qqmapsdk = new QQMapWX({
@@ -40,7 +41,8 @@ Page({
     pageNow = 1;
     this.setData({
       jid:options.jid,
-      position:options.pos
+      position:options.pos,
+      inviteCode:optins.inviteCode
     })
     this.seeCollection() //判断是否收藏
     this.getSendResumeStatus() //判断是否投递简历
@@ -71,6 +73,7 @@ Page({
       data: {},
       success(res){
         _this.data.userName = res.data.data.realName
+        _this.data.inviteCode = res.data.data.inviteCode
       },
       fail(res){
         console.log(res)
@@ -322,8 +325,6 @@ Page({
             "jobDetail.rewardAmountText":rewardNum,            
           })
         }
-        console.log(_this.data.jobDetail,"job")
-        console.log(parseFloat(_this.data.jobDetail.rewardAmountText),"job")
         if(_this.data.jobDetail.isPrizes==1){
           _this.setData({
             hidden:false,
@@ -366,7 +367,8 @@ Page({
             url: api.login,
             method:"POST",
             data: {
-              code: res.code
+              code: res.code,
+              inviteCode:_this.data.inviteCode
             },
             success(res){
               console.log(res)

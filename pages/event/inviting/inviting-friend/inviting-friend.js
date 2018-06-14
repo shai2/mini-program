@@ -40,7 +40,6 @@ Page({
       },
       data: {},
       success(res) {
-        console.log(res,"aaaa")
         _this.setData({
           inviteCode:res.data.data.inviteCode
         })

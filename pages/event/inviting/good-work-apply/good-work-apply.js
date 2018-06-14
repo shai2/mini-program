@@ -107,9 +107,9 @@ Page({
   apply(){
     this.login()
   },
-  clickJob(){
-    wx.navigateTo({
-      url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+this.data.jid+"&pos="+this.data.position
-    })
-  }
+  // clickJob(){
+  //   wx.navigateTo({
+  //     url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+this.data.jid+"&pos="+this.data.position
+  //   })
+  // }
 })
