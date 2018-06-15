@@ -77,7 +77,7 @@ Page({
             jobId:e.detail.jobId
           },
           success: function(res){
-            this.selectAllComponents('#job-item')[e.detail.index].changeStatus(2)
+            _this.selectAllComponents('#job-item')[e.detail.index].changeStatus(2)
           }
         })
       }
