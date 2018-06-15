@@ -77,7 +77,7 @@
 <view class="operation flex-row-around fix-bottom">
     <button plain="true" open-type="share" class="operation-item flex-column-center share-btn">
         <image class="bottom-icon" src="/img/share.png"></image>
-        <text style="line-height:20px;">分享</text>
+        <text style="line-height:20px;color:#909ba3">分享</text>
     </button>
     <view class="operation-item flex-column-center" bindtap="collection">
         <image class="bottom-icon" src="{{coImg}}"></image>
