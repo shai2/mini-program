@@ -60,28 +60,27 @@ Page({
         })
         return
       }
-      let _this = this
-      wx.request({
-        url: api.registMoney,
-        method:"GET",
-        header:{
-          sessionId: wx.getStorageSync('sessionId')
-        },
-        data: {},
-        success(res){
-          // if(res.data.code===0)
-          _this.setData({
-            money:res.data.money/100,
-            rewardFlag:-1
-          })
-          _this.selectComponent("#redpack").show()
-        },
-        fail(res){
-          console.log(res)
-        }
-      })
     }
-    
+    let _this = this
+    wx.request({
+      url: api.registMoney,
+      method:"GET",
+      header:{
+        sessionId: wx.getStorageSync('sessionId')
+      },
+      data: {},
+      success(res){
+        // if(res.data.code===0)
+        _this.setData({
+          money:res.data.money/100,
+          rewardFlag:-1
+        })
+        _this.selectComponent("#redpack").show()
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   },
   getRewardStatus(){
     let _this = this
