@@ -318,18 +318,18 @@ Page({
             flag:false,            
           })
         }
-       
-        if(rewardNum>=1000){
-          rewardNum=(rewardNum/1000).toFixed(2)+"K";
-          _this.setData({
-            "jobDetail.rewardAmountText":rewardNum,            
-          })
-        }else{
-          rewardNum="￥"+rewardNum;
-          _this.setData({
-            "jobDetail.rewardAmountText":rewardNum,            
-          })
-        }
+       console.log(_this.data.jobDetail,"aaaaaa")
+        // if(rewardNum>=1000){
+        //   rewardNum=(rewardNum/1000).toFixed(2)+"K";
+        //   _this.setData({
+        //     "jobDetail.rewardAmountText":rewardNum,            
+        //   })
+        // }else{
+        //   rewardNum="￥"+rewardNum;
+        //   _this.setData({
+        //     "jobDetail.rewardAmountText":rewardNum,            
+        //   })
+        // }
         if(_this.data.jobDetail.isPrizes==1){
           _this.setData({
             hidden:false,

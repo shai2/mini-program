@@ -20,10 +20,15 @@
                     <!-- <image class="normal-icon" src="/img/edu.png"></image> -->
                     <text>{{jobDetail.edu_text }}</text>
                 </view>
-                <view class="reward">
-                    <text>推荐奖\t\t</text>
+                <!-- <view class="reward">
+                    <image src=""></image>
                     <text>{{jobDetail.rewardAmountText}}</text>
-                </view>
+                </view> -->
+            </view>
+            <view class="reward">
+                <!-- <image src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/rewardBar.png"></image> -->
+                <text>候选人成功入职后可得奖励(仅限首位)</text>
+                <text>入职候选人￥{{jobDetail.rewardAmountCandidate}};\t\t\t\t 邀请人￥{{jobDetail.rewardAmountInviter}};\t\t\t\t 分享岗位人￥{{jobDetail.rewardAmountPostPerson}}</text>
             </view>
             <view class="company-info flex-row-between" bindtap="toCompanyDetail" data-cid="{{jobDetail.cid}}">
                 <image class="default-c" src="{{companyDetail.image==''?'/img/default-c.png':companyDetail.image}}"></image>
