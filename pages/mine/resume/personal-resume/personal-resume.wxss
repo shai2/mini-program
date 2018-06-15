@@ -6,7 +6,7 @@
 .base-info text{margin-right:20px;position:relative;}
 .base-info text:nth-child(n+2):after{content:'';display:block;position:absolute;left:-10px;top:3px;width:1px;height:12px;background:#c7cde3;}
 .skill-box{padding:20px 0px;}
-.skill-box text:nth-child(n+2){margin-left:13px;}
+.skill-box text:nth-last-child(n+2){margin-right:13px;}
 .advantage-box{position:relative;padding:25px 0;}
 .full-page-flex{padding-bottom:0px;}
 .title-icon{width:10px;height:10px;}

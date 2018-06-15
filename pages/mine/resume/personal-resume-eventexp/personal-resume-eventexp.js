@@ -16,7 +16,7 @@ Page({
       if (_this.data.index==-1) {
         _this.setData({
           index:_this.data.userInfo.projectExperiences.length*1,
-          deleteShow:true
+          deleteShow:false
         })
       }else{
         _this.setData({
