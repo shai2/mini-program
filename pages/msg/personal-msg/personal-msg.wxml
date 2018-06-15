@@ -1,12 +1,12 @@
 <view class="contain">
-	<view class="box" bindtap="show">
+	<view class="box" bindtap="showWaiting">
 		<image class="left-icon" mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/know.png"></image>
 		<view >
 			<text>小蜗通知</text>
 			<image mode="widthFix" style="width:12px;margin-left:10px;" src="/img/arrow-right.png"></image>
 		</view>
 	</view>
-	<view class="box" bindtap="show">
+	<view class="box" bindtap="showWaiting">
 		<image class="left-icon" mode="widthFax" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/job.png"></image>
 		<view>
 			<text>小蜗求职</text>

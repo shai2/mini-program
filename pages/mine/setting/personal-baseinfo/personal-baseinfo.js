@@ -80,9 +80,9 @@ Page({
       [_city]:e.detail.value[1],
       [_area]:e.detail.value[2]
     })
-    console.log(this.data.userInfo)
   },
   saveBaseInfo(){
+    console.log(this.data.userInfo)
     let _this = this
     wx.request({
       url: api.updateUserInfo,

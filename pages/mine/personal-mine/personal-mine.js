@@ -1,4 +1,5 @@
 let api = require("../../../utils/api")
+var util = require('../../../utils/util')
 Page({
   data: {
     userInfo:{},
@@ -247,6 +248,9 @@ Page({
         console.log(res)
       }
     })
+  },
+  showWaiting(){
+    util.showWaiting()
   },
   toJobIndex(){
     wx.switchTab({

@@ -29,8 +29,8 @@ Page({
     this.getJobListByType(pageNow,4,true)
   },
   onReady(){
-    console.log('inviteCode:',wx.getStorageSync('inviteCode'))
-    console.log('inviteJid:',wx.getStorageSync('inviteJid'))
+    // console.log('inviteCode:',wx.getStorageSync('inviteCode'))
+    // console.log('inviteJid:',wx.getStorageSync('inviteJid'))
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -208,7 +208,7 @@ Page({
           sessionId: wx.getStorageSync('sessionId')
         },
         data: {
-          "city": this.data.city,
+          "prov": this.data.city,
           "jobTraidId": this.data.searchText,
         },
         success(res){

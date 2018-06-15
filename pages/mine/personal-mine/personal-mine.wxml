@@ -73,29 +73,29 @@
             <image class="service-icon" src="/img/mine-icon-2-1.png"></image>
             <text class="state-disc">好友注册</text>
         </view>
-        <view class="state flex-column-center" bindtap="show">
+        <view class="state flex-column-center" bindtap="showWaiting">
             <image class="service-icon" src="/img/mine-icon-2-2.png"></image>
             <text class="state-disc">日志</text>
         </view>
-        <view class="state flex-column-center"  bindtap="show">
+        <view class="state flex-column-center"  bindtap="showWaiting">
             <image class="service-icon" src="/img/mine-icon-2-3.png"></image>
             <text class="state-disc">足迹</text>
         </view>
-        <view class="state flex-column-center" bindtap="show">
+        <view class="state flex-column-center" bindtap="showWaiting">
             <image class="service-icon" src="/img/mine-icon-2-4.png"></image>
             <text class="state-disc">相册</text>
         </view>
     </view>
     <view class="middle-sp flex-row-around grid border-top">
-        <view class="state flex-column-center" bindtap="show">
+        <view class="state flex-column-center" bindtap="showWaiting">
             <image class="service-icon" src="/img/mine-icon-2-5.png"></image>
             <text class="state-disc">运动</text>
         </view>
-        <view class="state flex-column-center" bindtap="show">
+        <view class="state flex-column-center" bindtap="showWaiting">
             <image class="service-icon" src="/img/mine-icon-2-6.png"></image>
             <text class="state-disc">城市服务</text>
         </view>
-        <view class="state flex-column-center" bindtap="show">
+        <view class="state flex-column-center" bindtap="showWaiting">
             <image class="service-icon" src="/img/mine-icon-2-7.png"></image>
             <text class="state-disc">手机充值</text>
         </view>

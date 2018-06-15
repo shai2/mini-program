@@ -15,8 +15,8 @@ Page({
     wx.setStorageSync('inviteCode',options.inviteCode)
     wx.setStorageSync('inviteJid',options.jid)
     this.shareJobDetail()
-    console.log('inviteCode:',wx.getStorageSync('inviteCode'))
-    console.log('inviteJid:',wx.getStorageSync('inviteJid'))
+    // console.log('inviteCode:',wx.getStorageSync('inviteCode'))
+    // console.log('inviteJid:',wx.getStorageSync('inviteJid'))
     console.log('apply页面')
   },
   imgError(){
@@ -118,9 +118,9 @@ Page({
   apply(){
     this.login()
   },
-  // clickJob(){
-  //   wx.navigateTo({
-  //     url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+this.data.jid+"&pos="+this.data.position
-  //   })
-  // }
+  clickJob(){
+    wx.navigateTo({
+      url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+this.data.jid+"&pos="+this.data.position
+    })
+  }
 })

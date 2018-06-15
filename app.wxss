@@ -87,6 +87,7 @@ button[plain]{border-width: 0;}
     color:#909ba3;
     text-align:right;
     margin-right:12px;
+    width:375rpx;
 }
 .title-box{padding: 0;margin-bottom:30px;text-align:center;}
 .title{position:relative;top:-14px;background: #fff;padding:0 10px;font-size:19px;}

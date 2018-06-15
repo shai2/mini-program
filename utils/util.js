@@ -44,9 +44,18 @@ const wxPromisifty = (fn)=>{
     })
   }
 }
+// 敬请期待
+const showWaiting = ()=>{
+  wx.showToast({
+    title: '敬请期待',
+    icon: 'none',
+    duration: 1000
+  })
+}
 
 module.exports = {
   formatTime,
   shareFunction,
-  wxPromisifty
+  wxPromisifty,
+  showWaiting
 }

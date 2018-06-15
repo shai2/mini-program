@@ -1,4 +1,4 @@
-// pages/mine/personal-service/personal-service.js
+var util = require('../../../../utils/util')
 Page({
 
   /**
@@ -19,11 +19,7 @@ Page({
       url:"/pages/event/inviting/inviting-friend/inviting-friend"
     })
   },
-  show(){
-    wx.showToast({
-      title: '敬请期待',
-      icon: 'none',
-      duration: 2000
-    })
+  showWaiting(){
+    util.showWaiting()
   }
 })
