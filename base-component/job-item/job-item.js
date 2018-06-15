@@ -98,6 +98,9 @@ Component({
       })
     },
     changeStatus(status){
+      this.setData({
+        ['jobItem.status']:status
+      })
       this.chooseStatus(status)
     }
   }
