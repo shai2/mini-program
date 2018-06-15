@@ -4,7 +4,7 @@
         <text class="salary">{{jobItem.wagemin}}k-{{jobItem.wagemax}}k</text>
     </view>
     <view class="middle flex-row-between">
-        <view class="">
+        <view class="flex">
             <text class="text-item">{{jobItem.prov}} - {{jobItem.city}}</text>
             <text class="text-item">{{jobItem.workexp_text}}</text>
             <text class="text-item">{{jobItem.edu_text}}</text>
