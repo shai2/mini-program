@@ -119,30 +119,8 @@ Page({
     this.login()
   },
   clickJob(){
-    var _this = this
-    wx.request({
-      url: api.recommonedApply,
-      method:"GET",
-      header:{
-        sessionId: wx.getStorageSync('sessionId')
-      },
-      data: {
-        jobId:_this.data.jid,
-        inviteCode:_this.data.inviteCode
-      },
-      success(res){
-        wx.navigateTo({
-          url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+_this.data.jid+"&pos="+_this.data.position
-        })
-      },
-      fail(res){
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          duration: 1000
-        })
-      }
+    wx.navigateTo({
+      url:"/pages/job/personal-jobdetail/personal-jobdetail?jid="+this.data.jid+"&pos="+this.data.position
     })
-    
   }
 })

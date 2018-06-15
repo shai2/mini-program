@@ -32,11 +32,11 @@
             <view class="">
                 <text class="name block">{{userInfo.basicInfo.name}}</text>
                 <view class="base-info">
-                    <text wx:if="{{userInfo.basicInfo.gender}}">{{userInfo.basicInfo.gender}}</text>
-                    <text wx:if="{{userInfo.basicInfo.age}}">{{userInfo.basicInfo.age}}岁</text>
-                    <text wx:if="{{userInfo.basicInfo.workLife}}">{{userInfo.basicInfo.workLife}}年</text>
-                    <text wx:if="{{userInfo.jobIntension.onBoardDate}}">{{userInfo.jobIntension.onBoardDate}}</text>
-                    <text wx:if="{{userInfo.basicInfo.address}}">{{userInfo.basicInfo.address}}</text>
+                    <text>{{userInfo.basicInfo.gender}}</text>
+                    <text>{{userInfo.basicInfo.age}}岁</text>
+                    <text>{{userInfo.basicInfo.workLife}}年</text>
+                    <text>{{userInfo.jobIntension.onBoardDate}}</text>
+                    <text>{{userInfo.basicInfo.address}}</text>
                 </view>
             </view>
             <view class="info-normal">

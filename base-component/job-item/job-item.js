@@ -52,11 +52,6 @@ Component({
         this.data.jobItem.status = status
       }
       switch(this.data.jobItem.status){
-        case 0:
-          this.setData({
-            statusTxt:'简历未投递'
-          })
-          break
         case 1:
           this.setData({
             statusTxt:'上传合同领取奖金'

@@ -50,6 +50,5 @@ module.exports = {
   jobListInterviewed: baseUrl + "/app/job/jobList-interviewed", //待面试职位（包含判断合同状态字段）
   contractpath: baseUrl + "/app/contract/v1/contractpath", //获取合同状态
   uploadContract: baseUrl + "/app/contract/v1/contract", //上传合同
-  recommonedApply: baseUrl + "/app/job/recommend/apply", //收藏推荐岗位
   
 }
