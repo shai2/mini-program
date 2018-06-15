@@ -1,4 +1,5 @@
-const baseUrl = "https://wxapitest.wnzx.com/credit"  //徐秦
+// const baseUrl = "https://wxapitest.wnzx.com/credit"  //test
+const baseUrl = "https://wxapi.wnzx.com/credit"  //prod
 
 module.exports = {
   login : baseUrl + "/wx/v1/login", //登录
