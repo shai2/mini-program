@@ -55,6 +55,7 @@ Page({
             },
             success(res){
               console.log(res)
+              wx.removeStorageSync('inviteCode')
               wx.setStorageSync('sessionId', res.data.data.token)
               wx.setStorageSync('userId', res.data.data.userInfo.userId)
               info.userInfo = res.data.data.userInfo //同步到全局
