@@ -1,6 +1,6 @@
 <!--pages/event/good-word-apply/good-word-apply.wxml-->
 <view class="bg">
-	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/jobReward.jpg"></image>
+	<image mode="widthFix" style="width:100%;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/rewardJobBg.jpg"></image>
 	<view class="people-box">
 		<image class="people" hidden="{{imgFlag}}" binderror="imgError" mode="widthFix" src="{{detail.avatar}}" ></image>
 	</view>
