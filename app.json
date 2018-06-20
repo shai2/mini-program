@@ -8,6 +8,7 @@
 
     "pages/account/personal-contract/personal-contract",
     "pages/account/personal-reward/personal-reward",
+    "pages/account/personal-credit/personal-credit",
 
     "pages/event/inviting/good-work-register/good-work-register",
     "pages/event/inviting/inviting-friend/inviting-friend",
