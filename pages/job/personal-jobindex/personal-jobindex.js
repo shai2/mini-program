@@ -29,8 +29,7 @@ Page({
     this.getJobListByType(pageNow,4,true)
   },
   onReady(){
-    // console.log('inviteCode:',wx.getStorageSync('inviteCode'))
-    // console.log('inviteJid:',wx.getStorageSync('inviteJid'))
+    
   },
   onPullDownRefresh (){
     pageNow = 1;
@@ -41,6 +40,11 @@ Page({
   },
   login(){
     let _this = this
+    // 手机号验证码登录的login
+    if(wx.getStorageSync('phone')){
+
+    }
+    // 微信快捷登录的login
     wx.login({
       success: res => {
         if (res.code) {
