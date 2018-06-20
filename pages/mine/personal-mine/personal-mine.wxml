@@ -106,7 +106,7 @@
     </view>
     <view class="w100 mgbt10">
         <myline-with-icon url="/pages/account/personal-reward/personal-reward" title="奖金账户" icon="/img/mine-icon-3-3.png" hasTopBorder="{{false}}"></myline-with-icon>
-        <myline-with-icon url="/pages/account/personal-credit/personal-credit" title="我的信钻" icon="/img/mine-icon-3-4.png"></myline-with-icon>
+        <!-- <myline-with-icon url="/pages/account/credit/personal-creditindex/personal-creditindex" title="我的信钻" icon="/img/mine-icon-3-4.png"></myline-with-icon> -->
         <!-- <myline-with-icon url="/pages/mine/setting/personal-setting/personal-setting" title="设置" icon="/img/mine-icon-3-1.png"></myline-with-icon> -->
         <myline-with-icon url="/pages/mine/setting/personal-feedback/personal-feedback" title="反馈帮助" icon="/img/mine-icon-3-2.png"></myline-with-icon>
     </view>

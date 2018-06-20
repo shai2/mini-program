@@ -4,6 +4,10 @@
             <image mode="widthFix" style="width:100%;margin-top: -40px;" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/banner/banner-00.png"></image>
             <image style="width:100%;height:12px;position:absolute;left:0;right:0;bottom:0;" src="/img/banner-bottom.png"></image>
         </view>
+        <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="getinfobutton flex-row-center">
+            <image mode="widthFix" style="width:14px;margin-right: 5px;" src="/img/welogo.png"></image>
+            <span>手机号验证码登录</span>
+        </button> -->
         <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="getinfobutton flex-row-center">
             <image mode="widthFix" style="width:14px;margin-right: 5px;" src="/img/welogo.png"></image>
             <span>手机号快捷登录</span>
