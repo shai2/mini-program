@@ -1,5 +1,18 @@
 .flex-column-center{display:flex;flex-direction:column;justify-content:center;align-items:center;}
 .flex-row-center{display:flex;flex-direction:row;justify-content:center;align-items:center;}
+.flex-row-between{display:flex;flex-direction:row;justify-content:space-between;align-items:center;}
+.flex{flex: 1 1;}
+.mybutton{
+    text-align:center;
+    border-radius:6px;
+    padding:5px 20px;
+    font-size:15px;
+    background:#29a1f7;
+    color:#fff;
+    margin-top:10px;
+    width:100px;
+}
+/* .mybutton:nth-child(n+2){margin-left:20px;} */
 .bg{
     background:rgba(0,0,0,0.4);
     position:fixed;
@@ -10,14 +23,16 @@
     z-index:100;
 }
 .card{
+    width:310px;
     background:#fff;
     border-radius:10px;
     overflow:hidden;
     margin-bottom:70px;
+    position:relative;
 }
 .card-top{
     position:relative;
-    width:310px;
+    width:100%;
     height:105px;
 }
 .getinfobutton{
@@ -28,4 +43,51 @@
     margin:25px 0;
     width:200px;
     font-size:15px;
+    border-radius:5px;
 }
+.registerbutton{
+    padding:0 20px;
+    background:#29a1f7;
+    display:inline-block;
+    color:#fff;
+    margin-top:25px;
+    width:200px;
+    font-size:15px;
+    border-radius:5px;
+}
+.login-part{
+    width:200px;
+}
+.register-part{
+    width:230px;
+    padding:25px 0 20px;
+    font-size:14px;
+}
+.input-line{
+    margin-bottom:20px;
+}
+.input-txt{
+    white-space:nowrap;
+    margin-right:10px;
+    color:#374665;
+}
+.sendcode-txt{
+    width:70px;
+    text-align:center;
+    display:inline-block;
+    position:relative;
+    margin-left:10px;
+    color:#909ba3;
+}
+.sendcode-txt:after{
+    content:'';
+    display:block;
+    position:absolute;
+    left:-10px;
+    bottom:3px;
+    top:3px;
+    width:1px;
+    z-index:1;
+    background:#e4e9f0;
+}
+.placeholder{color:#cbd4db;}

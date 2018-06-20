@@ -52,5 +52,6 @@ module.exports = {
   contractpath: baseUrl + "/app/contract/v1/contractpath", //获取合同状态
   uploadContract: baseUrl + "/app/contract/v1/contract", //上传合同
   recommonedApply: baseUrl + "/app/job/recommend/apply", //收藏推荐岗位
+  sendVerifyCode: baseUrl + "/app/v1/sendVerifyCode", //手机验证码登录 发送验证码
   
 }

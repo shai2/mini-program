@@ -29,3 +29,12 @@
     width:200px;
     font-size:15px;
 }
+.registerbutton{
+    padding:0 20px;
+    background:#29a1f7;
+    display:inline-block;
+    color:#fff;
+    margin:25px 0;
+    width:200px;
+    font-size:15px;
+}
