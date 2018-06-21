@@ -27,8 +27,19 @@
             </view>
             <view class="reward">
                 <!-- <image src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/rewardBar.png"></image> -->
-                <text>候选人成功入职后可得奖励(仅限首位)</text>
-                <text>入职候选人￥{{jobDetail.rewardAmountCandidate}};\t\t\t\t 邀请人￥{{jobDetail.rewardAmountInviter}};\t\t\t\t 分享岗位人￥{{jobDetail.rewardAmountPostPerson}}</text>
+                <!-- <text>候选人成功入职后可得奖励(仅限首位)</text>
+                <text>入职候选人￥{{jobDetail.rewardAmountCandidate}};\t\t\t\t 邀请人￥{{jobDetail.rewardAmountInviter}};\t\t\t\t 分享岗位人￥{{jobDetail.rewardAmountPostPerson}}</text> -->
+                <image class="rewardLogo" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/rewardLogo.png"></image>
+                <image class="rewardBox" src="http://nhh-image.oss-cn-shanghai.aliyuncs.com/mini-app/images/rewardBox.png"></image>
+                <text class="reTitle">候选人成功入职后可得奖励(仅限首位)</text>
+                <view>
+                    <text>入职候选人</text>
+                    <text class="reward-menoy">￥{{jobDetail.rewardAmountCandidate}}</text>
+                    <text>;邀请人</text>
+                    <text class="reward-menoy">￥{{jobDetail.rewardAmountInviter}}</text>
+                    <text>;分享岗位人</text>
+                    <text class="reward-menoy">￥{{jobDetail.rewardAmountPostPerson}}</text>
+                </view>
             </view>
             <view class="company-info flex-row-between" bindtap="toCompanyDetail" data-cid="{{jobDetail.cid}}">
                 <image class="default-c" src="{{companyDetail.image==''?'/img/default-c.png':companyDetail.image}}"></image>
