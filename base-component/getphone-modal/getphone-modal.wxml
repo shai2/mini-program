@@ -19,7 +19,11 @@
             </button>
         </view>
         <view hidden="{{!isRegister}}" class="register-part">
-            <image bindtap="closeRegist" mode="widthFix" style="position:absolute;top:10px;left:10px;width:16px;z-index:1;" src="/img/arrow-left2.png"></image>
+            <!-- <image bindtap="closeRegist" mode="widthFix" style="position:absolute;top:10px;left:10px;width:16px;z-index:1;" src="/img/arrow-left2.png"></image> -->
+            <view class="flex-row-center input-line" bindtap="closeRegist">
+                <image mode="widthFix" style="width:16px;" src="/img/arrow-left2.png"></image>
+                <text class="input-txt flex return-button">返回</text>
+            </view>
             <view class="flex-row-center input-line">
                 <text class="input-txt">手机号</text>
                 <view class="flex">
@@ -34,7 +38,7 @@
                 <view class="sendcode-txt" bindtap="sendCode">{{codeTxt}}</view>
             </view>
             <view class="flex-row-center">
-                <text class="mybutton">登录</text>
+                <text class="mybutton" bindtap="codeLogin">登录</text>
             </view>
         </view>
     </view>

@@ -2,7 +2,9 @@
 const baseUrl = "https://wxapi.wnzx.com/credit"  //prod
 
 module.exports = {
-  login : baseUrl + "/wx/v1/login", //登录
+  login : baseUrl + "/wx/v1/login", //微信手机号快捷登录
+  codeLogin : baseUrl + "/wx/v2/bindMobile", //手机验证码登录
+  sendVerifyCode: baseUrl + "/app/v1/sendVerifyCode", //手机验证码登录 发送验证码
   getAreaList : baseUrl + "/app/dict/getAreaList", //地区字典
   bindMobile : baseUrl + "/wx/v1/bindMobile",  //手机绑定
   authorize : baseUrl + "/wx/v1/authorize",  //用户授权
@@ -52,6 +54,5 @@ module.exports = {
   contractpath: baseUrl + "/app/contract/v1/contractpath", //获取合同状态
   uploadContract: baseUrl + "/app/contract/v1/contract", //上传合同
   recommonedApply: baseUrl + "/app/job/recommend/apply", //收藏推荐岗位
-  sendVerifyCode: baseUrl + "/app/v1/sendVerifyCode", //手机验证码登录 发送验证码
   
 }

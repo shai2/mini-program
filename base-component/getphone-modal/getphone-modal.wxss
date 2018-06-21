@@ -40,7 +40,7 @@
     background:#29a1f7;
     display:inline-block;
     color:#fff;
-    margin:25px 0;
+    margin:15px 0 25px;
     width:200px;
     font-size:15px;
     border-radius:5px;
@@ -91,3 +91,4 @@
     background:#e4e9f0;
 }
 .placeholder{color:#cbd4db;}
+.return-button{color:#909ba3;}

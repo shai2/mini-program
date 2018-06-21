@@ -8,13 +8,14 @@ Component({
   },
   data: {
     modalShow:false,
-    isRegister:true,
+    isRegister:false,
     phone:0,
     code:0,
     codeTxt:'发送验证码'
   },
   methods: {
     getPhoneNumber(e){  //绑定手机请求
+      console.log(e)
       let _this = this
       wx.request({
         url: api.bindMobile,
@@ -50,8 +51,7 @@ Component({
     },
     sendCode(){
       if(this.data.codeTxt.indexOf('s')>0) return //防止重复点击
-      console.log('发送验证码')
-      const _regExp = /^1\d{10}$/
+      const _regExp = /^1[3-9]\d{9}$/
       if(!_regExp.test(this.data.phone)){ //验证手机号
         wx.showToast({
           title: '清输入正确的手机号',
@@ -60,6 +60,8 @@ Component({
         })
         return
       }
+
+      console.log('发送验证码')
       if(timer) clearInterval(timer) //防止重复计算
       let _time = 120 //初始值
       this.setData({
@@ -89,15 +91,50 @@ Component({
         data: {
           'mobile':_this.data.phone
         },
-        success(res){
-          console.log(res)
+        success(res){ 
+          if(res.data.code===0){
+            console.log('发送成功')
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
+          }
         },
         fail(res){
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 1000
-          })
+          console.log(res)
+        }
+      })
+    },
+    codeLogin(){
+      let _this = this
+      wx.request({
+        url: api.codeLogin,
+        method:"POST",
+        header:{
+          "sessionId":wx.getStorageSync('sessionId')
+        },
+        data: {
+          mobile:_this.data.phone,
+          code:_this.data.code,
+        },
+        success(res){ 
+          if(res.data.code===0){
+            console.log('绑定手机成功')
+            wx.setStorageSync('hasPhone',true)
+            _this.triggerEvent('getPhoneSuccess') //抛出事件
+            _this.hide()
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1000
+            })
+          }
+        },
+        fail(res){
+          console.log(res)
         }
       })
     },
