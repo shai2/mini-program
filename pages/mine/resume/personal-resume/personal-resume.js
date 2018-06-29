@@ -3,7 +3,6 @@ let api = require("../../../../utils/api")
 Page({
   data: {
     userInfo:{},
-    rewardShow:false,
     hasReward:false,
     money:0
   },

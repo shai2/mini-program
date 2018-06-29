@@ -24,7 +24,7 @@
     <text class="middle-title">活动中心</text>
 </view>
 <view class="middle-sp flex-row-around grid border-top">
-    <view class="state flex-column-center" bindtap="showWaiting">
+    <view class="state flex-column-center" bindtap="toInvitingReward">
         <image class="service-icon" src="/img/mine-icon-2-1.png"></image>
         <text class="state-disc">邀请奖励</text>
     </view>

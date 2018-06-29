@@ -1,5 +1,5 @@
 <view class="big-box">
-    <job-item jobItem="{{jobObj}}" exData="{{item}}"></job-item>
+    <job-item jobItem="{{jobObj}}"></job-item>
     <view class="register-list">
         <block wx:for="{{userList}}" wx:key="{{index}}">
             <view class="register-card flex-row-center">

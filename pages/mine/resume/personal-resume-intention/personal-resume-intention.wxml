@@ -5,7 +5,7 @@
         </myline-with-icon>
         <picker bindchange="workPlaceChange" mode="region">
             <myline-with-icon title="工作地点" showLeftIcon="">
-                <text class="myline-text">{{jobIntension.prov}}{{jobIntension.city!=''?" · "+jobIntension.city:''}}{{jobIntension.area!=''?" · " + jobIntension.area:""}}</text>
+                <text class="myline-text" wx:if="{{jobIntension.prov}}">{{jobIntension.prov}}{{jobIntension.city!=''?" · "+jobIntension.city:''}}{{jobIntension.area!=''?" · " + jobIntension.area:""}}</text>
             </myline-with-icon>
         </picker>
         <picker bindchange="salaryChange" range="{{salaryOption}}">

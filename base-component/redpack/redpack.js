@@ -3,14 +3,10 @@ Component({
     money:{
       type:Number,
       value:0
-    },
-    rewardShow:{
-      type:Boolean,
-      value:false
     }
   },
   data: {
-
+    rewardShow:false
   },
   methods: {
     hide(){

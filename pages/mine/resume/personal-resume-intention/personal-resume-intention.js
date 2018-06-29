@@ -165,21 +165,6 @@ Page({
   },
   getIntention(){
     var _this = this
-    wx.request({
-      url: api.getIntention,
-      method:"GET",
-      header:{
-        sessionId: wx.getStorageSync('sessionId')
-      },
-      data: {},
-      success(res){
-        _this.setData({
-          jobIntension:res.data.data
-        })
-      },
-      fail(res){
-        console.log(res)
-      }
-    })
+     
   }
 })

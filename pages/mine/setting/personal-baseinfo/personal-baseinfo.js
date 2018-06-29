@@ -82,7 +82,11 @@ Page({
     })
   },
   saveBaseInfo(){
-    console.log(this.data.userInfo)
+    if (this.data.userInfo.email) {
+      this.setData({
+        ['userInfo.email']:''
+      })
+    }
     let _this = this
     wx.request({
       url: api.updateUserInfo,
@@ -92,16 +96,24 @@ Page({
       },
       data: _this.data.userInfo,
       success(res){
-        app.globalData.userInfo = _this.data.userInfo
-        console.log(app.globalData.userInfo)
-        wx.showToast({
-          title: '保存成功',
-          icon: 'success',
-          duration: 1000
-        })
-        setTimeout(()=>{
-          wx.navigateBack({delta:1})
-        },1000)
+        if(res.code==0){
+          app.globalData.userInfo = _this.data.userInfo
+          console.log(app.globalData.userInfo)
+          wx.showToast({
+            title: '保存成功',
+            icon: 'success',
+            duration: 1000
+          })
+          setTimeout(() => {
+            wx.navigateBack({ delta: 1 })
+          }, 1000)
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 1000
+          })
+        }
       },
       fail(res){
         console.log(res)

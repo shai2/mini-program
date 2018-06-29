@@ -27,16 +27,16 @@
     </view>
     <view class="middle flex-row-around">
         <view class="state flex-column-center" data-type="1" bindtap="toDeliver">
-            <text class="state-num">{{countJobStatus.applyed}}</text>
+            <text class="state-num">{{countJobStatus.applyed||0}}</text>
             <text class="state-disc">已投递</text>
         </view>
         <view class="state flex-column-center" data-type="2" bindtap="toCommunicate">
-            <text class="state-num">{{countJobStatus.sended}}</text>
+            <text class="state-num">{{countJobStatus.sended||0}}</text>
             <text class="state-disc">沟通过</text>
         </view>
         <view class="state flex-column-center" data-type="3" bindtap="toInterview">
             <view class="state-icon">
-                <text class="state-num orange">{{countJobStatus.interviewed}}</text>
+                <text class="state-num orange">{{countJobStatus.interviewed||0}}</text>
                 <text class="state-text">入职奖</text>
             </view>
 
