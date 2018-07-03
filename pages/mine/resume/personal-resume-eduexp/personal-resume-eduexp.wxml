@@ -6,7 +6,11 @@
         <myline-with-icon title="专业名称" showLeftIcon="" showRightIcon="">
             <input class="myline-text" value="{{userInfo.educationExperiences[index].major}}" bindinput="majorChange" placeholder="请输入专业名称" placeholder-class="placeholder"/>
         </myline-with-icon>
-
+        <picker bindchange="arrangementChange" range="{{arrangementOption}}">
+            <myline-with-icon title="学历" showLeftIcon="">
+                <text class="myline-text">{{userInfo.educationExperiences[index].arrangement}}</text>
+            </myline-with-icon>
+        </picker>
         <picker bindchange="educationStartChange" mode="date">
             <myline-with-icon title="入学时间" showLeftIcon="">
                 <text class="myline-text">{{userInfo.educationExperiences[index].educationStart}}</text>

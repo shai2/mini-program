@@ -24,6 +24,7 @@ module.exports = {
   jobSaveList : baseUrl + "/app/job/favorite/jobList", //职位收藏
   whoFocus : baseUrl + "/app/resume/queryRecords", //谁看过我
   feedback : baseUrl + "/user/feedback", //反馈
+  getEduList: baseUrl + "/app/dict/getEduList", //字典-学历
   getSalaryList : baseUrl + "/app/dict/getSalaryList", //字典-薪资
   getScaleList : baseUrl + "/app/dict/getScaleList", //字典-公司规模
   getJobStateList : baseUrl + "/app/dict/getTargetcurrList", //字典-求职状态

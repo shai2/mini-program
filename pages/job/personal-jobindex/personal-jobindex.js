@@ -214,7 +214,7 @@ Page({
         },
         data: {
           "prov": this.data.city,
-          "jobTraidId": this.data.searchText,
+          "jobTradeId": this.data.searchText,
         },
         success(res){
           console.log("保存求职意向")

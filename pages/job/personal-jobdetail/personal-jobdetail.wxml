@@ -69,7 +69,7 @@
             </view>
         </view>
         <view class="big-card">
-            <text class="middle-title">公司地址</text>
+            <text class="middle-title">工作地点</text>
             <view class="address-disc flex-row-between" bindtap="toAddress">
                 <view>
                     <image class="address-icon" src="/img/place.png"></image>

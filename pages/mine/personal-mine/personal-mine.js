@@ -10,6 +10,7 @@ Page({
     canTap:false
   },
   onLoad(){
+    this.getEduList()
     this.getPositionList()
     this.getSalaryList()
     this.getScaleList()
@@ -77,6 +78,24 @@ Page({
         })
       },
       fail(res){
+        console.log(res)
+      }
+    })
+  }, 
+  getEduList(){  //存学历
+    if (wx.getStorageSync('eduList')) return
+    let _this = this
+    wx.request({
+      url: api.getEduList,
+      method: "GET",
+      success(res) {
+        let _arr = []
+        res.data.data.eduList.map((e, i) => {
+          _arr.push(e.value)
+        })
+        wx.setStorageSync('eduList', _arr)
+      },
+      fail(res) {
         console.log(res)
       }
     })

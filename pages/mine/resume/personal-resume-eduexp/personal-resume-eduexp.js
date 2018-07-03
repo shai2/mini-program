@@ -8,6 +8,9 @@ Page({
     repeatFlag:false
   },
   onLoad(options) {
+    this.setData({
+      arrangementOption: wx.getStorageSync('eduList'),
+    })
     var _this = this
     this.getResume(()=>{
       _this.setData({
@@ -25,6 +28,12 @@ Page({
       }
       // console.log('options.index是'+options.index+'要修改的index是'+_this.data.index)
       // console.log(_this.data.index,this.data.userInfo.educationExperiences.length)
+    })
+  },
+  arrangementChange(e) {
+    let _scale = 'userInfo.educationExperiences[' + this.data.index +'].arrangement' //学历
+    this.setData({
+      [_scale]: this.data.arrangementOption[e.detail.value],
     })
   },
   nameChange(e){
